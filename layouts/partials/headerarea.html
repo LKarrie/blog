@@ -1,0 +1,25 @@
+{{ if .IsHome }}
+  <!-- for mobile -->
+  <div class="m-8 cursor-pointer md:hidden" id="burger">          
+    <i class="fa-solid fa-bars fa-2xl"></i>
+  </div>
+  <!-- end for mobile -->
+
+  <section class="bg-main min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
+
+    <!-- header -->
+    {{- partial "header.html" . -}}
+    <!-- /header -->
+
+    <!-- welcome -->
+    {{- partial "welcome.html" -}}
+    <!-- /welcome -->
+
+  </section>
+{{ else }}
+
+  <!-- header -->
+  {{- partial "header.html" . -}}
+  <!-- /header -->
+
+{{ end }}
