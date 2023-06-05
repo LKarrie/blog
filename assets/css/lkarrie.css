@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .topcard{
   @apply w-64 h-32 bg-white rounded overflow-hidden shadow-md relative;
 }
