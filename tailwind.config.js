@@ -11,7 +11,8 @@ module.exports = {
         lg: '0 8px 0 var(--tw-shadow-color)',
       },
       backgroundImage: {
-        'main': "url('../img/Novelance_68656805_p0.jpg')"
+        // 'main': "url('../img/Novelance_68656805_p0.jpg')"
+        'main': "url('../img/123.jpg')"
       },
       colors: {
         primary: '#FF6363',
