@@ -12,7 +12,7 @@ module.exports = {
       },
       backgroundImage: {
         // 'main': "url('../img/Novelance_68656805_p0.jpg')"
-        'main': "url('../img/123.jpg')"
+        'main': "url('../img/silverwolf.jpg')"
       },
       colors: {
         primary: '#FF6363',

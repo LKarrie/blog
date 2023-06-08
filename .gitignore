@@ -131,3 +131,4 @@ dist
 
 # lockfile
 *-lock.json
+.hugo_build.lock

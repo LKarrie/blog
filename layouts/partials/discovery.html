@@ -7,7 +7,8 @@
 
     <div class="flex flex-col items-center justify-center gap-14">
 
-      <div class="group h-80 w-full [perspeective:1000px]">
+      <!-- PC card backup -->
+      <!-- <div class="group h-80 w-full [perspeective:1000px]">
         <div class="relative h-full w-full rounded-xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div class="absolute inset-0">
             <img class="h-full w-full rounded-xl object-cover shadow-black/40" src="img/98941448_p1.png" loading="lazy">
@@ -25,29 +26,62 @@
             </div> 
           </div>
         </div>
-      </div>  
-
-      <div class="flex group h-128 md:h-80 w-full md:[perspeective:1000px]">
+      </div>   -->
+      
+      {{ range first 2 (where .Site.RegularPages.ByDate.Reverse "Type" "blog") }}
+      <div class="flex group h-64 md:h-80 w-full md:[perspeective:1000px]">      
         <div class="flex flex-col md:relative h-full w-full rounded-xl shadow-lg transition-all duration-500 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
           <div class="relative md:absolute inset-0">
-            <img class="md:h-full w-full rounded-xl object-cover shadow-black/40" src="img/98941448_p1.png" loading="lazy">
-            <div class="bg-secondary-100 text-secondary-200 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2 opacity-1 md:group-hover:opacity-0 transition-all duration-1000">
-              <i class="inline-block fa-solid fa-tag animate-pulse"></i>        
-              <span>nginx</span>
+            <a class="md:pointer-events-none flex group h-40 md:h-80 w-full md:[perspeective:1000px]" href="{{ .RelPermalink }}">
+              <img class="md:h-full w-full rounded-xl object-cover shadow-black/40" src="img/98941448_p1.png" loading="lazy">
+            </a>
+            <div class="text-violet-950 text-sm uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2 opacity-1 md:group-hover:opacity-0 transition-all duration-1000">                   
+              {{ with .Params.tags }}
+                {{ range $tag := (first 3 .) }}
+                  <i class="inline-block fa-solid fa-tag animate-pulse"></i>     
+                  <span> {{ $tag }}</span>
+                {{ end }}
+              {{ end }}
             </div>
           </div>
-          <div class="md:absolute md:inset-0 w-full rounded-xl md:bg-black/80 px-12 text-center md:text-slate-200 md:[transform:rotateY(180deg)] [backface-visibility:hidden]">
-            <div class="flex min-h-full flex-col items-start justify-center">
-              <h1 class="text-3xl font-bold">LKarrie Blog Design</h1>
-              <p class="text-lg">LKarrie Blog Design</p>
-              <p class="text-base">LKarrie Blog Design</p>
-              <div class="flex items-start justify-center ">
+          <div class="md:absolute md:inset-0 w-full rounded-xl md:bg-black/80 md:px-12 text-center md:text-slate-200 md:[transform:rotateY(180deg)] [backface-visibility:hidden]">
+            <div class="flex h-20 overflow-hidden md:min-h-full flex-col items-center justify-center">
+              <a class="md:pointer-events-none pt-2 md:pt-0" href="{{ .RelPermalink }}">
+                <h1 class="text-lg md:text-3xl font-bold ">{{ .Title }}</h1>
+              </a>
+              <p class="text-sm md:text-lg my-[1px]"><i class="inline-block fa-solid fa-clock animate-pulse"></i>&nbsp;Created&nbsp;:&nbsp;{{ .Date.Format "2006-01-02" }}</p>
+              <p class="text-sm md:text-base">{{ .Description }}</p>
+              <div class="flex items-center justify-center">
                 <button class="hidden md:block mx-44 mt-2 rounded-md bg-neutral-800 py-1 px-2 text-sm hover:bg-neutral-900">Read More</button>
               </div>
             </div> 
           </div>
         </div>
-      </div>  
+      </div>
+
+      
+
+      <!-- <style>
+        .tags{
+          padding: 15px 0;
+        }
+      </style>
+      <div class="f6 text-gray mt-2 tags border-bottom">
+        {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
+          {{range $key, $value := $taxonomy }}
+            <a class="muted-link mr-3" href="{{ relURL (print "tags/" $key) }}/">
+              <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                  d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                </path>
+              </svg>
+              {{$key}}
+            </a>
+          {{end}}
+        {{end}}
+      </div>-->
+
+      {{ end }} 
 
   </div>
 

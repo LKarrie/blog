@@ -1,3 +1,4 @@
 baseURL = 'http://dev.lkarrie.com/'
 languageCode = 'zh-cn'
 title = 'LKarrie'
+paginate = '1'
