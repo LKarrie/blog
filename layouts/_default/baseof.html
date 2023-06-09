@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{- partial "head.html" . -}}
+    <body class="text-gray-600 font-body">
+
+      <!-- headerarea -->
+      {{- partial "headerarea.html" . -}}
+      <!-- /headerarea -->
+
+      <!-- main -->
+      {{- block "main" . }}{{- end }}
+      <!-- /main -->
+
+      <!-- footer -->
+      {{- partial "footer.html" . -}}
+      <!-- /footer -->
+
+      <!-- Additional scripts -->
+      {{- block "scripts" . }}{{- end }}
+
+      <!-- Scripts -->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
+      <script src="{{ .Site.BaseURL }}js/throttleDebounce.js"></script>
+      <script src="{{ .Site.BaseURL }}js/lkarrie.js"></script>
+    </body>
+</html>
