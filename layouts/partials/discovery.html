@@ -39,7 +39,7 @@
               {{ with .Params.tags }}
                 {{ range $tag := (first 3 .) }}
                   <i class="inline-block fa-solid fa-tag animate-pulse"></i>     
-                  <span> {{ $tag }}</span>
+                  <span class="animate-pulse"> {{ $tag }}</span>
                 {{ end }}
               {{ end }}
             </div>

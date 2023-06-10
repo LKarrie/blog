@@ -16,11 +16,15 @@
       <!-- /footer -->
 
       <!-- Additional scripts -->
-      {{- block "scripts" . }}{{- end }}
-
+      {{ if .IsHome }}
+        {{- block "scripts" . }}{{- end }}
+        <!-- {{ print .RelPermalink }}   -->
+      {{ end }}
       <!-- Scripts -->
+
       <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
       <script src="{{ .Site.BaseURL }}js/throttleDebounce.js"></script>
       <script src="{{ .Site.BaseURL }}js/lkarrie.js"></script>
+
     </body>
 </html>

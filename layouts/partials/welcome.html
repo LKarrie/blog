@@ -1,12 +1,12 @@
 <section class="min-h-screen overflow-hidden relative w-full hidden md:block">
   <div class="relative flex flex-col items-center z-10 mx-auto my-0">
-    <h1 id="lkarrie" class="text-shadow-lg shadow-black/50 transition ease-out duration-500 hover:text-blue-200 text-white text-8xl uppercase font-bold absolute top-[26rem]" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);">
+    <h1 id="lkarrie" class="text-shadow-lg shadow-black/50 transition ease-in-out duration-500 hover:text-pink-400 text-purple-400 text-8xl uppercase font-bold absolute top-[30rem]" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);">
       Hi,LKarrie!
     </h1>
 
-    <div class="mr-[25rem] mt-[1px] absolute top-[32rem] border-black/50 opacity-80 w-0 h-0 border-b-15 border-l-15 border-r-15 border-l-transparent border-r-transparent"></div>
+    <div class="mr-[25rem] mt-[1px] absolute top-[36rem] border-black/50 opacity-80 w-0 h-0 border-b-15 border-l-15 border-r-15 border-l-transparent border-r-transparent"></div>
 
-    <div class="m-4 rounded-xl bg-black/50 opacity-80 absolute top-[32rem] shadow-lg">
+    <div class="m-4 rounded-xl bg-black/50 opacity-80 absolute top-[36rem] shadow-lg">
       <p class="px-6 m-4 text-white text-base">
         Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ .
       </p>
@@ -17,18 +17,69 @@
 {{ define "scripts" }}
 <!-- <script src="https://unpkg.com/split-type"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <script src="{{ .Site.BaseURL }}js/split-type@0.3.3-umd-index.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/gsap-3.11.5-gsap.min.js"></script>
-<script>
-  let text = new SplitType('#lkarrie');
-  let characters = document.querySelectorAll('.char');
+<script src="{{ .Site.BaseURL }}js/jquery-3.3.1-jquery.min.js"></script>
 
-  for(i=0; i<characters.length;i++){
-    characters[i].classList.add('translate-y-full')
+<script>
+  // Hi LKarrie anime
+  // $(document).ready(function () {
+
+  //   let text = new SplitType('#lkarrie');
+  //   let characters = document.querySelectorAll('.char');
+
+  //   for(i=0; i<characters.length;i++){
+  //     characters[i].classList.add('translate-y-full')
+  //   }
+  //   gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5});
+  // });
+
+  // Main Loading anime
+  // $(document).ready(function () {
+  //   $(".loading-wrapper").fadeOut(500);
+  // });
+
+  function loadedhi () {
+    let text = new SplitType('#lkarrie');
+    let characters = document.querySelectorAll('.char');
+
+    for(i=0; i<characters.length;i++){
+      characters[i].classList.add('translate-y-full')
+    }
+    gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5});
   }
 
-  gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5});
+  function loaded() {
+    $(".loading-wrapper").fadeOut(500);
+  }
 
+  const home = document.querySelector("#home-with-image")
+  if(home){
+    console.log('bg is image')
+    const homebgimage = new Image();
+    homebgimage.src = "img/silverwolf.jpg";
+    if (homebgimage.complete) {
+      console.log('image download complate,welcome:)');
+      loaded()
+      loadedhi()
+    }
+  }else{
+    const vido = document.querySelector("#video")
+    if(vido){
+      console.log('bg is video')
+      let timer = null
+      timer = setInterval(() => {
+        console.log('start video download timer');
+        if( document.querySelector('#video').readyState === 4){
+          console.log('vido download complate,close timer,welcome:)');
+          loaded();
+          loadedhi();
+          clearInterval(timer);
+        }
+      }, 300);
+    }
+  }
 
 </script>
 {{ end }}

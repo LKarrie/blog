@@ -2,3 +2,9 @@ baseURL = 'http://dev.lkarrie.com/'
 languageCode = 'zh-cn'
 title = 'LKarrie'
 paginate = '1'
+
+
+[Params.home]
+  showVideo = true
+  HomeBgImage = '/img/silverwolf.jpg'
+  homeBgVideo = '/img/silverwolf.mp4'
