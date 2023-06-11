@@ -544,6 +544,18 @@ video {
   bottom: 0px;
 }
 
+.bottom-3{
+  bottom: 0.75rem;
+}
+
+.bottom-4{
+  bottom: 1rem;
+}
+
+.bottom-5{
+  bottom: 1.25rem;
+}
+
 .left-0{
   left: 0px;
 }
@@ -574,6 +586,22 @@ video {
 
 .z-50{
   z-index: 50;
+}
+
+.z-\[46\]{
+  z-index: 46;
+}
+
+.z-\[47\]{
+  z-index: 47;
+}
+
+.z-\[48\]{
+  z-index: 48;
+}
+
+.z-\[49\]{
+  z-index: 49;
 }
 
 .m-4{
@@ -621,10 +649,6 @@ video {
   margin-left: 0.5rem;
 }
 
-.mr-3{
-  margin-right: 0.75rem;
-}
-
 .mr-\[25rem\]{
   margin-right: 25rem;
 }
@@ -643,6 +667,10 @@ video {
 
 .mt-5{
   margin-top: 1.25rem;
+}
+
+.mt-60{
+  margin-top: 15rem;
 }
 
 .mt-\[1px\]{
@@ -677,6 +705,10 @@ video {
   height: 5rem;
 }
 
+.h-24{
+  height: 6rem;
+}
+
 .h-4{
   height: 1rem;
 }
@@ -695,6 +727,10 @@ video {
 
 .h-full{
   height: 100%;
+}
+
+.h-auto{
+  height: auto;
 }
 
 .min-h-full{
@@ -917,6 +953,10 @@ video {
   background-image: url('../img/silverwolf.jpg');
 }
 
+.bg-wave{
+  background-image: url('../img/wave.png');
+}
+
 .from-pink-400{
   --tw-gradient-from: #f472b6 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(244 114 182 / 0) var(--tw-gradient-to-position);
@@ -1006,7 +1046,11 @@ video {
 }
 
 .font-body{
-  font-family: Nunito;
+  font-family: Nunito, sans-serif;
+}
+
+.font-logo{
+  font-family: logo;
 }
 
 .text-2xl{
@@ -1092,6 +1136,18 @@ video {
 
 .opacity-0{
   opacity: 0;
+}
+
+.opacity-100{
+  opacity: 1;
+}
+
+.opacity-50{
+  opacity: 0.5;
+}
+
+.opacity-70{
+  opacity: 0.7;
 }
 
 .opacity-80{
@@ -1187,6 +1243,30 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+/* @font-face {
+  font-family: 'Nunito';
+  src: url('../../fonts/nunito/nunito.woff2');
+} */
+
+@font-face {
+  font-family: "logo";
+
+  src: url("../../fonts/logo/logo.eot");
+
+  /* IE9 */
+
+  src: url("../../fonts/logo/logo.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../fonts/logo/logo.woff") format("woff"), /* chrome、firefox */
+  url("../../fonts/logo/logo.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+  url("../../fonts/logo/logo.svg#logo") format("svg");
+
+  /* iOS 4.1- */
+
+  font-style: normal;
+
+  font-weight: normal;
+}
+
 .hover\:translate-x-0:hover{
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1239,6 +1319,10 @@ video {
 
 .group:hover .group-hover\:opacity-0{
   opacity: 0;
+}
+
+.group:hover .group-hover\:opacity-100{
+  opacity: 1;
 }
 
 .group:hover .group-hover\:opacity-50{

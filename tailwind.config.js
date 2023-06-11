@@ -11,7 +11,8 @@ module.exports = {
         lg: '0 8px 0 var(--tw-shadow-color)',
       },
       backgroundImage: {
-        'main': "url('../img/silverwolf.jpg')"
+        'main': "url('../img/silverwolf.jpg')",
+        'wave': "url('../img/wave.png')",
       },
       colors: {
         primary: '#FF6363',
@@ -21,7 +22,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        body: ['Nunito']
+        body: ['Nunito, sans-serif'],
+        logo: ['logo']
       },
       height: {
         '128': '32rem',

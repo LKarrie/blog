@@ -9,12 +9,12 @@
   {{- partial "mainloading.html" . -}}
   <!-- /main loading-->
 
-    {{ if eq site.Params.home.ShowVideo false }}
-      <section id="home-with-image" style="background-image: url({{site.Params.home.HomeBgImage}});" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
-    {{ else }}
-      <section class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
-      {{- partial "video.html" . -}}
-    {{ end }}
+      {{ if eq site.Params.home.ShowVideo false }}
+        <section id="home-with-image" style="background-image: url({{site.Params.home.HomeBgImage}});" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
+      {{ else }}
+        <section class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
+        {{- partial "video.html" . -}}
+      {{ end }}
 
       <!-- header -->
       {{- partial "header.html" . -}}
@@ -23,6 +23,9 @@
       <!-- welcome -->
       {{- partial "welcome.html" -}}
       <!-- /welcome -->
+
+      <!-- bottom wave -->
+      {{- partial "wave.html" -}}
 
   </section>
 {{ else }}

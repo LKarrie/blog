@@ -2,6 +2,7 @@ const burger = document.querySelector('#burger')
 const menu = document.querySelector('#menu')
 const topnav = document.querySelector('#topnav')
 const tophaeder = document.querySelector('#tophaeder')
+const toplogo = document.querySelector('#toplogo')
 
 burger.addEventListener('click',()=>{
   if (menu.classList.contains('hidden')) {
@@ -39,6 +40,7 @@ if (beforeScrollTop > scrollTop) {
 }
 
 if (direction == DIRECTION_ENUM.DOWN) {
+  toplogo.classList.remove('opacity-0');
   topnav.classList.remove('opacity-0');
   topnav.classList.remove('translate-x-28');
   tophaeder.classList.remove('bg-opacity-0');
@@ -47,6 +49,7 @@ if (direction == DIRECTION_ENUM.DOWN) {
   }
 } else {
   if (scrollTop <= threshold) {
+    toplogo.classList.add('opacity-0');
     topnav.classList.add('opacity-0');
     topnav.classList.add('translate-x-28');
     tophaeder.classList.add('bg-opacity-0');
@@ -64,5 +67,43 @@ handleScroll
 
 window.addEventListener('scroll', throttleHandleScroll);
 
-
 /** 监听滚动条 **/
+
+
+/** 监听Cards展示 **/
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.remove('.cantsee')
+      entry.target.classList.add('cansee')
+    } else {
+      // do not anime again and again :）
+      // entry.target.classList.add('cantsee')
+      // entry.target.classList.remove('cansee')
+    }
+  })
+})
+
+const hiddenElements = document.querySelectorAll('.cantsee')
+hiddenElements.forEach((el)=> observer.observe(el))
+
+/** 监听Cards展示 **/
+
+/** 监听Weighanchor展示 **/
+const observer2 = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.remove('.cantsee2')
+      entry.target.classList.add('cansee2')
+    } else {
+      // do not anime again and again :）
+      // entry.target.classList.add('cantsee2')
+      // entry.target.classList.remove('cansee2')
+    }
+  })
+})
+
+const hiddenElements2 = document.querySelectorAll('.cantsee2')
+hiddenElements2.forEach((el)=> observer2.observe(el))
+
+/** 监听Weighanchor展示 **/
