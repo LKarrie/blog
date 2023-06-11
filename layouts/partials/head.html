@@ -30,7 +30,6 @@
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/mainload.css" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/wave.css" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/cardanime.css" />
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/logo.css" />
 
     {{ with .OutputFormats.Get "rss" -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

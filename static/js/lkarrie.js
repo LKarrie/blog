@@ -3,6 +3,7 @@ const menu = document.querySelector('#menu')
 const topnav = document.querySelector('#topnav')
 const tophaeder = document.querySelector('#tophaeder')
 const toplogo = document.querySelector('#toplogo')
+const toptext = document.querySelector('#toptext')
 
 burger.addEventListener('click',()=>{
   if (menu.classList.contains('hidden')) {
@@ -41,6 +42,7 @@ if (beforeScrollTop > scrollTop) {
 
 if (direction == DIRECTION_ENUM.DOWN) {
   toplogo.classList.remove('opacity-0');
+  toptext.classList.remove('opacity-0');
   topnav.classList.remove('opacity-0');
   topnav.classList.remove('translate-x-28');
   tophaeder.classList.remove('bg-opacity-0');
@@ -50,6 +52,7 @@ if (direction == DIRECTION_ENUM.DOWN) {
 } else {
   if (scrollTop <= threshold) {
     toplogo.classList.add('opacity-0');
+    toptext.classList.add('opacity-0');
     topnav.classList.add('opacity-0');
     topnav.classList.add('translate-x-28');
     tophaeder.classList.add('bg-opacity-0');
