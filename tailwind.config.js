@@ -23,7 +23,7 @@ module.exports = {
       },
       fontFamily: {
         body: ['Nunito, sans-serif'],
-        logo: ['logo']
+        logo: ['logo'],
       },
       height: {
         '128': '32rem',
