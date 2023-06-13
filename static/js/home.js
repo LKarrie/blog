@@ -1,17 +1,9 @@
-const burger = document.querySelector('#burger')
-const menu = document.querySelector('#menu')
 const topnav = document.querySelector('#topnav')
 const tophaeder = document.querySelector('#tophaeder')
 const toplogo = document.querySelector('#toplogo')
 const toptext = document.querySelector('#toptext')
 
-burger.addEventListener('click',()=>{
-  if (menu.classList.contains('hidden')) {
-    menu.classList.remove('hidden');
-  } else {
-    menu.classList.add('hidden');
-  }
-})
+
 
 /** 监听滚动条 **/
 

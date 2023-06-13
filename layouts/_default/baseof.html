@@ -15,16 +15,21 @@
       {{- partial "footer.html" . -}}
       <!-- /footer -->
 
+
+      <!-- common js -->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
+      <script src="{{ .Site.BaseURL }}/js/throttleDebounce.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/common.js"></script>
+      <!-- /common js -->
+
       <!-- Additional scripts -->
       {{ if .IsHome }}
         {{- block "scripts" . }}{{- end }}
-        <!-- {{ print .RelPermalink }}   -->
+        <script src="{{ .Site.BaseURL }}/js/home.js"></script>
+      {{ else }}
+        {{- block "otherpagecripts" . }}{{- end }}
+        <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>  
       {{ end }}
       <!-- Scripts -->
-
-      <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
-      <script src="{{ .Site.BaseURL }}/js/throttleDebounce.js"></script>
-      <script src="{{ .Site.BaseURL }}/js/lkarrie.js"></script>
-
     </body>
 </html>
