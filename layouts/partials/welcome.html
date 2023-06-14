@@ -66,6 +66,27 @@
 
 <script>
 
+  const words = [
+    "Captain!",
+    "Doctor!",
+    "Traveler!",
+    "Sensei!",
+    "Trailblazer!",
+    "LKarrie!",
+  ] 
+
+  function loadedtext () {
+    texttimer = setInterval(() => {
+        console.log('text change');
+          $('#autochangetext').fadeOut(function(){
+            $(this).html(words[(i=(i+1)%words.length)]).fadeIn(1000)
+            if(i===words.length-1){
+              clearInterval(texttimer);
+            }
+          })
+    }, 2000);
+  }
+
   function loadedhi () {
     let text = new SplitType('#lkarrie');
     let characters = document.querySelectorAll('.char');
@@ -89,6 +110,7 @@
       console.log('image download complate,welcome:)');
       loaded()
       loadedhi()
+      loadedtext()
     }
   }else{
     const vido = document.querySelector("#video")
@@ -102,30 +124,11 @@
           loaded();
           loadedhi();
           clearInterval(timer);
+          loadedtext()
         }
       }, 300);
     }
   }
-
-
-  const words = [
-    "Captain!",
-    "Doctor!",
-    "Traveler!",
-    "Sensei!",
-    "Trailblazer!",
-    "LKarrie!",
-  ] 
-
-  texttimer = setInterval(() => {
-    console.log('text change');
-      $('#autochangetext').fadeOut(function(){
-        $(this).html(words[(i=(i+1)%words.length)]).fadeIn(1000)
-        if(i===words.length-1){
-          clearInterval(texttimer);
-        }
-      })
-  }, 2000);
 
 </script>
 {{ end }}
