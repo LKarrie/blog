@@ -113,20 +113,38 @@
       loadedtext()
     }
   }else{
-    const vido = document.querySelector("#video")
-    if(vido){
+    const video = document.querySelector("#video")
+    if(video){
       console.log('bg is video')
+      
       let timer = null
-      timer = setInterval(() => {
-        console.log('start video download timer');
-        if( document.querySelector('#video').readyState === 4){
-          console.log('vido download complate,close timer,welcome:)');
-          loaded();
-          loadedhi();
-          clearInterval(timer);
-          loadedtext()
-        }
-      }, 300);
+      // 768 is md in tailwindcss
+      if(document.body.clientWidth <= 768){
+        console.log('but in mobile, hidden video and dont auto play')
+        $('#video').attr('autoplay',false); 
+        timer = setInterval(() => {
+          console.log('start video download timer');
+          if( document.querySelector('#video').readyState === 4){
+            console.log('video cant download in mobile,close timer,welcome:)');
+            loaded();
+            clearInterval(timer);
+            // test not shown so do not load
+            // loadedhi();
+            // loadedtext()
+          }
+        }, 300);
+      } else {
+        timer = setInterval(() => {
+          console.log('start video download timer');
+          if( document.querySelector('#video').readyState === 4){
+            console.log('video download complate,close timer,welcome:)');
+            loaded();
+            loadedhi();
+            clearInterval(timer);
+            loadedtext()
+          }
+        }, 300);
+      }
     }
   }
 
