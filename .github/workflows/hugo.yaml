@@ -44,8 +44,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          pwd \
-          hugo 
+          pwd && ls && hugo && ls
 
   # Deployment job
   deploy:
