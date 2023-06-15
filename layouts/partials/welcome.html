@@ -122,6 +122,8 @@
       if(document.body.clientWidth <= 768){
         console.log('but in mobile, hidden video and dont auto play')
         $('#video').attr('autoplay',false); 
+        $('#video').attr('muted',''); 
+        $('#video').attr('loop',''); 
         timer = setInterval(() => {
           console.log('start video download timer');
           if( document.querySelector('#video').readyState === 4){
