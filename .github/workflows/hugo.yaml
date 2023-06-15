@@ -46,13 +46,7 @@ jobs:
         run: |
           pwd && ls && hugo && ls
 
-  # Deployment job
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to Server
-        id: deployment
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_TOKEN }}
