@@ -120,8 +120,7 @@
       let timer = null
       // 768 is md in tailwindcss
       if(document.body.clientWidth <= 768){
-        console.log('but in mobile, remove video')
-        $('#video').remove()
+
         timer = setInterval(() => {
           console.log('start video download timer')
           console.log('video cant download in mobile,close timer,welcome:)')
@@ -130,7 +129,14 @@
           clearInterval(timer)
           loadedtext()
         }, 300)
+        
       } else {
+
+        $('#video').attr( "preload","auto")
+        $('#video').attr( "autoplay","true")
+        $('#video').attr( "muted","true")
+        video.play();
+
         timer = setInterval(() => {
           console.log('start video download timer')
           if( document.querySelector('#video').readyState === 4){
