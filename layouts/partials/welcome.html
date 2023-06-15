@@ -77,37 +77,37 @@
 
   function loadedtext () {
     texttimer = setInterval(() => {
-        console.log('text change');
+        console.log('text change')
           $('#autochangetext').fadeOut(function(){
             $(this).html(words[(i=(i+1)%words.length)]).fadeIn(1000)
             if(i===words.length-1){
-              clearInterval(texttimer);
+              clearInterval(texttimer)
             }
           })
-    }, 2000);
+    }, 2000)
   }
 
   function loadedhi () {
-    let text = new SplitType('#lkarrie');
-    let characters = document.querySelectorAll('.char');
+    let text = new SplitType('#lkarrie')
+    let characters = document.querySelectorAll('.char')
 
     for(i=0; i<characters.length;i++){
       characters[i].classList.add('translate-y-full')
     }
-    gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5});
+    gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5})
   }
 
   function loaded() {
-    $(".loading-wrapper").fadeOut(500);
+    $(".loading-wrapper").fadeOut(500)
   }
 
   const home = document.querySelector("#home-with-image")
   if(home){
     console.log('bg is image')
-    const homebgimage = new Image();
-    homebgimage.src = "img/silverwolf.jpg";
+    const homebgimage = new Image()
+    homebgimage.src = "img/silverwolf.jpg"
     if (homebgimage.complete) {
-      console.log('image download complate,welcome:)');
+      console.log('image download complate,welcome:)')
       loaded()
       loadedhi()
       loadedtext()
@@ -120,32 +120,27 @@
       let timer = null
       // 768 is md in tailwindcss
       if(document.body.clientWidth <= 768){
-        console.log('but in mobile, hidden video and dont auto play')
-        $('#video').attr('autoplay',false); 
-        $('#video').attr('muted',''); 
-        $('#video').attr('loop',''); 
+        console.log('but in mobile, remove video')
+        $('#video').remove()
         timer = setInterval(() => {
-          console.log('start video download timer');
-          if( document.querySelector('#video').readyState === 4){
-            console.log('video cant download in mobile,close timer,welcome:)');
-            loaded();
-            clearInterval(timer);
-            // test not shown so do not load
-            // loadedhi();
-            // loadedtext()
-          }
-        }, 300);
+          console.log('start video download timer')
+          console.log('video cant download in mobile,close timer,welcome:)')
+          loaded()
+          loadedhi()
+          clearInterval(timer)
+          loadedtext()
+        }, 300)
       } else {
         timer = setInterval(() => {
-          console.log('start video download timer');
+          console.log('start video download timer')
           if( document.querySelector('#video').readyState === 4){
-            console.log('video download complate,close timer,welcome:)');
-            loaded();
-            loadedhi();
-            clearInterval(timer);
+            console.log('video download complate,close timer,welcome:)')
+            loaded()
+            loadedhi()
+            clearInterval(timer)
             loadedtext()
           }
-        }, 300);
+        }, 300)
       }
     }
   }
