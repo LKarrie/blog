@@ -61,6 +61,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_TOKEN }}
           ARGS: '-avz --delete'
           SOURCE: './public'
-          REMOTE_HOST: 'blog.lkarrie.com'   
+          REMOTE_HOST: ${{ secrets.SERVER_IP }}
           REMOTE_USER: 'root'
           TARGET: '/app/nginx/html/test'
