@@ -37,7 +37,6 @@ if (direction == DIRECTION_ENUM.DOWN) {
   toptext.classList.remove('opacity-0');
   topnav.classList.remove('opacity-0');
   topnav.classList.remove('translate-x-28');
-  tophaeder.classList.remove('bg-opacity-0');
   if (scrollTop + clientHeight + threshold >= scrollHeight) {
     console.log("滚动触底");
   }

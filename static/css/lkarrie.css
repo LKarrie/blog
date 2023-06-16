@@ -645,6 +645,10 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mb-20{
+  margin-bottom: 5rem;
+}
+
 .ml-2{
   margin-left: 0.5rem;
 }
@@ -749,10 +753,6 @@ video {
   width: 0px;
 }
 
-.w-16{
-  width: 4rem;
-}
-
 .w-24{
   width: 6rem;
 }
@@ -840,10 +840,6 @@ video {
 
 .cursor-pointer{
   cursor: pointer;
-}
-
-.resize{
-  resize: both;
 }
 
 .flex-row{
@@ -974,6 +970,10 @@ video {
   --tw-bg-opacity: 0;
 }
 
+.bg-opacity-80{
+  --tw-bg-opacity: 0.8;
+}
+
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1079,10 +1079,6 @@ video {
 
 .pl-10{
   padding-left: 2.5rem;
-}
-
-.pt-1{
-  padding-top: 0.25rem;
 }
 
 .pt-2{
@@ -1277,17 +1273,36 @@ video {
   transform: rotateY(180deg);
 }
 
-.topcard{
+.nav{
   position: relative;
-  height: 8rem;
-  width: 16rem;
-  overflow: hidden;
-  border-radius: 0.25rem;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.nav:hover{
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity));
+}
+
+.nav::after{
+  position: absolute;
+  left: 0px;
+  bottom: -1.25rem;
+  height: 3px;
+  width: 0%;
+  border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+  transition-duration: 300ms;
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.nav:hover::after{
+  width: 100%;
 }
 
 /* @font-face {
@@ -1329,8 +1344,8 @@ video {
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-opacity-100:hover{
-  --tw-bg-opacity: 1;
+.hover\:bg-opacity-80:hover{
+  --tw-bg-opacity: 0.8;
 }
 
 .hover\:text-gray-700:hover{

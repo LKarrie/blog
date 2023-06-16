@@ -38,6 +38,7 @@ if (direction == DIRECTION_ENUM.DOWN) {
   topnav.classList.remove('opacity-0');
   topnav.classList.remove('translate-x-28');
   tophaeder.classList.remove('bg-opacity-0');
+  tophaeder.classList.add('bg-opacity-80');
   if (scrollTop + clientHeight + threshold >= scrollHeight) {
     console.log("滚动触底");
   }
@@ -47,6 +48,7 @@ if (direction == DIRECTION_ENUM.DOWN) {
     toptext.classList.add('opacity-0');
     topnav.classList.add('opacity-0');
     topnav.classList.add('translate-x-28');
+    tophaeder.classList.remove('bg-opacity-80');
     tophaeder.classList.add('bg-opacity-0');
     console.log("滚动到顶部");
   }
