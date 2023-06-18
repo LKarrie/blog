@@ -524,6 +524,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.static{
+  position: static;
+}
+
 .fixed{
   position: fixed;
 }
@@ -602,6 +606,10 @@ video {
 
 .z-\[49\]{
   z-index: 49;
+}
+
+.-z-10{
+  z-index: -10;
 }
 
 .m-4{
@@ -689,8 +697,16 @@ video {
   display: inline-block;
 }
 
+.inline{
+  display: inline;
+}
+
 .flex{
   display: flex;
+}
+
+.inline-flex{
+  display: inline-flex;
 }
 
 .hidden{
@@ -749,6 +765,11 @@ video {
   min-height: 100vh;
 }
 
+.min-h-fit{
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
 .w-0{
   width: 0px;
 }
@@ -771,6 +792,14 @@ video {
 
 .w-full{
   width: 100%;
+}
+
+.w-96{
+  width: 24rem;
+}
+
+.min-w-full{
+  min-width: 100%;
 }
 
 .-translate-x-full{
@@ -1017,9 +1046,19 @@ video {
   background-repeat: no-repeat;
 }
 
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-fill{
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .p-2{
@@ -1087,6 +1126,22 @@ video {
 
 .pt-4{
   padding-top: 1rem;
+}
+
+.pt-16{
+  padding-top: 4rem;
+}
+
+.pt-8{
+  padding-top: 2rem;
+}
+
+.pb-20{
+  padding-bottom: 5rem;
+}
+
+.pt-60{
+  padding-top: 15rem;
 }
 
 .text-center{
@@ -1423,6 +1478,10 @@ video {
 @media (min-width: 768px){
   .md\:pointer-events-none{
     pointer-events: none;
+  }
+
+  .md\:fixed{
+    position: fixed;
   }
 
   .md\:absolute{

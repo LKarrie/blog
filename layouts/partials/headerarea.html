@@ -12,8 +12,8 @@
       {{ if eq site.Params.home.ShowVideo false }}
         <section id="home-with-image" style="background-image: url({{site.Params.home.HomeBgImage}});" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
       {{ else }}
-        <section class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
-        {{- partial "video.html" . -}}
+        <section class="min-h-screen hidden md:block">
+          {{- partial "video.html" . -}} 
       {{ end }}
 
       <!-- header -->
