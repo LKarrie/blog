@@ -16,28 +16,44 @@
   @apply w-[100%]
 }
 
-.group-date {
-  @apply text-4xl text-gray-300 px-3 py-4 font-bold tracking-widest
+.group-date-year {
+  @apply text-2xl text-blue-400 font-bold tracking-widest
+}
+
+.group-date-month {
+  @apply text-xl text-blue-400 font-bold tracking-widest
 }
 
 .timeline {
-  @apply border-l-4 border-gray-200 ml-3 mt-3 py-16  space-y-14
+  @apply ml-[30px] py-6 border-l-4 border-gray-200 space-y-14
 }
 
-.dot{
+.timeline-item {
+  @apply text-right pt-1 border-b-4 border-gray-200 
+}
+
+.dot-md{
+  @apply absolute top-5 -left-4 bg-blue-700 h-7 w-7 rounded-full border-4 border-white
+}
+
+.dot-md-ping{
+  @apply absolute -top-1 -left-1 bg-blue-700 h-7 w-7 rounded-full border-4 border-white animate-ping
+}
+
+.dot-sm{
   @apply absolute top-5 -left-3.5 bg-blue-400 h-6 w-6 rounded-full border-4 border-white
 }
 
-.dot-ping{
+.dot-sm-ping{
   @apply absolute -top-1 -left-1 bg-blue-400 h-6 w-6 rounded-full border-4 border-white animate-ping
 }
 
 .timeline-date {
-  @apply text-xs font-bold opacity-40 tracking-widest
+  @apply text-base font-semibold opacity-40 tracking-widest
 }
 
 .timeline-title {
-  @apply text-3xl text-gray-600 font-semibold tracking-wide mb-2
+  @apply text-2xl text-gray-600 font-semibold tracking-wide mb-2
 }
 
 /* @font-face {
