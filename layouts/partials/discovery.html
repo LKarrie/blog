@@ -52,7 +52,9 @@
               <p class="text-sm md:text-lg my-[1px]"><i class="inline-block fa-solid fa-clock animate-pulse"></i>&nbsp;Created&nbsp;:&nbsp;{{ .Date.Format "2006-01-02" }}</p>
               <p class="text-sm md:text-base">{{ .Description }}</p>
               <div class="flex items-center justify-center">
-                <button class="hidden md:block mx-44 mt-2 rounded-md bg-neutral-800 py-1 px-2 text-sm hover:bg-neutral-900">Read More</button>
+                <a href="{{ .RelPermalink }}">
+                  <button class="hidden md:block mx-44 mt-2 rounded-md bg-neutral-800 py-1 px-2 text-sm hover:bg-neutral-900">Read More</button>
+                </a>  
               </div>
             </div> 
           </div>
