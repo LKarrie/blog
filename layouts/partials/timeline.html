@@ -59,7 +59,9 @@
                 <div class="dot-sm-ping"></div>
               </div>
               <div class="group timeline-item-bg m-4 p-4 rounded">
-                <h3 class="timeline-title" > {{ .Title }} </h3>
+                <a href="{{ .RelPermalink }}">
+                  <h3 class="timeline-title" > {{ .Title }} </h3>
+                </a>
                 <div class="timeline-item-bg m-4 p-4 rounded grid grid-rows-[0fr] group-hover:grid-rows-[1fr] duration-500">
 
                   <div class="md:overflow-hidden">
