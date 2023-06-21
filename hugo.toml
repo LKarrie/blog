@@ -7,4 +7,4 @@ paginate = '1'
 [Params.home]
   showVideo = true
   HomeBgImage = '/img/silverwolf.jpg'
-  homeBgVideo = '/img/silverwolf.mp4'
+  homeBgVideo = 'https://dev.lkarrie.com/media/silverwolf.mp4/index.m3u8'
