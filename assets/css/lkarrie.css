@@ -25,7 +25,7 @@
 }
 
 .timeline {
-  @apply ml-[30px] py-6 border-l-4 border-gray-200 space-y-14
+  @apply ml-[30px] py-3 border-l-4 border-gray-200 space-y-3
 }
 
 .timeline-item {

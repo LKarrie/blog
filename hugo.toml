@@ -3,6 +3,9 @@ languageCode = 'zh-cn'
 title = 'LKarrie'
 paginate = '1'
 
+[Params]
+  description = "雑魚の小站"
+
 
 [Params.home]
   showVideo = true

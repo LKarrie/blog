@@ -612,6 +612,10 @@ video {
   margin: 2rem;
 }
 
+.m-2{
+  margin: 0.5rem;
+}
+
 .mx-4{
   margin-left: 1rem;
   margin-right: 1rem;
@@ -640,6 +644,16 @@ video {
 .my-\[1px\]{
   margin-top: 1px;
   margin-bottom: 1px;
+}
+
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mb-1{
@@ -690,16 +704,16 @@ video {
   margin-top: 1px;
 }
 
+.ml-4{
+  margin-left: 1rem;
+}
+
 .block{
   display: block;
 }
 
 .inline-block{
   display: inline-block;
-}
-
-.inline{
-  display: inline;
 }
 
 .flex{
@@ -758,8 +772,8 @@ video {
   height: 100%;
 }
 
-.min-h-\[400px\]{
-  min-height: 400px;
+.min-h-\[300px\]{
+  min-height: 300px;
 }
 
 .min-h-full{
@@ -774,8 +788,8 @@ video {
   width: 0px;
 }
 
-.w-24{
-  width: 6rem;
+.w-28{
+  width: 7rem;
 }
 
 .w-4{
@@ -797,10 +811,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-28{
-  width: 7rem;
 }
 
 .-translate-x-full{
@@ -944,10 +954,6 @@ video {
   border-radius: 0.75rem;
 }
 
-.border{
-  border-width: 1px;
-}
-
 .border-b-15{
   border-bottom-width: 15px;
 }
@@ -1080,6 +1086,14 @@ video {
   padding: 10px;
 }
 
+.p-3{
+  padding: 0.75rem;
+}
+
+.p-1{
+  padding: 0.25rem;
+}
+
 .px-1{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1115,6 +1129,16 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pb-20{
   padding-bottom: 5rem;
 }
@@ -1141,6 +1165,10 @@ video {
 
 .pt-8{
   padding-top: 2rem;
+}
+
+.pb-0{
+  padding-bottom: 0px;
 }
 
 .text-center{
@@ -1402,16 +1430,16 @@ video {
 
 .timeline > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
-  margin-top: calc(3.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(3.5rem * var(--tw-space-y-reverse));
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
 .timeline{
   border-left-width: 4px;
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .timeline-item{
