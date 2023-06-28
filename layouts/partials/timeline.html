@@ -39,7 +39,7 @@
   <div class="w-full md:w-[800px] ">
     <section class="my-8">
       <h1 class="sm:text-4xl text-2xl text-blue-400 font-semibold mb-4">{{ .Title }}</h1>
-      <div class="mx-4 flex justify-center items-center flex-col pt-8">
+      <div class="mx-0 flex justify-center items-center flex-col pt-8">
         <section class="w-full md:w-[800px]">
           {{ range .Pages.GroupByDate "2006" "desc" }}      
               <h3 class="group-date-year">  {{ .Key }} </h3>  
@@ -60,11 +60,11 @@
                     <div class="dot-sm" title="test">
                       <div class="dot-sm-ping"></div>
                     </div>
-                    <div class="group timeline-item-bg ml-4 mt-2 mb-1 p-2 rounded">
+                    <div class="group timeline-item-bg ml-4 mr-4 md:mr-0 mt-2 mb-1 p-2 rounded">
                       <a href="{{ .RelPermalink }}">
                         <h3 class="timeline-title" > {{ .Title }} </h3>
                       </a>
-                      <div class="timeline-item-bg mx-4 my-2 p-3 rounded grid grid-rows-[0fr] group-hover:grid-rows-[1fr] duration-500">
+                      <div class="hidden timeline-item-bg mx-4 my-2 p-3 rounded md:grid grid-rows-[0fr] group-hover:grid-rows-[1fr] duration-500">
 
                         <div class="md:overflow-hidden">
                           <span class="timeline-date block"> {{ .Date.Format "Mon, Jan 2, 2006" }} </span>
