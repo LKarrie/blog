@@ -13,6 +13,7 @@ module.exports = {
       backgroundImage: {
         'main': "url('../img/silverwolf.jpg')",
         'wave': "url('../img/wave.png')",
+        'weighanchor1-lazy': "url('../imglazy/weighanchor1-lazy.png')",
       },
       colors: {
         primary: '#FF6363',
