@@ -36,12 +36,18 @@
   </div>
   <!-- end for mobile -->
 
-  <section class="bg-main min-h-[300px] bg-no-repeat bg-cover bg-center hidden md:block">
-
-    <!-- header -->
+  <!--not lazy-->
+  <!-- <section class="bg-main min-h-[300px] bg-no-repeat bg-cover bg-center hidden md:block">
     {{- partial "header.html" . -}}
-    <!-- /header -->
- 
+  </section> -->
+
+  <!--lazy-->
+  <section class="min-h-[300px] hidden md:block h-[300px]">  
+
+    {{- partial "header.html" . -}}  
+    
+    {{- partial "banner.html" . -}}
+  
   </section>
 
 {{ end }}
