@@ -781,6 +781,10 @@ video {
   height: 20rem;
 }
 
+.h-\[300px\]{
+  height: 300px;
+}
+
 .h-\[4\.5rem\]{
   height: 4.5rem;
 }
@@ -793,10 +797,6 @@ video {
   height: 100%;
 }
 
-.h-\[300px\]{
-  height: 300px;
-}
-
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -807,10 +807,6 @@ video {
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.min-h-\[100px\]{
-  min-height: 100px;
 }
 
 .w-0{

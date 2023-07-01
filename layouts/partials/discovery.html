@@ -38,9 +38,15 @@
               <!-- <img class="md:h-full w-full rounded-xl object-cover shadow-black/40" src="img/weighanchor1.png" loading="lazy"> -->
               
               <!--lazy-->
-              <div class="blurred-img relative h-full w-full bg-center bg-cover bg-weighanchor1-lazy rounded-t-xl md:rounded-xl">
-                <img class="opacity-0 transition-opacity duration-1000 ease-in-out h-full w-full rounded-t-xl md:rounded-xl object-center object-cover shadow-black/40" src="/img/weighanchor1.png" loading="lazy">
+              {{ if .Params.cardImg }}
+              <div class="blurred-img relative h-full w-full bg-center bg-cover rounded-t-xl md:rounded-xl" style="background-image: url('{{ .Params.lazyCardImg }}')">
+                <img class="opacity-0 transition-opacity duration-1000 ease-in-out h-full w-full rounded-t-xl md:rounded-xl object-center object-cover shadow-black/40" src="{{ .Params.cardImg }}" loading="lazy">
               </div>
+              {{ else }}
+              <div class="blurred-img relative h-full w-full bg-center bg-cover rounded-t-xl md:rounded-xl" style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')">
+                <img class="opacity-0 transition-opacity duration-1000 ease-in-out h-full w-full rounded-t-xl md:rounded-xl object-center object-cover shadow-black/40" src="{{ .Site.Params.defaulCardImg }}" loading="lazy">
+              </div>
+              {{ end }}
             
             </a>
             <div class="text-violet-950 text-sm uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2 opacity-1 md:group-hover:opacity-0 transition-all duration-1000">                   
