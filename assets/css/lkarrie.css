@@ -16,6 +16,8 @@
   @apply w-[100%]
 }
 
+
+
 .group-date-year {
   @apply text-2xl text-blue-400 font-bold tracking-widest
 }
@@ -54,6 +56,11 @@
 
 .timeline-title {
   @apply text-lg md:text-2xl text-gray-600 font-semibold tracking-wide
+}
+
+
+.tagcloud--item {
+  @apply py-2 px-4 whitespace-nowrap cursor-pointer text-2xl hover:text-purple-400
 }
 
 /* @font-face {

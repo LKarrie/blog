@@ -5,6 +5,9 @@ module.exports = {
   content: ["./layouts/**/*.html"],
   theme: {
     extend: {
+      flex: {
+        'main': '1 0 auto'
+      },
       textShadow: {
         sm: '0 1px 0 var(--tw-shadow-color)',
         DEFAULT: '0 4px 0 var(--tw-shadow-color)',

@@ -3,29 +3,32 @@
     {{- partial "head.html" . -}}
     <body class="text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-purple-300 scrollbar-track-slate-200">
 
-      <!-- headerarea -->
-      {{- partial "headerarea.html" . -}}
-      <!-- /headerarea -->
-
-      <!-- main -->
-      {{- block "main" . }}{{- end }}
-      <!-- /main -->
-
-      <!-- footer -->
-      {{- partial "footer.html" . -}}
-      <!-- /footer -->
+      <div class="flex flex-col h-screen">
+        <header class="flex-shrink-0">
+          {{- partial "headerarea.html" . -}}
+        </header>
+        
+        <main class="flex-main">
+          {{- block "main" . }}{{- end }}
+        </main>
+        <footer class="flex-shrink-0">
+          {{- partial "footer.html" . -}}
+        </footer>
+      </div>
 
 
       <!-- common js -->
       <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
       <script src="{{ .Site.BaseURL }}/js/throttleDebounce.js"></script>
       <script src="{{ .Site.BaseURL }}/js/common.js"></script>
+
       <!-- /common js -->
 
       <!-- Additional scripts -->
       {{ if .IsHome }}
         {{- block "scripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/home.js"></script>
+      {{ else if eq .Title "Tags"}} 
       {{ else }}
         {{- block "otherpagecripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>  
