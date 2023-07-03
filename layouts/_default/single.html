@@ -1,13 +1,17 @@
 {{ define "main" }}
-<section>
-  <h1>{{ .Title }}</h1>
-  {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
-  {{ else }}
-  <p >Created at: {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</p>
-  {{ end }}
-</section>
+<div class="mx-4 flex justify-center items-center flex-col pt-8">
+  <div class="w-full md:w-[800px] ">
+    <section class="my-8">
+      <h1 class="sm:text-4xl text-2xl text-blue-400 font-semibold mb-4">{{ .Title }}</h1>
+      {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
+      {{ else }}
+      <p class="text-zinc-400 text-base">Created at: {{ .Date.Format "Jan 02, 2006" }}</p>
+      {{ end }}
+    </section>
 
-<section>
-  {{ .Content }}
-</section>
+    <section class="post-content">
+      {{ .Content }}
+    </section>
+  </div>
+</div>
 {{ end }}

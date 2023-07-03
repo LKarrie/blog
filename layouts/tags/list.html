@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="mx-4 flex justify-center items-center flex-col pt-8">
+  <div class="w-full md:w-[800px] ">
+    <section class="my-8 text-center">
+      <h1 class="sm:text-4xl text-2xl text-blue-400 font-semibold mb-4">{{ .Title }}</h1>
+      <!-- <div class="flex flex-col gap-2">
+        {{ range .Pages.ByPublishDate.Reverse }}
+
+          <a href="{{ .RelPermalink }}" class="inline-block w-fit">
+            {{ .Title }} <span class="text-zinc-400">// {{ .Date.Format "2006-01-02" }} 
+            
+            {{ if not (eq (len .Pages) 0) }}
+              // {{ len .Pages }}</span>
+            {{ end }}
+          </a>
+        {{ end }}
+      </div> -->
+      {{ if eq .Kind "taxonomy"}}
+        <div class="flex justify-center items-center tagcloud"></div>
+      {{ end }}
+    </section>
+  </div>
+</div>
+
+<!-- 
+{{range $name, $taxonomy := .Site.Taxonomies.categories}} {{ $cnt := .Count }}
+  {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+        <div class="tagbutton">
+          <a href={{ .RelPermalink }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
+          <sup>{{$cnt}}</sup>
+        </div>
+  {{end}}
+{{end}}
+-->
+
+
+<script type="text/javascript" src="{{ .Site.BaseURL }}/js/TagCloud.js"></script>
+<script>
+  let tagMap = new Map();
+  let tagArray = new Array()
+  // add ' prevent vscode script error tips
+  '{{ range $key, $value := .Data.Terms }}'
+      // tagArray.push([{{ $key }}])
+      tagArray.push(["{{ $key }} [{{ len $value }}]"])
+  '{{ end }}'
+
+  var tc = TagCloud('.tagcloud', tagArray,{radius:175});
+
+  function clickEventHandler(e) {
+    
+      if (e.target.className === 'tagcloud--item') {
+          let path = '/tags/'+ e.target.innerText.split('[')[0]
+          window.open(path, '_self');
+      }
+  }
+
+  var rootEl = document.querySelector('.tagcloud');
+  rootEl.addEventListener('click', clickEventHandler);
+</script>
+{{ end }}

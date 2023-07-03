@@ -1,0 +1,36 @@
+.wave1{
+    animation: animate 30s linear infinite;
+    animation-delay: 0s;
+    background-size: 1000px 100px;
+}
+.wave2{
+    animation: animate2 15s linear infinite;
+    animation-delay: -5s;
+    background-size: 1000px 100px;
+}
+.wave3{
+    animation: animate 30s linear infinite;
+    animation-delay: -2s;
+    background-size: 1000px 100px;
+}
+.wave4{
+    animation: animate2 5s linear infinite;
+    animation-delay: -5s;
+    background-size: 1000px 100px;
+}
+@keyframes animate {
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate2 {
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: -1000px;
+    }
+}

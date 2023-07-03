@@ -1,0 +1,96 @@
+<!-- <div class="mx-4 flex justify-center items-center flex-col pt-8">
+  <section class="w-full md:w-[800px]">
+    {{ range .Pages.GroupByDate "2006" "desc" }}      
+        <h3 class="group-date-year">  {{ .Key }} </h3>      
+        {{ range .Pages.GroupByDate "2006-01" "desc" }}
+        <div class="timeline">
+          
+            <div class="relative">
+              <div class="dot-md" title="test">
+                <div class="dot-md-ping"></div>
+              </div>
+              <div class="timeline-item">
+                <h3 class="group-date-month" >  {{ .Key }} </h3>
+              </div>
+            </div>
+
+          {{ range .Pages.ByTitle.Reverse }}
+            <div class="relative">
+              <div class="dot-sm" title="test">
+                <div class="dot-sm-ping"></div>
+              </div>
+              <div class="pl-10 group">
+                <span class="timeline-date"> {{ .Date.Format "Mon, Jan 2, 2006" }} </span>
+                <h3 class="timeline-title" > {{ .Title }} </h3>
+                <span class="text-gray-500">
+                  {{ .Description }}
+                </span>
+              </div>
+            </div>
+          {{ end }}
+          
+        </div>
+        {{ end }}
+
+    {{ end }}
+  </section>
+</div> -->
+<div class="mx-4 flex justify-center items-center flex-col pt-8">
+  <div class="w-full md:w-[800px] ">
+    <section class="my-8">
+      <h1 class="text-center sm:text-4xl text-2xl text-blue-400 font-semibold mb-4">{{ .Title }}</h1>
+      <div class="mx-0 flex justify-center items-center flex-col pt-8">
+        <section class="w-full md:w-[800px]">
+          {{ range .Pages.GroupByDate "2006" "desc" }}      
+              <h3 class="group-date-year">  {{ .Key }} </h3>  
+              {{ range .Pages.GroupByDate "2006-01" "desc" }}
+              <div class="timeline">
+                
+                  <div class="relative">
+                    <div class="dot-md" title="test">
+                      <div class="dot-md-ping"></div>
+                    </div>
+                    <div class="timeline-item">
+                      <h3 class="group-date-month" >  {{ .Key }} </h3>
+                    </div>
+                  </div>
+
+                {{ range .Pages.ByTitle.Reverse }}
+                  <div class="relative">
+                    <div class="dot-sm" title="test">
+                      <div class="dot-sm-ping"></div>
+                    </div>
+                    <div class="group timeline-item-bg ml-4 mr-4 md:mr-0 mt-2 mb-1 p-2 rounded">
+                      <a href="{{ .RelPermalink }}">
+                        <h3 class="timeline-title" > {{ .Title }} </h3>
+                      </a>
+                      <div class="hidden timeline-item-bg mx-4 my-2 p-3 rounded md:grid grid-rows-[0fr] group-hover:grid-rows-[1fr] duration-500">
+
+                        <div class="md:overflow-hidden">
+                          <span class="timeline-date block"> {{ .Date.Format "Mon, Jan 2, 2006" }} </span>
+                        
+                          <span class="text-gray-500">
+                            {{ .Description }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {{ end }}
+                
+              </div>
+              {{ end }}
+
+          {{ end }}
+        </section>
+
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .timeline-item-bg {
+    background: hsl(200 50% 50% / 0.4);
+  }
+</style>

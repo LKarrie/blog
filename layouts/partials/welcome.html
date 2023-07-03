@@ -1,34 +1,223 @@
 <section class="min-h-screen overflow-hidden relative w-full hidden md:block">
-  <div class="relative flex flex-col items-center z-10 mx-auto my-0">
-    <h1 id="lkarrie" class="text-shadow-lg shadow-black/50 transition ease-out duration-500 hover:text-blue-200 text-white text-8xl uppercase font-bold absolute top-[26rem]" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);">
-      Hi,LKarrie!
+
+  <!-- some back up -->
+  <!-- <div class="relative flex flex-col items-center z-10 mx-auto my-0">
+    <h1 id="lkarrie" class="py-3 text-shadow-lg shadow-black/50 transition ease-in-out duration-500 text-white text-8xl font-bold absolute top-[29rem]" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);">
+      Hi,<span id="autochangetext">LKarrie!</span>
     </h1>
 
-    <div class="mr-[25rem] mt-[1px] absolute top-[32rem] border-black/50 opacity-80 w-0 h-0 border-b-15 border-l-15 border-r-15 border-l-transparent border-r-transparent"></div>
+    <div class="mr-[25rem] mt-[1px] absolute top-[36rem] border-black/50 opacity-80 w-0 h-0 border-b-15 border-l-15 border-r-15 border-l-transparent border-r-transparent"></div>
 
-    <div class="m-4 rounded-xl bg-black/50 opacity-80 absolute top-[32rem] shadow-lg">
-      <p class="px-6 m-4 text-white text-base">
+    <div class="m-4 rounded-xl bg-black/50 opacity-80 absolute top-[36rem] shadow-lg">
+      <p class="px-6 m-4 text-white text-lg">
+        <i class="fa-solid fa-quote-left"></i>
         Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ .
+        <i class="fa-solid fa-quote-right"></i>
       </p>
+     
+
+        <ul class="px-20 pb-5 flex flex-row items-center justify-between">
+          <li class="inline-block whitespace-nowrap">
+            <i class="fa-solid fa-angle-left fa-xl" style="color: #5dcaee;"></i>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="https://github.com/LKarrie" target="_blank" title="Github">
+              <img src="img/sns/github.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap" title="163Mail">
+            <a href="mailto:lkarrie@163.com">
+              <img src="img/sns/email.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="{{ .Site.BaseURL }}/wechat" target="_blank" title="WeChat">
+              <img src="img/sns/wechat.png">      
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=3024505225&amp;site=qq&amp;menu=yes" target="_blank" title="TencentQQ">
+              <img src="img/sns/qq.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="https://weibo.com/u/6707437821" target="_blank" title="Weibo">
+              <img src="img/sns/sina.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="https://steamcommunity.com/id/LKarrie/" target="_blank" title="Steam">
+              <img src="img/sns/steam.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <i class="fa-solid fa-angle-right fa-xl" style="color: #5dcaee;"></i>
+          </li>      
+        </ul>
+
     </div>
+
+  </div> -->
+
+  <div class="flex flex-col justify-center items-center z-10 min-h-screen">
+    <h1 id="lkarrie" class="inline-block py-3 mb-64 text-shadow-lg shadow-black/50 transition ease-in-out duration-500 text-white text-8xl font-bold absolute " style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);">
+      Hi,<span id="autochangetext">LKarrie!</span>
+    </h1>
+
+    <div class="mr-[25rem] mt-[1px] absolute mb-32 border-black/50 opacity-80 w-0 h-0 border-b-15 border-l-15 border-r-15 border-l-transparent border-r-transparent"></div>
+
+    <div class="m-4 rounded-xl bg-black/50 opacity-80 absolute shadow-lg">
+      <p class="px-6 m-4 text-white text-lg">
+        <i class="fa-solid fa-quote-left"></i>
+        Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ .
+        <i class="fa-solid fa-quote-right"></i>
+      </p>
+     
+
+        <ul class="px-20 pb-5 flex flex-row items-center justify-between">
+          <li class="inline-block whitespace-nowrap">
+            <i class="fa-solid fa-angle-left fa-xl" style="color: #5dcaee;"></i>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="{{site.Params.home.github}}" target="_blank" title="Github">
+              <img src="img/sns/github.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap" title="Mail">
+            <a href="mailto:{{site.Params.home.mail}}">
+              <img src="img/sns/email.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="{{site.Params.home.wechat}}" target="_blank" title="WeChat">
+              <img src="img/sns/wechat.png">      
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="https://wpa.qq.com/msgrd?v=3&amp;uin={{site.Params.home.qq}}&amp;site=qq&amp;menu=yes" target="_blank" title="TencentQQ">
+              <img src="img/sns/qq.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="{{site.Params.home.weibo}}" target="_blank" title="Weibo">
+              <img src="img/sns/sina.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <a href="{{site.Params.home.steam}}" target="_blank" title="Steam">
+              <img src="img/sns/steam.png">
+            </a>
+          </li>
+          <li class="inline-block whitespace-nowrap">
+            <i class="fa-solid fa-angle-right fa-xl" style="color: #5dcaee;"></i>
+          </li>      
+        </ul>
+
+    </div>
+
   </div>
+
 </section>
 
 {{ define "scripts" }}
 <!-- <script src="https://unpkg.com/split-type"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script> -->
-<script src="{{ .Site.BaseURL }}js/split-type@0.3.3-umd-index.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/gsap-3.11.5-gsap.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="{{ .Site.BaseURL }}/js/split-type@0.3.3-umd-index.min.js"></script>
+<script src="{{ .Site.BaseURL }}/js/gsap-3.11.5-gsap.min.js"></script>
+<script src="{{ .Site.BaseURL }}/js/jquery-3.3.1-jquery.min.js"></script>
+<script src="{{ .Site.BaseURL }}/js/video.min.js"></script>
 <script>
-  let text = new SplitType('#lkarrie');
-  let characters = document.querySelectorAll('.char');
 
-  for(i=0; i<characters.length;i++){
-    characters[i].classList.add('translate-y-full')
+  const words = [
+    "Captain!",
+    "Doctor!",
+    "Traveler!",
+    "Sensei!",
+    "Trailblazer!",
+    "LKarrie!",
+  ] 
+
+  function loadedtext () {
+    texttimer = setInterval(() => {
+        console.log('text change')
+          $('#autochangetext').fadeOut(function(){
+            $(this).html(words[(i=(i+1)%words.length)]).fadeIn(1000)
+            if(i===words.length-1){
+              clearInterval(texttimer)
+            }
+          })
+    }, 2000)
   }
 
-  gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5});
+  function loadedhi () {
+    let text = new SplitType('#lkarrie')
+    let characters = document.querySelectorAll('.char')
 
+    for(i=0; i<characters.length;i++){
+      characters[i].classList.add('translate-y-full')
+    }
+    gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5})
+  }
+
+  function loaded() {
+    $(".loading-wrapper").fadeOut(500)
+  }
+
+  const home = document.querySelector("#home-with-image")
+  if(home){
+    console.log('bg is image')
+    const homebgimage = new Image()
+    homebgimage.src = "img/silverwolf.jpg"
+    if (homebgimage.complete) {
+      console.log('image download complate,welcome:)')
+      loaded()
+      loadedhi()
+      loadedtext()
+    }
+  }else{
+    // const video = document.querySelector("#video")
+    var video = videojs('video');
+    if(video){
+      console.log('bg is video')
+      
+      let timer = null
+      // 768 is md in tailwindcss
+      if(document.body.clientWidth <= 768){
+
+        timer = setInterval(() => {
+          console.log('start video download timer')
+          console.log('video cant download in mobile,close timer,welcome:)')
+          loaded()
+          loadedhi()
+          clearInterval(timer)
+          loadedtext()
+        }, 300)
+        
+      } else {
+
+       
+        // $('#video').attr( "preload","auto")
+        // $('#video').attr( "autoplay","true")
+        // $('#video').attr( "muted","true")
+        video.play();
+
+        timer = setInterval(() => {
+          console.log('start video download timer')
+          let a = video.readyState()
+          console.log( a )
+          // if( document.querySelector('#video').readyState === 4){
+          if( video.readyState() === 4){
+            console.log('video download complate,close timer,welcome:)')
+            loaded()
+            loadedhi()
+            clearInterval(timer)
+            loadedtext()
+          }
+        }, 300)
+      }
+    }
+  }
 
 </script>
 {{ end }}

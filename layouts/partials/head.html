@@ -24,9 +24,14 @@
     <meta name="HandheldFriendly" content="True">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/lkarrie.css" />
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/font-awesome-6.4.0-css-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/lkarrie.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/font-awesome-6.4.0-css-all.min.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/mainload.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/wave.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/cardanime.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/video-js-8.3.0-lk.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/imglazy.css" rel="stylesheet" />
 
     {{ with .OutputFormats.Get "rss" -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

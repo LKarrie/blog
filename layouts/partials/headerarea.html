@@ -5,15 +5,27 @@
   </div>
   <!-- end for mobile -->
 
-  <section class="bg-main min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
+  <!-- main loading-->
+  {{- partial "mainloading.html" . -}}
+  <!-- /main loading-->
 
-    <!-- header -->
-    {{- partial "header.html" . -}}
-    <!-- /header -->
+      {{ if eq site.Params.home.ShowVideo false }}
+        <section id="home-with-image" style="background-image: url({{site.Params.home.HomeBgImage}});" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
+      {{ else }}
+        <section class="min-h-screen hidden md:block">
+          {{- partial "video.html" . -}} 
+      {{ end }}
 
-    <!-- welcome -->
-    {{- partial "welcome.html" -}}
-    <!-- /welcome -->
+      <!-- header -->
+      {{- partial "header.html" . -}}
+      <!-- /header -->
+
+      <!-- welcome -->
+      {{- partial "welcome.html" -}}
+      <!-- /welcome -->
+
+      <!-- bottom wave -->
+      {{- partial "wave.html" -}}
 
   </section>
 {{ else }}
@@ -24,12 +36,18 @@
   </div>
   <!-- end for mobile -->
 
-  <section class="bg-main min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
-
-    <!-- header -->
+  <!--not lazy-->
+  <!-- <section class="bg-main min-h-[300px] bg-no-repeat bg-cover bg-center hidden md:block">
     {{- partial "header.html" . -}}
-    <!-- /header -->
- 
+  </section> -->
+
+  <!--lazy-->
+  <section class="min-h-[300px] hidden md:block h-[300px]">  
+
+    {{- partial "header.html" . -}}  
+    
+    {{- partial "banner.html" . -}}
+  
   </section>
 
 {{ end }}

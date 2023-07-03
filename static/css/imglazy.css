@@ -1,0 +1,23 @@
+@keyframes imgpulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.blurred-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: imgpulse 2.5s infinite;
+}
+
+.blurred-img.loaded::before {
+  animation: none;
+  content: none;
+}

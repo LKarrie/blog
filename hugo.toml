@@ -1,4 +1,23 @@
-baseURL = 'http://dev.lkarrie.com/'
+baseURL = 'https://dev.lkarrie.com'
 languageCode = 'zh-cn'
 title = 'LKarrie'
 paginate = '1'
+
+[Params]
+  description = '雑魚の小站'
+  defaulBanner = '/img/silverwolf.jpg'
+  defaulLazyBanner ='/imglazy/silverwolf-lazy.jpg'
+  defaulCardImg = '/img/weighanchor1.png'
+  defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
+
+
+[Params.home]
+  showVideo = true
+  HomeBgImage = '/img/silverwolf.jpg'
+  homeBgVideo = 'https://dev.lkarrie.com/media/silverwolf.mp4/index.m3u8'
+  github = 'https://github.com/LKarrie'
+  mail = 'lkarrie@163.com'
+  wechat = 'https://dev.lkarrie.com/wechat'
+  qq = '3024505225'
+  weibo = 'https://weibo.com/u/6707437821'
+  steam = 'https://steamcommunity.com/id/LKarrie'
