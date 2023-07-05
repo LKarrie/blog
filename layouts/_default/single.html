@@ -1,6 +1,7 @@
 {{ define "main" }}
 <div class="mx-4 flex justify-center items-center flex-col pt-8">
   <div class="w-full md:w-[800px] ">
+    <article>
     <section class="my-8">
       <h1 class="sm:text-4xl text-2xl text-blue-400 font-semibold mb-4">{{ .Title }}</h1>
       {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
@@ -12,6 +13,13 @@
     <section class="post-content">
       {{ .Content }}
     </section>
+    </article>
+
+
+
+    <aside>
+      {{ .TableOfContents }}
+    </aside>
   </div>
 </div>
 {{ end }}

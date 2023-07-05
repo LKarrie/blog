@@ -5,7 +5,7 @@
       <div class="container px-6 py-10 mx-auto">
         <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500">{{ .Title }}</span></h1>
         <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-          Lorem ipsum dolor 
+          {{site.Params.tags.description.default}}
         </p>
         <!-- <div class="flex flex-col gap-2">
         {{ range .Pages.ByPublishDate.Reverse }}
@@ -18,7 +18,7 @@
             {{ end }}
           </a>
         {{ end }}
-      </div> -->
+        </div> -->
         {{ if eq .Kind "taxonomy"}}
           <div class="flex justify-center items-center tagcloud"></div>
         {{ end }}
