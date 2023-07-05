@@ -9,6 +9,7 @@ paginate = '1'
   defaulLazyBanner ='/imglazy/silverwolf-lazy.jpg'
   defaulCardImg = '/img/weighanchor1.png'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
+  syntaxHighlighter = "highlight.js"
 
 [Params.categories.description]
   cat1 = 'cat1 description'
@@ -35,11 +36,7 @@ paginate = '1'
 
 [markup]
   [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNos = true
-    lineNumbersInTable = true
-    noClasses = true
+    noClasses = false
   [markup.goldmark]
     [markup.goldmark.extensions]
       definitionList = true
