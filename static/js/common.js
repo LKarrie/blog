@@ -10,8 +10,8 @@ burger.addEventListener('click',()=>{
   }
 })
 
+/** lazy loading js **/
 const blurredImageDiv = document.querySelectorAll(".blurred-img")
-console.log(blurredImageDiv)
 blurredImageDiv.forEach(div => {
   const img = div.querySelector("img")
   function loaded() {
@@ -25,4 +25,15 @@ blurredImageDiv.forEach(div => {
   } else {
     img.addEventListener("load", loaded)
   }
+})
+
+/** lazy loading js **/
+const highlightDiv = document.querySelectorAll(".highlight")
+highlightDiv.forEach(div => {
+  div.classList.add("border-solid")
+  div.classList.add("border-2")
+  div.classList.add("rounded-xl")
+  div.classList.add("shadow-lg") 
+  div.classList.add("p-2") 
+  div.classList.add("my-2") 
 })

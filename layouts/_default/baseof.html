@@ -35,10 +35,14 @@
       {{ end }}
 
       <!-- {{ if eq .Site.Params.syntaxHighlighter "highlight.js" }} -->
-      <link rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/google-light.min.css">
+      <script src="{{ .Site.BaseURL }}/js/highlightjs-copy.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script>
+      <script>
+        hljs.highlightAll();
+        // not good
+        hljs.configure({ignoreUnescapedHTML:true});
+        hljs.addPlugin(new CopyButtonPlugin());
+      </script>
       <script>
         document.addEventListener('DOMContentLoaded', (event) => {
           document.querySelectorAll('pre code').forEach((el) => {
@@ -46,7 +50,6 @@
           });
         });
       </script>
-
       <!-- {{ end }} -->
       <!-- Scripts -->
     </body>

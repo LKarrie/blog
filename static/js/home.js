@@ -5,21 +5,17 @@ const toptext = document.querySelector('#toptext')
 
 
 
-/** 监听滚动条 **/
-
+/** scroll **/
 const DIRECTION_ENUM = {
 DOWN: "down",
 UP: "up",
 };
 
-// 距离顶部或底部的阈值
 const threshold = 20;
 
-// 记录前一个滚动位置
 let beforeScrollTop = 0;
 
 function handleScroll() {
-// 距顶部
 var scrollTop =
   document.documentElement.scrollTop || document.body.scrollTop;
 var clientHeight =
@@ -64,10 +60,8 @@ handleScroll
 
 window.addEventListener('scroll', throttleHandleScroll);
 
-/** 监听滚动条 **/
 
-
-/** 监听Cards展示 **/
+/** Cards**/
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach((entry)=>{
     if(entry.isIntersecting){
@@ -84,9 +78,7 @@ const observer = new IntersectionObserver((entries)=>{
 const hiddenElements = document.querySelectorAll('.cantsee')
 hiddenElements.forEach((el)=> observer.observe(el))
 
-/** 监听Cards展示 **/
-
-/** 监听Weighanchor展示 **/
+/** Weighanchor **/
 const observer2 = new IntersectionObserver((entries)=>{
   entries.forEach((entry)=>{
     if(entry.isIntersecting){
@@ -102,5 +94,3 @@ const observer2 = new IntersectionObserver((entries)=>{
 
 const hiddenElements2 = document.querySelectorAll('.cantsee2')
 hiddenElements2.forEach((el)=> observer2.observe(el))
-
-/** 监听Weighanchor展示 **/
