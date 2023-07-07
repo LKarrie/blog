@@ -15,12 +15,13 @@ paginate = '1'
   cat1 = 'cat1 description'
   cat2 = 'cat2 description'
   cat3 = 'cat3 description'
+  default = 'categories.description'
 
 [Params.archive.description]
   default = 'archive.description'
 
 [Params.tags.description]
-  default = 'archive.description'  
+  default = 'tags.description'  
 
 [Params.home]
   showVideo = true

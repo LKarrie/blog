@@ -55,7 +55,7 @@
 }
 
 .timeline-title {
-  @apply text-lg md:text-2xl text-gray-600 font-semibold tracking-wide
+  @apply text-lg md:text-2xl text-gray-600 font-semibold tracking-wide mx-4
 }
 
 
