@@ -2,8 +2,9 @@
 <div class="mx-4 flex justify-center items-center flex-col pt-8">
     <div class="w-full md:w-[800px] ">
         <section class="my-8 bg-white dark:bg-gray-900">
+            {{ if eq (.Kind) ("taxonomy")}}
             <div class="container px-2 mx-auto">
-                <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500">Categories</span></h1>
+                <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-hashtag"></i>Categories</span></h1>
 
                 <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
                     {{site.Params.categories.description.default}}
@@ -59,6 +60,18 @@
                     {{ end }}
                 </div>
             </div>
+            {{ else }}
+            <div class="container px-2 mx-auto">
+                <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-hashtag"></i>Category {{.Title}}</span></h1>
+                <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
+                    {{ $key := .Title}}
+                    {{ range $cat, $des := site.Params.categories.description}}
+                        {{ if eq $cat $key }} {{$des}} {{end}} 
+                    {{ end }}
+                </p>
+                {{- partial "termcard.html" . -}}
+            </div>
+            {{ end }}
         </section>
     </div>
 </div>

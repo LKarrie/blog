@@ -6,26 +6,26 @@
   <!-- end for mobile -->
 
   <!-- main loading-->
-  {{- partial "mainloading.html" . -}}
+  {{- partial "home/mainloading.html" . -}}
   <!-- /main loading-->
 
       {{ if eq site.Params.home.ShowVideo false }}
         <section id="home-with-image" style="background-image: url({{site.Params.home.HomeBgImage}});" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
       {{ else }}
         <section class="min-h-screen hidden md:block">
-          {{- partial "video.html" . -}} 
+          {{- partial "home/video.html" . -}} 
       {{ end }}
 
       <!-- header -->
-      {{- partial "header.html" . -}}
+      {{- partial "common/header.html" . -}}
       <!-- /header -->
 
       <!-- welcome -->
-      {{- partial "welcome.html" -}}
+      {{- partial "home/welcome.html" -}}
       <!-- /welcome -->
 
       <!-- bottom wave -->
-      {{- partial "wave.html" -}}
+      {{- partial "home/wave.html" -}}
 
   </section>
 {{ else }}
@@ -38,15 +38,15 @@
 
   <!--not lazy-->
   <!-- <section class="bg-main min-h-[300px] bg-no-repeat bg-cover bg-center hidden md:block">
-    {{- partial "header.html" . -}}
+    {{- partial "common/header.html" . -}}
   </section> -->
 
   <!--lazy-->
   <section class="min-h-[300px] hidden md:block h-[300px]">  
 
-    {{- partial "header.html" . -}}  
+    {{- partial "common/header.html" . -}}  
     
-    {{- partial "banner.html" . -}}
+    {{- partial "common/banner.html" . -}}
   
   </section>
 

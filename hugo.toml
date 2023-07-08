@@ -21,6 +21,9 @@ paginate = '1'
   default = 'archive.description'
 
 [Params.tags.description]
+  tag1 = 'tag1 description'
+  tag2 = 'tag2 description'
+  tag3 = 'tag3 description'
   default = 'tags.description'  
 
 [Params.home]
