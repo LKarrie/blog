@@ -3,23 +3,38 @@
   <div class="w-full md:w-[800px] ">
     <article>
     <section class="my-8">
-      <h1 class="sm:text-4xl text-2xl text-blue-400 font-semibold mb-4">{{ .Title }}</h1>
-      {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
-      {{ else }}
-      <p class="text-zinc-400 text-base">Created at: {{ .Date.Format "Jan 02, 2006" }}</p>
-      {{ end }}
+      <h1 class="text-3xl lg:text-4xl font-semibold mb-4">{{ .Title }}</h1>
+      <p class="text-base my-2">
+        {{ range $category := .Params.categories }}
+        <a class="pr-4 text-blue-400 hover:text-blue-600" href="/categories/{{$category}}"><i class="fa-solid fa-hashtag"></i>{{$category}}</a>
+        {{ end }}
+      </p>
+      <p class="text-base my-2">
+        {{ range $tag := .Params.tags }}
+        <a class="pr-4 text-blue-400 hover:text-blue-600" href="/tags/{{$tag}}"><i class="fa-solid fa-tag"></i>{{$tag}}</a>
+        {{ end }}
+      </p>
+      <p class="text-zinc-400 text-base">
+        {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
+        {{ else }}
+          Created at: {{ .Date.Format "Jan 02, 2006" }}
+        {{ end }}
+      </p>
+      <p class="text-zinc-400 text-base">
+        Words count: {{.FuzzyWordCount}}.
+        Read time: {{.ReadingTime}}min.
+      </p>
     </section>
 
-    <section class="post-content">
+    <section class="post-content text-xl tracking-wide leading-relaxed">
       {{ .Content }}
     </section>
     </article>
 
-
-
     <aside>
       {{ .TableOfContents }}
     </aside>
+
   </div>
 </div>
 {{ end }}

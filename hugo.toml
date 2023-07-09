@@ -2,6 +2,7 @@ baseURL = 'https://dev.lkarrie.com'
 languageCode = 'zh-cn'
 title = 'LKarrie'
 paginate = '1'
+enableEmoji = true
 
 [Params]
   description = '雑魚の小站'
@@ -53,5 +54,5 @@ paginate = '1'
     [markup.goldmark.renderer]
       unsafe = true
   [markup.tableOfContents]
-    startLevel = 2
+    startLevel = 1
     endLevel = 6
