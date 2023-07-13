@@ -3,27 +3,31 @@
 <div class="flex flex-col items-center my-12">
   <div class="inline-flex mt-2 xs:mt-0">
     {{ if .PrevInSection }}
-    <button data-tooltip-target="tooltip-light" onclick="window.location.href='{{ .PrevInSection.Permalink }}'" class="flex items-center justify-center px-4 h-10 text-base font-medium text-white bg-blue-400 rounded-l hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-        <svg class="w-3.5 h-3.5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
-        </svg>
-        Prev 
+    <button title="Go to {{.PrevInSection.Title}}" onclick="window.location.href='{{ .PrevInSection.Permalink }}'" class="w-36 flex flex-col items-end justify-center px-4 h-16 text-lg font-medium text-white bg-blue-400 rounded-l hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <span class="flex items-center gap-4">
+        <i class="fa-solid fa-chevron-left"></i>Prev
+      </span>
+      <span class="text-end w-32 text-base truncate">{{.PrevInSection.Title}}</span>
     </button>
     {{ else }}
-    <div class="flex items-center justify-center px-4 h-10 text-base font-medium text-white bg-blue-400 rounded-l hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-      <i class="fa-solid fa-star"></i>&nbsp;&nbsp;Start
+    <div class="w-36 flex flex-col items-center justify-center px-4 h-16 text-lg font-medium text-white bg-blue-400 rounded-l hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <span class="flex items-center gap-4">
+        <i class="fa-solid fa-star"></i>Start
+      </span>
     </div>
     {{ end }}
     {{ if .NextInSection }}
-    <button onclick="window.location.href='{{ .NextInSection.Permalink }}'" class="flex items-center justify-center px-4 h-10 text-base font-medium text-white bg-blue-400 border-0 border-l border-white rounded-r hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-        Next
-        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-      </svg>
+    <button onclick="window.location.href='{{ .NextInSection.Permalink }}'" class="w-36 flex flex-col items-start justify-center px-4 h-16 text-lg font-medium text-white bg-blue-400 border-0 border-l border-white rounded-r hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <span class="flex items-center gap-4">
+        Next<i class="fa-solid fa-chevron-right"></i>
+      </span>
+      <span class="text-start w-32 text-base truncate">{{.NextInSection.Title}}</span>
     </button>
     {{ else }}
-    <div class="flex items-center justify-center px-4 h-10 text-base font-medium text-white bg-blue-400 border-0 border-l border-white rounded-r hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-      End&nbsp;&nbsp;<i class="fa-solid fa-flag-checkered"></i>
+    <div class="w-36 flex flex-col items-start justify-center px-4 h-16 text-lg font-medium text-white bg-blue-400 border-0 border-l border-white rounded-r hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <span class="flex items-center gap-4">
+        End<i class="fa-solid fa-flag-checkered"></i>
+      </span>
     </div>
     {{ end }}
   </div>
