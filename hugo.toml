@@ -11,6 +11,11 @@ enableEmoji = true
   defaulCardImg = '/img/weighanchor1.png'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
   syntaxHighlighter = "highlight.js"
+  helloText = "Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ ."
+
+[Params.mobile]
+  avatar = '/img/avatar.jpg'
+  helloText = "hello this is my mobile version"
 
 [Params.categories.description]
   cat1 = 'cat1 description'
