@@ -55,7 +55,7 @@
 }
 
 .timeline-title {
-  @apply text-lg md:text-2xl text-gray-600 font-semibold tracking-wide
+  @apply text-lg md:text-2xl text-gray-600 font-semibold tracking-wide mx-4
 }
 
 
@@ -67,6 +67,55 @@
   font-family: 'Nunito';
   src: url('../../fonts/nunito/nunito.woff2');
 } */
+
+.post-content h1 {
+  @apply text-blue-400 leading-tight border-b text-2xl lg:text-3xl font-semibold mb-4 mt-6 pb-2;
+}
+.post-content h2 {
+  @apply text-blue-400 leading-tight border-b text-xl lg:text-2xl selection:font-semibold mb-4 mt-6 pb-2;
+}
+.post-content h3 {
+  @apply text-blue-400 leading-tight border-b text-lg lg:text-xl font-semibold mb-4 mt-6 pb-2;
+}
+.post-content h4 {
+  @apply text-blue-400 leading-tight border-b text-lg lg:text-xl font-semibold mb-4 mt-6 pb-2;
+}
+.post-content h5 {
+  @apply text-blue-400 leading-tight border-b text-lg lg:text-xl font-semibold mb-4 mt-6 pb-2;
+}
+.post-content h6 {
+  @apply text-blue-400 leading-tight border-b text-lg lg:text-xl font-semibold mb-4 mt-6 pb-2;
+}
+.post-content ul {
+  @apply max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400
+}
+.post-content blockquote {
+  @apply p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800
+}
+.post-content blockquote p{
+  @apply text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white
+}
+.post-content pre code{
+  @apply bg-white 
+}
+.post-content code{
+  @apply text-red-600 bg-rose-200 selection:bg-purple-300 selection:text-purple-900
+}
+.post-content table{
+  @apply overflow-x-auto shadow-md rounded-lg w-full text-sm text-left text-gray-500 dark:text-gray-400
+}
+.post-content table thead {
+  @apply text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400
+}
+.post-content table thead tr th{
+  @apply px-6 py-3 
+}
+.post-content table tbody tr td{
+  @apply px-6 py-4
+}
+.post-content a {
+  @apply font-medium text-blue-600 dark:text-blue-500 hover:underline
+}
 
 @font-face {
   font-family: "logo";

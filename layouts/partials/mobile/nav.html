@@ -1,0 +1,59 @@
+<div class="m-8 cursor-pointer md:hidden" id="burger">          
+  <!-- here can add function like change style or search -->
+  <!-- -->
+
+  <input type="checkbox" id="drawer-toggle" class="relative sr-only peer">
+  <label for="drawer-toggle" class="absolute top-0 left-0 inline-block p-4 transition-all duration-500 bg-blue-400 rounded-lg peer-checked:rotate-180 peer-checked:left-56">
+      <div class="w-6 h-1 mb-3 -rotate-45 bg-white rounded-lg"></div>
+      <div class="w-6 h-1 rotate-45 bg-white rounded-lg"></div>
+  </label>
+  <div class="fixed top-0 left-0 z-20 w-56 h-full transition-all duration-500 transform -translate-x-full bg-white shadow-lg peer-checked:translate-x-0">
+
+    <div class="flex flex-col h-screen">
+      <div class="flex-shrink-0 px-6 py-4">
+        <h2 class="text-lg font-semibold">Drawer</h2>
+        <p class="text-gray-500">This is a drawer.</p>
+      </div>
+
+      <div class="flex-main">
+        <ul class="flex flex-col font-bold justify-center gap-4">
+          <li>
+            <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700" href="/">
+              <i class="fa-brands fa-fort-awesome animate-pulse"></i>
+              <span class="mx-2 text-lg font-medium">Home</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"  href="/blog">          
+                <i class="fa-solid fa-list-ul animate-pulse"></i>
+                <span class="mx-2 text-lg font-medium">Archive</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700" href="/tags" >
+                <i class="fa-solid fa-tag animate-pulse"></i>
+                <span class="mx-2 text-lg font-medium">Tags</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700" href="/categories" >
+                <i class="fa-solid fa-hashtag animate-pulse"></i>
+                <span class="mx-2 text-lg font-medium">Categories</span>
+            </a>
+          </li>
+        </nav>
+      </div>
+
+      <div class="flex-shrink-0">
+          <div class="p-3 bg-gray-100 rounded-lg dark:bg-gray-800">
+              <h2 class="text-lg font-medium text-gray-800 dark:text-white">New feature availabel!</h2>
+
+              <p class="mt-1 text-base text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus harum officia eligendi velit.</p>
+
+              <img class="object-cover w-full h-32 mt-2 rounded-lg" src="{{ .Site.Params.newFeatureImg }}" alt="">
+          </div>
+      </div>
+    </div>   
+
+  </div>
+</div>

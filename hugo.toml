@@ -2,6 +2,7 @@ baseURL = 'https://dev.lkarrie.com'
 languageCode = 'zh-cn'
 title = 'LKarrie'
 paginate = '1'
+enableEmoji = true
 
 [Params]
   description = '雑魚の小站'
@@ -9,7 +10,28 @@ paginate = '1'
   defaulLazyBanner ='/imglazy/silverwolf-lazy.jpg'
   defaulCardImg = '/img/weighanchor1.png'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
+  syntaxHighlighter = "highlight.js"
+  helloText = "Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ ."
+  newFeatureImg = '/img/silverwolf.jpg'
 
+[Params.mobile]
+  avatar = '/img/avatar.jpg'
+  helloText = "hello this is my mobile version"
+
+[Params.categories.description]
+  cat1 = 'cat1 description'
+  cat2 = 'cat2 description'
+  cat3 = 'cat3 description'
+  default = 'categories.description'
+
+[Params.archive.description]
+  default = 'archive.description'
+
+[Params.tags.description]
+  tag1 = 'tag1 description'
+  tag2 = 'tag2 description'
+  tag3 = 'tag3 description'
+  default = 'tags.description'  
 
 [Params.home]
   showVideo = true
@@ -21,3 +43,22 @@ paginate = '1'
   qq = '3024505225'
   weibo = 'https://weibo.com/u/6707437821'
   steam = 'https://steamcommunity.com/id/LKarrie'
+
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 6
