@@ -29,9 +29,7 @@
 {{ else }}
 
   <!-- for mobile -->
-  <div class="m-8 cursor-pointer md:hidden" id="burger">          
-    <i class="fa-solid fa-bars fa-2xl"></i>
-  </div>
+  {{- partial "mobile/mobile.html" . -}}
   <!-- end for mobile -->
 
   <!--not lazy-->

@@ -12,6 +12,7 @@ enableEmoji = true
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
   syntaxHighlighter = "highlight.js"
   helloText = "Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ ."
+  newFeatureImg = '/img/silverwolf.jpg'
 
 [Params.mobile]
   avatar = '/img/avatar.jpg'
