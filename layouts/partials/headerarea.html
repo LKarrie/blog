@@ -38,12 +38,13 @@
   </section> -->
 
   <!--lazy-->
-  <section class="min-h-[300px] hidden md:block h-[300px]">  
+  <section class="md:min-h-[300px] md:h-[300px] min-h-[200px] h-[200px]">  
+    <div class="hidden md:block">
+      {{- partial "common/header.html" . -}}  
+    </div>
 
-    {{- partial "common/header.html" . -}}  
-    
     {{- partial "common/banner.html" . -}}
-  
+
   </section>
 
 {{ end }}

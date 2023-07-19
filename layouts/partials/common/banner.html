@@ -3,11 +3,11 @@
 </div> -->
 
 {{ if .Params.banner }}
-  <div class="min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Params.lazyBanner }}')">
-    <img class="min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Params.banner }}" loading="lazy">
+  <div class="min-h-[200px] md:min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Params.lazyBanner }}')">
+    <img class="min-h-[200px] md:min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Params.banner }}" loading="lazy">
   </div>
 {{ else }}
-  <div class="min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Site.Params.defaulLazyBanner }}')">
-    <img class="min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Site.Params.defaulBanner }}" loading="lazy">
+  <div class="min-h-[200px] md:min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Site.Params.defaulLazyBanner }}')">
+    <img class="min-h-[200px] md:min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Site.Params.defaulBanner }}" loading="lazy">
   </div>
 {{ end }}
