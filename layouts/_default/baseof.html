@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {{- partial "common/head.html" . -}}
-    <body class="text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-purple-300 scrollbar-track-slate-200">
+    <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-purple-300 scrollbar-track-slate-200">
 
       <div class="flex flex-col h-screen">
         <header class="flex-shrink-0">
@@ -39,7 +39,7 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
       <script>
         hljs.highlightAll();
-        // not good
+        // disable console warning
         hljs.configure({ignoreUnescapedHTML:true});
         hljs.addPlugin(new CopyButtonPlugin());
       </script>
