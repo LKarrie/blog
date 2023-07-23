@@ -59,9 +59,16 @@
 }
 
 
+
 .tagcloud--item {
   @apply py-2 px-4 whitespace-nowrap cursor-pointer text-2xl hover:text-purple-400
 }
+
+
+.bend-border {
+  @apply after:rounded-100% after:content-[''] after:absolute after:w-[150%] after:h-[4rem] after:bg-white after:left-[-25%] after:bottom-[-3rem]
+}
+
 
 /* @font-face {
   font-family: 'Nunito';

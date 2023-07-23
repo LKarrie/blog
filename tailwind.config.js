@@ -37,6 +37,9 @@ module.exports = {
       borderWidth: {
         '15': '15px',
       },
+      borderRadius: {
+        '100%': '100%',
+      },
       animation: {
         tilt: 'tilt 10s infinite linear',
       },
