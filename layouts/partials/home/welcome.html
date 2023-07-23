@@ -129,11 +129,22 @@
   }
 
   const home = document.querySelector("#home-with-image")
+  /** random bg **/
+  function getRandom(N,M) {
+    return Math.floor(Math.random() * (M - N + 1)) + N
+  }
+  const start = parseInt("{{site.Params.home.homeBgStartIndex}}")
+  const end = parseInt("{{site.Params.home.homeBgEndIndex}}")
+  const random = getRandom(start,end)
+
+  const bgUrl = "{{site.Params.home.homeBgImage}}"+`${random}.`+"{{site.Params.home.homeBgImageSuffix}}"
+  home.style.backgroundImage=`url(${bgUrl})`;
+
   if(home){
     console.log('bg is image')
     const homebgimage = new Image()
-    homebgimage.src = "img/silverwolf.jpg"
-    if (homebgimage.complete) {
+    homebgimage.src = bgUrl
+    homebgimage.onload = ()=>{
       console.log('image download complate,welcome:)')
       loaded()
       loadedhi()
@@ -159,8 +170,6 @@
         }, 300)
         
       } else {
-
-       
         // $('#video').attr( "preload","auto")
         // $('#video').attr( "autoplay","true")
         // $('#video').attr( "muted","true")

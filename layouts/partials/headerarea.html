@@ -7,12 +7,13 @@
   {{- partial "home/mainloading.html" . -}}
   <!-- /main loading-->
 
-      {{ if eq site.Params.home.ShowVideo false }}
-        <section id="home-with-image" style="background-image: url({{site.Params.home.HomeBgImage}});" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
-      {{ else }}
-        <section class="min-h-screen hidden md:block">
-          {{- partial "home/video.html" . -}} 
-      {{ end }}
+  {{ if eq site.Params.home.ShowVideo false }}
+    <!-- use js to set bg , css like style="background-image: url({{site.Params.home.HomeBgImage}});" -->
+    <section id="home-with-image" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
+  {{ else }}
+    <section class="min-h-screen hidden md:block">
+      {{- partial "home/video.html" . -}} 
+  {{ end }}
 
       <!-- header -->
       {{- partial "common/header.html" . -}}
@@ -25,7 +26,7 @@
       <!-- bottom wave -->
       {{- partial "home/wave.html" -}}
 
-  </section>
+    </section>
 {{ else }}
 
   <!-- for mobile -->
