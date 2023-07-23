@@ -138,24 +138,28 @@
   const random = getRandom(start,end)
 
   const bgUrl = "{{site.Params.home.homeBgImage}}"+`${random}.`+"{{site.Params.home.homeBgImageSuffix}}"
-  home.style.backgroundImage=`url(${bgUrl})`;
 
   if(home){
-    console.log('bg is image')
-    const homebgimage = new Image()
-    homebgimage.src = bgUrl
-    homebgimage.onload = ()=>{
-      console.log('image download complate,welcome:)')
+    console.log('home bg is image')
+    if(document.body.clientWidth <= 768){
+      console.log('image cant download in mobile,welcome:)')
       loaded()
-      loadedhi()
-      loadedtext()
+    } else {
+      home.style.backgroundImage=`url(${bgUrl})`
+      const homebgimage = new Image()
+      homebgimage.src = bgUrl
+      homebgimage.onload = ()=>{
+        console.log('image download complate,welcome:)')
+        loaded()
+        loadedhi()
+        loadedtext()
+      }
     }
   }else{
     // const video = document.querySelector("#video")
     var video = videojs('video');
     if(video){
-      console.log('bg is video')
-      
+      console.log('home bg is video')
       let timer = null
       // 768 is md in tailwindcss
       if(document.body.clientWidth <= 768){
@@ -164,9 +168,7 @@
           console.log('start video download timer')
           console.log('video cant download in mobile,close timer,welcome:)')
           loaded()
-          loadedhi()
           clearInterval(timer)
-          loadedtext()
         }, 300)
         
       } else {
