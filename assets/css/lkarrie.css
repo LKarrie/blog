@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .nav {
-  @apply relative items-center text-gray-500 font-bold tracking-[1px] hover:text-purple-500
+  @apply dark:text-white relative items-center text-gray-500 font-bold tracking-[1px] hover:text-purple-500
 }
 
 .nav::after {
@@ -51,11 +51,11 @@
 }
 
 .timeline-date {
-  @apply text-base font-semibold opacity-40 tracking-widest
+  @apply text-base font-semibold opacity-40 tracking-widest dark:text-white
 }
 
 .timeline-title {
-  @apply text-lg md:text-2xl text-gray-600 font-semibold tracking-wide mx-4
+  @apply text-lg md:text-2xl text-gray-600 dark:text-white font-semibold tracking-wide mx-4
 }
 
 
@@ -66,7 +66,7 @@
 
 
 .bend-border {
-  @apply after:rounded-100% after:content-[''] after:absolute after:w-[150%] after:h-[4rem] after:bg-white after:left-[-25%] after:bottom-[-3rem]
+  @apply after:dark:bg-gray-900 after:rounded-100% after:content-[''] after:absolute after:w-[150%] after:h-[4rem] after:bg-white after:left-[-25%] after:bottom-[-3rem]
 }
 
 

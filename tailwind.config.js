@@ -16,6 +16,7 @@ module.exports = {
       backgroundImage: {
         'main': "url('../img/silverwolf.jpg')",
         'wave': "url('../img/wave.png')",
+        'wavedark': "url('../img/wavedark.png')",
         'weighanchor1-lazy': "url('../imglazy/weighanchor1-lazy.png')",
       },
       colors: {

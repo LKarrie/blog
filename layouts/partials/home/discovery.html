@@ -1,6 +1,6 @@
 <div class="mx-4 flex justify-center items-center flex-col mt-16">
   <div class="w-full md:w-[800px] ">
-    <h1 class="gap-2 text-lg font-bold tracking-wide border-dotted border-b-2 mb-10 flex justify-self-start items-center">
+    <h1 class="text-gray-800 dark:text-white gap-2 text-lg font-bold tracking-wide border-dotted dark:border-solid border-b-2 mb-10 flex justify-self-start items-center">
       <i class="fa-solid fa-anchor animate-pulse mb-1"></i>
       Discovery^^
     </h1>
@@ -58,7 +58,7 @@
               {{ end }}
             </div>
           </div>
-          <div class="md:absolute md:inset-0 w-full rounded-xl md:bg-black/80 md:px-12 text-center md:text-slate-200 md:[transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div class="md:absolute md:inset-0 w-full rounded-xl md:bg-black/50 md:px-12 text-center md:text-slate-200 md:[transform:rotateY(180deg)] [backface-visibility:hidden]">
             <div class="flex h-20 overflow-hidden md:min-h-full flex-col items-center justify-center">
               <a class="md:pointer-events-none pt-2 md:pt-0" href="{{ .RelPermalink }}">
                 <h1 class="text-lg md:text-3xl font-bold ">{{ .Title }}</h1>
@@ -76,6 +76,6 @@
       </div>
       {{ end }} 
 
+    </div>
   </div>
-
 </div>
