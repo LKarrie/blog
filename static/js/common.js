@@ -36,19 +36,6 @@ highlightDiv.forEach(div => {
   div.classList.add("my-2") 
 })
 
-/** set theme **/
-// function loaded() {
-//   $(".loading-wrapper").fadeOut(500)
-// }
-
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-    // loaded()
-} else {
-    document.documentElement.classList.remove('dark')
-    // loaded()
-}
-
 /** change theme func **/
 function changeTheme() {
   // if set via local storage previously
