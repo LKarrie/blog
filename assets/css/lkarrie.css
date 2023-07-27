@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 .nav {
-  @apply dark:text-white relative items-center text-gray-500 font-bold tracking-[1px] hover:text-purple-500
+  @apply dark:text-white relative items-center text-gray-500 font-bold tracking-[1px] hover:text-purple-500 dark:hover:text-violet-500
 }
 
 .nav::after {
-  @apply content-[''] bg-pink-500 h-[3px] left-0 w-[0%] -bottom-5 rounded-lg absolute duration-300
+  @apply content-[''] bg-pink-500 dark:bg-fuchsia-500 h-[3px] left-0 w-[0%] -bottom-5 rounded-lg absolute duration-300
 }
 
 .nav:hover::after {

@@ -3,7 +3,7 @@
   <div class="w-full md:w-[800px] ">
     <article>
     <section class="my-8">
-      <h1 class="text-3xl lg:text-4xl font-semibold mb-4">{{ .Title }}</h1>
+      <h1 class="text-3xl lg:text-4xl font-semibold mb-4 dark:text-white">{{ .Title }}</h1>
       <p class="text-base my-2">
         {{ range $category := .Params.categories }}
         <a class="pr-4 text-blue-400 hover:text-blue-600" href="/categories/{{$category}}"><i class="fa-solid fa-hashtag"></i>{{$category}}</a>
@@ -26,7 +26,7 @@
       </p>
     </section>
 
-    <section class="post-content text-xl tracking-wide leading-relaxed">
+    <section class="post-content text-xl tracking-wide leading-relaxed text-zinc-400">
       {{ .Content }}
     </section>
     </article>
