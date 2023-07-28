@@ -2247,19 +2247,12 @@ video {
   margin-top: 1.5rem;
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   font-weight: 600;
   line-height: 1.25;
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
-@media (min-width: 1024px){
-  .post-content h1{
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 
 .post-content h2{
@@ -2267,8 +2260,8 @@ video {
   margin-top: 1.5rem;
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   line-height: 1.25;
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
@@ -2290,31 +2283,17 @@ video {
   font-weight: 600;
 }
 
-@media (min-width: 1024px){
-  .post-content h2{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-
 .post-content h3{
   margin-bottom: 1rem;
   margin-top: 1.5rem;
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
   line-height: 1.25;
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
-@media (min-width: 1024px){
-  .post-content h3{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
 }
 
 .post-content h4{
@@ -2441,7 +2420,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(254 205 211 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .post-content code *::-moz-selection{
@@ -2766,11 +2745,6 @@ video {
 :is(.dark .dark\:bg-gray-900){
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-:is(.dark .dark\:bg-gray-950){
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-opacity-80){

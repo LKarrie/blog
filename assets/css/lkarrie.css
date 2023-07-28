@@ -76,13 +76,13 @@
 } */
 
 .post-content h1 {
-  @apply text-blue-400 leading-tight border-b text-2xl lg:text-3xl font-semibold mb-4 mt-6 pb-2;
+  @apply text-blue-400 leading-tight border-b text-4xl font-semibold mb-4 mt-6 pb-2;
 }
 .post-content h2 {
-  @apply text-blue-400 leading-tight border-b text-xl lg:text-2xl selection:font-semibold mb-4 mt-6 pb-2;
+  @apply text-blue-400 leading-tight border-b text-3xl selection:font-semibold mb-4 mt-6 pb-2;
 }
 .post-content h3 {
-  @apply text-blue-400 leading-tight border-b text-lg lg:text-xl font-semibold mb-4 mt-6 pb-2;
+  @apply text-blue-400 leading-tight border-b text-xl font-semibold mb-4 mt-6 pb-2;
 }
 .post-content h4 {
   @apply text-blue-400 leading-tight border-b text-lg lg:text-xl font-semibold mb-4 mt-6 pb-2;
@@ -106,7 +106,7 @@
   @apply bg-white 
 }
 .post-content code{
-  @apply text-red-600 bg-rose-200 selection:bg-purple-300 selection:text-purple-900
+  @apply text-gray-500 bg-rose-200 selection:bg-purple-300 selection:text-purple-900
 }
 .post-content table{
   @apply overflow-x-auto shadow-md rounded-lg w-full text-sm text-left text-gray-500 dark:text-gray-400
