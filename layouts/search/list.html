@@ -2,8 +2,33 @@
 <div class="mx-4 flex justify-center items-center flex-col pt-8">
   <div class="w-full md:w-[800px] ">
 
+    <form id="search"
+      action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">
+      <label hidden for="search-input">Search site</label>
+      <input type="text" id="search-input" name="query" placeholder="Type here to search">
+      <input type="submit" value="search">
+    </form>
 
+    <ul id="results">
+      <li>
+          Enter a keyword above to search this site.
+      </li>
+    </ul>
 
   </div>
 </div>
+
+<script>
+  window.store = {
+    {{ range where .Site.Pages "Section" "blog" }}
+    "{{ .Permalink }}": {
+        "title": "{{ .Title  }}",
+        "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
+        "categories": [{{ range .Params.Categories }}"{{ . }}",{{ end }}],
+        "content": {{ .Content | plainify }},
+        "url": "{{ .Permalink }}"
+    },
+    {{ end }}
+  }
+</script>
 {{ end }}

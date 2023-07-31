@@ -28,7 +28,9 @@
       {{ if .IsHome }}
         {{- block "scripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/home.js"></script>
-      {{ else if eq .Title "Tags"}} 
+      {{ else if eq .Title "Search"}} 
+        <script src="{{ .Site.BaseURL }}/js/lunr.min.js"></script>
+        <script src="{{ .Site.BaseURL }}/js/search.js"></script>
       {{ else }}
         {{- block "otherpagecripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>  
