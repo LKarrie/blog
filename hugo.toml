@@ -3,6 +3,8 @@ languageCode = 'zh-cn'
 title = 'LKarrie'
 paginate = '1'
 enableEmoji = true
+[outputs]
+    home = [ "HTML", "JSON", "RSS"]
 
 [Params]
   description = '雑魚の小站'

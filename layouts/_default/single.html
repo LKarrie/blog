@@ -14,16 +14,16 @@
         <a class="pr-4 text-blue-400 hover:text-blue-600" href="/tags/{{$tag}}"><i class="fa-solid fa-tag"></i>{{$tag}}</a>
         {{ end }}
       </p>
+      {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
+      {{ else }}
       <p class="text-zinc-400 text-base">
-        {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
-        {{ else }}
-          Created at: {{ .Date.Format "Jan 02, 2006" }}
-        {{ end }}
+        Created at: {{ .Date.Format "Jan 02, 2006" }}
       </p>
       <p class="text-zinc-400 text-base">
         Words count: {{.FuzzyWordCount}}.
         Read time: {{.ReadingTime}}min.
       </p>
+      {{ end }}
     </section>
 
     <section class="post-content text-lg tracking-wide leading-relaxed text-zinc-400">
