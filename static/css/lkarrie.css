@@ -668,6 +668,18 @@ video {
   right: 0.625rem;
 }
 
+.bottom-\[2\.25rem\]{
+  bottom: 2.25rem;
+}
+
+.bottom-\[0\.56rem\]{
+  bottom: 0.56rem;
+}
+
+.bottom-\[0\.55rem\]{
+  bottom: 0.55rem;
+}
+
 .-z-10{
   z-index: -10;
 }
