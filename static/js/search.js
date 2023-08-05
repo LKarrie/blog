@@ -5,6 +5,7 @@ function displayResults (results, store) {
     // Iterate and build result list elements
     for (const n in results) {
       const item = store[results[n].ref]
+      resultList += '<img draggable="false" src="' + item.cardImg + '" loading="lazy">'
       resultList += '<li><p><a href="' + item.url + '">' + item.title + '</a></p>'
       resultList += '<p>' + item.content.substring(0, 150) + '...</p></li>'
     }
@@ -40,7 +41,9 @@ if (query) {
         title: window.store[key].title,
         tags: window.store[key].tags,
         categories: window.store[key].categories,
-        content: window.store[key].content
+        content: window.store[key].content,
+        lazyCardImg: window.store[key].lazyCardImg,
+        cardImg: window.store[key].cardImg,
       })
     }
   })
