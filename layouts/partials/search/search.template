@@ -1,0 +1,15 @@
+<script>
+window.store = {
+  {{ range where .Site.Pages "Section" "blog" }}
+  "{{ .Permalink }}": {
+      "title": "{{ .Title  }}",
+      "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
+      "categories": [{{ range .Params.Categories }}"{{ . }}",{{ end }}],
+      "content": {{ .Content | plainify }},
+      "url": "{{ .Permalink }}",
+      "lazyCardImg": "{{ .Params.LazyCardImg}}",
+      "cardImg": "{{ .Params.CardImg }}"
+  },
+  {{ end }}
+}
+</script>

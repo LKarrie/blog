@@ -12,7 +12,7 @@
           <input type="search" id="search-input" name="query" class="outline-none block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search ..." required>
           <button type="submit" value="search" class="text-white absolute right-2.5 bottom-[0.55rem] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
       </div>
-  </form>
+    </form>
 
   <!-- <form id="search"
     action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">
@@ -21,28 +21,43 @@
     <input type="submit" value="search">
   </form> -->
 
-  <ul id="results">
+  <!-- <ul id="results">
     <li>
         Enter a keyword above to search this site.
     </li>
-  </ul>
+  </ul> -->
 
+    <ul id="results" class="mt-10 gap-10 flex flex-col w-full md:w-[800px]">
+      <li class="flex flex-row h-28 text-xl gap-10 justify-center items-center">
+          <span>Enter a keyword above to search this site.</span>
+      </li>
+
+      <li class="flex flex-row h-28 text-ellipsis overflow-hidden gap-10">
+        <div class="flex items-center shrink-0 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full">
+          <a href="/" class="block bg-white p-1 rounded-full transform transition hover:-rotate-6">
+            <img class="w-24 h-24 rounded-full" src="{{ .Site.Params.mobile.avatar }}" />
+          </a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center mr-1">
+            <p class="text-xl font-bold">Title</p>
+            <p class="text-sm"><i class="inline-block fa-solid fa-clock animate-pulse"></i>&nbsp;Created&nbsp;:&nbsp;{{ .Date.Format "2006-01-02" }}</p>
+          </div>
+          <div class="flex flex-col break-all text-sm overflow-hidden text-ellipsis ">
+            <span class="line-clamp-2">你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他</span>
+          </div>
+          <div class="flex justify-end">
+            <a href="/">
+              <i class="fa-solid fa-ellipsis fa-2xl mt-4"></i>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
 
-<script>
-  window.store = {
-    {{ range where .Site.Pages "Section" "blog" }}
-    "{{ .Permalink }}": {
-        "title": "{{ .Title  }}",
-        "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
-        "categories": [{{ range .Params.Categories }}"{{ . }}",{{ end }}],
-        "content": {{ .Content | plainify }},
-        "url": "{{ .Permalink }}",
-        "lazyCardImg": "{{ .Params.LazyCardImg}}",
-        "cardImg": "{{ .Params.CardImg }}"
-    },
-    {{ end }}
-  }
-</script>
+
+{{- partial "search/search.template" . -}}
+
 {{ end }}

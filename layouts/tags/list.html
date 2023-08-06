@@ -28,29 +28,6 @@
   </div>
 </div>
 
-  {{ if eq (.Kind) ("taxonomy")}}
-  <script type="text/javascript" src="{{ .Site.BaseURL }}/js/TagCloud.js"></script>
-  <script>
-    let tagMap = new Map()
-    let tagArray = new Array()
-    // add ' prevent vscode script error tips
-    '{{ range $key, $value := .Data.Terms }}'
-        // tagArray.push([{{ $key }}])
-        tagArray.push(["{{ $key }} [{{ len $value }}]"])
-    '{{ end }}'
+{{- partial "tags/tags.template" . -}}
 
-    var tc = TagCloud('.tagcloud', tagArray,{radius:175});
-
-    function clickEventHandler(e) {
-      
-        if (e.target.className === 'tagcloud--item') {
-            let path = '/tags/'+ e.target.innerText.split('[')[0]
-            window.open(path, '_self');
-        }
-    }
-
-    var rootEl = document.querySelector('.tagcloud');
-    rootEl.addEventListener('click', clickEventHandler);
-  </script>
-  {{ end }}
 {{ end }}
