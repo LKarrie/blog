@@ -33,7 +33,7 @@
       </li>
 
       <li class="flex flex-row h-28 text-ellipsis overflow-hidden gap-10">
-        <div class="flex items-center shrink-0 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full">
+        <div class="hidden md:flex items-center shrink-0 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full">
           <a href="/" class="block bg-white p-1 rounded-full transform transition hover:-rotate-6">
             <div class="blurred-img relative h-full w-full bg-center bg-cover rounded-full" style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')">
               <img class="opacity-0 transition-opacity duration-1000 ease-in-out w-24 h-24 rounded-full" src="{{ .Site.Params.mobile.avatar }}" />
@@ -59,6 +59,11 @@
   </div>
 </div>
 
+<style>
+  #search-input{
+    -webkit-appearance: none;
+  }
+</style>
 
 {{- partial "search/search.template" . -}}
 

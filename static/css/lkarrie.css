@@ -1062,6 +1062,14 @@ video {
   width: 1px;
 }
 
+.w-56{
+  width: 14rem;
+}
+
+.w-1\/2{
+  width: 50%;
+}
+
 .min-w-0{
   min-width: 0px;
 }
@@ -3279,6 +3287,10 @@ video {
 
   .md\:inline{
     display: inline;
+  }
+
+  .md\:flex{
+    display: flex;
   }
 
   .md\:grid{
