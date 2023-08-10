@@ -13,7 +13,7 @@
     function clickEventHandler(e) {
       
         if (e.target.className === 'tagcloud--item') {
-            let path = '/tags/'+ e.target.innerText.split('[')[0]
+            let path = '{{ absLangURL "tags" }}/'+ e.target.innerText.split('[')[0]
             window.open(path, '_self');
         }
     }

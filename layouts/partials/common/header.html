@@ -29,27 +29,27 @@
             <div class="text-lg hidden md:inline w-full" id="menu">
               <ul class="flex font-bold justify-center gap-4">
                 <li class="text-center w-28">
-                    <a href="/" class="nav">
+                    <a href="{{ absLangURL "" }}" class="nav">
                       <i class="fa-brands fa-fort-awesome animate-pulse"></i>
-                      <span>Home</span>
+                      <span>{{ T "Home" }}</span>
                     </a>
                 </li>
                 <li class="text-center w-28">
-                    <a href="/blog" class="nav">          
+                    <a href="{{ absLangURL "blog" }}" class="nav">          
                         <i class="fa-solid fa-list-ul animate-pulse"></i>
-                        <span>Archive</span>
+                        <span>{{ T "Archive" }}</span>
                     </a>
                 </li>
                 <li class="text-center w-28">
-                  <a href="/tags" class="nav">
+                  <a href="{{ absLangURL "tags" }}" class="nav">
                       <i class="fa-solid fa-tag animate-pulse"></i>
-                      <span>Tags</span>
+                      <span>{{ T "Tags" }}</span>
                   </a>
                 </li>
                 <li class="text-center w-30">
-                  <a href="/categories" class="nav">
+                  <a href="{{ absLangURL "categories" }}" class="nav">
                       <i class="fa-solid fa-hashtag animate-pulse"></i>
-                      <span>Categories</span>
+                      <span>{{ T "Categories" }}</span>
                   </a>
                 </li>
               </ul>
@@ -60,7 +60,7 @@
       <!-- other -->
       <div class="absolute right-1 z-50">
         <div class="flex flex-row gap-4">
-        <!-- {{- partial "common/lang.html" . -}}   -->
+        {{- partial "common/lang.html" . -}}
         {{- partial "common/searchbtn.html" . -}}
         {{- partial "common/darktoggle.html" . -}}
         </div>

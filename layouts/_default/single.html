@@ -6,12 +6,12 @@
       <h1 class="text-3xl md:text-4xl font-semibold mb-4 dark:text-white">{{ .Title }}</h1>
       <p class="text-base my-2">
         {{ range $category := .Params.categories }}
-        <a class="pr-4 text-blue-400 hover:text-blue-600" href="/categories/{{$category}}"><i class="fa-solid fa-hashtag"></i>{{$category}}</a>
+        <a class="pr-4 text-blue-400 hover:text-blue-600" href="{{ absLangURL "categories" }}/{{lower $category}}"><i class="fa-solid fa-hashtag"></i>{{$category}}</a>
         {{ end }}
       </p>
       <p class="text-base my-2">
         {{ range $tag := .Params.tags }}
-        <a class="pr-4 text-blue-400 hover:text-blue-600" href="/tags/{{$tag}}"><i class="fa-solid fa-tag"></i>{{$tag}}</a>
+        <a class="pr-4 text-blue-400 hover:text-blue-600" href="{{ absLangURL "tags" }}/{{lower $tag}}"><i class="fa-solid fa-tag"></i>{{$tag}}</a>
         {{ end }}
       </p>
       {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
