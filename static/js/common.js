@@ -25,7 +25,7 @@ blurredImageDiv.forEach(div => {
   }
 })
 
-/** lazy loading js **/
+/** highlight js style**/
 const highlightDiv = document.querySelectorAll(".highlight")
 highlightDiv.forEach(div => {
   div.classList.add("border-solid")
@@ -33,7 +33,7 @@ highlightDiv.forEach(div => {
   div.classList.add("rounded-xl")
   div.classList.add("shadow-lg") 
   div.classList.add("p-2") 
-  div.classList.add("my-2") 
+  div.classList.add("my-8")
 })
 
 /** change theme func **/

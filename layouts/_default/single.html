@@ -20,13 +20,13 @@
         Created at: {{ .Date.Format "Jan 02, 2006" }}
       </p>
       <p class="text-zinc-400 text-base">
-        Words count: {{.FuzzyWordCount}}.
+        Words count: {{.WordCount}}.
         Read time: {{.ReadingTime}}min.
       </p>
       {{ end }}
     </section>
 
-    <section class="post-content text-base md:text-lg tracking-wide leading-relaxed text-zinc-400">
+    <section class="post-content text-base md:text-lg tracking-normal leading-relaxed antialiasedtext-zinc-400 dark:text-zinc-200">
       {{ .Content }}
     </section>
     </article>

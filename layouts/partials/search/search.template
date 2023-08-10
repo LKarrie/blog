@@ -3,6 +3,7 @@ window.store = {
   {{ range where .Site.Pages "Section" "blog" }}
   "{{ .Permalink }}": {
       "title": "{{ .Title  }}",
+      "time" : "{{ .Date.Format "2006-01-02" }}",
       "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
       "categories": [{{ range .Params.Categories }}"{{ . }}",{{ end }}],
       "content": {{ .Content | plainify }},

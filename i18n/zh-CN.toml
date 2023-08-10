@@ -1,0 +1,15 @@
+# Translations for Simplified Chinese
+# 简体中文的翻译
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+[Home]
+other = "首页"
+
+[Archive]
+other = "归档"
+
+[Tags]
+other = "标签"
+
+[Categories]
+other = "分类"

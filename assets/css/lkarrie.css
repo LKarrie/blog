@@ -106,7 +106,7 @@
   @apply bg-white 
 }
 .post-content code{
-  @apply text-gray-500 bg-rose-200 selection:bg-purple-300 selection:text-purple-900
+  @apply text-gray-500 dark:text-gray-400 bg-rose-200 selection:bg-purple-300 selection:text-purple-900
 }
 .post-content table{
   @apply overflow-x-auto shadow-md rounded-lg w-full text-sm text-left text-gray-500 dark:text-gray-400
@@ -122,6 +122,12 @@
 }
 .post-content a {
   @apply font-medium text-blue-600 dark:text-blue-500 hover:underline
+}
+.post-content p {
+  @apply py-2
+}
+.post-content p img{
+  @apply m-auto py-4
 }
 
 @font-face {

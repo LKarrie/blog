@@ -1,0 +1,7 @@
+<nav class="LangNav">
+
+    {{ range $.Site.Home.AllTranslations }}
+          <a href="{{ .Page.Permalink }}">{{ .Language.Lang  }}</a> 
+    {{ end }}
+
+ </nav>

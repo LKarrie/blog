@@ -1,10 +1,9 @@
 baseURL = 'https://dev.lkarrie.com'
-languageCode = 'zh-cn'
 title = 'LKarrie'
 paginate = '1'
 enableEmoji = true
 [outputs]
-    home = [ "HTML", "RSS"]
+  home = [ "HTML", "RSS"]
 
 [Params]
   description = '雑魚の小站'

@@ -2,7 +2,6 @@
 <div class="mx-4 flex justify-center items-center flex-col pt-8">
   <div class="w-full md:w-[800px] ">
     <form id="search" action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">  
-      <!-- <label for="search-input" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label> -->
       <div class="relative">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -32,11 +31,11 @@
           <span>Enter a keyword above to search this site.</span>
       </li>
 
-      <li class="flex flex-row h-28 text-ellipsis overflow-hidden gap-10">
+      <!-- <li class="flex flex-row h-28 text-ellipsis overflow-hidden gap-10">
         <div class="hidden md:flex items-center shrink-0 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full">
           <a href="/" class="block bg-white p-1 rounded-full transform transition hover:-rotate-6">
             <div class="blurred-img relative h-full w-full bg-center bg-cover rounded-full" style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')">
-              <img class="opacity-0 transition-opacity duration-1000 ease-in-out w-24 h-24 rounded-full" src="{{ .Site.Params.mobile.avatar }}" />
+              <img class="opacity-0 transition-opacity duration-1000 ease-in-out w-24 h-24 rounded-full object-cover" src="{{ .Site.Params.mobile.avatar }}" loading="lazy"/>
             </div>
           </a>
         </div>
@@ -46,7 +45,7 @@
             <p class="text-sm"><i class="inline-block fa-solid fa-clock animate-pulse"></i>&nbsp;Created&nbsp;:&nbsp;{{ .Date.Format "2006-01-02" }}</p>
           </div>
           <div class="flex flex-col break-all text-sm overflow-hidden text-ellipsis ">
-            <span class="line-clamp-2">你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他你我他</span>
+            <span class="line-clamp-2">TEST</span>
           </div>
           <div class="flex justify-end">
             <a href="/">
@@ -54,7 +53,7 @@
             </a>
           </div>
         </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>

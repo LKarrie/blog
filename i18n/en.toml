@@ -1,0 +1,14 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+[Home]
+other = "Home"
+
+[Archive]
+other = "Archive"
+
+[Tags]
+other = "Tags"
+
+[Categories]
+other = "Categories"
