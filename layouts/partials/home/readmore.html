@@ -4,7 +4,7 @@
       <div class="grid gap-8 items-start justify-center">
         <div class="relative group">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-          <a href="/blog/" class="hidden md:inline">
+          <a href="{{ absLangURL "blog" }}" class="hidden md:inline">
             <button class="relative px-7 py-4 bg-white dark:bg-gray-800 rounded-lg leading-none flex items-center divide-x divide-gray-600">
                 <span class="flex items-center space-x-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600 -rotate-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -15,7 +15,7 @@
                 <span class="pl-6 text-indigo-400 group-hover:text-pink-600 transition duration-200">Click me ! &rarr;</span>
             </button>
           </a>
-          <a href="/blog/" class="inline md:hidden">
+          <a href="{{ absLangURL "blog" }}" class="inline md:hidden">
             <button class="relative px-7 py-4 bg-white rounded-lg leading-none flex items-center divide-x divide-gray-600">
                 <span class=" text-indigo-400 group-hover:text-pink-600 transition duration-200">See more ! </span>
             </button>

@@ -7,14 +7,12 @@ enableEmoji = true
   home = [ "HTML", "RSS"]
 
 [languages]
-  [languages.en]
-    contentDir = 'content/en'
-    languageCode = 'en'
-    weight = 10
   [languages.zh-CN]
     contentDir = 'content/zh-CN'
     languageCode = 'zh-CN'
-    weight = 1
+  [languages.en]
+    contentDir = 'content/en'
+    languageCode = 'en'
 
 [Params]
   description = '雑魚の小站'
