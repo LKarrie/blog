@@ -24,18 +24,26 @@
 
       <!-- /common js -->
 
-      <!-- Additional scripts -->
       {{ if .IsHome }}
+        <!-- Additional scripts and Block cannot repeat -->
         {{- block "scripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/home.js"></script>
       {{ else if eq .Title "Search"}} 
+        <!-- template same as block scripts -->
+        {{- partial "search/search.template" . -}}
         <script src="{{ .Site.BaseURL }}/js/lunr.min.js"></script>
         <script src="{{ .Site.BaseURL }}/js/search.js"></script>
+      {{ else if eq .Title "Tags"}} 
+        {{- partial "tags/tags.template" . -}}
       {{ else }}
         {{- block "otherpagecripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>  
       {{ end }}
 
+      <script>
+        function search() {window.open('{{ absLangURL "" }}/search', '_self')}
+      </script>
+      
       <!-- {{ if eq .Site.Params.syntaxHighlighter "highlight.js" }} -->
       <script src="{{ .Site.BaseURL }}/js/highlightjs-copy.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>

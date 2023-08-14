@@ -23,6 +23,7 @@
     <meta name="robots" content="index,follow">
     <meta name="HandheldFriendly" content="True">
 
+    <!-- theme style js -->
     <script>
       if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark')
@@ -42,6 +43,11 @@
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/highlightjs-copy.min.css"/>
     <link rel="stylesheet" type="text/css"href="{{ .Site.BaseURL }}/css/dracula.min.css">
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/google-light.min.css"> -->
+    <style>
+      #search-input{
+        -webkit-appearance: none;
+      }
+    </style>
 
     {{ with .OutputFormats.Get "rss" -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
