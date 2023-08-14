@@ -19,3 +19,12 @@ other = "启航! ⛵"
 
 [Discovery]
 other = "随便看看~ ✨"
+
+[Search]
+other = "搜索页"
+
+[Theme]
+other = "深色 / 浅色模式"
+
+[Translation]
+other = "中 / 英文切换"

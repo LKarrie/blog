@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 ,maximum-scale=1, user-scalable=no">
     {{ $title := print .Title " - " .Site.Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>🚀 {{ $title }}</title>
@@ -41,7 +41,8 @@
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/video-js-8.3.0-lk.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/imglazy.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/highlightjs-copy.min.css"/>
-    <link rel="stylesheet" type="text/css"href="{{ .Site.BaseURL }}/css/dracula.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/dracula.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/mobile.css">
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/google-light.min.css"> -->
     <style>
       #search-input{
