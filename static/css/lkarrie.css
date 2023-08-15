@@ -692,6 +692,10 @@ video {
   z-index: 49;
 }
 
+.m-2{
+  margin: 0.5rem;
+}
+
 .m-4{
   margin: 1rem;
 }
@@ -834,6 +838,14 @@ video {
   margin-top: 1px;
 }
 
+.ml-1{
+  margin-left: 0.25rem;
+}
+
+.mr-2{
+  margin-right: 0.5rem;
+}
+
 .line-clamp-2{
   overflow: hidden;
   display: -webkit-box;
@@ -971,6 +983,10 @@ video {
 
 .w-10{
   width: 2.5rem;
+}
+
+.w-16{
+  width: 4rem;
 }
 
 .w-24{
@@ -1186,6 +1202,10 @@ video {
   align-items: center;
 }
 
+.items-baseline{
+  align-items: baseline;
+}
+
 .justify-end{
   justify-content: flex-end;
 }
@@ -1355,6 +1375,14 @@ video {
 
 .border-r-15{
   border-right-width: 15px;
+}
+
+.border-r-2{
+  border-right-width: 2px;
+}
+
+.border-dashed{
+  border-style: dashed;
 }
 
 .border-dotted{
@@ -1707,6 +1735,22 @@ video {
   padding-top: 2rem;
 }
 
+.pr-1{
+  padding-right: 0.25rem;
+}
+
+.pl-1{
+  padding-left: 0.25rem;
+}
+
+.pl-2{
+  padding-left: 0.5rem;
+}
+
+.pr-2{
+  padding-right: 0.5rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -1813,6 +1857,10 @@ video {
 
 .tracking-wide{
   letter-spacing: 0.025em;
+}
+
+.tracking-widest{
+  letter-spacing: 0.1em;
 }
 
 .text-black{
@@ -2682,6 +2730,10 @@ video {
   font-style: normal;
 
   font-weight: normal;
+}
+
+.first-line\:border-dotted::first-line{
+  border-style: dotted;
 }
 
 .group:hover .group-hover\:translate-x-0{

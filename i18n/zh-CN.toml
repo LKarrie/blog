@@ -28,3 +28,15 @@ other = "深色 / 浅色模式"
 
 [Translation]
 other = "中 / 英文切换"
+
+[ReadMore]
+other = "不够看 ?"
+
+[ClickMe]
+other = "戳我 ! ➡️"
+
+[SeeMore]
+other = "查看更多 ! "
+
+[SearchPromptInBtn]
+other = "找一些感兴趣的东西吧 ..."

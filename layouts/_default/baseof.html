@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang={{ .Site.LanguageCode }}>
     {{- partial "common/head.html" . -}}
     <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-purple-300 scrollbar-track-slate-200">
 
@@ -23,17 +23,16 @@
       <script src="{{ .Site.BaseURL }}/js/common.js"></script>
 
       <!-- /common js -->
-
       {{ if .IsHome }}
         <!-- Additional scripts and Block cannot repeat -->
         {{- block "scripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/home.js"></script>
-      {{ else if eq .Title "Search"}} 
+      {{ else if or (eq .Title "Search") (eq .Title "搜索") }} 
         <!-- template same as block scripts -->
         {{- partial "search/search.template" . -}}
         <script src="{{ .Site.BaseURL }}/js/lunr.min.js"></script>
         <script src="{{ .Site.BaseURL }}/js/search.js"></script>
-      {{ else if eq .Title "Tags"}} 
+      {{ else if or (eq .Title "Tags") (eq .Title "标签") }} 
         {{- partial "tags/tags.template" . -}}
       {{ else }}
         {{- block "otherpagecripts" . }}{{- end }}

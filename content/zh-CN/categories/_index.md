@@ -1,6 +1,6 @@
 ---
-title: "搜索"
-description: "搜索"
+title: "分类"
+description: "分类"
 date: 2021-03-23T21:46:40+03:00
 show_date: false
 ---

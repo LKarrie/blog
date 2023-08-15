@@ -27,3 +27,15 @@ other = "Dark / White Mode"
 
 [Translation]
 other = "Chinese / English Switch"
+
+[ReadMore]
+other = "Want to see more ?"
+
+[ClickMe]
+other = "Click me ! ➡️"
+
+[SeeMore]
+other = "See more ! "
+
+[SearchPromptInBtn]
+other = "Search ..."

@@ -1,7 +1,6 @@
 baseURL = 'https://dev.lkarrie.com'
 defaultContentLanguage = 'zh-CN'
 title = 'LKarrie'
-paginate = '1'
 enableEmoji = true
 [outputs]
   home = [ "HTML", "RSS"]
@@ -32,16 +31,27 @@ enableEmoji = true
   menuTitle = 'Menu'
   menuDes = 'Where u wanna go ?~'
 
-[Params.categories.description]
-  game = 'happy game time~'
-  default = 'categories.description'
+[Params.archive.description.en]
+  default = 'blog archive'
 
-[Params.archive.description]
-  default = 'archive.description'
+[Params.archive.description.zhCN]
+  default = '文章归档'
 
-[Params.tags.description]
-  minecraft = 'mc mc mc'
-  default = 'tags.description'  
+[Params.tags.description.en]
+  default = 'blog tags'  
+  minecraft = 'mc mc mc !'
+
+[Params.tags.description.zhCN]
+  default = '文章标签'  
+  minecraft = 'mc mc mc ~'
+
+[Params.categories.description.en]
+  default = 'blog categories'
+  game = 'happy game time~ 🎮'
+
+[Params.categories.description.zhCN]
+  default = '文章分类'
+  game = '游戏~ 🎮'
 
 [Params.home]
   showVideo = false

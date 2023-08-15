@@ -1,7 +1,9 @@
 function displayResults (results, store) {
   const searchResults = document.getElementById('results')
+  let resultList = ''
+  let searchPrompt = ''
   if (results.length) {
-    let resultList = ''
+    // let resultList = ''
     // Iterate and build result list elements
     for (const n in results) {
       const item = store[results[n].ref]
@@ -35,8 +37,39 @@ function displayResults (results, store) {
     }
     searchResults.innerHTML = resultList
   } else {
-    searchResults.innerHTML = 'No results found.'
+
+    if (document.documentElement.lang === "en") {
+      searchPrompt = "No results found.";
+    } else if (document.documentElement.lang === "zh-CN") {
+      searchPrompt = "没有找到哦😥";
+    }
+
+    resultList +='<li class="flex flex-row h-28 text-xl gap-10 justify-center items-center">'
+    resultList +='<span>'
+    resultList +=searchPrompt
+    resultList +='</span>'
+    resultList +='</li>'
+    searchResults.innerHTML = resultList
   }
+}
+
+function displayEmpty () {
+  const searchResults = document.getElementById('results')
+  let resultList = ''
+  let searchPrompt = ''
+
+  if (document.documentElement.lang === "en") {
+    searchPrompt = "Enter a keyword above to search this site. ᕕ(◠ڼ◠)ᕗ";
+  } else if (document.documentElement.lang === "zh-CN") {
+    searchPrompt = "键入关键字开始搜索哦~ ᕕ(◠ڼ◠)ᕗ";
+  }
+
+  resultList +='<li class="flex flex-row h-28 text-xl gap-10 justify-center items-center">'
+  resultList +='<span>'
+  resultList +=searchPrompt
+  resultList +='</span>'
+  resultList +='</li>'
+  searchResults.innerHTML = resultList
 }
 
 // Get the query parameter(s)
@@ -93,4 +126,6 @@ if (query) {
       img.addEventListener("load", loaded)
     }
   })
+}else {
+  displayEmpty ()
 }

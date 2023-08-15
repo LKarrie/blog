@@ -1,3 +1,3 @@
 ---
-title: "Archive"
+title: "归档"
 ---
