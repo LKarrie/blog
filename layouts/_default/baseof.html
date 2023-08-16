@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang={{ .Site.LanguageCode }}>
     {{- partial "common/head.html" . -}}
-    <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-purple-300 scrollbar-track-slate-200">
-
+    {{ if .IsHome }}
+    <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-white scrollbar-track-white dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-900">
+    {{ else }}
+    <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded  scrollbar-thumb-purple-300 scrollbar-track-slate-200 dark:scrollbar-thumb-purple-100 dark:scrollbar-track-slate-800">
+    {{ end }}
       <div class="flex flex-col h-screen">
         <header class="flex-shrink-0">
           {{- partial "headerarea.html" . -}}

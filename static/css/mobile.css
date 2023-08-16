@@ -48,24 +48,40 @@
     transition: all 0.7s;
 }
 
-.otherinput~.otherbutton:nth-child(5) {
+.otherinput~.otherbutton:nth-child(6) {
     transform: translateY(250px) rotate(60deg);
     transition-delay: 200ms;
    
 }
 
-.otherinput~.otherbutton:nth-child(4) {
+.otherinput~.otherbutton:nth-child(5) {
     transform: translateY(200px) rotate(90deg);
     transition-delay: 300ms;
 
 }
 
-.otherinput~.otherbutton:nth-child(3) {
+.otherinput~.otherbutton:nth-child(4) {
     transform: translateY(150px) rotate(180deg);
     transition-delay: 400ms;
-
 }
 
 .otherinput[type="checkbox"]:checked~.otherbutton {
-    transform: translateX(0);
+    transform: translateY(0);
+}
+
+.otherinput[type="checkbox"]:checked~.otherbar:nth-child(2) {
+    transform: translateY(0)
+}
+
+.otherinput[type="checkbox"]:checked~.otherbar:nth-child(3) {
+    transform: translateY(150px)
+}
+
+.otherinput~.otherbar:nth-child(2) {
+    transform: translateY(150px);
+
+}
+
+.otherinput~.otherbar:nth-child(3) {
+    transform: translateY(0);
 }
