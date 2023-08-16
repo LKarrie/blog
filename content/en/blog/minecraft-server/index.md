@@ -1,7 +1,7 @@
 ---
 title: Minecraft Server
 date: 2022-02-20T23:25:00.000Z
-date_updated: 2022-02-20T23:25:00.000Z
+lastmod: 2022-02-25T23:25:00.000Z
 description: Build Minecraft Server ~
 tags: [ "Minecraft" ]
 categories : [ "Game" ]

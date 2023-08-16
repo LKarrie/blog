@@ -16,12 +16,25 @@
       </p>
       {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
       {{ else }}
+        {{ if  eq .Site.LanguageCode "zh-CN" }}
+        <p class="text-zinc-400 text-base">
+          {{ T "CreatedTime" }}: {{ .Date.Format "2006年01月02日, 15时04分05秒" }}
+        </p>
+        <p class="text-zinc-400 text-base">
+          {{ T "UpdatedTime" }}: {{ .Lastmod.Format "2006年01月02日, 15时04分05秒" }}
+        </p>
+        {{ end }}
+        {{ if  eq .Site.LanguageCode "en" }}
+        <p class="text-zinc-400 text-base">
+          {{ T "CreatedTime" }}: {{ .Date.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
+        </p>
+        <p class="text-zinc-400 text-base">
+          {{ T "UpdatedTime" }}: {{ .Lastmod.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
+        </p>
+        {{ end }}
       <p class="text-zinc-400 text-base">
-        Created at: {{ .Date.Format "Jan 02, 2006" }}
-      </p>
-      <p class="text-zinc-400 text-base">
-        Words count: {{.WordCount}}.
-        Read time: {{.ReadingTime}}min.
+        {{ T "WordsCount" }}: {{.WordCount}}.
+        {{ T "ReadTime" }}: {{.ReadingTime}}{{ T "Minute" }}.
       </p>
       {{ end }}
     </section>

@@ -40,3 +40,21 @@ other = "查看更多 ! "
 
 [SearchPromptInBtn]
 other = "找一些感兴趣的东西吧 ..."
+
+[Menu]
+other = "菜单"
+
+[CreatedTime]
+other = "创建时间"
+
+[UpdatedTime]
+other = "更新时间"
+
+[WordsCount]
+other = "文章字数"
+
+[ReadTime]
+other = "阅读时间"
+
+[Minute]
+other = "分钟"

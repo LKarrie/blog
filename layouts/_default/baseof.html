@@ -54,9 +54,33 @@
       </script>
       <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-          document.querySelectorAll('pre code').forEach((el) => {
-            hljs.highlightElement(el);
-            el.classList.add("dark:bg-gray-900")
+          // document.querySelectorAll('pre code').forEach((el) => {
+          //   hljs.highlightElement(el);
+          //   el.classList.add("dark:bg-gray-900")
+          // });
+          document.querySelectorAll('.highlight').forEach((el) => {
+            let pre = el.getElementsByTagName('pre')[0]
+            pre.classList.add("flex-1")
+            el.querySelectorAll('pre code').forEach((inner) => {
+              hljs.highlightElement(inner);
+              inner.classList.add("dark:bg-gray-900")
+
+              el.setAttribute("code-type", inner.getAttribute("data-lang").toUpperCase());
+              
+              // generate line num 
+              // hugo can automatically generate line numbers, but it breaks my style 
+              let html = el?.innerHTML
+              let size = html.split('\n').length
+              let ul = document.createElement('ul')
+              for (let i = 1; i <= size; i++) {
+                  let li = document.createElement('li')
+                  li.innerText = i + ''
+                  ul.appendChild(li)
+              }
+              ul.classList.add('hljs-code-number')
+              el.insertBefore(ul, pre)
+            });
+
           });
         });
       </script>

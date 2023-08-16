@@ -39,3 +39,21 @@ other = "See more ! "
 
 [SearchPromptInBtn]
 other = "Search ..."
+
+[Menu]
+other = "Menu"
+
+[CreatedTime]
+other = "Created at"
+
+[UpdatedTime]
+other = "Updated at"
+
+[WordsCount]
+other = "Words count"
+
+[ReadTime]
+other = "Read time"
+
+[Minute]
+other = "min"

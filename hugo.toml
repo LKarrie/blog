@@ -25,11 +25,63 @@ enableEmoji = true
   newFeatureImg = '/img/silverwolf.jpg'
   newFeatureDes = 'new new new feature!'
 
+[Params.weighanchor.one.en]
+  title = 'one'
+  image = '/img/weighanchor1.png'
+  description = 'weighanchor one'
+  url = '/about'
+  
+[Params.weighanchor.two.en]
+  title = 'two'
+  image = '/img/weighanchor1.png'
+  description = 'weighanchor two'
+  url = '/'
+
+[Params.weighanchor.three.en]
+  title = 'three'
+  image = '/img/weighanchor1.png'
+  description = 'weighanchor three'
+  url = '/'
+
+[Params.weighanchor.one.zhCN]
+  title = 'one zhCN'
+  image = '/img/weighanchor1.png'
+  description = 'weighanchor one zhCN'
+  url = '/'
+
+[Params.weighanchor.two.zhCN]
+  title = 'two zhCN'
+  image = '/img/weighanchor1.png'
+  description = 'weighanchor two zhCN'
+  url = '/'
+
+[Params.weighanchor.three.zhCN]
+  title = 'three zhCN'
+  image = '/img/weighanchor1.png'
+  description = 'weighanchor three zhCN'
+  url = '/'
+
 [Params.mobile]
   avatar = '/img/avatar.jpg'
   helloText = 'hello this is my mobile version'
-  menuTitle = 'Menu'
-  menuDes = 'Where u wanna go ?~'
+
+[Params.newFeature.en]
+  title = 'New feature!'
+  image = '/img/silverwolf.jpg'
+  description = 'new new new feature!'
+  url = '/'
+
+[Params.newFeature.zhCN]
+  title = '没用的功能又增加了🧐'
+  image = '/img/silverwolf.jpg'
+  description = '1.新增黑白模式;2.新增中英文翻译... 详细信息戳我一下'
+  url = '/'
+
+[Params.mobile.description.en]
+  menuDes = 'Where u wanna go ? ~'
+
+[Params.mobile.description.zhCN]
+  menuDes = '你想去哪 ? ~ 🤔'  
 
 [Params.archive.description.en]
   default = 'blog archive'
