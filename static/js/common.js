@@ -1,15 +1,7 @@
-// const burger = document.querySelector('#burger')
-const menu = document.querySelector('#menu')
-// burger.addEventListener('click',()=>{
-//   if (menu.classList.contains('hidden')) {
-//     menu.classList.remove('hidden');
-//   } else {
-//     menu.classList.add('hidden');
-//   }
-// })
+const blurredImageDiv = document.querySelectorAll(".blurred-img")
+const highlightDiv = document.querySelectorAll(".highlight")
 
 /** lazy loading js **/
-const blurredImageDiv = document.querySelectorAll(".blurred-img")
 blurredImageDiv.forEach(div => {
   const img = div.querySelector("img")
   function loaded() {
@@ -26,7 +18,6 @@ blurredImageDiv.forEach(div => {
 })
 
 /** highlight js style**/
-const highlightDiv = document.querySelectorAll(".highlight")
 highlightDiv.forEach(div => {
   div.classList.add("border-solid")
   div.classList.add("border-2")

@@ -1,4 +1,4 @@
-.otherinput {
+.toolsinput {
     margin: 0;
     padding: 0;
     top: 0px;
@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-.otherbar {
+.toolsbar {
     margin: 0;
     padding: 0;
     position: absolute;
@@ -33,7 +33,7 @@
     border: 0;
 }
 
-.otherbutton {
+.toolsbutton {
     height: 40px;
     width: 40px;
     margin-right: 5px;
@@ -48,40 +48,39 @@
     transition: all 0.7s;
 }
 
-.otherinput~.otherbutton:nth-child(6) {
+.toolsinput~.toolsbutton:nth-child(6) {
     transform: translateY(250px) rotate(60deg);
     transition-delay: 200ms;
    
 }
 
-.otherinput~.otherbutton:nth-child(5) {
+.toolsinput~.toolsbutton:nth-child(5) {
     transform: translateY(200px) rotate(90deg);
     transition-delay: 300ms;
 
 }
 
-.otherinput~.otherbutton:nth-child(4) {
+.toolsinput~.toolsbutton:nth-child(4) {
     transform: translateY(150px) rotate(180deg);
     transition-delay: 400ms;
 }
 
-.otherinput[type="checkbox"]:checked~.otherbutton {
+.toolsinput[type="checkbox"]:checked~.toolsbutton {
     transform: translateY(0);
 }
 
-.otherinput[type="checkbox"]:checked~.otherbar:nth-child(2) {
-    transform: translateY(0)
+.toolsinput[type="checkbox"]:checked~.toolsbar:nth-child(2) {
+    display: none;
 }
 
-.otherinput[type="checkbox"]:checked~.otherbar:nth-child(3) {
-    transform: translateY(150px)
+.toolsinput[type="checkbox"]:checked~.toolsbar:nth-child(3) {
+    display: block;
 }
 
-.otherinput~.otherbar:nth-child(2) {
-    transform: translateY(150px);
-
+.toolsinput~.toolsbar:nth-child(2) {
+    display: block;
 }
 
-.otherinput~.otherbar:nth-child(3) {
-    transform: translateY(0);
+.toolsinput~.toolsbar:nth-child(3) {
+    display: none;
 }

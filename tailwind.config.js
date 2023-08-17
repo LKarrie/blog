@@ -43,8 +43,26 @@ module.exports = {
       },
       animation: {
         tilt: 'tilt 10s infinite linear',
+        spainslow: 'spain2 2.25s infinite linear',
+        spainslowreverse: 'spain2-reverse 2.25s infinite linear',
       },
       keyframes: {
+        spain2: {
+          '0%': {
+              transform: 'rotate(0)'
+          },
+          '100%': {
+              transform: 'rotate(359deg)'
+          }
+        },
+        'spain2-reverse': {
+          '0%': {
+              transform: 'rotate(0)'
+          },
+          '100%': {
+              transform: 'rotate(-359deg)'
+          }
+        },
         tilt: {
           '0%, 50%, 100%': {
             transform: 'rotate(0deg)',

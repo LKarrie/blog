@@ -1,0 +1,17 @@
+<div class="z-20 fixed bottom-0 right-0 mb-5">
+    <div class="flex flex-col-reverse justify-center gap-1">
+        <input type="checkbox" class="toolsinput">
+        <button class="animate-spainslow fa-solid fa-gear fa-xl toolsbar dark:text-gray-300"></button>
+        <button class="animate-spainslowreverse fa-solid fa-circle-xmark fa-xl toolsbar dark:text-gray-300"></button>
+
+        <div class="toolsbutton flex justify-center items-center">
+            {{- partial "common/lang.html" . -}}
+        </div>
+        <div class="toolsbutton flex justify-center items-center">
+            {{- partial "common/searchbtn.html" . -}}
+        </div>
+        <div class="toolsbutton flex justify-center items-center">
+            {{- partial "common/darktoggle.html" . -}}
+        </div>
+    </div>
+</div>

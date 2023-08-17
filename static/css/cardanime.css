@@ -1,27 +1,27 @@
 .cantsee {
   opacity: 0;
   filter: blur(5px);
-  transform: translateY(50%);
+  transform: translate3d(translateY(50%));
   transition: all 1s;
 }
 
 .cansee {
   opacity: 1;
   filter: blur(0);
-  transform: translateY(0);
+  transform: translate3d(translateY(0));
 }
 
 .cantsee2 {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-100%);
+  transform: translate3d(translateX(-100%));
   transition: all 1.2s;
 }
 
 .cansee2 {
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0);
+  transform: translate3d(translateX(0));
 }
 
 .anchor:nth-child(2){
