@@ -18,13 +18,10 @@
           {{- partial "common/footer.html" . -}}
         </footer>
       </div>
-
-
       <!-- common js -->
       <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
       <script src="{{ .Site.BaseURL }}/js/throttleDebounce.js"></script>
       <script src="{{ .Site.BaseURL }}/js/common.js"></script>
-
       <!-- /common js -->
       {{ if .IsHome }}
         <!-- Additional scripts and Block cannot repeat -->
@@ -41,12 +38,9 @@
         {{- block "otherpagecripts" . }}{{- end }}
         <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>  
       {{ end }}
-
       <script>
         function search() {window.open('{{ absLangURL "" }}/search', '_self')}
       </script>
-      
-      <!-- {{ if eq .Site.Params.syntaxHighlighter "highlight.js" }} -->
       <script src="{{ .Site.BaseURL }}/js/highlightjs-copy.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
       <script>
@@ -87,7 +81,10 @@
           });
         });
       </script>
-      <!-- {{ end }} -->
-      <!-- Scripts -->
+      <!-- other js -->
+      {{- partial "common/script.html" . -}}
+      {{ if eq site.Params.views.plausible.enable true}} 
+      {{- partial "common/plausible.html" . -}}
+      {{ end }}
     </body>
 </html>
