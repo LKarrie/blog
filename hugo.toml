@@ -24,6 +24,7 @@ enableEmoji = true
   newFeatureTitle = 'New feature!'
   newFeatureImg = '/img/silverwolf.jpg'
   newFeatureDes = 'new new new feature!'
+  disableWeighanchorAnime = true
 
 [Params.weighanchor.one.en]
   title = 'one'

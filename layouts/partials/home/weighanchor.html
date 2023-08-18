@@ -6,7 +6,7 @@
     </h1>
     <div class="flex flex-col md:flex-row justify-center gap-3">
 
-      <div class="anchor cantsee2 w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
+      <div class="anchor {{ if eq .Site.Params.disableWeighanchorAnime true }} {{ else }} cantsee2 {{end}}  w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.one.zhCN.url}}">
           <div class="group">
@@ -43,7 +43,7 @@
         {{ end }}
       </div>
 
-      <div class="anchor cantsee2 w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
+      <div class="anchor {{ if eq .Site.Params.disableWeighanchorAnime true }} {{ else }} cantsee2 {{end}} w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.two.zhCN.url}}">
           <div class="group">
@@ -78,7 +78,7 @@
         {{ end }}
       </div>
 
-      <div class="anchor cantsee2 w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
+      <div class="anchor {{ if eq .Site.Params.disableWeighanchorAnime true }} {{ else }} cantsee2 {{end}} w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.three.zhCN.url}}">
           <div class="group">
