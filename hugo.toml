@@ -25,7 +25,7 @@ enableEmoji = true
   newFeatureImg = '/img/silverwolf.jpg'
   newFeatureDes = 'new new new feature!'
   disableWeighanchorLoadAnime = true
-  disableDiscoveryLoadAnime = false
+  disableDiscoveryLoadAnime = true
 
 [Params.views.plausible]
   enable = true
