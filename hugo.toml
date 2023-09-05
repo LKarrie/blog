@@ -24,6 +24,13 @@ enableEmoji = true
   newFeatureTitle = 'New feature!'
   newFeatureImg = '/img/silverwolf.jpg'
   newFeatureDes = 'new new new feature!'
+  disableWeighanchorLoadAnime = true
+  disableDiscoveryLoadAnime = true
+
+[Params.views.plausible]
+  enable = true
+  url = 'analytics.lkarrie.com'
+  site = 'dev.lkarrie.com'
 
 [Params.weighanchor.one.en]
   title = 'one'

@@ -58,3 +58,9 @@ other = "阅读时间"
 
 [Minute]
 other = "分钟"
+
+[Visitors]
+other = " 访客: "
+
+[Pageviews]
+other = " 热度: "

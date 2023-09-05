@@ -57,3 +57,9 @@ other = "Read time"
 
 [Minute]
 other = "min"
+
+[Visitors]
+other = " Visitors: "
+
+[Pageviews]
+other = " Pageviews: "

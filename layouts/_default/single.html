@@ -17,26 +17,31 @@
       {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
       {{ else }}
         {{ if  eq .Site.LanguageCode "zh-CN" }}
-        <p class="text-zinc-400 text-base">
+        <p class="text-zinc-400 text-base my-1">
           {{ T "CreatedTime" }}: {{ .Date.Format "2006年01月02日, 15时04分05秒" }}
         </p>
-        <p class="text-zinc-400 text-base">
+        <p class="text-zinc-400 text-base my-1">
           {{ T "UpdatedTime" }}: {{ .Lastmod.Format "2006年01月02日, 15时04分05秒" }}
         </p>
         {{ end }}
         {{ if  eq .Site.LanguageCode "en" }}
-        <p class="text-zinc-400 text-base">
+        <p class="text-zinc-400 text-base my-1">
           {{ T "CreatedTime" }}: {{ .Date.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
         </p>
-        <p class="text-zinc-400 text-base">
+        <p class="text-zinc-400 text-base my-1">
           {{ T "UpdatedTime" }}: {{ .Lastmod.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
         </p>
         {{ end }}
-      <p class="text-zinc-400 text-base">
+      <p class="text-zinc-400 text-base my-1">
         {{ T "WordsCount" }}: {{.WordCount}}.
         {{ T "ReadTime" }}: {{.ReadingTime}}{{ T "Minute" }}.
       </p>
       {{ end }}
+      <div class="analytics text-base my-1" page-url="{{ .RelPermalink }}"> 
+        <i class="fa-solid fa-user"></i><span class="text-zinc-400">{{ T "Visitors" }}</span><spane class="text-zinc-400"><i class="fa-solid fa-spinner animate-spainslow"></i></spane><br>
+        <i class="fa-solid fa-fire"></i><span class="text-zinc-400">{{ T "Pageviews" }}</span><spane class="text-zinc-400"><i class="fa-solid fa-spinner animate-spainslow"></i></spane>  
+      </div>
+    </section>
     </section>
 
     <section class="post-content text-base md:text-lg tracking-normal leading-relaxed antialiasedtext-zinc-400 dark:text-zinc-200">

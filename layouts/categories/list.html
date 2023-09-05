@@ -80,13 +80,29 @@
             </div>
             {{ else }}
             <div class="container px-2 mx-auto">
+                {{ if  eq .Site.LanguageCode "en" }}
                 <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-hashtag"></i>Category {{.Title}}</span></h1>
                 <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
                     {{ $key := .Title}}
-                    {{ range $cat, $des := site.Params.categories.description}}
-                        {{ if eq $cat $key }} {{$des}} {{end}} 
+                    {{ range $cat, $des := site.Params.categories.description.en}}
+                        {{ if eq (lower $cat) (lower $key) }} {{$des}} {{end}} 
                     {{ end }}
                 </p>
+                {{ end }}
+                {{ if  eq .Site.LanguageCode "zh-CN" }}
+                <div class="flex items-baseline justify-center">
+                  <h1 class="tracking-widest text-center text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white my-2 ml-2 pr-2 border-r-2 border-dashed">
+                    分类
+                  </h1>
+                  <span class="tracking-normal font-normal my-2 mr-2 pl-2 dark:text-gray-400">{{ .Title }}</span>
+                </div>
+                <p class="mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
+                    {{ $key := .Title}}
+                    {{ range $cat, $des := site.Params.categories.description.zhCN}}
+                        {{ if eq (lower $cat) (lower $key) }} {{$des}} {{end}} 
+                    {{ end }}
+                </p>
+                {{ end }}
                 {{- partial "termcard.html" . -}}
             </div>
             {{ end }}

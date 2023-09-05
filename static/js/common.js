@@ -1,5 +1,6 @@
 const blurredImageDiv = document.querySelectorAll(".blurred-img")
 const highlightDiv = document.querySelectorAll(".highlight")
+const analytics = document.querySelectorAll(".analytics")
 
 /** lazy loading js **/
 blurredImageDiv.forEach(div => {

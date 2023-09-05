@@ -1,0 +1,21 @@
+<script async>
+function getTimeNow(){
+	return new Date().toISOString().slice(0,10)
+}
+
+analytics.forEach(div => {
+  let pageurl = div.getAttribute("page-url")
+  let filters='&filters=%7B%22page%22%3A%22'+pageurl+'%22%7D'
+  let queryurl='https://{{ .Site.Params.views.plausible.url }}/api/stats/{{ .Site.Params.views.plausible.site }}/pages?period=custom&from=2020-01-01&to='+getTimeNow()
+  let queryapi=queryurl+filters
+  fetch(queryapi)
+  .then(response => response.json())
+  .then(res => {
+    if(res.length != 0){
+      div.children[2].innerHTML = res[0].count
+      div.children[6].innerHTML = res[0].pageviews
+    }
+  }) 
+  .catch(err => console.log('Get Analytics Data Failed', err))
+})
+</script>
