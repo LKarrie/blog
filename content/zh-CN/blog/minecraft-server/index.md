@@ -6,9 +6,9 @@ description: Build Minecraft Server ~
 tags: [ "Minecraft" ]
 categories : [ "Game" ]
 lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
+banner : "/img/blog/88268073.jpg"
 lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+cardImg : "/img/blog/88268073.jpg"
 ---
 
 ## Minecraft

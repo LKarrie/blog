@@ -1,14 +1,14 @@
 ---
-title: 基于SpringCloud Gateway 3.1.3的DMZ区域网关设计
+title: SpringCloud Gateway 网关设计
 date: 2022-06-26T01:51:00.000Z
 lastmod: 2022-06-26T01:51:00.000Z
-description: 基于SpringCloud Gateway的DMZ区域网关设计~
+description: 基于SpringCloud Gateway 3.1.3的DMZ区域网关设计~
 tags: [ "SpringCloud","Gateway" ]
 categories : [ "Java" ]
 lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
+banner : "/img/blog/99118291.png"
 lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+cardImg : "/img/blog/99118291.png"
 ---
 
 # 🍇

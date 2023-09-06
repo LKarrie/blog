@@ -6,9 +6,9 @@ description: Docker相关知识总结
 tags: [ "Docker" ]
 categories : [ "Docker" ]
 lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
+banner : "/img/blog/84036478.jpg"
 lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+cardImg : "/img/blog/84036478.jpg"
 ---
 
 # ☕

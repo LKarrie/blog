@@ -1,14 +1,14 @@
 ---
-title: SpringBoot Actuator Prometheus 自定义埋点
+title: SpringBoot Actuator Prometheus
 date: 2022-09-30T20:10:00.000Z
 lastmod: 2022-09-30T20:10:00.000Z
 description: Spring Boot Actuator Prometheus 自定义埋点~
 tags: [ "SpringBoot","Actuator" ]
 categories : [ "Java" ]
 lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
+banner : "/img/blog/101267080.jpg"
 lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+cardImg : "/img/blog/101267080.jpg"
 ---
 
 ## 🍮

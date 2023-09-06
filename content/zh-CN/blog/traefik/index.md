@@ -1,14 +1,14 @@
 ---
-title: 在K3S、RANCHER中使用Traefik的正确姿势
+title: Traefik使用指北
 date: 2022-03-02T00:05:00.000Z
 lastmod: 2022-03-02T00:05:00.000Z
-description: Traefik使用指北~
+description: 在K3S、RANCHER中使用Traefik的正确姿势~
 tags: [ "Traefik" ]
 categories : [ "K8S" ]
 lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
+banner : "/img/blog/30413138.jpg"
 lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+cardImg : "/img/blog/30413138.jpg"
 ---
 
 ## 💕

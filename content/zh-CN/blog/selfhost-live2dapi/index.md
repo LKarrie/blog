@@ -6,9 +6,9 @@ description: 创建属于自己的看板娘API~
 tags: [ "Live2d" ]
 categories : [ "NGINX" ]
 lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
+banner : "/img/blog/99127546.jpg"
 lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+cardImg : "/img/blog/99127546.jpg"
 ---
 
 ## 🌿

@@ -6,9 +6,9 @@ description: k3s和rancher的一些工作部署总结~
 tags: [ "K3S","Rancher" ]
 categories : [ "K8S" ]
 lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
+banner : "/img/blog/85074489.jpg"
 lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+cardImg : "/img/blog/85074489.jpg"
 ---
 
 # 🥕
