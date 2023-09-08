@@ -5,10 +5,10 @@ lastmod: 2022-09-30T20:10:00.000Z
 description: Spring Boot Actuator Prometheus 自定义埋点~
 tags: [ "SpringBoot","Actuator" ]
 categories : [ "Java" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/blog/101267080.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/blog/101267080.jpg"
+lazyBanner : "/imglazy/blog/actuator-lazy.jpg"
+banner : "/img/blog/actuator.jpg"
+lazyCardImg : "/imglazy/blog/actuator-lazy.jpg"
+cardImg : "/img/blog/actuator.jpg"
 ---
 
 ## 🍮

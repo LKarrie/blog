@@ -5,13 +5,13 @@ lastmod: 2022-03-21T00:26:00.000Z
 description: Docker相关知识总结
 tags: [ "Docker" ]
 categories : [ "Docker" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/blog/84036478.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/blog/84036478.jpg"
+lazyBanner : "/imglazy/blog/docker-lazy.jpg"
+banner : "/img/blog/docker.jpg"
+lazyCardImg : "/imglazy/blog/docker-lazy.jpg"
+cardImg : "/img/blog/docker.jpg"
 ---
 
-# ☕
+## ☕
 
 ## 0.前言
 
@@ -20,8 +20,6 @@ cardImg : "/img/blog/84036478.jpg"
 最近发的文章里大部分都有容器相关的东西，就考虑把以前学习时候的文档拿出来水一水，这是我旧的博客（已经停了）里翻出来的，大概两年前的东西了，虽然有点旧但是内容是挺多的，适合学习使用
 
 文章的内容是我在一位优秀的前辈 [编程不良人](https://space.bilibili.com/352224540?spm_id_from=333.788.b_765f7570696e666f.1) 的笔记之上，整合自己的学习和理解添加补充修改后形成
-
-文章分为上下两部分，本篇是上半，[下半部分在这里（点我）](https://blog.lkarrie.com/archives/docker2)
 
 （说起来真的非常感谢这位老师的JAVA和一些其他的基础视频，在我还在写该死的Oracle Package时，是这位老师的课程让我成功转型，真的非常感谢这位老师，如果觉得这篇文章不错可以多多关注[编程不良人](https://space.bilibili.com/352224540?spm_id_from=333.788.b_765f7570696e666f.1)老师的B站账号！
 

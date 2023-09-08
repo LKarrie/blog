@@ -942,8 +942,8 @@ video {
   height: 10rem;
 }
 
-.h-56{
-  height: 14rem;
+.h-48{
+  height: 12rem;
 }
 
 .h-6{
@@ -1059,8 +1059,24 @@ video {
   width: 100%;
 }
 
+.w-\[500px\]{
+  width: 500px;
+}
+
+.w-\[600px\]{
+  width: 600px;
+}
+
 .min-w-\[200px\]{
   min-width: 200px;
+}
+
+.min-w-\[600px\]{
+  min-width: 600px;
+}
+
+.min-w-\[800px\]{
+  min-width: 800px;
 }
 
 .flex-1{
@@ -1568,8 +1584,16 @@ video {
   background-image: url('../img/wave.png');
 }
 
-.bg-weighanchor1-lazy{
-  background-image: url('../imglazy/weighanchor1-lazy.png');
+.bg-weighanchor1-lazy-jpg{
+  background-image: url('../imglazy/weighanchor1-lazy.jpg');
+}
+
+.bg-weighanchor2-lazy-jpg{
+  background-image: url('../imglazy/weighanchor2-lazy.jpg');
+}
+
+.bg-weighanchor3-lazy-jpg{
+  background-image: url('../imglazy/weighanchor3-lazy.jpg');
 }
 
 .from-gray-400{
@@ -1992,11 +2016,6 @@ video {
 
 .text-transparent{
   color: transparent;
-}
-
-.text-violet-950{
-  --tw-text-opacity: 1;
-  color: rgb(46 16 101 / var(--tw-text-opacity));
 }
 
 .text-white{
@@ -3218,6 +3237,10 @@ video {
     height: 3rem;
   }
 
+  .md\:h-64{
+    height: 16rem;
+  }
+
   .md\:h-8{
     height: 2rem;
   }
@@ -3396,6 +3419,11 @@ video {
   .md\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-black{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
   }
 
   .md\:text-slate-200{

@@ -5,10 +5,10 @@ lastmod: 2022-03-02T00:05:00.000Z
 description: k3s和rancher的一些工作部署总结~
 tags: [ "K3S","Rancher" ]
 categories : [ "K8S" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/blog/85074489.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/blog/85074489.jpg"
+lazyBanner : "/imglazy/blog/rancher-k3s-lazy.jpg"
+banner : "/img/blog/rancher-k3s.jpg"
+lazyCardImg : "/imglazy/blog/rancher-k3s-lazy.jpg"
+cardImg : "/img/blog/rancher-k3s.jpg"
 ---
 
 # 🥕

@@ -1,4 +1,4 @@
-baseURL = 'https://dev.lkarrie.com'
+baseURL = 'https://blog.lkarrie.com'
 defaultContentLanguage = 'zh-CN'
 title = 'LKarrie'
 enableEmoji = true
@@ -20,7 +20,7 @@ enableEmoji = true
   defaulCardImg = '/img/weighanchor1.png'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
   syntaxHighlighter = "highlight.js"
-  helloText = 'Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ .'
+  helloText = '⚡peace~ peace~ peace~ peace~ peace~ ⚡'
   newFeatureTitle = 'New feature!'
   newFeatureImg = '/img/silverwolf.jpg'
   newFeatureDes = 'new new new feature!'
@@ -33,39 +33,39 @@ enableEmoji = true
   site = 'dev.lkarrie.com'
 
 [Params.weighanchor.one.en]
-  title = 'one'
-  image = '/img/weighanchor1.png'
-  description = 'weighanchor one'
-  url = '/about'
+  title = 'Under Maintenance'
+  image = '/img/weighanchor1.jpg'
+  description = 'Oops sry :('
+  url = '/'
   
 [Params.weighanchor.two.en]
-  title = 'two'
-  image = '/img/weighanchor1.png'
-  description = 'weighanchor two'
+  title = 'Under Maintenance'
+  image = '/img/weighanchor2.jpg'
+  description = 'Oops sry :('
   url = '/'
 
 [Params.weighanchor.three.en]
-  title = 'three'
-  image = '/img/weighanchor1.png'
-  description = 'weighanchor three'
+  title = 'Under Maintenance'
+  image = '/img/weighanchor3.jpg'
+  description = '维护中... 下次再来看看吧:)'
   url = '/'
 
 [Params.weighanchor.one.zhCN]
-  title = 'one zhCN'
-  image = '/img/weighanchor1.png'
-  description = 'weighanchor one zhCN'
+  title = '维护中...'
+  image = '/img/weighanchor1.jpg'
+  description = '维护中... 下次再来看看吧:)'
   url = '/'
 
 [Params.weighanchor.two.zhCN]
-  title = 'two zhCN'
-  image = '/img/weighanchor1.png'
-  description = 'weighanchor two zhCN'
+  title = '维护中...'
+  image = '/img/weighanchor2.jpg'
+  description = '维护中... 下次再来看看吧:)'
   url = '/'
 
 [Params.weighanchor.three.zhCN]
-  title = 'three zhCN'
-  image = '/img/weighanchor1.png'
-  description = 'weighanchor three zhCN'
+  title = '维护中...'
+  image = '/img/weighanchor3.jpg'
+  description = '维护中... 下次再来看看吧:)'
   url = '/'
 
 [Params.mobile]
@@ -112,6 +112,12 @@ enableEmoji = true
   default = '文章分类'
   game = '游戏~ 🎮'
 
+[Params.links.description.en]
+  default = 'friend link'
+
+[Params.links.description.zhCN]
+  default = '小伙伴们~'
+
 [Params.home]
   showVideo = false
   homeBgStartIndex = 0
@@ -126,6 +132,46 @@ enableEmoji = true
   weibo = 'https://weibo.com/u/6707437821'
   steam = 'https://steamcommunity.com/id/LKarrie'
 
+[[Params.link]] 
+  name = 'HAHA'
+  url = 'https://deployment.net.cn/'
+  logo = 'https://image.lkarrie.com/images/2022/02/12/HAHA.jpg'
+[[Params.link]] 
+  name = '不予の测试笔记'
+  url = 'https://www.shibuyu.fun'
+  logo = 'https://www.shibuyu.fun/logo'
+[[Params.link]] 
+  name = '喵雨の小屋'
+  url = 'https://meowrain.cn'
+  logo = 'https://meowrain.cn/upload/2022/06/Snipaste_2022-06-30_20-24-55.png'    
+[[Params.link]] 
+  name = '低调小熊猫'
+  url = 'https://ilovey.live'
+  logo = 'https://uss.ilovey.live/img/avatar.jpg'    
+[[Params.link]] 
+  name = '宇生の后花园'
+  url = 'https://blog.yuse.cc'
+  logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'    
+[[Params.link]] 
+  name = '墨言笙歌'
+  url = 'https://gxjblog.com'
+  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'    
+[[Params.link]] 
+  name = '凛音的奇幻树屋'
+  url = 'https://www.rinne.ink'
+  logo = 'https://public-1306037490.cos.ap-beijing.myqcloud.com/logo.jpg'     
+[[Params.link]] 
+  name = 'FGHRSH'
+  url = 'https://www.fghrsh.net'
+  logo = '//fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg'    
+[[Params.link]] 
+  name = 'Takagi'
+  url = 'https://lixingyong.com/'
+  logo = 'https://image.lkarrie.com/images/2022/07/03/takagi.webp'        
+[[Params.link]] 
+  name = 'Mashiro'
+  url = 'https://2heng.xin/'
+  logo = 'https://image.lkarrie.com/images/2022/07/03/mashiro.jpg'
 
 [markup]
   [markup.highlight]

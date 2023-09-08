@@ -5,15 +5,15 @@ lastmod: 2022-06-26T01:51:00.000Z
 description: 基于SpringCloud Gateway 3.1.3的DMZ区域网关设计~
 tags: [ "SpringCloud","Gateway" ]
 categories : [ "Java" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/blog/99118291.png"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/blog/99118291.png"
+lazyBanner : "/imglazy/blog/springcloud-gateway-lazy.jpg"
+banner : "/img/blog/springcloud-gateway.jpg"
+lazyCardImg : "/imglazy/blog/springcloud-gateway-lazy.jpg"
+cardImg : "/img/blog/springcloud-gateway.jpg"
 ---
 
-# 🍇
+## 🍇
 
-文章封面来自[necömi-魔女の旅々 学園](https://www.pixiv.net/artworks/99118291)
+文章封面来自[月夜](https://www.pixiv.net/users/8968)
 
 最近接到BOSS的一个需求，需要在DMZ网络区域整一个网关出来转发到其他网络区域的系统，当然不允许直接透明转发，需要做到接口方法级别（GET、POST、PUT、DELETE等等）的限制，并根据IP可以动态控制访问权限
 

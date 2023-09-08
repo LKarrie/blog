@@ -5,13 +5,13 @@ lastmod: 2022-05-05T12:40:00.000Z
 description: K3S etcd数据回滚~
 tags: [ "K3S","ETCD" ]
 categories : [ "K8S" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+lazyBanner : "/imglazy/blog/k3s-etcd-rollback-lazy.png"
+banner : "/img/blog/k3s-etcd-rollback.png"
+lazyCardImg : "/imglazy/blog/k3s-etcd-rollback-lazy.png"
+cardImg : "/img/blog/k3s-etcd-rollback.png"
 ---
 
-# 🐈
+## 🐈
 
 文章封面来自[まふゆ-★](https://www.pixiv.net/artworks/83736901)
 

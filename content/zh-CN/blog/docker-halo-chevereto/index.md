@@ -1,27 +1,27 @@
 ---
 title: Docker部署Halo和Chevereto
 date: 2022-03-21T00:26:00.000Z
-lastmod: 2022-03-21T00:26:00.000Z
+lastmod: 2023-09-08T13:14:00.000Z
 description: Docker部署Halo和Chevereto相关笔记
 tags: [ "Docker","Chevereto","Halo" ]
 categories : [ "Docker" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+lazyBanner : "/imglazy/blog/docker-halo-chevereto-lazy.jpg"
+banner : "/img/blog/docker-halo-chevereto.jpg"
+lazyCardImg : "/imglazy/blog/docker-halo-chevereto-lazy.jpg"
+cardImg : "/img/blog/docker-halo-chevereto.jpg"
 ---
 
 ## 🍀
 
-本篇简单介绍一下，本站相关的后台服务搭建
+本篇简单介绍一下，使用Docker部署Halo和Chevereto
 
-文章封面来自[まよぎい - 一緒にごろごろしたいなぁ～...なーんてw](https://www.pixiv.net/artworks/77915926)
+文章封面来自[哆啦小熙 - < ， >](https://www.pixiv.net/artworks/85705596)
 
-本片文章涉及Docker相关的基础使用，如果你对Docker不是很了解，欢迎阅读一下我的[Docker笔记](https://blog.lkarrie.com/archives/docker)
+本片文章涉及Docker相关的基础使用，如果你对Docker不是很了解，欢迎阅读一下我的[Docker笔记](https://blog.lkarrie.com/blog/docker/)
 
 ## Docker helo
 
-本站后台使用的halo，关于halo的部署方式官网有很多介绍，关于docker的部署也介绍的十分详细，[官方docker部署文档](https://docs.halo.run/getting-started/install/docker)
+关于halo的部署方式官网有很多介绍，关于docker的部署也介绍的十分详细，[官方docker部署文档](https://docs.halo.run/getting-started/install/docker)
 
 下面是本站部署的一些记录
 

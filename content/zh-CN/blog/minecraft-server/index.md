@@ -5,10 +5,10 @@ lastmod: 2022-02-25T23:25:00.000Z
 description: Build Minecraft Server ~
 tags: [ "Minecraft" ]
 categories : [ "Game" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/blog/88268073.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/blog/88268073.jpg"
+lazyBanner : "/imglazy/blog/minecraft-lazy.jpg"
+banner : "/img/blog/minecraft.jpg"
+lazyCardImg : "/imglazy/blog/minecraft-lazy.jpg"
+cardImg : "/img/blog/minecraft.jpg"
 ---
 
 ## Minecraft

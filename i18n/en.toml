@@ -13,6 +13,9 @@ other = "Tags"
 [Categories]
 other = "Categories"
 
+[Links]
+other = "links"
+
 [Anchor]
 other = "Weigh Anchor! ⛵"
 

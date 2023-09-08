@@ -17,7 +17,10 @@ module.exports = {
         'main': "url('../img/silverwolf.jpg')",
         'wave': "url('../img/wave.png')",
         'wavedark': "url('../img/wavedark.png')",
-        'weighanchor1-lazy': "url('../imglazy/weighanchor1-lazy.png')",
+        'weighanchor1-lazy-png': "url('../imglazy/weighanchor1-lazy.png')",
+        'weighanchor1-lazy-jpg': "url('../imglazy/weighanchor1-lazy.jpg')",
+        'weighanchor2-lazy-jpg': "url('../imglazy/weighanchor2-lazy.jpg')",
+        'weighanchor3-lazy-jpg': "url('../imglazy/weighanchor3-lazy.jpg')",
       },
       colors: {
         primary: '#FF6363',

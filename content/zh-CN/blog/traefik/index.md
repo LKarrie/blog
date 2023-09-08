@@ -5,10 +5,10 @@ lastmod: 2022-03-02T00:05:00.000Z
 description: 在K3S、RANCHER中使用Traefik的正确姿势~
 tags: [ "Traefik" ]
 categories : [ "K8S" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/blog/30413138.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/blog/30413138.jpg"
+lazyBanner : "/imglazy/blog/traefik-lazy.jpg"
+banner : "/img/blog/traefik.jpg"
+lazyCardImg : "/imglazy/blog/traefik-lazy.jpg"
+cardImg : "/img/blog/traefik.jpg"
 ---
 
 ## 💕
