@@ -30,7 +30,7 @@ enableEmoji = true
 [Params.views.plausible]
   enable = true
   url = 'analytics.lkarrie.com'
-  site = 'dev.lkarrie.com'
+  site = 'blog.lkarrie.com'
 
 [Params.weighanchor.one.en]
   title = 'Under Maintenance'
@@ -124,10 +124,10 @@ enableEmoji = true
   homeBgEndIndex = 1
   homeBgImage = '/img/home'
   homeBgImageSuffix = 'jpg'
-  homeBgVideo = 'https://dev.lkarrie.com/media/silverwolf.mp4/index.m3u8'
+  homeBgVideo = 'https://blog.lkarrie.com/media/silverwolf.mp4/index.m3u8'
   github = 'https://github.com/LKarrie'
   mail = 'lkarrie@163.com'
-  wechat = 'https://dev.lkarrie.com/wechat'
+  wechat = 'https://blog.lkarrie.com/wechat'
   qq = '3024505225'
   weibo = 'https://weibo.com/u/6707437821'
   steam = 'https://steamcommunity.com/id/LKarrie'
