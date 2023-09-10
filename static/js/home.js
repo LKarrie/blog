@@ -3,7 +3,8 @@ const tophaeder = document.querySelector('#tophaeder')
 const toplogo = document.querySelector('#toplogo')
 const toptext = document.querySelector('#toptext')
 
-
+const hiddenElements = document.querySelectorAll('.cantsee')
+const hiddenElements2 = document.querySelectorAll('.cantsee2')
 
 /** scroll **/
 const DIRECTION_ENUM = {
@@ -74,8 +75,6 @@ const observer = new IntersectionObserver((entries)=>{
     }
   })
 })
-
-const hiddenElements = document.querySelectorAll('.cantsee')
 hiddenElements.forEach((el)=> observer.observe(el))
 
 /** Weighanchor **/
@@ -91,6 +90,4 @@ const observer2 = new IntersectionObserver((entries)=>{
     }
   })
 })
-
-const hiddenElements2 = document.querySelectorAll('.cantsee2')
 hiddenElements2.forEach((el)=> observer2.observe(el))

@@ -1,4 +1,4 @@
-<header id="tophaeder" class="group h-16 w-full bg-white {{ if .IsHome }} bg-opacity-0 hover:bg-opacity-80 transition ease-in-out duration-300 {{ else}} bg-opacity-80 transition ease-in-out duration-300 {{ end }} fixed z-50">
+<header id="tophaeder" class="group h-16 w-full bg-white dark:bg-gray-900 dark:bg-opacity-80 {{ if .IsHome }} bg-opacity-0 hover:bg-opacity-80 transition ease-in-out duration-300 {{ else}} bg-opacity-80 transition ease-in-out duration-300 {{ end }} fixed z-50">
     <div class="h-full w-full flex items-center justify-between mx-auto my-0">
 
       <div class="absolute hidden lg:block">
@@ -12,14 +12,13 @@
             <img id="toplogo" class="w-[4.5rem] h-[4.5rem]  {{ if .IsHome }} opacity-0 group-hover:opacity-100 transition ease-in-out duration-1000 {{ end }}" src="/img/silverwolf-logo.png">
             <div id="toptext" class="{{ if .IsHome }} opacity-0 group-hover:opacity-100 transition ease-in-out duration-500 {{ end }} flex flex-col font-logo pt-4 ">
               <span class="px-1">
-                <span class="px-2 bg-white group-hover:bg-purple-400 rounded-lg h-auto w-auto text-2xl bg-opacity-0 group-hover:text-white transition ease-in-out duration-500">雑魚</span>
-                <span class="inline-block bg-white h-auto w-auto text-2xl bg-opacity-0 animate-none group-hover:animate-spin transition ease-in-out duration-500">の</span>
-                <span class="px-2 bg-white h-auto w-auto text-2xl bg-opacity-0 group-hover:text-purple-500 transition ease-in-out duration-500">小站</span>
+                <span class="dark:text-white px-2 bg-white group-hover:bg-purple-400 rounded-lg h-auto w-auto text-2xl bg-opacity-0 group-hover:text-white transition ease-in-out duration-500">雑魚</span>
+                <span class="text-gray-600 dark:text-white inline-block bg-white h-auto w-auto text-2xl bg-opacity-0 animate-none group-hover:animate-spin transition ease-in-out duration-500">の</span>
+                <span class="dark:text-white px-2 bg-white h-auto w-auto text-2xl bg-opacity-0 group-hover:text-purple-500 transition ease-in-out duration-500">小站</span>
               </span>
               <rp></rp>
                 <rt class="opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 group-hover:text-purple-500 text-xs transition ease-in-out duration-500">让杂鱼来给你整个活!</rt>
               <rp></rp>
-              </ruby>
             </div>
         </div>
 
@@ -27,35 +26,50 @@
 
       <div class="absolute h-full w-full">
         <nav id="topnav" class="flex items-center justify-center flex-col w-full h-16 opacity-0 hover:opacity-100 translate-x-28 hover:translate-x-0 transition ease-in-out duration-1000 fixed z-50">
-            <div class="text-lg hidden md:inline w-full" id="menu">
+            <div class="text-lg hidden md:inline w-full">
               <ul class="flex font-bold justify-center gap-4">
                 <li class="text-center w-28">
-                    <a href="/" class="nav">
+                    <a href="{{ absLangURL "" }}" class="nav">
                       <i class="fa-brands fa-fort-awesome animate-pulse"></i>
-                      <span>Home</span>
+                      <span>{{ T "Home" }}</span>
                     </a>
                 </li>
                 <li class="text-center w-28">
-                    <a href="/blog" class="nav">          
+                    <a href="{{ absLangURL "blog" }}/" class="nav">          
                         <i class="fa-solid fa-list-ul animate-pulse"></i>
-                        <span>Archive</span>
+                        <span>{{ T "Archive" }}</span>
                     </a>
                 </li>
                 <li class="text-center w-28">
-                  <a href="/tags" class="nav">
+                  <a href="{{ absLangURL "tags" }}/" class="nav">
                       <i class="fa-solid fa-tag animate-pulse"></i>
-                      <span>Tags</span>
+                      <span>{{ T "Tags" }}</span>
                   </a>
                 </li>
-                <li class="text-center w-30">
-                  <a href="/categories" class="nav">
+                <li class="text-center w-28">
+                  <a href="{{ absLangURL "categories" }}/" class="nav">
                       <i class="fa-solid fa-hashtag animate-pulse"></i>
-                      <span>Categories</span>
+                      <span>{{ T "Categories" }}</span>
+                  </a>
+                </li>
+                <li class="text-center w-28">
+                  <a href="{{ absLangURL "links" }}/" class="nav">
+                      <i class="fa-solid fa-link animate-pulse"></i>
+                      <span>{{ T "Links" }}</span>
                   </a>
                 </li>
               </ul>
             </div>
         </nav>
+      </div>
+
+      <!-- other -->
+      <div class="absolute right-1 z-50">
+        <div class="flex flex-row gap-1">
+        {{- partial "common/lang.html" . -}}
+        {{- partial "common/searchbtn.html" . -}}
+        {{- partial "common/darktoggle.html" . -}}
+        </div>
       </div>
     </div>
 </header>

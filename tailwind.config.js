@@ -16,7 +16,11 @@ module.exports = {
       backgroundImage: {
         'main': "url('../img/silverwolf.jpg')",
         'wave': "url('../img/wave.png')",
-        'weighanchor1-lazy': "url('../imglazy/weighanchor1-lazy.png')",
+        'wavedark': "url('../img/wavedark.png')",
+        'weighanchor1-lazy-png': "url('../imglazy/weighanchor1-lazy.png')",
+        'weighanchor1-lazy-jpg': "url('../imglazy/weighanchor1-lazy.jpg')",
+        'weighanchor2-lazy-jpg': "url('../imglazy/weighanchor2-lazy.jpg')",
+        'weighanchor3-lazy-jpg': "url('../imglazy/weighanchor3-lazy.jpg')",
       },
       colors: {
         primary: '#FF6363',
@@ -37,10 +41,31 @@ module.exports = {
       borderWidth: {
         '15': '15px',
       },
+      borderRadius: {
+        '100%': '100%',
+      },
       animation: {
         tilt: 'tilt 10s infinite linear',
+        spainslow: 'spain2 2.25s infinite linear',
+        spainslowreverse: 'spain2-reverse 2.25s infinite linear',
       },
       keyframes: {
+        spain2: {
+          '0%': {
+              transform: 'rotate(0)'
+          },
+          '100%': {
+              transform: 'rotate(359deg)'
+          }
+        },
+        'spain2-reverse': {
+          '0%': {
+              transform: 'rotate(0)'
+          },
+          '100%': {
+              transform: 'rotate(-359deg)'
+          }
+        },
         tilt: {
           '0%, 50%, 100%': {
             transform: 'rotate(0deg)',

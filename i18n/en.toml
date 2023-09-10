@@ -1,0 +1,68 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+[Home]
+other = "Home"
+
+[Archive]
+other = "Archive"
+
+[Tags]
+other = "Tags"
+
+[Categories]
+other = "Categories"
+
+[Links]
+other = "links"
+
+[Anchor]
+other = "Weigh Anchor! ⛵"
+
+[Discovery]
+other = "Discovery~ ✨"
+
+[Search]
+other = "Search Page"
+
+[Theme]
+other = "Dark / White Mode"
+
+[Translation]
+other = "Chinese / English Switch"
+
+[ReadMore]
+other = "Want to see more ?"
+
+[ClickMe]
+other = "Click me ! ➡️"
+
+[SeeMore]
+other = "See more ! "
+
+[SearchPromptInBtn]
+other = "Search ..."
+
+[Menu]
+other = "Menu"
+
+[CreatedTime]
+other = "Created at"
+
+[UpdatedTime]
+other = "Updated at"
+
+[WordsCount]
+other = "Words count"
+
+[ReadTime]
+other = "Read time"
+
+[Minute]
+other = "min"
+
+[Visitors]
+other = " Visitors: "
+
+[Pageviews]
+other = " Pageviews: "

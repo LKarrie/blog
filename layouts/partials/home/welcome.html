@@ -66,8 +66,8 @@
 
     <div class="mr-[25rem] mt-[1px] absolute mb-32 border-black/50 opacity-80 w-0 h-0 border-b-15 border-l-15 border-r-15 border-l-transparent border-r-transparent"></div>
 
-    <div class="m-4 rounded-xl bg-black/50 opacity-80 absolute shadow-lg">
-      <p class="px-6 m-4 text-white text-lg">
+    <div class="m-4 rounded-xl bg-black/50 opacity-80 absolute shadow-lg min-w-[800px]">
+      <p class="px-6 m-4 text-white text-lg text-center">
         <i class="fa-solid fa-quote-left"></i>
         {{site.Params.helloText}}
         <i class="fa-solid fa-quote-right"></i>
@@ -124,27 +124,63 @@
     gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5})
   }
 
+  function unScroll() {
+    var top = $(document).scrollTop();
+    $(document).on('scroll.unable',function (e) {
+        $(document).scrollTop(top);
+    })
+  }
+
+  function removeUnScroll() {
+      $(document).unbind("scroll.unable");
+  }
+
   function loaded() {
+    removeUnScroll()
     $(".loading-wrapper").fadeOut(500)
+    document.body.classList.remove("scrollbar-thumb-white")
+    document.body.classList.remove("scrollbar-track-white")
+    document.body.classList.remove("dark:scrollbar-thumb-gray-900")
+    document.body.classList.remove("dark:scrollbar-track-gray-900")  
+    document.body.classList.add("scrollbar-thumb-purple-300")
+    document.body.classList.add("scrollbar-track-slate-200")
+    document.body.classList.add("dark:scrollbar-thumb-purple-100")
+    document.body.classList.add("dark:scrollbar-track-slate-800")
   }
 
   const home = document.querySelector("#home-with-image")
+  /** random bg **/
+  function getRandom(N,M) {
+    return Math.floor(Math.random() * (M - N + 1)) + N
+  }
+  const start = parseInt("{{site.Params.home.homeBgStartIndex}}")
+  const end = parseInt("{{site.Params.home.homeBgEndIndex}}")
+  const random = getRandom(start,end)
+
+  const bgUrl = "{{site.Params.home.homeBgImage}}"+`${random}.`+"{{site.Params.home.homeBgImageSuffix}}"
+
+  unScroll()
   if(home){
-    console.log('bg is image')
-    const homebgimage = new Image()
-    homebgimage.src = "img/silverwolf.jpg"
-    if (homebgimage.complete) {
-      console.log('image download complate,welcome:)')
+    console.log('home bg is image')
+    if(document.body.clientWidth <= 768){
+      console.log('image cant download in mobile,welcome:)')
       loaded()
-      loadedhi()
-      loadedtext()
+    } else {
+      home.style.backgroundImage=`url(${bgUrl})`
+      const homebgimage = new Image()
+      homebgimage.src = bgUrl
+      homebgimage.onload = ()=>{
+        console.log('image download complate,welcome:)')
+        loaded()
+        loadedhi()
+        loadedtext()
+      }
     }
   }else{
     // const video = document.querySelector("#video")
     var video = videojs('video');
     if(video){
-      console.log('bg is video')
-      
+      console.log('home bg is video')
       let timer = null
       // 768 is md in tailwindcss
       if(document.body.clientWidth <= 768){
@@ -153,14 +189,10 @@
           console.log('start video download timer')
           console.log('video cant download in mobile,close timer,welcome:)')
           loaded()
-          loadedhi()
           clearInterval(timer)
-          loadedtext()
         }, 300)
         
       } else {
-
-       
         // $('#video').attr( "preload","auto")
         // $('#video').attr( "autoplay","true")
         // $('#video').attr( "muted","true")

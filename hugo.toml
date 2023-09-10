@@ -1,8 +1,17 @@
-baseURL = 'https://dev.lkarrie.com'
-languageCode = 'zh-cn'
+baseURL = 'https://blog.lkarrie.com'
+defaultContentLanguage = 'zh-CN'
 title = 'LKarrie'
-paginate = '1'
 enableEmoji = true
+[outputs]
+  home = [ "HTML", "RSS"]
+
+[languages]
+  [languages.zh-CN]
+    contentDir = 'content/zh-CN'
+    languageCode = 'zh-CN'
+  [languages.en]
+    contentDir = 'content/en'
+    languageCode = 'en'
 
 [Params]
   description = '雑魚の小站'
@@ -11,39 +20,158 @@ enableEmoji = true
   defaulCardImg = '/img/weighanchor1.png'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
   syntaxHighlighter = "highlight.js"
-  helloText = "Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello! ^^ ."
+  helloText = '⚡peace~ peace~ peace~ peace~ peace~ ⚡'
+  newFeatureTitle = 'New feature!'
   newFeatureImg = '/img/silverwolf.jpg'
+  newFeatureDes = 'new new new feature!'
+  disableWeighanchorLoadAnime = true
+  disableDiscoveryLoadAnime = true
+
+[Params.views.plausible]
+  enable = true
+  url = 'analytics.lkarrie.com'
+  site = 'blog.lkarrie.com'
+
+[Params.weighanchor.one.en]
+  title = 'Under Maintenance'
+  image = '/img/weighanchor1.jpg'
+  description = 'Oops sry :('
+  url = '/'
+  
+[Params.weighanchor.two.en]
+  title = 'Under Maintenance'
+  image = '/img/weighanchor2.jpg'
+  description = 'Oops sry :('
+  url = '/'
+
+[Params.weighanchor.three.en]
+  title = 'Under Maintenance'
+  image = '/img/weighanchor3.jpg'
+  description = '维护中... 下次再来看看吧:)'
+  url = '/'
+
+[Params.weighanchor.one.zhCN]
+  title = '维护中...'
+  image = '/img/weighanchor1.jpg'
+  description = '维护中... 下次再来看看吧:)'
+  url = '/'
+
+[Params.weighanchor.two.zhCN]
+  title = '维护中...'
+  image = '/img/weighanchor2.jpg'
+  description = '维护中... 下次再来看看吧:)'
+  url = '/'
+
+[Params.weighanchor.three.zhCN]
+  title = '维护中...'
+  image = '/img/weighanchor3.jpg'
+  description = '维护中... 下次再来看看吧:)'
+  url = '/'
 
 [Params.mobile]
   avatar = '/img/avatar.jpg'
-  helloText = "hello this is my mobile version"
+  helloText = 'hello this is my mobile version'
 
-[Params.categories.description]
-  cat1 = 'cat1 description'
-  cat2 = 'cat2 description'
-  cat3 = 'cat3 description'
-  default = 'categories.description'
+[Params.newFeature.en]
+  title = 'New feature!'
+  image = '/img/silverwolf.jpg'
+  description = 'new new new feature!'
+  url = '/'
 
-[Params.archive.description]
-  default = 'archive.description'
+[Params.newFeature.zhCN]
+  title = '没用的功能又增加了🧐'
+  image = '/img/silverwolf.jpg'
+  description = '1.新增黑白模式;2.新增中英文翻译... 详细信息戳我一下'
+  url = '/'
 
-[Params.tags.description]
-  tag1 = 'tag1 description'
-  tag2 = 'tag2 description'
-  tag3 = 'tag3 description'
-  default = 'tags.description'  
+[Params.mobile.description.en]
+  menuDes = 'Where u wanna go ? ~'
+
+[Params.mobile.description.zhCN]
+  menuDes = '你想去哪 ? ~ 🤔'  
+
+[Params.archive.description.en]
+  default = 'blog archive'
+
+[Params.archive.description.zhCN]
+  default = '文章归档'
+
+[Params.tags.description.en]
+  default = 'blog tags'  
+  minecraft = 'mc mc mc !'
+
+[Params.tags.description.zhCN]
+  default = '文章标签'  
+  minecraft = 'mc mc mc ~'
+
+[Params.categories.description.en]
+  default = 'blog categories'
+  game = 'happy game time~ 🎮'
+
+[Params.categories.description.zhCN]
+  default = '文章分类'
+  game = '游戏~ 🎮'
+
+[Params.links.description.en]
+  default = 'friend link'
+
+[Params.links.description.zhCN]
+  default = '小伙伴们~'
 
 [Params.home]
-  showVideo = true
-  HomeBgImage = '/img/silverwolf.jpg'
-  homeBgVideo = 'https://dev.lkarrie.com/media/silverwolf.mp4/index.m3u8'
+  showVideo = false
+  homeBgStartIndex = 0
+  homeBgEndIndex = 1
+  homeBgImage = '/img/home'
+  homeBgImageSuffix = 'jpg'
+  homeBgVideo = 'https://blog.lkarrie.com/media/silverwolf.mp4/index.m3u8'
   github = 'https://github.com/LKarrie'
   mail = 'lkarrie@163.com'
-  wechat = 'https://dev.lkarrie.com/wechat'
+  wechat = 'https://blog.lkarrie.com/wechat'
   qq = '3024505225'
   weibo = 'https://weibo.com/u/6707437821'
   steam = 'https://steamcommunity.com/id/LKarrie'
 
+[[Params.link]] 
+  name = 'HAHA'
+  url = 'https://deployment.net.cn/'
+  logo = 'https://image.lkarrie.com/images/2022/02/12/HAHA.jpg'
+[[Params.link]] 
+  name = '不予の测试笔记'
+  url = 'https://www.shibuyu.fun'
+  logo = 'https://www.shibuyu.fun/logo'
+[[Params.link]] 
+  name = '喵雨の小屋'
+  url = 'https://meowrain.cn'
+  logo = 'https://meowrain.cn/upload/2022/06/Snipaste_2022-06-30_20-24-55.png'    
+[[Params.link]] 
+  name = '低调小熊猫'
+  url = 'https://ilovey.live'
+  logo = 'https://uss.ilovey.live/img/avatar.jpg'    
+[[Params.link]] 
+  name = '宇生の后花园'
+  url = 'https://blog.yuse.cc'
+  logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'    
+[[Params.link]] 
+  name = '墨言笙歌'
+  url = 'https://gxjblog.com'
+  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'    
+[[Params.link]] 
+  name = '凛音的奇幻树屋'
+  url = 'https://www.rinne.ink'
+  logo = 'https://public-1306037490.cos.ap-beijing.myqcloud.com/logo.jpg'     
+[[Params.link]] 
+  name = 'FGHRSH'
+  url = 'https://www.fghrsh.net'
+  logo = '//fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg'    
+[[Params.link]] 
+  name = 'Takagi'
+  url = 'https://lixingyong.com/'
+  logo = 'https://image.lkarrie.com/images/2022/07/03/takagi.webp'        
+[[Params.link]] 
+  name = 'Mashiro'
+  url = 'https://2heng.xin/'
+  logo = 'https://image.lkarrie.com/images/2022/07/03/mashiro.jpg'
 
 [markup]
   [markup.highlight]

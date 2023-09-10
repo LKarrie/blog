@@ -1,13 +1,9 @@
-<!-- <div class="blurred-img relative bg-center bg-cover bg-weighanchor1-lazy">
-  <img class="opacity-0 transition-opacity duration-1000 ease-in-out md:h-full w-full rounded-xl object-center object-cover shadow-black/40" src="/img/weighanchor1.png" loading="lazy">
-</div> -->
-
 {{ if .Params.banner }}
-  <div class="min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Params.lazyBanner }}')">
-    <img class="min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Params.banner }}" loading="lazy">
+  <div class="bend-border min-h-[200px] md:min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Params.lazyBanner }}')">
+    <img draggable="false" class="min-h-[200px] md:min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Params.banner }}" loading="lazy">
   </div>
 {{ else }}
-  <div class="min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Site.Params.defaulLazyBanner }}')">
-    <img class="min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Site.Params.defaulBanner }}" loading="lazy">
+  <div class="bend-border min-h-[200px] md:min-h-[300px] h-full w-full blurred-img relative bg-center bg-cover" style="background-image: url('{{ .Site.Params.defaulLazyBanner }}')">
+    <img draggable="false" class="min-h-[200px] md:min-h-[300px] h-full w-full opacity-0 transition-opacity duration-1000 ease-in-out object-center object-cover shadow-black/40" src="{{ .Site.Params.defaulBanner }}" loading="lazy">
   </div>
 {{ end }}

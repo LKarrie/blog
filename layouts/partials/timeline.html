@@ -1,49 +1,25 @@
-<!-- <div class="mx-4 flex justify-center items-center flex-col pt-8">
-  <section class="w-full md:w-[800px]">
-    {{ range .Pages.GroupByDate "2006" "desc" }}      
-        <h3 class="group-date-year">  {{ .Key }} </h3>      
-        {{ range .Pages.GroupByDate "2006-01" "desc" }}
-        <div class="timeline">
-          
-            <div class="relative">
-              <div class="dot-md" title="test">
-                <div class="dot-md-ping"></div>
-              </div>
-              <div class="timeline-item">
-                <h3 class="group-date-month" >  {{ .Key }} </h3>
-              </div>
-            </div>
-
-          {{ range .Pages.ByTitle.Reverse }}
-            <div class="relative">
-              <div class="dot-sm" title="test">
-                <div class="dot-sm-ping"></div>
-              </div>
-              <div class="pl-10 group">
-                <span class="timeline-date"> {{ .Date.Format "Mon, Jan 2, 2006" }} </span>
-                <h3 class="timeline-title" > {{ .Title }} </h3>
-                <span class="text-gray-500">
-                  {{ .Description }}
-                </span>
-              </div>
-            </div>
-          {{ end }}
-          
-        </div>
-        {{ end }}
-
-    {{ end }}
-  </section>
-</div> -->
-<div class="mx-4 flex justify-center items-center flex-col pt-8">
+<div class="mx-4 flex justify-center items-center flex-col pt-4">
   <div class="w-full md:w-[800px] ">
     <section class="my-8 bg-white dark:bg-gray-900">
       <div class="container px-2 mx-auto">
-        <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-bars-staggered"></i>{{ .Title }}</span></h1>
-        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-          {{site.Params.archive.description.default}}
+        {{ if  eq .Site.LanguageCode "zh-CN" }}
+        <div class="flex items-baseline justify-center">
+          <h1 class="tracking-widest text-center text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white my-2 ml-2 pr-2 border-r-2 border-dashed">
+            {{ .Title }}
+          </h1>
+          <span class="tracking-normal font-normal my-2 mr-2 pl-2 dark:text-gray-400">Archive</span>
+        </div>
+        <p class="mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
+          {{site.Params.archive.description.zhCN.default}}
         </p>
-        <div class="mx-0 flex justify-center items-center flex-col pt-8">
+        {{ end }}
+        {{ if  eq .Site.LanguageCode "en" }}
+        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-bars-staggered"></i>{{ .Title }}</span></h1>
+        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
+          {{site.Params.archive.description.en.default}}
+        </p>
+        {{ end }}
+        <div class="mx-0 flex justify-center items-center flex-col pt-4">
           <section class="w-full md:w-[800px] px-0 md:px-2">
             {{ range .Pages.GroupByDate "2006" "desc" }}      
                 <h3 class="group-date-year">  {{ .Key }} </h3>  
@@ -71,9 +47,13 @@
                         <div class="hidden timeline-item-bg mx-4 my-2 p-3 rounded md:grid grid-rows-[0fr] group-hover:grid-rows-[1fr] duration-500">
 
                           <div class="md:overflow-hidden">
+                            {{ if  eq .Site.LanguageCode "zh-CN" }}
+                            <span class="timeline-date block"> {{ .Date.Format "2006年1月02日" }} </span>
+                            {{ end }}
+                            {{ if  eq .Site.LanguageCode "en" }}
                             <span class="timeline-date block"> {{ .Date.Format "Mon, Jan 2, 2006" }} </span>
-                          
-                            <span class="text-gray-500">
+                            {{ end }}
+                            <span class="text-gray-500 dark:text-white">
                               {{ .Description }}
                             </span>
                           </div>

@@ -1,32 +1,50 @@
 {{ define "main" }}
-<div class="mx-4 flex justify-center items-center flex-col pt-8">
+<div class="mx-4 flex justify-center items-center flex-col pt-4">
   <div class="w-full md:w-[800px] ">
     <article>
     <section class="my-8">
-      <h1 class="text-3xl lg:text-4xl font-semibold mb-4">{{ .Title }}</h1>
+      <h1 class="text-3xl md:text-4xl font-semibold mb-4 dark:text-white">{{ .Title }}</h1>
       <p class="text-base my-2">
         {{ range $category := .Params.categories }}
-        <a class="pr-4 text-blue-400 hover:text-blue-600" href="/categories/{{$category}}"><i class="fa-solid fa-hashtag"></i>{{$category}}</a>
+        <a class="pr-4 text-blue-400 hover:text-blue-600" href="{{ absLangURL "categories" }}/{{lower $category}}"><i class="fa-solid fa-hashtag"></i>{{$category}}</a>
         {{ end }}
       </p>
       <p class="text-base my-2">
         {{ range $tag := .Params.tags }}
-        <a class="pr-4 text-blue-400 hover:text-blue-600" href="/tags/{{$tag}}"><i class="fa-solid fa-tag"></i>{{$tag}}</a>
+        <a class="pr-4 text-blue-400 hover:text-blue-600" href="{{ absLangURL "tags" }}/{{lower $tag}}"><i class="fa-solid fa-tag"></i>{{$tag}}</a>
         {{ end }}
       </p>
-      <p class="text-zinc-400 text-base">
-        {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
-        {{ else }}
-          Created at: {{ .Date.Format "Jan 02, 2006" }}
+      {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
+      {{ else }}
+        {{ if  eq .Site.LanguageCode "zh-CN" }}
+        <p class="text-zinc-400 text-base my-1">
+          {{ T "CreatedTime" }}: {{ .Date.Format "2006年01月02日, 15时04分05秒" }}
+        </p>
+        <p class="text-zinc-400 text-base my-1">
+          {{ T "UpdatedTime" }}: {{ .Lastmod.Format "2006年01月02日, 15时04分05秒" }}
+        </p>
         {{ end }}
+        {{ if  eq .Site.LanguageCode "en" }}
+        <p class="text-zinc-400 text-base my-1">
+          {{ T "CreatedTime" }}: {{ .Date.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
+        </p>
+        <p class="text-zinc-400 text-base my-1">
+          {{ T "UpdatedTime" }}: {{ .Lastmod.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
+        </p>
+        {{ end }}
+      <p class="text-zinc-400 text-base my-1">
+        {{ T "WordsCount" }}: {{.WordCount}}.
+        {{ T "ReadTime" }}: {{.ReadingTime}}{{ T "Minute" }}.
       </p>
-      <p class="text-zinc-400 text-base">
-        Words count: {{.FuzzyWordCount}}.
-        Read time: {{.ReadingTime}}min.
-      </p>
+      {{ end }}
+      <div class="analytics text-base my-1" page-url="{{ .RelPermalink }}"> 
+        <i class="fa-solid fa-user"></i><span class="text-zinc-400">{{ T "Visitors" }}</span><spane class="text-zinc-400"><i class="fa-solid fa-spinner animate-spainslow"></i></spane><br>
+        <i class="fa-solid fa-fire"></i><span class="text-zinc-400">{{ T "Pageviews" }}</span><spane class="text-zinc-400"><i class="fa-solid fa-spinner animate-spainslow"></i></spane>  
+      </div>
+    </section>
     </section>
 
-    <section class="post-content text-xl tracking-wide leading-relaxed">
+    <section class="post-content text-base md:text-lg tracking-normal leading-relaxed antialiasedtext-zinc-400 dark:text-zinc-200">
       {{ .Content }}
     </section>
     </article>

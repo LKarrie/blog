@@ -1,0 +1,69 @@
+# Translations for Simplified Chinese
+# 简体中文的翻译
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+[Home]
+other = "首页"
+
+[Archive]
+other = "归档"
+
+[Tags]
+other = "标签"
+
+[Categories]
+other = "分类"
+
+[Links]
+other = "友链"
+
+[Anchor]
+other = "启航! ⛵"
+
+[Discovery]
+other = "随便看看~ ✨"
+
+[Search]
+other = "搜索页"
+
+[Theme]
+other = "深色 / 浅色模式"
+
+[Translation]
+other = "中 / 英文切换"
+
+[ReadMore]
+other = "不够看 ?"
+
+[ClickMe]
+other = "戳我 ! ➡️"
+
+[SeeMore]
+other = "查看更多 ! "
+
+[SearchPromptInBtn]
+other = "找一些感兴趣的东西吧 ..."
+
+[Menu]
+other = "菜单"
+
+[CreatedTime]
+other = "创建时间"
+
+[UpdatedTime]
+other = "更新时间"
+
+[WordsCount]
+other = "文章字数"
+
+[ReadTime]
+other = "阅读时间"
+
+[Minute]
+other = "分钟"
+
+[Visitors]
+other = " 访客: "
+
+[Pageviews]
+other = " 热度: "
