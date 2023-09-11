@@ -26,6 +26,7 @@ enableEmoji = true
   newFeatureDes = 'new new new feature!'
   disableWeighanchorLoadAnime = true
   disableDiscoveryLoadAnime = true
+  fancybox = true
 
 [Params.views.plausible]
   enable = true
