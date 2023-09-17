@@ -22,6 +22,13 @@
       <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
       <script src="{{ .Site.BaseURL }}/js/throttleDebounce.js"></script>
       <script src="{{ .Site.BaseURL }}/js/common.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/jquery-3.5.1-jquery.min.js"></script>
+      <!-- fancybox -->
+      {{if .Page.Site.Params.fancybox }}
+        <script src="{{ .Site.BaseURL }}/js/fancybox-3.5.7-jquery.fancybox.min.js"></script>
+      {{ end }}
+      <!-- fancybox -->
+
       <!-- /common js -->
       {{ if .IsHome }}
         <!-- Additional scripts and Block cannot repeat -->

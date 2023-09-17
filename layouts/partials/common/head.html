@@ -23,14 +23,6 @@
     <meta name="robots" content="index,follow">
     <meta name="HandheldFriendly" content="True">
 
-    <!-- fancybox -->
-    {{if .Page.Site.Params.fancybox }}
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-      <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    {{ end }}
-    <!-- fancybox -->
-
     <!-- theme style js -->
     <script>
       if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -42,7 +34,6 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/lkarrie.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/font-awesome-6.4.0-css-all.min.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/mainload.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/wave.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/cardanime.css" rel="stylesheet" />
@@ -52,6 +43,7 @@
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/dracula.min.css">
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/hljs.css">
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/fancybox-3.5.7-jquery.fancybox.min.css" />
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/google-light.min.css"> -->
     <style>
       #search-input{

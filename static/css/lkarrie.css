@@ -767,6 +767,11 @@ video {
   margin-bottom: 1px;
 }
 
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mb-1{
   margin-bottom: 0.25rem;
 }
@@ -1059,20 +1064,8 @@ video {
   width: 100%;
 }
 
-.w-\[500px\]{
-  width: 500px;
-}
-
-.w-\[600px\]{
-  width: 600px;
-}
-
 .min-w-\[200px\]{
   min-width: 200px;
-}
-
-.min-w-\[600px\]{
-  min-width: 600px;
 }
 
 .min-w-\[800px\]{
