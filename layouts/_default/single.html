@@ -1,6 +1,9 @@
 {{ define "main" }}
-<div class="mx-4 flex justify-center items-center flex-col pt-4">
-  <div class="w-full md:w-[800px] ">
+<div class="mx-4 flex justify-center md:justify-between items-center flex-col md:flex-row pt-4">
+  <div class="hidden md:block w-[400px] text-lg self-start sticky top-16">
+    {{- partial "common/toc.html" . }}
+  </div>
+  <div class="w-full md:w-[500px] lg:w-[800px]">
     <article>
     <section class="my-8">
       <h1 class="text-3xl md:text-4xl font-semibold mb-4 dark:text-white">{{ .Title }}</h1>
@@ -43,7 +46,6 @@
       </div>
     </section>
     </section>
-
     <section class="post-content text-base md:text-lg tracking-normal leading-relaxed antialiasedtext-zinc-400 dark:text-zinc-200">
       {{ .Content }}
     </section>
@@ -54,6 +56,10 @@
       {{ .TableOfContents }}
     </aside> -->
 
+  </div>
+
+  <div class="hidden md:block w-[400px] text-lg self-start">
+      <!-- other menu -->
   </div>
 </div>
 {{ end }}

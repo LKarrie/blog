@@ -124,7 +124,7 @@
   @apply font-medium text-blue-600 dark:text-blue-500 hover:underline
 }
 .post-content p {
-  @apply py-2
+  @apply py-2 break-all
 }
 .post-content p img{
   @apply m-auto py-4

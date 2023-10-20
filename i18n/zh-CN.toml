@@ -67,3 +67,6 @@ other = " 访客: "
 
 [Pageviews]
 other = " 热度: "
+
+[TOC]
+other = "目录"

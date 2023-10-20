@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang={{ .Site.LanguageCode }}>
+<html lang={{ .Site.LanguageCode }} class="scroll-smooth">
     {{- partial "common/head.html" . -}}
     {{ if .IsHome }}
     <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-white scrollbar-track-white dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-900">
@@ -19,10 +19,10 @@
         </footer>
       </div>
       <!-- common js -->
-      <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
       <script src="{{ .Site.BaseURL }}/js/throttleDebounce.js"></script>
       <script src="{{ .Site.BaseURL }}/js/common.js"></script>
       <script src="{{ .Site.BaseURL }}/js/jquery-3.5.1-jquery.min.js"></script>
+      <!-- <script src="{{ .Site.BaseURL }}/js/jquery-migrate-3.4.1.js"></script> -->
       <!-- fancybox -->
       {{if .Page.Site.Params.fancybox }}
         <script src="{{ .Site.BaseURL }}/js/fancybox-3.5.7-jquery.fancybox.min.js"></script>

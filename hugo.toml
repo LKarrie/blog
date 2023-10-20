@@ -27,6 +27,7 @@ enableEmoji = true
   disableWeighanchorLoadAnime = true
   disableDiscoveryLoadAnime = true
   fancybox = true
+  tocopen = true
 
 [Params.views.plausible]
   enable = true

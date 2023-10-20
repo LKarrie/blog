@@ -45,7 +45,7 @@ cardImg : "/img/blog/actuator.jpg"
 
 POM 引入相关依赖
 
-```pom
+```java
 <!-- actuator -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -460,7 +460,8 @@ test_long_timed_seconds_duration_sum{method="GET",uri="/api/test/timed/v3",} 0.0
 
 修复方案（`没有经过仔细验证，修复方法仅供参考`）：
 
-源码覆盖的方式修复  org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter的record方法
+源码覆盖的方式修复  
+org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter的record方法
 
 修改如下
 
