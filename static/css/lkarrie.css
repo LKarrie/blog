@@ -1315,6 +1315,10 @@ video {
   gap: 1rem;
 }
 
+.gap-5{
+  gap: 1.25rem;
+}
+
 .gap-8{
   gap: 2rem;
 }
@@ -1358,6 +1362,10 @@ video {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-y-scroll{
+  overflow-y: scroll;
 }
 
 .scroll-smooth{
@@ -3140,6 +3148,10 @@ video {
   --scrollbar-track: #1e293b !important;
 }
 
+:is(.dark .dark\:scrollbar-thumb-gray-400){
+  --scrollbar-thumb: #9ca3af !important;
+}
+
 :is(.dark .dark\:scrollbar-thumb-gray-900){
   --scrollbar-thumb: #111827 !important;
 }
@@ -3294,16 +3306,12 @@ video {
     width: 28rem;
   }
 
-  .md\:w-\[480px\]{
-    width: 480px;
+  .md\:w-\[500px\]{
+    width: 500px;
   }
 
   .md\:w-\[800px\]{
     width: 800px;
-  }
-
-  .md\:w-\[500px\]{
-    width: 500px;
   }
 
   .md\:-translate-x-full{
@@ -3496,6 +3504,10 @@ video {
 
   .lg\:w-\[800px\]{
     width: 800px;
+  }
+
+  .lg\:gap-10{
+    gap: 2.5rem;
   }
 
   .lg\:text-4xl{

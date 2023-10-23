@@ -1,7 +1,13 @@
 baseURL = 'https://blog.lkarrie.com'
 defaultContentLanguage = 'zh-CN'
-title = 'LKarrie'
+title = '雑魚の小站'
 enableEmoji = true
+enableRobotsTXT = true
+copyright = '© 2023 LKarrie.'
+[author]
+  email = 'lkarrie@163.com'
+  name = 'LKarrie'
+
 [outputs]
   home = [ "HTML", "RSS"]
 
@@ -83,7 +89,7 @@ enableEmoji = true
 [Params.newFeature.zhCN]
   title = '没用的功能又增加了🧐'
   image = '/img/silverwolf.jpg'
-  description = '1.新增黑白模式;2.新增中英文翻译... 详细信息戳我一下'
+  description = '1.新增文章目录... 详细信息戳我一下'
   url = '/'
 
 [Params.mobile.description.en]

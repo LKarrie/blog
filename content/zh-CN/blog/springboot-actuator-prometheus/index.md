@@ -362,7 +362,7 @@ public @interface Timed {
 
 ---
 
-#### **Controller类使用Timed**
+#### Controller类使用Timed
 
 （对应 Demo TestTimed）
 
@@ -411,7 +411,7 @@ test_timed_seconds_max{exception="None",method="GET",outcome="SUCCESS",status="2
 
 ---
 
-#### **Controller类中方法使用Timed**
+#### Controller类中方法使用Timed
 
 只生成对应方法请求的指标
 
