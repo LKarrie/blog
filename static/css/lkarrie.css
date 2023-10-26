@@ -3294,16 +3294,12 @@ video {
     width: 28rem;
   }
 
-  .md\:w-\[480px\]{
-    width: 480px;
+  .md\:w-\[500px\]{
+    width: 500px;
   }
 
   .md\:w-\[800px\]{
     width: 800px;
-  }
-
-  .md\:w-\[500px\]{
-    width: 500px;
   }
 
   .md\:-translate-x-full{
