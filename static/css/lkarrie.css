@@ -628,6 +628,10 @@ video {
   bottom: 1.25rem;
 }
 
+.bottom-8{
+  bottom: 2rem;
+}
+
 .bottom-\[0\.55rem\]{
   bottom: 0.55rem;
 }
@@ -646,6 +650,10 @@ video {
 
 .right-1{
   right: 0.25rem;
+}
+
+.right-16{
+  right: 4rem;
 }
 
 .right-2{
