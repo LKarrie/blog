@@ -2647,6 +2647,11 @@ video {
   }
 }
 
+.post-content ul{
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
 .post-content pre code ul{
   max-width: 28rem;
   list-style-position: inside;

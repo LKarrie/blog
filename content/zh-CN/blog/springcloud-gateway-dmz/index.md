@@ -63,7 +63,7 @@ DEMO写的比较简单，希望能对你有一些帮助~
 
   DEMO版本（spring-boot 2.6.8 & spring-cloud-gateway 3.1.3 ）：
 
-  ```pom
+  ```xml
   <parent>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-parent</artifactId>
@@ -730,7 +730,7 @@ public class RouterFactory {
 
 启动Nacos
 
-```cmd
+```shell
 docker run ^
 --restart=unless-stopped ^
 --name nacos2 ^
@@ -746,7 +746,7 @@ docker run ^
 
 相关测试参数
 
-```启动参数
+```JAVA
 -DNACOS_USERNAME=nacos
 -DNACOS_PASSWORD=nacos
 -DNACOS_NAMESPACE=dmz

@@ -93,6 +93,9 @@
 .post-content h6 {
   @apply text-blue-400 leading-tight border-b text-lg md:text-xl font-semibold mb-4 mt-6 pb-2;
 }
+.post-content ul {
+  @apply list-disc pl-5
+}
 .post-content pre code ul {
   @apply max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400
 }

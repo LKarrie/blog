@@ -144,7 +144,7 @@ PHP管理器容器内的路径需要和 Nginx 相同！例如我Nginx中存储�
 
 这里创建看板娘Nginx的配置，在conf目录下创建live2d.conf，具体内容如下
 
-```conf
+```Nginx
 server {
     listen       443;
 	# 修改成你自己的api域名
