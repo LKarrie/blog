@@ -5,7 +5,6 @@
       {{ T "Anchor" }}
     </h1>
     <div class="flex flex-col md:flex-row justify-center gap-3">
-
       <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}}  w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.one.zhCN.url}}">
@@ -27,10 +26,6 @@
         {{ if  eq .Site.LanguageCode "en" }}
         <a href="{{site.Params.weighanchor.one.en.url}}">
           <div class="group">
-            <!--not lazy-->
-            <!-- <img src="img/weighanchor1.png" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy"> -->
-            <!-- lazy load have some bug when hover -->
-            <!--lazy-->
             <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor2-lazy-jpg rounded-lg">
               <img src="{{site.Params.weighanchor.one.en.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
             </div>
@@ -42,14 +37,10 @@
         </a> 
         {{ end }}
       </div>
-
       <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.two.zhCN.url}}">
           <div class="group">
-            <!--not lazy-->
-            <!-- <img src="img/weighanchor1.png" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy"> -->
-            <!--lazy-->
             <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor3-lazy-jpg rounded-lg">
               <img src="{{site.Params.weighanchor.two.zhCN.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
             </div>
@@ -63,9 +54,6 @@
         {{ if  eq .Site.LanguageCode "en" }}
         <a href="{{site.Params.weighanchor.two.en.url}}">
           <div class="group">
-            <!--not lazy-->
-            <!-- <img src="img/weighanchor1.png" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy"> -->
-            <!--lazy-->
             <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor1-lazy-jpg rounded-lg">
               <img src="{{site.Params.weighanchor.two.en.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
             </div>
@@ -77,14 +65,10 @@
         </a> 
         {{ end }}
       </div>
-
       <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.three.zhCN.url}}">
           <div class="group">
-            <!--not lazy-->
-            <!-- <img src="img/weighanchor1.png" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy"> -->
-            <!--lazy-->
             <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor2-lazy-jpg rounded-lg">
               <img src="{{site.Params.weighanchor.three.zhCN.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
             </div>
@@ -98,9 +82,6 @@
         {{ if  eq .Site.LanguageCode "en" }}
         <a href="{{site.Params.weighanchor.two.en.url}}">
           <div class="group">
-            <!--not lazy-->
-            <!-- <img src="img/weighanchor1.png" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy"> -->
-            <!--lazy-->
             <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor3-lazy-jpg rounded-lg">
               <img src="{{site.Params.weighanchor.three.en.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
             </div>
@@ -112,22 +93,6 @@
         </a>
         {{ end }}
       </div>
- 
-      <!-- back up -->
-      <!-- <div class="anchor cantsee2 w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
-        <a href="/">
-          <div class="group">
-            <img src="img/weighanchor1.png" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
-            <div class="absolute top-0 bottom-0 left-0 right-0 text-center ">
-              <h3 class="text-lg uppercase text-white text-center p-[10px] bg-black mt-5 -translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0">Abut me</h3>
-              <p class="text-base mt-3 p-5 text-white text-center translate-x-full transition ease-linear duration-300 group-hover:translate-x-0">A Little Self Introduction</p>
-            </div>
-          </div>
-        </a> 
-      </div> -->
-
     </div>
-
   </div>
-
 </div>

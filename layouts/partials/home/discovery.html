@@ -4,39 +4,14 @@
       <i class="fa-solid fa-seedling animate-pulse mb-1"></i>
       {{ T "Discovery" }}
     </h1>
-
     <div class="flex flex-col items-center justify-center gap-14">
-
-      <!-- PC card backup -->
-      <!-- <div class="group h-80 w-full [perspeective:1000px]">
-        <div class="relative h-full w-full rounded-xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-          <div class="absolute inset-0">
-            <img class="h-full w-full rounded-xl object-cover shadow-black/40" src="img/weighanchor1.png" loading="lazy">
-            <div class="bg-secondary-100 text-secondary-200 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2 opacity-1 group-hover:opacity-0 transition-all duration-1000">
-              <i class="inline-block fa-solid fa-tag animate-pulse"></i>        
-              <span>nginx</span>
-            </div>
-          </div>
-          <div class="absolute inset-0 w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-            <div class="flex min-h-full flex-col items-center justify-center">
-              <h1 class="text-3xl font-bold">LKarrie Blog Design</h1>
-              <p class="text-lg">LKarrie Blog Design</p>
-              <p class="text-base">LKarrie Blog Design</p>
-              <button class="mt-2 rounded-md bg-neutral-800 py-1 px-2 text-sm hover:bg-neutral-900">Read More</button>
-            </div> 
-          </div>
-        </div>
-      </div>   -->
-      
       {{ range first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "blog") }}
       <div class="{{ if eq .Site.Params.disableDiscoveryLoadAnime true }} {{ else }} cantsee {{end}} flex group h-64 md:h-80 w-full md:[perspeective:1000px]">      
         <div class="flex flex-col md:relative h-full w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg transition-transform duration-500 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
           <div class="relative md:absolute inset-0">
             <a class="md:pointer-events-none flex group h-40 md:h-80 w-full md:[perspeective:1000px]" href="{{ .RelPermalink }}">
-
               <!--not lazy-->
-              <!-- <img class="md:h-full w-full rounded-xl object-cover shadow-black/40" src="img/weighanchor1.png" loading="lazy"> -->
-              
+              <!-- <img class="md:h-full w-full rounded-xl object-cover shadow-black/40" src="img/weighanchor1.png" loading="lazy"> -->             
               <!--lazy-->
               {{ if .Params.cardImg }}
               <div class="blurred-img relative h-full w-full bg-center bg-cover rounded-t-xl md:rounded-xl" style="background-image: url('{{ .Params.lazyCardImg }}')">
@@ -47,7 +22,6 @@
                 <img class="opacity-0 transition-opacity duration-1000 ease-in-out h-full w-full rounded-t-xl md:rounded-xl object-center object-cover shadow-black/40" src="{{ .Site.Params.defaulCardImg }}" loading="lazy">
               </div>
               {{ end }}
-            
             </a>
             <div class="text-blue-500 text-sm uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2 opacity-1 md:group-hover:opacity-0 transition-all duration-1000">                   
               {{ with .Params.tags }}
@@ -75,7 +49,6 @@
         </div>
       </div>
       {{ end }} 
-
     </div>
   </div>
 </div>

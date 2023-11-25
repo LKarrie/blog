@@ -60,7 +60,7 @@ POM 引入相关依赖
 
 导入micrometer-registry-prometheus依赖会自动生成 promethus endpoint
 
-```Properties
+```properties
 # 没有类似配置 修改actuator相关端口和路径 servlet相关路径
 # 访问 http://ip:port/actuator 查看所有endpoint
 
@@ -417,7 +417,7 @@ test_timed_seconds_max{exception="None",method="GET",outcome="SUCCESS",status="2
 
 ---
 
-#### **Timed LongTask 参数**
+#### Timed LongTask 参数
 
 对应 Demo TestLongTimed
 

@@ -9,8 +9,7 @@
       <div id="trigger-back-top" class="flex flex-col h-screen">
         <header class="flex-shrink-0">
           {{- partial "headerarea.html" . -}}
-        </header>
-        
+        </header>        
         <main class="flex-main bg-white dark:bg-gray-900">
           {{- block "main" . }}{{- end }}
         </main>
@@ -28,7 +27,6 @@
         <script src="{{ .Site.BaseURL }}/js/fancybox-3.5.7-jquery.fancybox.min.js"></script>
       {{ end }}
       <!-- fancybox -->
-
       <!-- /common js -->
       {{ if .IsHome }}
         <!-- Additional scripts and Block cannot repeat -->
@@ -50,15 +48,15 @@
       </script>
       <script src="{{ .Site.BaseURL }}/js/highlightjs-copy.min.js"></script>
       <script src="{{ .Site.BaseURL }}/js/highlight.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/properties.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/nginx.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/dockerfile.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/shell.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/xml.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/powershell.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/http.min.js"></script>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/markdown.min.js"></script>
-
+      <!--11.7.0-->
+      <script src="{{ .Site.BaseURL }}/js/languages/properties.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/nginx.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/dockerfile.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/shell.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/xml.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/powershell.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/http.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/markdown.min.js"></script>
       <script>
         hljs.highlightAll();
         // disable console warning
@@ -67,19 +65,13 @@
       </script>
       <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-          // document.querySelectorAll('pre code').forEach((el) => {
-          //   hljs.highlightElement(el);
-          //   el.classList.add("dark:bg-gray-900")
-          // });
           document.querySelectorAll('.highlight').forEach((el) => {
             let pre = el.getElementsByTagName('pre')[0]
             pre.classList.add("flex-1")
             el.querySelectorAll('pre code').forEach((inner) => {
               hljs.highlightElement(inner);
               inner.classList.add("dark:bg-gray-900")
-
-              el.setAttribute("code-type", inner.getAttribute("data-lang").toUpperCase());
-              
+              el.setAttribute("code-type", inner.getAttribute("data-lang").toUpperCase());              
               // generate line num 
               // hugo can automatically generate line numbers, but it breaks my style 
               let html = el?.innerHTML
@@ -93,7 +85,6 @@
               ul.classList.add('hljs-code-number')
               el.insertBefore(ul, pre)
             });
-
           });
         });
       </script>

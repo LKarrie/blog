@@ -3,7 +3,6 @@
   <div class="dark:text-gray-300 hidden md:block w-[400px] text-lg self-start sticky top-16 h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded  scrollbar-thumb-purple-300 scrollbar-track-slate-200 dark:scrollbar-thumb-gray-400 dark:scrollbar-track-slate-800">
     {{- partial "common/toc.html" . }}
   </div>
-
   <div class="w-full md:w-[500px] lg:w-[800px]">
     <article>
     <section class="my-8">
@@ -51,14 +50,7 @@
       {{ .Content }}
     </section>
     </article>
-
-    <!-- toc -->
-    <!-- <aside>
-      {{ .TableOfContents }}
-    </aside> -->
-
   </div>
-
   <div class="hidden md:block w-[400px] text-lg self-start">
       <!-- other menu -->
       {{- partial "common/backtop.html" . }}

@@ -1,22 +1,10 @@
-<div class="md:hidden">          
-  <!-- here can add function like change style or search -->
-  <!-- -->
-
-  <!-- little bigger and style not good :P -->
-  <!-- <input type="checkbox" id="drawer-toggle" class="relative sr-only peer">
-  <label for="drawer-toggle" class="absolute top-0 left-0 inline-block p-4 transition-all duration-500 bg-blue-400 rounded-lg peer-checked:rotate-180 peer-checked:left-56">
-      <div class="w-6 h-1 mb-3 -rotate-45 bg-white rounded-lg"></div>
-      <div class="w-6 h-1 rotate-45 bg-white rounded-lg"></div>
-  </label> -->
-  
+<div class="md:hidden">
   <input type="checkbox" id="drawer-toggle" class="sr-only peer h-full fixed hidden">
   <label for="drawer-toggle" class="z-20 fixed top-0 left-0 inline-block p-3 peer-checked:transition-all peer-checked:duration-500 bg-blue-400 rounded-lg peer-checked:rotate-180 peer-checked:left-48">
       <div class="w-4 h-1 mb-[6px] -rotate-45 bg-white rounded-lg"></div>
       <div class="w-4 h-1 rotate-45 bg-white rounded-lg"></div>
   </label> 
-
   <div class="fixed top-0 left-0 z-20 w-48 h-full peer-checked:transition-all peer-checked:duration-500 peer-checked:transform -translate-x-full bg-white bg-opacity-95 shadow-lg dark:bg-gray-700 dark:bg-opacity-95 peer-checked:translate-x-0">
-
     <div class="flex flex-col h-screen">
       <div class="flex-shrink-0 px-6 py-4">
         <h2 class="text-lg font-semibold dark:text-white">{{ T "Menu" }}</h2>
@@ -27,7 +15,6 @@
           <p class="text-sm text-gray-500 dark:text-white">{{ .Site.Params.mobile.description.en.menuDes }}</p>
         {{ end }}
       </div>
-
       <div class="flex-main">
         <ul class="flex flex-col font-bold justify-center gap-4">
           <li>
@@ -62,26 +49,24 @@
           </li>
         </nav>
       </div>
-
       <div class="flex-shrink-0">
-          <div class="p-3 bg-gray-100 dark:bg-gray-800">
-              {{ if  eq .Site.LanguageCode "zh-CN" }}
-              <a href="{{ .Site.Params.newFeature.zhCN.url }}">
-                <h2 class="text-base font-medium text-gray-800 dark:text-white">{{ .Site.Params.newFeature.zhCN.title }}</h2>
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ .Site.Params.newFeature.zhCN.description }}</p>
-                <img class="object-cover w-full h-32 mt-2 rounded-lg" src="{{ .Site.Params.newFeature.zhCN.image }}">
-              </a>
-              {{ end }}
-              {{ if  eq .Site.LanguageCode "en" }}
-              <a href="{{ .Site.Params.newFeature.en.url }}">
-                <h2 class="text-base font-medium text-gray-800 dark:text-white">{{ .Site.Params.newFeature.en.title }}</h2>
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ .Site.Params.newFeature.en.description }}</p>
-                <img class="object-cover w-full h-32 mt-2 rounded-lg" src="{{ .Site.Params.newFeature.en.image }}">
-              </a>
-              {{ end }}
-          </div>
+        <div class="p-3 bg-gray-100 dark:bg-gray-800">
+            {{ if  eq .Site.LanguageCode "zh-CN" }}
+            <a href="{{ .Site.Params.newFeature.zhCN.url }}">
+              <h2 class="text-base font-medium text-gray-800 dark:text-white">{{ .Site.Params.newFeature.zhCN.title }}</h2>
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ .Site.Params.newFeature.zhCN.description }}</p>
+              <img class="object-cover w-full h-32 mt-2 rounded-lg" src="{{ .Site.Params.newFeature.zhCN.image }}">
+            </a>
+            {{ end }}
+            {{ if  eq .Site.LanguageCode "en" }}
+            <a href="{{ .Site.Params.newFeature.en.url }}">
+              <h2 class="text-base font-medium text-gray-800 dark:text-white">{{ .Site.Params.newFeature.en.title }}</h2>
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ .Site.Params.newFeature.en.description }}</p>
+              <img class="object-cover w-full h-32 mt-2 rounded-lg" src="{{ .Site.Params.newFeature.en.image }}">
+            </a>
+            {{ end }}
+        </div>
       </div>
-    </div>   
-
+    </div>
   </div>
 </div>
