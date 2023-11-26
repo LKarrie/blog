@@ -868,7 +868,7 @@ mv keepalived.conf  keepalived.conf.default
 
 编辑 192.168.202.129  keepalived.conf 配置 
 
-``` properties
+```properties
 global_defs { 
     # 全局唯一的主机标识,主备机使用不同的标识 
     router_id server_a 
@@ -916,7 +916,7 @@ vrrp_instance VI_1 {
 
 编辑 192.168.202.130  keepalived.conf 配置 
 
-```keepalived.conf
+```properties
 global_defs { 
     # 全局唯一的主机标识,主备机使用不用的标识 
     router_id server_a 
