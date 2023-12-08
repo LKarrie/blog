@@ -653,7 +653,7 @@ http{
 
 引用一下官方的一张图，展示一下vts的监控html页面
 
-<img src="https://image.lkarrie.com/images/2023/11/25/nginx-vts.png" alt="nginx-vts" style="zoom: 50%;" />
+![nginx-vts](https://image.lkarrie.com/images/2023/11/25/nginx-vts.png)
 
 详细分析一下这个html展示的内容
 
@@ -661,15 +661,14 @@ http{
 
   server main 主要展示了 当前NGINX的总体状态，例如运行机器的 hostname、nginx版本、nginx进程最后一次更新或启动到现在的时间、总体的链接情况、总体的请求情况、和vts所依赖的共享内存的区域状态（vts模块记录的这些指标存储在这里）
 
-  <img src="https://image.lkarrie.com/images/2023/11/25/nginx-vts-servermain.png" alt="nginx-vts-servermain" style="zoom: 50%;" />
-
+  ![nginx-vts-servermain](https://image.lkarrie.com/images/2023/11/25/nginx-vts-servermain.png)
   
 
 * Server Zone
 
   server zone 主要是对每一个 server 配置下面的 请求处理的状态，你可以查看你的每一个nginx server 配置下的请求状态（例如请求响应状态1xx 2xx 3xx 4xx 5xx的情况、流量情况等）
 
-  <img src="https://image.lkarrie.com/images/2023/11/25/nginx-vts-serverzones.png" alt="nginx-vts-serverzones" style="zoom: 50%;" />
+  ![nginx-vts-serverzones](https://image.lkarrie.com/images/2023/11/25/nginx-vts-serverzones.png)
 
   **注意**：如果没有设置server_name的server server_name 会缺省为 "_" ；
 
@@ -713,7 +712,7 @@ http{
 
   实现效果如下，可以看到filters对应的group为server下的server_name，每个gourp监控的key为具体的httpcode 200、206、301等等
 
-  <img src="https://image.lkarrie.com/images/2023/11/25/nginx-vts-filters.png" alt="nginx-vts-filters" style="zoom: 50%;" />
+  ![nginx-vts-filters](https://image.lkarrie.com/images/2023/11/25/nginx-vts-filters.png)
 
   **vhost_traffic_status_filter_by_set_key 后关于key的设置除了 $status 也可以设置其他变量，如果设置了其他变量就相当于监控每个server下的这个变量维度的1xx 2xx 3xx 4xx 5xx 出入流量 等状态**
 
@@ -810,8 +809,7 @@ nginx_vts_start_time_seconds 1686053290.672
 
 有一些改动的Nginx Vts Grafana监控大盘
 
-  <img src="https://image.lkarrie.com/images/2023/11/25/nginx-vts-grafana.png" alt="nginx-vts-grafana" style="zoom: 50%;" />
-
+  ![nginx-vts-grafana](https://image.lkarrie.com/images/2023/11/25/nginx-vts-grafana.png)
 
 
 #### Vhost_traffic Control
