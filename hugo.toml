@@ -144,42 +144,52 @@ copyright = '© 2023 LKarrie.'
   name = 'HAHA'
   url = 'https://deployment.net.cn/'
   logo = 'https://image.lkarrie.com/images/2022/02/12/HAHA.jpg'
+  icon = '👑'
 [[Params.link]] 
   name = '不予の测试笔记'
   url = 'https://www.shibuyu.fun'
   logo = 'https://www.shibuyu.fun/logo'
+  icon = '🍀'
 [[Params.link]] 
   name = '喵雨の小屋'
   url = 'https://meowrain.cn'
-  logo = 'https://meowrain.cn/upload/2022/06/Snipaste_2022-06-30_20-24-55.png'    
+  logo = 'https://meowrain.cn/upload/2022/06/Snipaste_2022-06-30_20-24-55.png'
+  icon = '🍁'
 [[Params.link]] 
   name = '低调小熊猫'
   url = 'https://ilovey.live'
-  logo = 'https://uss.ilovey.live/img/avatar.jpg'    
+  logo = 'https://uss.ilovey.live/img/avatar.jpg'
+  icon = '🍄' 
 [[Params.link]] 
   name = '宇生の后花园'
   url = 'https://blog.yuse.cc'
-  logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'    
+  logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'
+  icon = '🐚'
 [[Params.link]] 
   name = '墨言笙歌'
   url = 'https://gxjblog.com'
-  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'    
+  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'
+  icon = '💐' 
 [[Params.link]] 
   name = '凛音的奇幻树屋'
   url = 'https://www.rinne.ink'
-  logo = 'https://public-1306037490.cos.ap-beijing.myqcloud.com/logo.jpg'     
+  logo = 'https://public-1306037490.cos.ap-beijing.myqcloud.com/logo.jpg'
+  icon = '👑'  
 [[Params.link]] 
   name = 'FGHRSH'
   url = 'https://www.fghrsh.net'
-  logo = '//fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg'    
+  logo = '//fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg'
+  icon = '✨'
 [[Params.link]] 
   name = 'Takagi'
   url = 'https://lixingyong.com/'
-  logo = 'https://image.lkarrie.com/images/2022/07/03/takagi.webp'        
+  logo = 'https://image.lkarrie.com/images/2022/07/03/takagi.webp'
+  icon = '🔥'
 [[Params.link]] 
   name = 'Mashiro'
   url = 'https://2heng.xin/'
   logo = 'https://image.lkarrie.com/images/2022/07/03/mashiro.jpg'
+  icon = '🌈'
 
 [markup]
   [markup.highlight]
