@@ -5,7 +5,7 @@
     <div class="toc">
         <details {{if (.Param "tocopen") }} open {{ end }}>
             <!-- <summary accesskey="c" title="(Alt + C)"> -->
-            <summary >
+            <summary class="truncate">
                 <span class="details">{{ T "TOC" }}</span>
             </summary>
 
@@ -70,10 +70,10 @@
                     {{- end -}}
                     {{- end }}
                     <li>
-                        <a class="lka" href="#{{- $cleanedID -}}" aria-label="{{- $header | plainify -}}">{{- $header | safeHTML -}}</a>
+                        <a class="lka truncate" href="#{{- $cleanedID -}}" aria-label="{{- $header | plainify -}}">{{- $header | safeHTML -}}</a>
                         {{- else }}
                     <li>
-                        <a class="lka" href="#{{- $cleanedID -}}" aria-label="{{- $header | plainify -}}">{{- $header | safeHTML -}}</a>
+                        <a class="lka truncate" href="#{{- $cleanedID -}}" aria-label="{{- $header | plainify -}}">{{- $header | safeHTML -}}</a>
                         {{- end -}}
                         {{- end -}}
                         <!-- {{- $firstHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers 0) 1) 0)) -}} -->
