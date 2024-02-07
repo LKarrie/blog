@@ -765,11 +765,6 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.my-8{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .my-\[1px\]{
   margin-top: 1px;
   margin-bottom: 1px;
@@ -984,6 +979,14 @@ video {
 
 .h-screen{
   height: 100vh;
+}
+
+.h-72{
+  height: 18rem;
+}
+
+.h-80{
+  height: 20rem;
 }
 
 .min-h-\[200px\]{
@@ -1748,8 +1751,8 @@ video {
   padding-bottom: 1rem;
 }
 
-.pb-20{
-  padding-bottom: 5rem;
+.pb-10{
+  padding-bottom: 2.5rem;
 }
 
 .pb-4{
@@ -1786,6 +1789,10 @@ video {
 
 .pr-6{
   padding-right: 1.5rem;
+}
+
+.pt-10{
+  padding-top: 2.5rem;
 }
 
 .pt-16{
@@ -2441,7 +2448,7 @@ video {
 .post-content h1{
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 600;
@@ -2452,6 +2459,7 @@ video {
 
 @media (min-width: 768px){
   .post-content h1{
+    padding-top: 4rem;
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
@@ -2460,7 +2468,7 @@ video {
 .post-content h2{
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   font-size: 1.5rem;
   line-height: 2rem;
   line-height: 1.25;
@@ -2486,6 +2494,7 @@ video {
 
 @media (min-width: 768px){
   .post-content h2{
+    padding-top: 4rem;
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
@@ -2494,7 +2503,7 @@ video {
 .post-content h3{
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -2505,6 +2514,7 @@ video {
 
 @media (min-width: 768px){
   .post-content h3{
+    padding-top: 4rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
@@ -2513,7 +2523,7 @@ video {
 .post-content h4{
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -2524,6 +2534,7 @@ video {
 
 @media (min-width: 768px){
   .post-content h4{
+    padding-top: 4rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
@@ -2532,7 +2543,7 @@ video {
 .post-content h5{
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -2543,6 +2554,7 @@ video {
 
 @media (min-width: 768px){
   .post-content h5{
+    padding-top: 4rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
@@ -2551,7 +2563,7 @@ video {
 .post-content h6{
   border-bottom-width: 1px;
   padding-bottom: 0.5rem;
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -2562,6 +2574,7 @@ video {
 
 @media (min-width: 768px){
   .post-content h6{
+    padding-top: 4rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
@@ -3082,6 +3095,11 @@ video {
 :is(.dark .dark\:bg-slate-500){
   --tw-bg-opacity: 1;
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-slate-600){
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-opacity-80){

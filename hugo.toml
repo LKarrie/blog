@@ -41,10 +41,10 @@ copyright = '© 2023 LKarrie.'
   site = 'blog.lkarrie.com'
 
 [Params.weighanchor.one.en]
-  title = 'Under Maintenance'
+  title = 'About'
   image = '/img/weighanchor1.jpg'
-  description = 'Oops sry :('
-  url = '/'
+  description = 'About Me'
+  url = '/en/about/me'
   
 [Params.weighanchor.two.en]
   title = 'Under Maintenance'
@@ -55,14 +55,14 @@ copyright = '© 2023 LKarrie.'
 [Params.weighanchor.three.en]
   title = 'Under Maintenance'
   image = '/img/weighanchor3.jpg'
-  description = '维护中... 下次再来看看吧:)'
+  description = 'Oops sry :('
   url = '/'
 
 [Params.weighanchor.one.zhCN]
-  title = '维护中...'
+  title = '小雑魚'
   image = '/img/weighanchor1.jpg'
-  description = '维护中... 下次再来看看吧:)'
-  url = '/'
+  description = '快来和小雑魚对话吧~'
+  url = '/about/me/'
 
 [Params.weighanchor.two.zhCN]
   title = '维护中...'
