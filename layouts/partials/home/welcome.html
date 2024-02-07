@@ -50,26 +50,9 @@
     }
     gsap.to('.char', {y: 0, stagger: 0.05, delay: 0.02, duration: 0.5})
   }
-  function unScroll() {
-    var top = $(document).scrollTop();
-    $(document).on('scroll.unable',function (e) {
-        $(document).scrollTop(top);
-    })
-  }
-  function removeUnScroll() {
-      $(document).unbind("scroll.unable");
-  }
   function loaded() {
-    removeUnScroll()
     $(".loading-wrapper").fadeOut(500)
-    document.body.classList.remove("scrollbar-thumb-white")
-    document.body.classList.remove("scrollbar-track-white")
-    document.body.classList.remove("dark:scrollbar-thumb-gray-900")
-    document.body.classList.remove("dark:scrollbar-track-gray-900")  
-    document.body.classList.add("scrollbar-thumb-purple-300")
-    document.body.classList.add("scrollbar-track-slate-200")
-    document.body.classList.add("dark:scrollbar-thumb-purple-100")
-    document.body.classList.add("dark:scrollbar-track-slate-800")
+    document.body.classList.remove("overflow-hidden")
   }
   const home = document.querySelector("#home-with-image")
   /** random bg **/
@@ -80,7 +63,6 @@
   const end = parseInt("{{site.Params.home.homeBgEndIndex}}")
   const random = getRandom(start,end)
   const bgUrl = "{{site.Params.home.homeBgImage}}"+`${random}.`+"{{site.Params.home.homeBgImageSuffix}}"
-  unScroll()
   if(home){
     console.log('home bg is image')
     if(document.body.clientWidth <= 768){
