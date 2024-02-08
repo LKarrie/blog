@@ -5,20 +5,20 @@
       {{ T "Anchor" }}
     </h1>
     <div class="flex flex-col md:flex-row justify-center gap-3">
-      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}}  w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
+      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} weighanchor-div">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.one.zhCN.url}}">
           <div class="group">
             <!--not lazy-->
-            <!-- <img src="img/weighanchor1.png" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy"> -->
+            <!-- <img src="img/weighanchor1.png" class="weighanchor-img" loading="lazy"> -->
             <!-- lazy load have some bug when hover -->
             <!--lazy-->
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor1-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.one.zhCN.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
+            <div class="blurred-img weighanchor-img-div bg-weighanchor1-lazy-jpg">
+              <img src="{{site.Params.weighanchor.one.zhCN.image}}" class="weighanchor-img" loading="lazy">
             </div>
-            <div class="absolute top-0 bottom-0 left-0 right-0 text-center ">
-              <h3 class="text-lg uppercase text-black md:text-white text-center p-[10px] bg-slate-100 md:bg-black/70 bg-opacity-30 md:bg-opacity-100  mt-5 md:-translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0">{{site.Params.weighanchor.one.zhCN.title}}</h3>
-              <p class="text-base mt-3 p-2 md:p-5 text-black md:text-black text-center bg-slate-100 md:bg-black bg-opacity-30 md:bg-opacity-0 md:translate-x-full transition ease-linear duration-300 group-hover:translate-x-0">{{site.Params.weighanchor.one.zhCN.description}}</p>
+            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
+              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.one.zhCN.title}}</h3>
+              <p class="weighanchor-text-p">{{site.Params.weighanchor.one.zhCN.description}}</p>
             </div>
           </div>
         </a> 
@@ -26,27 +26,27 @@
         {{ if  eq .Site.LanguageCode "en" }}
         <a href="{{site.Params.weighanchor.one.en.url}}">
           <div class="group">
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor2-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.one.en.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
+            <div class="blurred-img weighanchor-img-div bg-weighanchor1-lazy-jpg">
+              <img src="{{site.Params.weighanchor.one.en.image}}" class="weighanchor-img" loading="lazy">
             </div>
-            <div class="absolute top-0 bottom-0 left-0 right-0 text-center ">
-              <h3 class="text-lg uppercase text-black md:text-white text-center p-[10px] bg-slate-100 md:bg-black/70 bg-opacity-30 md:bg-opacity-100  mt-5 md:-translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0">{{site.Params.weighanchor.one.en.title}}</h3>
-              <p class="text-base mt-3 p-2 md:p-5 text-black md:text-black text-center bg-slate-100 md:bg-black bg-opacity-30 md:bg-opacity-0 md:translate-x-full transition ease-linear duration-300 group-hover:translate-x-0">{{site.Params.weighanchor.one.en.description}}</p>
+            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
+              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.one.en.title}}</h3>
+              <p class="weighanchor-text-p">{{site.Params.weighanchor.one.en.description}}</p>
             </div>
           </div>
         </a> 
         {{ end }}
       </div>
-      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
+      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} weighanchor-div">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.two.zhCN.url}}">
           <div class="group">
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor3-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.two.zhCN.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
+            <div class="blurred-img weighanchor-img-div bg-weighanchor2-lazy-jpg">
+              <img src="{{site.Params.weighanchor.two.zhCN.image}}" class="weighanchor-img" loading="lazy">
             </div>
-            <div class="absolute top-0 bottom-0 left-0 right-0 text-center ">
-              <h3 class="text-lg uppercase text-black md:text-white text-center p-[10px] bg-slate-100 md:bg-black/70 bg-opacity-30 md:bg-opacity-100  mt-5 md:-translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0">{{site.Params.weighanchor.two.zhCN.title}}</h3>
-              <p class="text-base mt-3 p-2 md:p-5 text-black md:text-black text-center bg-slate-100 md:bg-black bg-opacity-30 md:bg-opacity-0 md:translate-x-full transition ease-linear duration-300 group-hover:translate-x-0">{{site.Params.weighanchor.two.zhCN.description}}</p>
+            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
+              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.two.zhCN.title}}</h3>
+              <p class="weighanchor-text-p">{{site.Params.weighanchor.two.zhCN.description}}</p>
             </div>
           </div>
         </a> 
@@ -54,27 +54,27 @@
         {{ if  eq .Site.LanguageCode "en" }}
         <a href="{{site.Params.weighanchor.two.en.url}}">
           <div class="group">
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor1-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.two.en.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
+            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor2-lazy-jpg rounded-lg">
+              <img src="{{site.Params.weighanchor.two.en.image}}" class="weighanchor-img" loading="lazy">
             </div>
-            <div class="absolute top-0 bottom-0 left-0 right-0 text-center ">
-              <h3 class="text-lg uppercase text-black md:text-white text-center p-[10px] bg-slate-100 md:bg-black/70 bg-opacity-30 md:bg-opacity-100  mt-5 md:-translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0">{{site.Params.weighanchor.two.en.title}}</h3>
-              <p class="text-base mt-3 p-2 md:p-5 text-black md:text-black text-center bg-slate-100 md:bg-black bg-opacity-30 md:bg-opacity-0 md:translate-x-full transition ease-linear duration-300 group-hover:translate-x-0">{{site.Params.weighanchor.two.en.description}}</p>
+            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
+              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.two.en.title}}</h3>
+              <p class="weighanchor-text-p">{{site.Params.weighanchor.two.en.description}}</p>
             </div>
           </div>
         </a> 
         {{ end }}
       </div>
-      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500">
+      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} weighanchor-div">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <a href="{{site.Params.weighanchor.three.zhCN.url}}">
           <div class="group">
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor2-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.three.zhCN.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
+            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor3-lazy-jpg rounded-lg">
+              <img src="{{site.Params.weighanchor.three.zhCN.image}}" class="weighanchor-img" loading="lazy">
             </div>
-            <div class="absolute top-0 bottom-0 left-0 right-0 text-center ">
-              <h3 class="text-lg uppercase text-black md:text-white text-center p-[10px] bg-slate-100 md:bg-black/70 bg-opacity-30 md:bg-opacity-100  mt-5 md:-translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0">{{site.Params.weighanchor.three.zhCN.title}}</h3>
-              <p class="text-base mt-3 p-2 md:p-5 text-black md:text-black text-center bg-slate-100 md:bg-black bg-opacity-30 md:bg-opacity-0 md:translate-x-full transition ease-linear duration-300 group-hover:translate-x-0">{{site.Params.weighanchor.three.zhCN.description}}</p>
+            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
+              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.three.zhCN.title}}</h3>
+              <p class="weighanchor-text-p">{{site.Params.weighanchor.three.zhCN.description}}</p>
             </div>
           </div>
         </a>
@@ -83,11 +83,11 @@
         <a href="{{site.Params.weighanchor.two.en.url}}">
           <div class="group">
             <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor3-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.three.en.image}}" class="w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500" loading="lazy">
+              <img src="{{site.Params.weighanchor.three.en.image}}" class="weighanchor-img" loading="lazy">
             </div>
-            <div class="absolute top-0 bottom-0 left-0 right-0 text-center ">
-              <h3 class="text-lg uppercase text-black md:text-white text-center p-[10px] bg-slate-100 md:bg-black/70 bg-opacity-30 md:bg-opacity-100  mt-5 md:-translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0">{{site.Params.weighanchor.three.en.title}}</h3>
-              <p class="text-base mt-3 p-2 md:p-5 text-black md:text-black text-center bg-slate-100 md:bg-black bg-opacity-30 md:bg-opacity-0 md:translate-x-full transition ease-linear duration-300 group-hover:translate-x-0">{{site.Params.weighanchor.three.en.description}}</p>
+            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
+              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.three.en.title}}</h3>
+              <p class="weighanchor-text-p">{{site.Params.weighanchor.three.en.description}}</p>
             </div>
           </div>
         </a>

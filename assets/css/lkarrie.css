@@ -16,8 +16,6 @@
   @apply w-[100%]
 }
 
-
-
 .group-date-year {
   @apply text-2xl text-blue-400 font-bold tracking-widest
 }
@@ -58,17 +56,37 @@
   @apply text-lg md:text-2xl text-gray-600 dark:text-white font-semibold tracking-wide mx-4
 }
 
-
-
 .tagcloud--item {
   @apply py-2 px-4 whitespace-nowrap cursor-pointer text-2xl hover:text-purple-400
 }
-
 
 .bend-border {
   @apply after:dark:bg-gray-900 after:rounded-100% after:content-[''] after:absolute after:w-[150%] after:h-[4rem] after:bg-white after:left-[-25%] after:bottom-[-3rem]
 }
 
+.weighanchor-div {
+  @apply w-full md:w-64 h-40 bg-white rounded-lg overflow-hidden shadow-md relative hover:bg-gray-600 hover:shadow-lg transition ease-in-out duration-500
+} 
+
+.weighanchor-img-div {
+  @apply relative w-full md:w-64 h-40 bg-center bg-cover rounded-lg group-hover:bg-black
+} 
+
+.weighanchor-img {
+  @apply group-hover:bg-black w-full md:w-64 h-40 object-cover group-hover:opacity-50 group-hover:scale-125 transition ease-in-out duration-500
+} 
+
+.weighanchor-text-div {
+  @apply text-black font-logo md:text-white absolute top-0 bottom-0 left-0 right-0 text-center transition ease-in-out duration-500
+} 
+
+.weighanchor-text-h3 {
+  @apply p-[10px] text-base uppercase text-center bg-slate-100 md:bg-black/60 bg-opacity-30 md:bg-opacity-100 mt-5 md:-translate-x-full transition ease-in-out duration-500 group-hover:translate-x-0
+} 
+
+.weighanchor-text-p {
+  @apply mt-4 p-2 md:p-4 text-sm text-center bg-slate-100 bg-opacity-30 md:bg-opacity-0 md:translate-x-full transition ease-linear duration-300 group-hover:translate-x-0
+} 
 
 /* @font-face {
   font-family: 'Nunito';
