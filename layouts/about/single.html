@@ -1,19 +1,25 @@
 {{ define "main" }}
-<div class="mx-4 flex justify-center items-center flex-col pt-4">
-  <div class="w-full md:w-[800px] ">
-    <section class="my-0 bg-white dark:bg-gray-900"> 
-      <div class="container px-2 mx-auto">
-        <div class="flex items-baseline justify-center">
-          {{ if or (eq .RelPermalink "/about/me/") (eq .RelPermalink "/en/about/me/") }}
-          <h1 class="tracking-widest text-center text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white my-2 ml-2 pr-2 border-r-2 border-dashed">
-            {{ .Title }}
-          </h1>
-          <span class="tracking-normal font-normal my-2 mr-2 pl-2 dark:text-gray-400">Chatbot</span>
-          {{ end }}
+  <div class="mx-4 flex flex-col items-center justify-center pt-4">
+    <div class="w-full md:w-[800px] ">
+      <section class="my-0 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-2">
+          <div class="flex items-baseline justify-center">
+            {{ if or (eq .RelPermalink "/about/me/") (eq .RelPermalink "/en/about/me/") }}
+              <h1
+                class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl"
+              >
+                {{ .Title }}
+              </h1>
+              <span
+                class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400"
+              >
+                Chatbot
+              </span>
+            {{ end }}
+          </div>
+          {{- partial "about/me.html" . -}}
         </div>
-        {{- partial "about/me.html" . -}}
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
-</div>
 {{ end }}

@@ -772,13 +772,13 @@ my-vol
 docker volume rm my-vol
 ```
 
-## 1.Docker安装常用服务
+## 11.Docker安装常用服务
 
-### 1.0 必读
+### 11.0 必读
 
 > 下面的安装均是简单安装（单机/单节点）的方法，有些组件高级的集群部署或者是相关介绍和详细设置我就在其他文章里补吧，不然太多了...
 
-### 1.1 安装mysql
+### 11.1 安装mysql
 
 ```markdown
 # 1.拉取mysql镜像到本地
@@ -815,7 +815,7 @@ docker volume rm my-vol
 	docker exec -i mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /root/xxx.sql
 ```
 
-### 1.2 安装Redis服务
+### 11.2 安装Redis服务
 
 ```markdown
 # 1.在docker hub搜索redis镜像
@@ -858,7 +858,7 @@ docker volume rm my-vol
 	redis:5.0.10 redis-server /usr/local/etc/redis/redis.conf
 ```
 
-### 1.3 安装Nginx
+### 11.3 安装Nginx
 
 ```markdown
 # 1.在docker hub搜索nginx
@@ -893,7 +893,7 @@ docker volume rm my-vol
 	nginx		
 ```
 
-### 1.4 安装Tomcat
+### 11.4 安装Tomcat
 
 ```markdown
 # 1.在docker hub搜索tomcat
@@ -919,7 +919,7 @@ docker volume rm my-vol
 	tomcat:8.0-jre8
 ```
 
-### 1.5 安装MongoDB数据库
+### 11.5 安装MongoDB数据库
 
 ```markdown
 # 1.运行mongDB
@@ -943,13 +943,13 @@ docker volume rm my-vol
 	docker run -d -p 27017:27017 -v /root/mongo/data:/data/db --name mymongo mongo 
 ```
 
-### 1.6 安装ElasticSearch
+### 11.6 安装ElasticSearch
 
 - `注意:`**调高JVM线程数限制数量**
 - [官方ES docker安装手册](https://www.elastic.co/guide/en/elasticsearch/reference/7.5/docker.html)
 - [官方ES+Kibana版本匹配](https://www.elastic.co/cn/support/matrix#matrix_compatibility)
 
-#### 1.6.0 拉取镜像试运行elasticsearch
+#### 11.6.0 拉取镜像试运行elasticsearch
 
 ```markdown
 # 1.dockerhub 拉取镜像
@@ -967,7 +967,7 @@ docker volume rm my-vol
 - 启动出现如下错误
 - ![image-20200602184321790](https://image.lkarrie.com/images/2022/06/15/image-20200602184321790.png)
 
-#### 1.6.1 预先配置
+#### 11.6.1 预先配置
 
 ```markdown
 # 1.在centos虚拟机中，修改配置sysctl.conf
@@ -991,7 +991,7 @@ docker volume rm my-vol
 
 ```
 
-#### 1.6.2 启动EleasticSearch容器
+#### 11.6.2 启动EleasticSearch容器
 
 ```markdown
 # 0.复制容器中data目录到宿主机中
@@ -1010,7 +1010,7 @@ docker volume rm my-vol
 	elasticsearch:6.8.0
 ```
 
-#### 1.6.3 安装IK分词器
+#### 11.6.3 安装IK分词器
 
 ```markdown
 # 1.下载对应版本的IK分词器
@@ -1049,7 +1049,7 @@ docker volume rm my-vol
 	docker commit -a="xiaochen666" -m="es with IKAnalyzer" 容器id xiaochen/elasticsearch:6.4.2
 ```
 
-#### 1.6.4 安装Kibana
+#### 11.6.4 安装Kibana
 
 ```markdown
 # 1.下载kibana镜像到本地
@@ -1063,7 +1063,7 @@ docker volume rm my-vol
 	docker run -d --name kibana -p 5601:5601 -v kibanaconf:/usr/share/kibana/config kibana:6.8.0
 ```
 
-### 1.7 安装Nexus3
+### 11.7 安装Nexus3
 
 ```markdown
 # Nexus搭建
@@ -1104,7 +1104,7 @@ cat admin.password
 # 具体设置单独开文章，这里就不多写了
 ```
 
-### 1.8 安装RabbitMQ
+### 11.8 安装RabbitMQ
 
 `下面是3.7.8版本的MQ 其他版本可能不适用 没记错的话有些新版本15672取消了`
 
@@ -1155,7 +1155,7 @@ rabbitmq:3.7.8-management-alpine
 # 6.登录ip:15672，默认用户名密码 guest/guest
 ```
 
-### 1.9 安装Minio
+### 11.9 安装Minio
 
 ```markdown
 # 在线直接pull
@@ -1181,7 +1181,7 @@ http://101.133.150.61:9100/minio/login
 fin/eyQ3idRpVkNZ
 ```
 
-### 1.10 安装Nacos
+### 11.10 安装Nacos
 
 Nacos1.4.0有一些坑我踩过建议不要用，老应用建议使用稳定版1.4.1，新应用Nacos服务端跟着官方迭代版本升级就行 
 
@@ -1210,9 +1210,9 @@ docker run \
 
 Docker启Rancher坑太多了，真的不要用（亲身体会后的真诚建议
 
-## 2.Dockerfile
+## 12.Dockerfile
 
-### 2.1 什么是Dockerfile
+### 12.1 什么是Dockerfile
 
 Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令和参数构成的脚本**。主要作用是**用来构建docker镜像的构建文件**。
 
@@ -1220,11 +1220,11 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
 
 - **通过架构图可以看出通过DockerFile可以直接构建镜像**
 
-### 2.2 Dockerfile解析过程
+### 12.2 Dockerfile解析过程
 
 ![image-20200603181253804](https://image.lkarrie.com/images/2022/06/15/image-20200603181253804.png)
 
-### 2.3 Dockerfile的保留命令
+### 12.3 Dockerfile的保留命令
 
 [官方说明](https://docs.docker.com/engine/reference/builder/)
 
@@ -1242,7 +1242,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
 | **CMD**        | **指定一个容器启动时要运行的命令<br/>Dockerfile中可以有多个CMD指令，但只有最后一个生效，CMD会被docker run之后的参数替换** |
 | **ENTRYPOINT** | **指定一个容器启动时要运行的命令<br/>ENTRYPOINT的目的和CMD一样，都是在指定容器启动程序及其参数** |
 
-#### 2.3.1 FROM 命令
+#### 12.3.1 FROM 命令
 
 - 基于那个镜像进行构建新的镜像,在构建时会自动从docker hub拉取base镜像 必须作为Dockerfile的第一个指令出现
 
@@ -1254,7 +1254,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   FROM  <image>[@<digest>]  使用摘要
   ```
 
-#### 2.3.2 MAINTAINER  命令
+#### 12.3.2 MAINTAINER  命令
 
 - 镜像维护者的姓名和邮箱地址[废弃]
 
@@ -1264,7 +1264,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   MAINTAINER <name>
   ```
 
-#### 2.3.3 RUN 命令
+#### 12.3.3 RUN 命令
 
 - RUN指令将在当前映像之上的新层中执行任何命令并提交结果。生成的提交映像将用于Dockerfile中的下一步
 
@@ -1278,7 +1278,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   RUN ["/bin/bash", "-c", "echo hello"]
   ```
 
-#### 2.3.4 EXPOSE 命令
+#### 12.3.4 EXPOSE 命令
 
 - 用来指定构建的镜像在运行为容器时对外暴露的端口
 
@@ -1289,7 +1289,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   EXPOSE 80/udp
   ```
 
-#### 2.3.5 CMD 命令
+#### 12.3.5 CMD 命令
 
 - 用来为启动的容器指定执行的命令,在Dockerfile中只能有一条CMD指令。如果列出多个命令，则只有最后一个命令才会生效。
 
@@ -1303,7 +1303,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   CMD command param1 param2 (shell form)
   ```
 
-#### 2.3.6 WORKDIR 命令
+#### 12.3.6 WORKDIR 命令
 
 - 用来为Dockerfile中的任何RUN、CMD、ENTRYPOINT、COPY和ADD指令设置工作目录。如果WORKDIR不存在，即使它没有在任何后续Dockerfile指令中使用，它也将被创建。
 
@@ -1318,7 +1318,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   `注意:WORKDIR指令可以在Dockerfile中多次使用。如果提供了相对路径，则该路径将与先前WORKDIR指令的路径相对`
   ```
 
-#### 2.3.7 ENV 命令
+#### 12.3.7 ENV 命令
 
 - 用来为构建镜像设置环境变量。这个值将出现在构建阶段中所有后续指令的环境中。
 
@@ -1329,7 +1329,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   ENV <key>=<value> ...
   ```
 
-#### 2.3.8 ADD 命令
+#### 12.3.8 ADD 命令
 
 - 用来从context上下文复制新文件、目录或远程文件url，并将它们添加到位于指定路径的映像文件系统中。
 
@@ -1343,7 +1343,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   ADD url 
   ```
 
-#### 2.3.9 COPY 命令
+#### 12.3.9 COPY 命令
 
 - 用来将context目录中指定文件复制到镜像的指定目录中
 
@@ -1354,7 +1354,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   COPY ["<src>",... "<dest>"]
   ```
 
-#### 2.3.10 VOLUME 命令
+#### 12.3.10 VOLUME 命令
 
 - 用来定义容器运行时可以挂在到宿主机的目录
 
@@ -1364,7 +1364,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   VOLUME ["/data"]
   ```
 
-#### 2.3.11 ENTRYPOINT命令
+#### 12.3.11 ENTRYPOINT命令
 
 - 用来指定容器启动时执行命令和CMD类似
 
@@ -1378,7 +1378,7 @@ Dockerfile可以认为是**Docker镜像的描述文件，是由一系列命令�
   ENTRYPOINT指令，往往用于设置容器启动后的**第一个命令**，这对一个容器来说往往是固定的。
   CMD指令，往往用于设置容器启动的第一个命令的**默认参数**，这对一个容器来说可以是变化的。
 
-### 2.4 Dockerfile举例（方便理解）
+### 12.4 Dockerfile举例（方便理解）
 
 ```shell
 # 举例中你可能用到的命令
@@ -1446,7 +1446,7 @@ CMD ["/data/b"]
 
 ```
 
-### 2.5 IDEA的Dockerfile插件
+### 12.5 IDEA的Dockerfile插件
 
 我的idea版本已经内置了
 
@@ -1456,17 +1456,17 @@ IDEA sftp
 
 ![image-20210616172705734](https://image.lkarrie.com/images/2022/06/15/image-20210616172705734.png)
 
-### 2.6 Dockerfile构建springboot项目部署
+### 12.6 Dockerfile构建springboot项目部署
 
-#### 2.6.1 准备springboot可运行项目
+#### 12.6.1 准备springboot可运行项目
 
 ![image-20200605172151266](https://image.lkarrie.com/images/2022/06/15/image-20200605172151266.png)
 
-#### 2.6.2 将可运行项目放入linux虚拟机中
+#### 12.6.2 将可运行项目放入linux虚拟机中
 
 ![image-20200605172340380](https://image.lkarrie.com/images/2022/06/15/image-20200605172340380.png)
 
-#### 2.6.3 编写Dockerfile
+#### 12.6.3 编写Dockerfile
 
 ```dockerfile
 FROM openjdk:8
@@ -1477,25 +1477,25 @@ ENTRYPOINT ["java","-jar"]
 CMD ["ems.jar"]
 ```
 
-#### 2.6.4 构建镜像
+#### 12.6.4 构建镜像
 
 ```shell
 [root@localhost ems]# docker build -t ems .
 ```
 
-#### 2.6.5 运行镜像
+#### 12.6.5 运行镜像
 
 ```shell
 [root@localhost ems]# docker run -p 8989:8989 ems
 ```
 
-#### 2.6.6 访问项目
+#### 12.6.6 访问项目
 
 ```http
 http://10.15.0.8:8989/ems/login.html
 ```
 
-## 3.Docker Compose
+## 13.Docker Compose
 
 相关参考文档：
 
@@ -1503,7 +1503,7 @@ http://10.15.0.8:8989/ems/login.html
 - [Compose 模板文件 | Docker 从入门到实践 (docker-practice.com)](https://vuepress.mirror.docker-practice.com/compose/compose_file/)
 - [Compose file | Docker Documentation（docker引擎兼容版本）](https://docs.docker.com/compose/compose-file/)
 
-### 3.1 简介
+### 13.1 简介
 
 `Compose` 项目是 Docker 官方的开源项目，负责实现对 Docker 容器集群的快速编排。从功能上看，跟 `OpenStack` 中的 `Heat` 十分类似。
 
@@ -1524,9 +1524,9 @@ http://10.15.0.8:8989/ems/login.html
 
 `Compose` 项目由 Python 编写，实现上调用了 Docker 服务提供的 API 来对容器进行管理。因此，只要所操作的平台支持 Docker API，就可以在其上利用 `Compose` 来进行编排管理。
 
-### 3.2 安装与卸载
+### 13.2 安装与卸载
 
-#### 3.2.1 linux
+#### 13.2.1 linux
 
 - 在 Linux 上的也安装十分简单，从 官方 GitHub Release 处直接下载编译好的二进制文件即可。例如，在 Linux 64 位系统上直接下载对应的二进制包。
 
@@ -1535,17 +1535,17 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/1.25.5/docker
 $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-#### 3.2.2 macos、window
+#### 13.2.2 macos、window
 
 - Compose 可以通过 Python 的包管理工具 pip 进行安装，也可以直接下载编译好的二进制文件使用，甚至能够直接在 Docker 容器中运行。`Docker Desktop for Mac/Windows 自带 docker-compose 二进制文件，安装 Docker 之后可以直接使用`。
 
-#### 3.2.3 bash命令补全
+#### 13.2.3 bash命令补全
 
 ```shell
 $ curl -L https://raw.githubusercontent.com/docker/compose/1.25.5/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
 ```
 
-#### 3.2.4 离线
+#### 13.2.4 离线
 
 就是下载二进制文件，改名，丢进local/bin
 
@@ -1561,7 +1561,7 @@ chmod +x /usr/local/bin/docker-compose
 
 ![image-20210616184306066](https://image.lkarrie.com/images/2022/06/15/image-20210616184306066.png)
 
-#### 3.2.5 卸载
+#### 13.2.5 卸载
 
 - 如果是二进制包方式安装的，删除二进制文件即可。
 
@@ -1569,23 +1569,23 @@ chmod +x /usr/local/bin/docker-compose
 $ sudo rm /usr/local/bin/docker-compose
 ```
 
-#### 3.2.6 测试安装成功
+#### 13.2.6 测试安装成功
 
 ```shell
 $ docker-compose --version
  docker-compose version 1.25.5, build 4667896b
 ```
 
-### 3.3 docker compose使用
+### 13.3 docker compose使用
 
-#### 3.3.1 相关概念
+#### 13.3.1 相关概念
 
 首先介绍几个术语。
 
 - 服务 (`service`)：一个应用容器，实际上可以运行多个相同镜像的实例。
 - 项目 (`project`)：由一组关联的应用容器组成的一个完整业务单元。∂一个项目可以由多个服务（容器）关联而成，`Compose` 面向项目进行管理。
 
-#### 3.3.2 场景
+#### 13.3.2 场景
 
 最常见的项目是 web 网站，该项目应该包含 web 应用和缓存。
 
@@ -1595,7 +1595,7 @@ $ docker-compose --version
 - elasticsearch服务
 - .......
 
-#### 3.3.3 docker-compose模板
+#### 13.3.3 docker-compose模板
 
 [参考文档](https://docker_practice.gitee.io/zh-cn/compose/compose_file.html)
 
@@ -1737,7 +1737,7 @@ networks: #定义服务用到桥
       true   #使用外部指定网桥  注意:网桥必须存在
 ```
 
-#### 3.3.4 通过docker-compose运行一组容器
+#### 13.3.4 通过docker-compose运行一组容器
 
 [参考文档](https://docker_practice.gitee.io/zh-cn/compose/commands.html)
 
@@ -1746,7 +1746,7 @@ networks: #定义服务用到桥
 [root@centos ~]# docker-compose up -d 							//后台启动一组服务
 ```
 
-### 3.4 docker-compose 模板文件
+### 13.4 docker-compose 模板文件
 
 模板文件是使用 `Compose` 的核心，涉及到的指令关键字也比较多。但大家不用担心，这里面大部分指令跟 `docker run` 相关参数的含义都是类似的。
 
@@ -1999,9 +1999,9 @@ volumes:
   mysql_data:
 ```
 
-### 3.5 docker-compose 常用命令
+### 13.5 docker-compose 常用命令
 
-#### 3.5.1 命令对象与格式
+#### 13.5.1 命令对象与格式
 
 对于 Compose 来说，大部分命令的对象既可以是项目本身，也可以指定为项目中的服务或者容器。如果没有特别的说明，命令对象将是项目，这意味着项目中所有的服务都会受到命令影响。
 
@@ -2015,7 +2015,7 @@ docker-compose [-f=<arg>...] [options] [COMMAND] [ARGS...]
 docker-compose -f your-compose.yml -p your-project up
 ```
 
-#### 3.5.2 命令选项
+#### 13.5.2 命令选项
 
 - `-f, --file FILE` 指定使用的 Compose 模板文件，默认为 `docker-compose.yml`，可以多次指定。
 - `-p, --project-name NAME` 指定项目名称，默认将使用所在目录名称作为项目名。
@@ -2024,7 +2024,7 @@ docker-compose -f your-compose.yml -p your-project up
 - `--verbose` 输出更多调试信息。
 - `-v, --version` 打印版本并退出。
 
-#### 3.5.3 命令使用说明
+#### 13.5.3 命令使用说明
 
 ##### up
 
@@ -2144,9 +2144,9 @@ docker-compose -f your-compose.yml -p your-project up
 
 查看日志。
 
-## 4.Docker可视化工具
+## 14.Docker可视化工具
 
-### 4.1 安装Portainer
+### 14.1 安装Portainer
 
 官方安装说明：[https://www.portainer.io/installation/](http://www.yunweipai.com/go?_=8fe4813824aHR0cHM6Ly93d3cucG9ydGFpbmVyLmlvL2luc3RhbGxhdGlvbi8=)
 
@@ -2184,7 +2184,7 @@ volumes:
       true
 ```
 
-### 4.2 登录和使用Portainer
+### 14.2 登录和使用Portainer
 
 用浏览器访问：`http://localhost:9000`
 
@@ -2196,7 +2196,7 @@ volumes:
 
 
 
-## 5.Docker 问题
+## 15.Docker 问题
 
 ### x509: certificate 
 

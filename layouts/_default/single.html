@@ -1,58 +1,91 @@
 {{ define "main" }}
-<div class="mx-4 flex justify-center md:justify-between items-center flex-col md:flex-row pt-4 gap-5 lg:gap-10">
-  <div class="dark:text-gray-300 hidden md:block w-[400px] text-lg self-start sticky top-16 h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded  scrollbar-thumb-purple-300 scrollbar-track-slate-200 dark:scrollbar-thumb-gray-400 dark:scrollbar-track-slate-800">
-    {{- partial "common/toc.html" . }}
-  </div>
-  <div class="w-full md:w-[500px] lg:w-[800px]">
-    <article>
-      <section class="my-0">
-        <h1 class="text-3xl md:text-4xl font-semibold mb-4 dark:text-white">{{ .Title }}</h1>
-        <p class="text-base my-2">
-          {{ range $category := .Params.categories }}
-          <a class="pr-4 text-blue-400 hover:text-blue-600" href="{{ absLangURL "categories" }}/{{lower $category}}"><i class="fa-solid fa-hashtag"></i>{{$category}}</a>
-          {{ end }}
-        </p>
-        <p class="text-base my-2">
-          {{ range $tag := .Params.tags }}
-          <a class="pr-4 text-blue-400 hover:text-blue-600" href="{{ absLangURL "tags" }}/{{lower $tag}}"><i class="fa-solid fa-tag"></i>{{$tag}}</a>
-          {{ end }}
-        </p>
-        {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
-        {{ else }}
-          {{ if  eq .Site.LanguageCode "zh-CN" }}
-          <p class="text-zinc-400 text-base my-1">
-            {{ T "CreatedTime" }}: {{ .Date.Format "2006年01月02日, 15时04分05秒" }}
+  <div
+    class="mx-4 flex flex-col items-center justify-center gap-5 pt-4 md:flex-row md:justify-between lg:gap-10"
+  >
+    <div
+      class="sticky top-16 hidden h-screen w-[400px] self-start overflow-y-scroll text-lg scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-purple-300 scrollbar-thumb-rounded  dark:text-gray-300 dark:scrollbar-track-slate-800 dark:scrollbar-thumb-gray-400 md:block"
+    >
+      {{- partial "common/toc.html" . }}
+    </div>
+    <div class="w-full md:w-[500px] lg:w-[800px]">
+      <article>
+        <section class="my-0">
+          <h1 class="mb-4 text-3xl font-semibold dark:text-white md:text-4xl">
+            {{ .Title }}
+          </h1>
+          <p class="my-2 text-base">
+            {{ range $category := .Params.categories }}
+              <a
+                class="pr-4 text-blue-400 hover:text-blue-600"
+                href="{{ absLangURL "categories" }}/{{ lower $category }}"
+              >
+                <i class="fa-solid fa-hashtag"></i>
+                {{ $category }}
+              </a>
+            {{ end }}
           </p>
-          <p class="text-zinc-400 text-base my-1">
-            {{ T "UpdatedTime" }}: {{ .Lastmod.Format "2006年01月02日, 15时04分05秒" }}
+          <p class="my-2 text-base">
+            {{ range $tag := .Params.tags }}
+              <a
+                class="pr-4 text-blue-400 hover:text-blue-600"
+                href="{{ absLangURL "tags" }}/{{ lower $tag }}"
+              >
+                <i class="fa-solid fa-tag"></i>
+                {{ $tag }}
+              </a>
+            {{ end }}
           </p>
+          {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
+          {{ else }}
+            {{ if  eq .Site.LanguageCode "zh-CN" }}
+              <p class="my-1 text-base text-zinc-400">
+                {{ T "CreatedTime" }}:
+                {{ .Date.Format "2006年01月02日, 15时04分05秒" }}
+              </p>
+              <p class="my-1 text-base text-zinc-400">
+                {{ T "UpdatedTime" }}:
+                {{ .Lastmod.Format "2006年01月02日, 15时04分05秒" }}
+              </p>
+            {{ end }}
+            {{ if  eq .Site.LanguageCode "en" }}
+              <p class="my-1 text-base text-zinc-400">
+                {{ T "CreatedTime" }}:
+                {{ .Date.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
+              </p>
+              <p class="my-1 text-base text-zinc-400">
+                {{ T "UpdatedTime" }}:
+                {{ .Lastmod.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
+              </p>
+            {{ end }}
+            <p class="my-1 text-base text-zinc-400">
+              {{ T "WordsCount" }}: {{ .WordCount }}. {{ T "ReadTime" }}:
+              {{ .ReadingTime }}{{ T "Minute" }}.
+            </p>
           {{ end }}
-          {{ if  eq .Site.LanguageCode "en" }}
-          <p class="text-zinc-400 text-base my-1">
-            {{ T "CreatedTime" }}: {{ .Date.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
-          </p>
-          <p class="text-zinc-400 text-base my-1">
-            {{ T "UpdatedTime" }}: {{ .Lastmod.Format "Mon, Jan 02, 2006, 03:04:05 PM" }}
-          </p>
-          {{ end }}
-        <p class="text-zinc-400 text-base my-1">
-          {{ T "WordsCount" }}: {{.WordCount}}.
-          {{ T "ReadTime" }}: {{.ReadingTime}}{{ T "Minute" }}.
-        </p>
-        {{ end }}
-        <div class="analytics text-base my-1" page-url="{{ .RelPermalink }}"> 
-          <i class="fa-solid fa-user"></i><span class="text-zinc-400">{{ T "Visitors" }}</span><spane class="text-zinc-400"><i class="fa-solid fa-spinner animate-spainslow"></i></spane><br>
-          <i class="fa-solid fa-fire"></i><span class="text-zinc-400">{{ T "Pageviews" }}</span><spane class="text-zinc-400"><i class="fa-solid fa-spinner animate-spainslow"></i></spane>  
-        </div>
-      </section>
-      <section class="post-content text-base md:text-lg tracking-normal leading-relaxed antialiasedtext-zinc-400 dark:text-zinc-200">
-        {{ .Content }}
-      </section>
-    </article>
-  </div>
-  <div class="hidden md:block w-[400px] text-lg self-start">
+          <div class="analytics my-1 text-base" page-url="{{ .RelPermalink }}">
+            <i class="fa-solid fa-user"></i>
+            <span class="text-zinc-400">{{ T "Visitors" }}</span>
+            <spane class="text-zinc-400">
+              <i class="fa-solid fa-spinner animate-spainslow"></i>
+            </spane>
+            <br />
+            <i class="fa-solid fa-fire"></i>
+            <span class="text-zinc-400">{{ T "Pageviews" }}</span>
+            <spane class="text-zinc-400">
+              <i class="fa-solid fa-spinner animate-spainslow"></i>
+            </spane>
+          </div>
+        </section>
+        <section
+          class="post-content antialiasedtext-zinc-400 text-base leading-relaxed tracking-normal dark:text-zinc-200 md:text-lg"
+        >
+          {{ .Content }}
+        </section>
+      </article>
+    </div>
+    <div class="hidden w-[400px] self-start text-lg md:block">
       <!-- other menu -->
       {{- partial "common/backtop.html" . }}
+    </div>
   </div>
-</div>
 {{ end }}

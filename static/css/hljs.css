@@ -1,75 +1,77 @@
 /* highlight */
 .highlight {
-    position: relative;
-    display: block;
-    display: flex;
-    flex-flow: row;
-    padding: 30px 10px 2px 0;
-    overflow-x: hidden;
-    font-size: 14px;
-    line-height: 24px;
-    text-align: left;
+  position: relative;
+  display: block;
+  display: flex;
+  flex-flow: row;
+  padding: 30px 10px 2px 0;
+  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
 }
 
 /* linenum */
 .hljs-code-number {
-    padding: 14.1px 10px 0;
-    color: #d1d8e6;
-    font-size: 12px;
-    list-style-type: none !important;
-    border-right: 1px solid #d1d8e6;
-    padding-left: 10px !important;
+  padding: 14.1px 10px 0;
+  color: #d1d8e6;
+  font-size: 12px;
+  list-style-type: none !important;
+  border-right: 1px solid #d1d8e6;
+  padding-left: 10px !important;
 }
 
 /* three ball */
 .highlight::before {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    width: 12px;
-    height: 12px;
-    overflow: visible;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 12px;
-    white-space: nowrap;
-    text-indent: 75px;
-    background-color: #fc625d;
-    border-radius: 16px;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-    content: attr(code-type);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 12px;
+  height: 12px;
+  overflow: visible;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 12px;
+  white-space: nowrap;
+  text-indent: 75px;
+  background-color: #fc625d;
+  border-radius: 16px;
+  box-shadow:
+    20px 0 #fdbc40,
+    40px 0 #35cd4b;
+  content: attr(code-type);
 }
 
 /* scroll */
 .hljs {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 .hljs::-webkit-scrollbar {
-    width: 12px !important;
-    height: 12px !important;
+  width: 12px !important;
+  height: 12px !important;
 }
 
 .hljs::-webkit-scrollbar-thumb {
-    height: 30px !important;
-    background: #d1d8e6;
-    background-clip: content-box;
-    border: 2px solid transparent;
-    border-radius: 19px;
-    opacity: 0.8;
+  height: 30px !important;
+  background: #d1d8e6;
+  background-clip: content-box;
+  border: 2px solid transparent;
+  border-radius: 19px;
+  opacity: 0.8;
 }
 
 .hljs::-webkit-scrollbar-thumb:hover {
-    background: #a5b3cf;
-    background-clip: content-box;
-    border: 2px solid transparent;
+  background: #a5b3cf;
+  background-clip: content-box;
+  border: 2px solid transparent;
 }
 
 .hljs::-webkit-scrollbar-track-piece {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 ::-webkit-scrollbar-button {
-    display: none;
+  display: none;
 }

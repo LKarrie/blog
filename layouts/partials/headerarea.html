@@ -5,24 +5,27 @@
   <!-- main loading-->
   {{- partial "home/mainloading.html" . -}}
   <!-- /main loading-->
-  {{ if eq site.Params.home.ShowVideo false }}
-    <!-- use js to set bg , css like style="background-image: url({{site.Params.home.HomeBgImage}});" -->
-    <section id="home-with-image" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block">
-  {{ else }}
-    <section class="min-h-screen hidden md:block">
-      {{- partial "home/video.html" . -}} 
-  {{ end }}
-      <!-- header -->
-      {{- partial "common/header.html" . -}}
-      <!-- /header -->
+  <!-- use js to set bg , css like style="background-image: url({{ site.Params.home.HomeBgImage }});" -->
+  <section
+    {{ if eq site.Params.home.ShowVideo false }}
+      id="home-with-image" class="min-h-screen bg-fixed bg-no-repeat bg-cover
+      bg-center hidden md:block"
+    {{ else }}
+      class="min-h-screen hidden md:block"
+      {{- partial "home/video.html" . -}}
+    {{ end }}
+  >
+    <!-- header -->
+    {{- partial "common/header.html" . -}}
+    <!-- /header -->
 
-      <!-- welcome -->
-      {{- partial "home/welcome.html" -}}
-      <!-- /welcome -->
+    <!-- welcome -->
+    {{- partial "home/welcome.html" -}}
+    <!-- /welcome -->
 
-      <!-- bottom wave -->
-      {{- partial "home/wave.html" -}}
-    </section>
+    <!-- bottom wave -->
+    {{- partial "home/wave.html" -}}
+  </section>
 {{ else }}
   <!-- for mobile -->
   {{- partial "mobile/mobile.html" . -}}
@@ -32,10 +35,10 @@
     {{- partial "common/header.html" . -}}
   </section> -->
   <!--lazy-->
-  <section class="md:min-h-[300px] md:h-[300px] min-h-[200px] h-[200px] overflow-hidden">  
-    <div class="hidden md:block">
-      {{- partial "common/header.html" . -}}  
-    </div>
+  <section
+    class="h-[200px] min-h-[200px] overflow-hidden md:h-[300px] md:min-h-[300px]"
+  >
+    <div class="hidden md:block">{{- partial "common/header.html" . -}}</div>
     {{- partial "common/banner.html" . -}}
   </section>
 {{ end }}

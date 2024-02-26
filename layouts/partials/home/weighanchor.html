@@ -1,96 +1,185 @@
-<div class="mx-4 flex justify-center items-center flex-col pt-4">
+<div class="mx-4 flex flex-col items-center justify-center pt-4">
   <div class="w-full md:w-[800px] ">
-    <h1 class="text-gray-800 dark:text-white gap-2 text-lg font-bold tracking-wide border-dotted dark:border-solid border-b-2 mb-10 flex justify-self-start items-center">
-      <i class="fa-solid fa-anchor animate-pulse mb-1"></i>
+    <h1
+      class="mb-10 flex items-center gap-2 justify-self-start border-b-2 border-dotted text-lg font-bold tracking-wide text-gray-800 dark:border-solid dark:text-white"
+    >
+      <i class="fa-solid fa-anchor mb-1 animate-pulse"></i>
       {{ T "Anchor" }}
     </h1>
-    <div class="flex flex-col md:flex-row justify-center gap-3">
-      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} weighanchor-div">
+    <div class="flex flex-col justify-center gap-3 md:flex-row">
+      <div
+        class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }}
+        {{ else }}
+          cantsee2
+        {{ end }} weighanchor-div"
+      >
         {{ if  eq .Site.LanguageCode "zh-CN" }}
-        <a href="{{site.Params.weighanchor.one.zhCN.url}}">
-          <div class="group">
-            <!--not lazy-->
-            <!-- <img src="img/weighanchor1.png" class="weighanchor-img" loading="lazy"> -->
-            <!-- lazy load have some bug when hover -->
-            <!--lazy-->
-            <div class="blurred-img weighanchor-img-div bg-weighanchor1-lazy-jpg">
-              <img src="{{site.Params.weighanchor.one.zhCN.image}}" class="weighanchor-img" loading="lazy">
+          <a href="{{ site.Params.weighanchor.one.zhCN.url }}">
+            <div class="group">
+              <!--not lazy-->
+              <!-- <img src="img/weighanchor1.png" class="weighanchor-img" loading="lazy"> -->
+              <!-- lazy load have some bug when hover -->
+              <!--lazy-->
+              <div
+                class="blurred-img weighanchor-img-div bg-weighanchor1-lazy-jpg"
+              >
+                <img
+                  src="{{ site.Params.weighanchor.one.zhCN.image }}"
+                  class="weighanchor-img"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="weighanchor-text-div md:group-hover:z-1 md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60"
+              >
+                <h3 class="weighanchor-text-h3">
+                  {{ site.Params.weighanchor.one.zhCN.title }}
+                </h3>
+                <p class="weighanchor-text-p">
+                  {{ site.Params.weighanchor.one.zhCN.description }}
+                </p>
+              </div>
             </div>
-            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
-              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.one.zhCN.title}}</h3>
-              <p class="weighanchor-text-p">{{site.Params.weighanchor.one.zhCN.description}}</p>
-            </div>
-          </div>
-        </a> 
+          </a>
         {{ end }}
         {{ if  eq .Site.LanguageCode "en" }}
-        <a href="{{site.Params.weighanchor.one.en.url}}">
-          <div class="group">
-            <div class="blurred-img weighanchor-img-div bg-weighanchor1-lazy-jpg">
-              <img src="{{site.Params.weighanchor.one.en.image}}" class="weighanchor-img" loading="lazy">
+          <a href="{{ site.Params.weighanchor.one.en.url }}">
+            <div class="group">
+              <div
+                class="blurred-img weighanchor-img-div bg-weighanchor1-lazy-jpg"
+              >
+                <img
+                  src="{{ site.Params.weighanchor.one.en.image }}"
+                  class="weighanchor-img"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="weighanchor-text-div md:group-hover:z-1 md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60"
+              >
+                <h3 class="weighanchor-text-h3">
+                  {{ site.Params.weighanchor.one.en.title }}
+                </h3>
+                <p class="weighanchor-text-p">
+                  {{ site.Params.weighanchor.one.en.description }}
+                </p>
+              </div>
             </div>
-            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
-              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.one.en.title}}</h3>
-              <p class="weighanchor-text-p">{{site.Params.weighanchor.one.en.description}}</p>
-            </div>
-          </div>
-        </a> 
+          </a>
         {{ end }}
       </div>
-      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} weighanchor-div">
+      <div
+        class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }}
+        {{ else }}
+          cantsee2
+        {{ end }} weighanchor-div"
+      >
         {{ if  eq .Site.LanguageCode "zh-CN" }}
-        <a href="{{site.Params.weighanchor.two.zhCN.url}}">
-          <div class="group">
-            <div class="blurred-img weighanchor-img-div bg-weighanchor2-lazy-jpg">
-              <img src="{{site.Params.weighanchor.two.zhCN.image}}" class="weighanchor-img" loading="lazy">
+          <a href="{{ site.Params.weighanchor.two.zhCN.url }}">
+            <div class="group">
+              <div
+                class="blurred-img weighanchor-img-div bg-weighanchor2-lazy-jpg"
+              >
+                <img
+                  src="{{ site.Params.weighanchor.two.zhCN.image }}"
+                  class="weighanchor-img"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="weighanchor-text-div md:group-hover:z-1 md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60"
+              >
+                <h3 class="weighanchor-text-h3">
+                  {{ site.Params.weighanchor.two.zhCN.title }}
+                </h3>
+                <p class="weighanchor-text-p">
+                  {{ site.Params.weighanchor.two.zhCN.description }}
+                </p>
+              </div>
             </div>
-            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
-              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.two.zhCN.title}}</h3>
-              <p class="weighanchor-text-p">{{site.Params.weighanchor.two.zhCN.description}}</p>
-            </div>
-          </div>
-        </a> 
+          </a>
         {{ end }}
         {{ if  eq .Site.LanguageCode "en" }}
-        <a href="{{site.Params.weighanchor.two.en.url}}">
-          <div class="group">
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor2-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.two.en.image}}" class="weighanchor-img" loading="lazy">
+          <a href="{{ site.Params.weighanchor.two.en.url }}">
+            <div class="group">
+              <div
+                class="blurred-img relative h-40 w-full rounded-lg bg-weighanchor2-lazy-jpg bg-cover bg-center md:w-64"
+              >
+                <img
+                  src="{{ site.Params.weighanchor.two.en.image }}"
+                  class="weighanchor-img"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="weighanchor-text-div md:group-hover:z-1 md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60"
+              >
+                <h3 class="weighanchor-text-h3">
+                  {{ site.Params.weighanchor.two.en.title }}
+                </h3>
+                <p class="weighanchor-text-p">
+                  {{ site.Params.weighanchor.two.en.description }}
+                </p>
+              </div>
             </div>
-            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
-              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.two.en.title}}</h3>
-              <p class="weighanchor-text-p">{{site.Params.weighanchor.two.en.description}}</p>
-            </div>
-          </div>
-        </a> 
+          </a>
         {{ end }}
       </div>
-      <div class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }} {{ else }} cantsee2 {{end}} weighanchor-div">
+      <div
+        class="anchor {{ if eq .Site.Params.disableWeighanchorLoadAnime true }}
+        {{ else }}
+          cantsee2
+        {{ end }} weighanchor-div"
+      >
         {{ if  eq .Site.LanguageCode "zh-CN" }}
-        <a href="{{site.Params.weighanchor.three.zhCN.url}}">
-          <div class="group">
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor3-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.three.zhCN.image}}" class="weighanchor-img" loading="lazy">
+          <a href="{{ site.Params.weighanchor.three.zhCN.url }}">
+            <div class="group">
+              <div
+                class="blurred-img relative h-40 w-full rounded-lg bg-weighanchor3-lazy-jpg bg-cover bg-center md:w-64"
+              >
+                <img
+                  src="{{ site.Params.weighanchor.three.zhCN.image }}"
+                  class="weighanchor-img"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="weighanchor-text-div md:group-hover:z-1 md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60"
+              >
+                <h3 class="weighanchor-text-h3">
+                  {{ site.Params.weighanchor.three.zhCN.title }}
+                </h3>
+                <p class="weighanchor-text-p">
+                  {{ site.Params.weighanchor.three.zhCN.description }}
+                </p>
+              </div>
             </div>
-            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
-              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.three.zhCN.title}}</h3>
-              <p class="weighanchor-text-p">{{site.Params.weighanchor.three.zhCN.description}}</p>
-            </div>
-          </div>
-        </a>
+          </a>
         {{ end }}
         {{ if  eq .Site.LanguageCode "en" }}
-        <a href="{{site.Params.weighanchor.two.en.url}}">
-          <div class="group">
-            <div class="blurred-img relative w-full md:w-64 h-40 bg-center bg-cover bg-weighanchor3-lazy-jpg rounded-lg">
-              <img src="{{site.Params.weighanchor.three.en.image}}" class="weighanchor-img" loading="lazy">
+          <a href="{{ site.Params.weighanchor.two.en.url }}">
+            <div class="group">
+              <div
+                class="blurred-img relative h-40 w-full rounded-lg bg-weighanchor3-lazy-jpg bg-cover bg-center md:w-64"
+              >
+                <img
+                  src="{{ site.Params.weighanchor.three.en.image }}"
+                  class="weighanchor-img"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="weighanchor-text-div md:group-hover:z-1 md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60"
+              >
+                <h3 class="weighanchor-text-h3">
+                  {{ site.Params.weighanchor.three.en.title }}
+                </h3>
+                <p class="weighanchor-text-p">
+                  {{ site.Params.weighanchor.three.en.description }}
+                </p>
+              </div>
             </div>
-            <div class="weighanchor-text-div md:group-hover:bg-gray-600 md:group-hover:bg-opacity-60 md:group-hover:z-1">
-              <h3 class="weighanchor-text-h3">{{site.Params.weighanchor.three.en.title}}</h3>
-              <p class="weighanchor-text-p">{{site.Params.weighanchor.three.en.description}}</p>
-            </div>
-          </div>
-        </a>
+          </a>
         {{ end }}
       </div>
     </div>

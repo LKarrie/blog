@@ -1,59 +1,98 @@
 {{ define "main" }}
-<div class="mx-4 flex justify-center items-center flex-col pt-4">
-  <div class="w-full md:w-[800px] ">
-    <section class="my-0 bg-white dark:bg-gray-900">
-      {{ if eq (.Kind) ("taxonomy")}}
-      <div class="container px-2 mx-auto">
-        {{ if  eq .Site.LanguageCode "zh-CN" }}
-        <div class="flex items-baseline justify-center">
-          <h1 class="tracking-widest text-center text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white my-2 ml-2 pr-2 border-r-2 border-dashed">
-            {{ .Title }}
-          </h1>
-          <span class="tracking-normal font-normal my-2 mr-2 pl-2 dark:text-gray-400">Tags</span>
-        </div>
-        <p class="mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
-          {{site.Params.tags.description.zhCN.default}}
-        </p>
-        {{ end }}
-        {{ if  eq .Site.LanguageCode "en" }}
-        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-tag"></i>{{ .Title }}</span></h1>
-        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-          {{site.Params.tags.description.en.default}}
-        </p>  
-        {{ end }}
-        {{ if eq .Kind "taxonomy"}}
-          <div class="flex justify-center items-center tagcloud dark:text-gray-200"></div>
-        {{ end }}
-      </div>
-      {{ else }}
-      <div class="container px-2 mx-auto">
-          {{ if  eq .Site.LanguageCode "en" }}
-          <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-hashtag"></i>Tag {{.Title}}</span></h1>
-          <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-200">
-              {{ $key := .Title}}
-              {{ range $tag, $des := site.Params.tags.description.en}}
-                  {{ if eq (lower $tag) (lower $key) }} {{$des}} {{end}} 
-              {{ end }}
-          </p>
-          {{ end }}
-          {{ if  eq .Site.LanguageCode "zh-CN" }}
-          <div class="flex items-baseline justify-center">
-            <h1 class="tracking-widest text-center text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white my-2 ml-2 pr-2 border-r-2 border-dashed">
-              标签
-            </h1>
-            <span class="tracking-normal font-normal my-2 mr-2 pl-2 dark:text-gray-400"> {{ .Title }}</span>
-          </div>
-          <p class="mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
-            {{ $key := .Title}}
-            {{ range $tag, $des := site.Params.tags.description.zhCN}}
-                {{ if eq (lower $tag) (lower $key) }} {{$des}} {{end}} 
+  <div class="mx-4 flex flex-col items-center justify-center pt-4">
+    <div class="w-full md:w-[800px] ">
+      <section class="my-0 bg-white dark:bg-gray-900">
+        {{ if eq (.Kind) ("taxonomy") }}
+          <div class="container mx-auto px-2">
+            {{ if  eq .Site.LanguageCode "zh-CN" }}
+              <div class="flex items-baseline justify-center">
+                <h1
+                  class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl"
+                >
+                  {{ .Title }}
+                </h1>
+                <span
+                  class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400"
+                >
+                  Tags
+                </span>
+              </div>
+              <p
+                class="mt-4 text-center text-gray-500 dark:text-gray-300 xl:mt-6"
+              >
+                {{ site.Params.tags.description.zhCN.default }}
+              </p>
             {{ end }}
-          </p>
-          {{ end }}
-          {{- partial "termcard.html" . -}}
-      </div>
-      {{ end }}
-    </section>
+            {{ if  eq .Site.LanguageCode "en" }}
+              <h1
+                class="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
+              >
+                explore my
+                <br />
+                awesome
+                <span class="underline decoration-blue-500">
+                  <i class="fa-solid fa-tag"></i>
+                  {{ .Title }}
+                </span>
+              </h1>
+              <p class="mt-4 text-gray-500 dark:text-gray-300 xl:mt-6">
+                {{ site.Params.tags.description.en.default }}
+              </p>
+            {{ end }}
+            {{ if eq .Kind "taxonomy" }}
+              <div
+                class="tagcloud flex items-center justify-center dark:text-gray-200"
+              ></div>
+            {{ end }}
+          </div>
+        {{ else }}
+          <div class="container mx-auto px-2">
+            {{ if  eq .Site.LanguageCode "en" }}
+              <h1
+                class="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
+              >
+                explore my
+                <br />
+                awesome
+                <span class="underline decoration-blue-500">
+                  <i class="fa-solid fa-hashtag"></i>
+                  Tag
+                  {{ .Title }}
+                </span>
+              </h1>
+              <p class="mt-4 text-gray-500 dark:text-gray-200 xl:mt-6">
+                {{ $key := .Title }}
+                {{ range $tag, $des := site.Params.tags.description.en }}
+                  {{ if eq (lower $tag) (lower $key) }}{{ $des }}{{ end }}
+                {{ end }}
+              </p>
+            {{ end }}
+            {{ if  eq .Site.LanguageCode "zh-CN" }}
+              <div class="flex items-baseline justify-center">
+                <h1
+                  class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl"
+                >
+                  标签
+                </h1>
+                <span
+                  class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400"
+                >
+                  {{ .Title }}
+                </span>
+              </div>
+              <p
+                class="mt-4 text-center text-gray-500 dark:text-gray-300 xl:mt-6"
+              >
+                {{ $key := .Title }}
+                {{ range $tag, $des := site.Params.tags.description.zhCN }}
+                  {{ if eq (lower $tag) (lower $key) }}{{ $des }}{{ end }}
+                {{ end }}
+              </p>
+            {{ end }}
+            {{- partial "termcard.html" . -}}
+          </div>
+        {{ end }}
+      </section>
+    </div>
   </div>
-</div>
 {{ end }}
