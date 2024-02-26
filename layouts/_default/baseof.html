@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang={{ .Site.LanguageCode }}>
+<html lang={{ .Site.LanguageCode }} class="scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-purple-300 scrollbar-track-slate-200 dark:scrollbar-thumb-purple-100 dark:scrollbar-track-slate-800">
     {{- partial "common/head.html" . -}}
     {{ if .IsHome }}
-    <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-white scrollbar-track-white dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-900">
+    <body class="overflow-hidden text-gray-600 font-body">
     {{ else }}
-    <body class="scroll-smooth text-gray-600 font-body scrollbar-thin scrollbar-thumb-rounded  scrollbar-thumb-purple-300 scrollbar-track-slate-200 dark:scrollbar-thumb-purple-100 dark:scrollbar-track-slate-800">
+    <body class="text-gray-600 font-body">
     {{ end }}
-      <div class="flex flex-col h-screen">
+      <div id="trigger-back-top" class="flex flex-col h-screen">
         <header class="flex-shrink-0">
           {{- partial "headerarea.html" . -}}
-        </header>
-        
+        </header>        
         <main class="flex-main bg-white dark:bg-gray-900">
           {{- block "main" . }}{{- end }}
         </main>
@@ -19,9 +18,15 @@
         </footer>
       </div>
       <!-- common js -->
-      <!-- <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.min.js"></script> -->
       <script src="{{ .Site.BaseURL }}/js/throttleDebounce.js"></script>
       <script src="{{ .Site.BaseURL }}/js/common.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/jquery-3.5.1-jquery.min.js"></script>
+      <!-- <script src="{{ .Site.BaseURL }}/js/jquery-migrate-3.4.1.js"></script> -->
+      <!-- fancybox -->
+      {{if .Page.Site.Params.fancybox }}
+        <script src="{{ .Site.BaseURL }}/js/fancybox-3.5.7-jquery.fancybox.min.js"></script>
+      {{ end }}
+      <!-- fancybox -->
       <!-- /common js -->
       {{ if .IsHome }}
         <!-- Additional scripts and Block cannot repeat -->
@@ -42,7 +47,16 @@
         function search() {window.open('{{ absLangURL "" }}/search', '_self')}
       </script>
       <script src="{{ .Site.BaseURL }}/js/highlightjs-copy.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/highlight.min.js"></script>
+      <!--11.7.0-->
+      <script src="{{ .Site.BaseURL }}/js/languages/properties.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/nginx.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/dockerfile.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/shell.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/xml.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/powershell.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/http.min.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/languages/markdown.min.js"></script>
       <script>
         hljs.highlightAll();
         // disable console warning
@@ -51,19 +65,13 @@
       </script>
       <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-          // document.querySelectorAll('pre code').forEach((el) => {
-          //   hljs.highlightElement(el);
-          //   el.classList.add("dark:bg-gray-900")
-          // });
           document.querySelectorAll('.highlight').forEach((el) => {
             let pre = el.getElementsByTagName('pre')[0]
             pre.classList.add("flex-1")
             el.querySelectorAll('pre code').forEach((inner) => {
               hljs.highlightElement(inner);
               inner.classList.add("dark:bg-gray-900")
-
-              el.setAttribute("code-type", inner.getAttribute("data-lang").toUpperCase());
-              
+              el.setAttribute("code-type", inner.getAttribute("data-lang").toUpperCase());              
               // generate line num 
               // hugo can automatically generate line numbers, but it breaks my style 
               let html = el?.innerHTML
@@ -77,7 +85,6 @@
               ul.classList.add('hljs-code-number')
               el.insertBefore(ul, pre)
             });
-
           });
         });
       </script>

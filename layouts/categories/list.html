@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="mx-4 flex justify-center items-center flex-col pt-4">
     <div class="w-full md:w-[800px] ">
-        <section class="my-8 bg-white dark:bg-gray-900">
+        <section class="my-0 bg-white dark:bg-gray-900">
             {{ if eq (.Kind) ("taxonomy")}}
             <div class="container px-2 mx-auto">
                 {{ if  eq .Site.LanguageCode "zh-CN" }}
@@ -53,7 +53,6 @@
                                 </svg>
                             </span>
                             {{end}}
-
                             <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">{{$key}} <sup>{{len $value}}</sup></h1>
 
                             <p class="text-gray-500">
@@ -68,7 +67,6 @@
                                 {{ end }}
                             {{ end }}
                             </p>
-
                             <a href="{{ absLangURL "categories" }}/{{$key}}" target="_self" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-900 hover:bg-blue-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />

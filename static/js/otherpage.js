@@ -2,7 +2,7 @@ const topnav = document.querySelector('#topnav')
 const tophaeder = document.querySelector('#tophaeder')
 const toplogo = document.querySelector('#toplogo')
 const toptext = document.querySelector('#toptext')
-
+const backtop = document.querySelector('#backtop')
 
 
 /** 监听滚动条 **/
@@ -37,6 +37,9 @@ if (direction == DIRECTION_ENUM.DOWN) {
   toptext.classList.remove('opacity-0');
   topnav.classList.remove('opacity-0');
   topnav.classList.remove('translate-x-28');
+  if (backtop) {
+    backtop.classList.remove('opacity-0');
+  }
   if (scrollTop + clientHeight + threshold >= scrollHeight) {
     console.log("滚动触底");
   }
@@ -44,6 +47,9 @@ if (direction == DIRECTION_ENUM.DOWN) {
   if (scrollTop <= threshold) {
     topnav.classList.add('opacity-0');
     topnav.classList.add('translate-x-28');
+    if (backtop) {
+      backtop.classList.add('opacity-0');
+    }
     console.log("滚动到顶部");
   }
 }

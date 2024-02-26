@@ -2,7 +2,6 @@
 function getTimeNow(){
 	return new Date().toISOString().slice(0,10)
 }
-
 analytics.forEach(div => {
   let pageurl = div.getAttribute("page-url")
   let filters='&filters=%7B%22page%22%3A%22'+pageurl+'%22%7D'

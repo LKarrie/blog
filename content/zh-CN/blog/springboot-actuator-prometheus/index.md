@@ -45,7 +45,7 @@ cardImg : "/img/blog/actuator.jpg"
 
 POM 引入相关依赖
 
-```pom
+```java
 <!-- actuator -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -362,7 +362,7 @@ public @interface Timed {
 
 ---
 
-#### **Controller类使用Timed**
+#### Controller类使用Timed
 
 （对应 Demo TestTimed）
 
@@ -411,13 +411,13 @@ test_timed_seconds_max{exception="None",method="GET",outcome="SUCCESS",status="2
 
 ---
 
-#### **Controller类中方法使用Timed**
+#### Controller类中方法使用Timed
 
 只生成对应方法请求的指标
 
 ---
 
-#### **Timed LongTask 参数**
+#### Timed LongTask 参数
 
 对应 Demo TestLongTimed
 
@@ -460,7 +460,8 @@ test_long_timed_seconds_duration_sum{method="GET",uri="/api/test/timed/v3",} 0.0
 
 修复方案（`没有经过仔细验证，修复方法仅供参考`）：
 
-源码覆盖的方式修复  org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter的record方法
+源码覆盖的方式修复  
+org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter的record方法
 
 修改如下
 

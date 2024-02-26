@@ -1,7 +1,13 @@
 baseURL = 'https://blog.lkarrie.com'
 defaultContentLanguage = 'zh-CN'
-title = 'LKarrie'
+title = '雑魚の小站'
 enableEmoji = true
+enableRobotsTXT = true
+copyright = '© 2023 LKarrie.'
+[author]
+  email = 'lkarrie@163.com'
+  name = 'LKarrie'
+
 [outputs]
   home = [ "HTML", "RSS"]
 
@@ -26,6 +32,8 @@ enableEmoji = true
   newFeatureDes = 'new new new feature!'
   disableWeighanchorLoadAnime = true
   disableDiscoveryLoadAnime = true
+  fancybox = true
+  tocopen = true
 
 [Params.views.plausible]
   enable = true
@@ -33,10 +41,10 @@ enableEmoji = true
   site = 'blog.lkarrie.com'
 
 [Params.weighanchor.one.en]
-  title = 'Under Maintenance'
+  title = 'About'
   image = '/img/weighanchor1.jpg'
-  description = 'Oops sry :('
-  url = '/'
+  description = 'About Me'
+  url = '/en/about/me'
   
 [Params.weighanchor.two.en]
   title = 'Under Maintenance'
@@ -47,14 +55,14 @@ enableEmoji = true
 [Params.weighanchor.three.en]
   title = 'Under Maintenance'
   image = '/img/weighanchor3.jpg'
-  description = '维护中... 下次再来看看吧:)'
+  description = 'Oops sry :('
   url = '/'
 
 [Params.weighanchor.one.zhCN]
-  title = '维护中...'
+  title = '小雑魚'
   image = '/img/weighanchor1.jpg'
-  description = '维护中... 下次再来看看吧:)'
-  url = '/'
+  description = '快来和小雑魚对话吧~'
+  url = '/about/me/'
 
 [Params.weighanchor.two.zhCN]
   title = '维护中...'
@@ -81,7 +89,7 @@ enableEmoji = true
 [Params.newFeature.zhCN]
   title = '没用的功能又增加了🧐'
   image = '/img/silverwolf.jpg'
-  description = '1.新增黑白模式;2.新增中英文翻译... 详细信息戳我一下'
+  description = '1.新增文章目录... 详细信息戳我一下'
   url = '/'
 
 [Params.mobile.description.en]
@@ -136,42 +144,52 @@ enableEmoji = true
   name = 'HAHA'
   url = 'https://deployment.net.cn/'
   logo = 'https://image.lkarrie.com/images/2022/02/12/HAHA.jpg'
+  icon = '👑'
 [[Params.link]] 
   name = '不予の测试笔记'
   url = 'https://www.shibuyu.fun'
   logo = 'https://www.shibuyu.fun/logo'
+  icon = '🍀'
 [[Params.link]] 
   name = '喵雨の小屋'
   url = 'https://meowrain.cn'
-  logo = 'https://meowrain.cn/upload/2022/06/Snipaste_2022-06-30_20-24-55.png'    
+  logo = 'https://meowrain.cn/upload/2022/06/Snipaste_2022-06-30_20-24-55.png'
+  icon = '🍁'
 [[Params.link]] 
   name = '低调小熊猫'
   url = 'https://ilovey.live'
-  logo = 'https://uss.ilovey.live/img/avatar.jpg'    
+  logo = 'https://uss.ilovey.live/img/avatar.jpg'
+  icon = '🍄' 
 [[Params.link]] 
   name = '宇生の后花园'
   url = 'https://blog.yuse.cc'
-  logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'    
+  logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'
+  icon = '🐚'
 [[Params.link]] 
   name = '墨言笙歌'
   url = 'https://gxjblog.com'
-  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'    
+  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'
+  icon = '💐' 
 [[Params.link]] 
   name = '凛音的奇幻树屋'
   url = 'https://www.rinne.ink'
-  logo = 'https://public-1306037490.cos.ap-beijing.myqcloud.com/logo.jpg'     
+  logo = 'https://public-1306037490.cos.ap-beijing.myqcloud.com/logo.jpg'
+  icon = '👑'  
 [[Params.link]] 
   name = 'FGHRSH'
   url = 'https://www.fghrsh.net'
-  logo = '//fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg'    
+  logo = '//fp1.fghrsh.net/2017/10/11/d383a9ad4318c5b4332fe02845f5323a.jpg'
+  icon = '✨'
 [[Params.link]] 
   name = 'Takagi'
   url = 'https://lixingyong.com/'
-  logo = 'https://image.lkarrie.com/images/2022/07/03/takagi.webp'        
+  logo = 'https://image.lkarrie.com/images/2022/07/03/takagi.webp'
+  icon = '🔥'
 [[Params.link]] 
   name = 'Mashiro'
   url = 'https://2heng.xin/'
   logo = 'https://image.lkarrie.com/images/2022/07/03/mashiro.jpg'
+  icon = '🌈'
 
 [markup]
   [markup.highlight]

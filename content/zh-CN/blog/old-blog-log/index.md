@@ -107,7 +107,7 @@ docker ps  docker rm -f halo
 
   日志最后的一些信息
 
-  ```log
+  ```txt
   error retrieving resource lock kube-system/cattle-controllers: an error on the server ("apiserver not ready") has prevented the request from succeeding
    
   failed to renew lease kube-system/cattle-controllers: timed out waiting for the condition

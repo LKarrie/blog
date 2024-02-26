@@ -22,7 +22,6 @@
     {{ end }}
     <meta name="robots" content="index,follow">
     <meta name="HandheldFriendly" content="True">
-
     <!-- theme style js -->
     <script>
       if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -34,7 +33,6 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/lkarrie.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/font-awesome-6.4.0-css-all.min.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/mainload.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/wave.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/cardanime.css" rel="stylesheet" />
@@ -44,13 +42,16 @@
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/dracula.min.css">
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/hljs.css">
     <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/fancybox-3.5.7-jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/toc.css" />
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/google-light.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/botui-theme-default.css" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/botui.min.css" />
     <style>
       #search-input{
         -webkit-appearance: none;
       }
     </style>
-
     {{ with .OutputFormats.Get "rss" -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}

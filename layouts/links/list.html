@@ -1,8 +1,7 @@
 {{ define "main" }}
 <div class="mx-4 flex justify-center items-center flex-col pt-4">
   <div class="w-full md:w-[800px] ">
-    <section class="my-8 bg-white dark:bg-gray-900">
-
+    <section class="my-0 bg-white dark:bg-gray-900">
       <div class="container px-2 mx-auto">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
         <div class="flex items-baseline justify-center">
@@ -21,15 +20,26 @@
             {{site.Params.links.description.en.default}}
         </p>
         {{ end }}
-
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-2">
-        <p> 样式维护中 ! </p><br/>
+        <ul class="px-10 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {{ range .Site.Params.link }}
-          <a href="{{.url}}"> {{ .name }}</a><br/>
+          <li>
+            <a href="{{.url}}">
+              <div class=" dark:bg-gray-700 dark:before:border-solid dark:rounded-lg group relative block h-full bg-white before:absolute before:inset-0 before:rounded-lg before:border-2 before:border-dashed before:border-gray-900">
+                <div class="dark:border-gray-200 dark:bg-slate-500 dark:border-[1px] rounded-lg border-2 border-gray-900 bg-white transition group-hover:-translate-y-2 group-hover:-translate-x-2">    
+                  <div class="p-4 sm:p-6">
+                    <div class="flex items-start justify-between">
+                      <span aria-hidden="true" role="img" class="text-lg sm:text-xl">{{ .icon }}</span>
+                    </div>
+                    <h2 class="dark:text-white mt-4 font-medium text-gray-900 sm:text-lg"> {{ .name }}</h2>
+                    <p class="dark:text-white mt-1 text-xs text-gray-700">{{ .url }}</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
         {{ end }}
-        </div>
+        </ul>
       </div>  
-
     </section>
   </div>
 </div>
