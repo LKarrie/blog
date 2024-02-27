@@ -27,7 +27,7 @@
           class="{{ if .IsHome }}
             opacity-0 group-hover:opacity-100 transition ease-in-out
             duration-500
-          {{ end }} flex flex-col pt-4 font-logo "
+          {{ end }} flex flex-col pt-4 font-logo"
         >
           <span class="px-1">
             <span
@@ -46,13 +46,11 @@
               小站
             </span>
           </span>
-          <rp></rp>
-          <rt
-            class="translate-y-3 text-xs opacity-0 transition duration-500 ease-in-out group-hover:translate-y-0 group-hover:text-purple-500 group-hover:opacity-100"
+          <span
+            class="translate-y-3 text-center text-xs tracking-[.5em] opacity-0 transition duration-500 ease-in-out group-hover:translate-y-0 group-hover:text-purple-500 group-hover:opacity-100"
           >
             让杂鱼来给你整个活!
-          </rt>
-          <rp></rp>
+          </span>
         </div>
       </div>
     </div>
@@ -61,33 +59,33 @@
         id="topnav"
         class="fixed z-50 flex h-16 w-full translate-x-28 flex-col items-center justify-center opacity-0 transition duration-1000 ease-in-out hover:translate-x-0 hover:opacity-100"
       >
-        <div class="hidden w-full text-lg md:inline">
+        <div class="hidden w-full font-logo text-lg md:inline">
           <ul class="flex justify-center gap-4 font-bold">
-            <li class="w-32 text-center">
+            <li class="w-[8.5em]  text-center">
               <a href="{{ absLangURL "" }}" class="nav">
                 <i class="fa-brands fa-fort-awesome animate-pulse"></i>
                 <span>{{ T "Home" }}</span>
               </a>
             </li>
-            <li class="w-32 text-center">
+            <li class="w-[8.5em]  text-center">
               <a href="{{ absLangURL "blog" }}/" class="nav">
                 <i class="fa-solid fa-list-ul animate-pulse"></i>
                 <span>{{ T "Archive" }}</span>
               </a>
             </li>
-            <li class="w-32 text-center">
+            <li class="w-[8.5em]  text-center">
               <a href="{{ absLangURL "tags" }}/" class="nav">
                 <i class="fa-solid fa-tag animate-pulse"></i>
                 <span>{{ T "Tags" }}</span>
               </a>
             </li>
-            <li class="w-32 text-center">
+            <li class="w-[8.5em] text-center">
               <a href="{{ absLangURL "categories" }}/" class="nav">
                 <i class="fa-solid fa-hashtag animate-pulse"></i>
                 <span>{{ T "Categories" }}</span>
               </a>
             </li>
-            <li class="w-32 text-center">
+            <li class="w-[8.5em]  text-center">
               <a href="{{ absLangURL "links" }}/" class="nav">
                 <i class="fa-solid fa-link animate-pulse"></i>
                 <span>{{ T "Links" }}</span>

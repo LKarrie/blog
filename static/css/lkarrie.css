@@ -1062,6 +1062,14 @@ video {
   width: 100%;
 }
 
+.w-36{
+  width: 9rem;
+}
+
+.w-\[8\.5em\]{
+  width: 8.5em;
+}
+
 .min-w-\[200px\]{
   min-width: 200px;
 }
@@ -1307,6 +1315,10 @@ video {
 
 .gap-8{
   gap: 2rem;
+}
+
+.gap-6{
+  gap: 1.5rem;
 }
 
 .space-x-5 > :not([hidden]) ~ :not([hidden]){
@@ -1908,6 +1920,10 @@ video {
 
 .tracking-widest{
   letter-spacing: 0.1em;
+}
+
+.tracking-\[\.5em\]{
+  letter-spacing: .5em;
 }
 
 .text-black{
@@ -3029,20 +3045,6 @@ video {
 .peer:checked ~ .peer-checked\:rotate-180{
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.peer:checked ~ .peer-checked\:transform{
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.peer:checked ~ .peer-checked\:transition-all{
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.peer:checked ~ .peer-checked\:duration-500{
-  transition-duration: 500ms;
 }
 
 .hover\:translate-x-0:hover{
