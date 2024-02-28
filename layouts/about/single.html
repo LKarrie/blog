@@ -5,16 +5,10 @@
         <div class="container mx-auto px-2">
           <div class="flex items-baseline justify-center">
             {{ if or (eq .RelPermalink "/about/me/") (eq .RelPermalink "/en/about/me/") }}
-              <h1
-                class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl"
-              >
+              <h1 class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl">
                 {{ .Title }}
               </h1>
-              <span
-                class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400"
-              >
-                Chatbot
-              </span>
+              <span class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400">Chatbot</span>
             {{ end }}
           </div>
           {{- partial "about/me.html" . -}}

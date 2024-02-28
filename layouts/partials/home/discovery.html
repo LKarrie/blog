@@ -1,8 +1,6 @@
 <div class="mx-4 mt-16 flex flex-col items-center justify-center">
   <div class="w-full md:w-[800px] ">
-    <h1
-      class="mb-10 flex items-center gap-2 justify-self-start border-b-2 border-dotted text-lg font-bold tracking-wide text-gray-800 dark:border-solid dark:text-white"
-    >
+    <h1 class="mb-10 flex items-center gap-2 justify-self-start border-b-2 border-dotted text-lg font-bold tracking-wide text-gray-800 dark:border-solid dark:text-white">
       <i class="fa-solid fa-seedling mb-1 animate-pulse"></i>
       {{ T "Discovery" }}
     </h1>
@@ -12,46 +10,24 @@
           class="{{ if eq .Site.Params.disableDiscoveryLoadAnime true }}
           {{ else }}
             cantsee
-          {{ end }} group flex h-64 w-full md:h-80 md:[perspeective:1000px]"
-        >
-          <div
-            class="flex h-full w-full flex-col rounded-xl bg-white shadow-lg transition-transform duration-500 dark:bg-gray-800 md:relative md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]"
-          >
+          {{ end }} group flex h-64 w-full md:h-80 md:[perspeective:1000px]">
+          <div class="flex h-full w-full flex-col rounded-xl bg-white shadow-lg transition-transform duration-500 dark:bg-gray-800 md:relative md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
             <div class="relative inset-0 md:absolute">
-              <a
-                class="group flex h-40 w-full md:pointer-events-none md:h-80 md:[perspeective:1000px]"
-                href="{{ .RelPermalink }}"
-              >
+              <a class="group flex h-40 w-full md:pointer-events-none md:h-80 md:[perspeective:1000px]" href="{{ .RelPermalink }}">
                 <!--not lazy-->
                 <!-- <img class="md:h-full w-full rounded-xl object-cover shadow-black/40" src="img/weighanchor1.png" loading="lazy"> -->
                 <!--lazy-->
                 {{ if .Params.cardImg }}
-                  <div
-                    class="blurred-img relative h-full w-full rounded-t-xl bg-cover bg-center md:rounded-xl"
-                    style="background-image: url('{{ .Params.lazyCardImg }}')"
-                  >
-                    <img
-                      class="h-full w-full rounded-t-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-xl"
-                      src="{{ .Params.cardImg }}"
-                      loading="lazy"
-                    />
+                  <div class="blurred-img relative h-full w-full rounded-t-xl bg-cover bg-center md:rounded-xl" style="background-image: url('{{ .Params.lazyCardImg }}')">
+                    <img class="h-full w-full rounded-t-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-xl" src="{{ .Params.cardImg }}" loading="lazy" />
                   </div>
                 {{ else }}
-                  <div
-                    class="blurred-img relative h-full w-full rounded-t-xl bg-cover bg-center md:rounded-xl"
-                    style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')"
-                  >
-                    <img
-                      class="h-full w-full rounded-t-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-xl"
-                      src="{{ .Site.Params.defaulCardImg }}"
-                      loading="lazy"
-                    />
+                  <div class="blurred-img relative h-full w-full rounded-t-xl bg-cover bg-center md:rounded-xl" style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')">
+                    <img class="h-full w-full rounded-t-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-xl" src="{{ .Site.Params.defaulCardImg }}" loading="lazy" />
                   </div>
                 {{ end }}
               </a>
-              <div
-                class="opacity-1 absolute top-0 ml-2 mt-2 rounded-full p-2 text-sm font-bold uppercase text-blue-500 transition-all duration-1000 md:group-hover:opacity-0"
-              >
+              <div class="opacity-1 absolute top-0 ml-2 mt-2 rounded-full p-2 text-sm font-bold uppercase text-blue-500 transition-all duration-1000 md:group-hover:opacity-0">
                 {{ with .Params.tags }}
                   {{ range $tag := (first 3 .) }}
                     <i class="fa-solid fa-tag inline-block animate-pulse"></i>
@@ -60,16 +36,9 @@
                 {{ end }}
               </div>
             </div>
-            <div
-              class="w-full rounded-xl text-center [backface-visibility:hidden] md:absolute md:inset-0 md:bg-black/50 md:px-12 md:text-slate-200 md:[transform:rotateY(180deg)]"
-            >
-              <div
-                class="flex h-20 flex-col items-center justify-center overflow-hidden md:min-h-full"
-              >
-                <a
-                  class="pt-2 md:pointer-events-none md:pt-0"
-                  href="{{ .RelPermalink }}"
-                >
+            <div class="w-full rounded-xl text-center [backface-visibility:hidden] md:absolute md:inset-0 md:bg-black/50 md:px-12 md:text-slate-200 md:[transform:rotateY(180deg)]">
+              <div class="flex h-20 flex-col items-center justify-center overflow-hidden md:min-h-full">
+                <a class="pt-2 md:pointer-events-none md:pt-0" href="{{ .RelPermalink }}">
                   <h1 class="text-lg font-bold dark:text-white md:text-3xl">
                     {{ .Title }}
                   </h1>
@@ -83,11 +52,7 @@
                 </p>
                 <div class="flex items-center justify-center">
                   <a href="{{ .RelPermalink }}">
-                    <button
-                      class="mx-44 mt-2 hidden rounded-md bg-neutral-800 px-2 py-1 text-sm hover:bg-neutral-900 md:block"
-                    >
-                      Read More
-                    </button>
+                    <button class="mx-44 mt-2 hidden rounded-md bg-neutral-800 px-2 py-1 text-sm hover:bg-neutral-900 md:block">Read More</button>
                   </a>
                 </div>
               </div>

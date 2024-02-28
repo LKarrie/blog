@@ -5,8 +5,7 @@
         <button
           title="Go to {{ .PrevInSection.Title }}"
           onclick="window.location.href='{{ .PrevInSection.Permalink }}'"
-          class="flex h-16 w-28 flex-col items-end justify-center rounded-l bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4"
-        >
+          class="flex h-16 w-28 flex-col items-end justify-center rounded-l bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
           <span class="flex items-center gap-4">
             <i class="fa-solid fa-chevron-left"></i>
             Prev
@@ -17,8 +16,7 @@
         </button>
       {{ else }}
         <div
-          class="flex h-16 w-28 flex-col items-center justify-center rounded-l bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4"
-        >
+          class="flex h-16 w-28 flex-col items-center justify-center rounded-l bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
           <span class="flex items-center gap-4">
             <i class="fa-solid fa-star"></i>
             Start
@@ -28,8 +26,7 @@
       {{ if .NextInSection }}
         <button
           onclick="window.location.href='{{ .NextInSection.Permalink }}'"
-          class="flex h-16 w-28 flex-col items-start justify-center rounded-r border-0 border-l border-white bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4"
-        >
+          class="flex h-16 w-28 flex-col items-start justify-center rounded-r border-0 border-l border-white bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
           <span class="flex items-center gap-4">
             Next
             <i class="fa-solid fa-chevron-right"></i>
@@ -40,8 +37,7 @@
         </button>
       {{ else }}
         <div
-          class="flex h-16 w-28 flex-col items-start justify-center rounded-r border-0 border-l border-white bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4"
-        >
+          class="flex h-16 w-28 flex-col items-start justify-center rounded-r border-0 border-l border-white bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
           <span class="flex items-center gap-4">
             End
             <i class="fa-solid fa-flag-checkered"></i>

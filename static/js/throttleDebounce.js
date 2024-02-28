@@ -5,16 +5,7 @@
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
 !(function (e, o) {
-  "object" == typeof exports && "undefined" != typeof module
-    ? o(exports)
-    : "function" == typeof define && define.amd
-      ? define(["exports"], o)
-      : o(
-          ((e =
-            "undefined" != typeof globalThis
-              ? globalThis
-              : e || self).throttleDebounce = {}),
-        );
+  "object" == typeof exports && "undefined" != typeof module ? o(exports) : "function" == typeof define && define.amd ? define(["exports"], o) : o(((e = "undefined" != typeof globalThis ? globalThis : e || self).throttleDebounce = {}));
 })(this, function (e) {
   "use strict";
   function o(e, o, n) {
@@ -32,8 +23,7 @@
       t && clearTimeout(t);
     }
     function p() {
-      for (var n = arguments.length, i = new Array(n), d = 0; d < n; d++)
-        i[d] = arguments[d];
+      for (var n = arguments.length, i = new Array(n), d = 0; d < n; d++) i[d] = arguments[d];
       var f = this,
         c = Date.now() - v;
       function p() {
@@ -42,14 +32,7 @@
       function b() {
         t = void 0;
       }
-      l ||
-        (r || !a || t || p(),
-        s(),
-        void 0 === a && c > e
-          ? r
-            ? ((v = Date.now()), u || (t = setTimeout(a ? b : p, e)))
-            : p()
-          : !0 !== u && (t = setTimeout(a ? b : p, void 0 === a ? e - c : e)));
+      l || (r || !a || t || p(), s(), void 0 === a && c > e ? (r ? ((v = Date.now()), u || (t = setTimeout(a ? b : p, e))) : p()) : !0 !== u && (t = setTimeout(a ? b : p, void 0 === a ? e - c : e)));
     }
     return (
       (p.cancel = function (e) {

@@ -1,25 +1,9 @@
 {{ if .Params.banner }}
-  <div
-    class="bend-border blurred-img relative h-full min-h-[200px] w-full bg-cover bg-center md:min-h-[300px]"
-    style="background-image: url('{{ .Params.lazyBanner }}')"
-  >
-    <img
-      draggable="false"
-      class="h-full min-h-[200px] w-full object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:min-h-[300px]"
-      src="{{ .Params.banner }}"
-      loading="lazy"
-    />
+  <div class="bend-border blurred-img relative h-full min-h-[200px] w-full bg-cover bg-center md:min-h-[300px]" style="background-image: url('{{ .Params.lazyBanner }}')">
+    <img draggable="false" class="h-full min-h-[200px] w-full object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:min-h-[300px]" src="{{ .Params.banner }}" loading="lazy" />
   </div>
 {{ else }}
-  <div
-    class="bend-border blurred-img relative h-full min-h-[200px] w-full bg-cover bg-center md:min-h-[300px]"
-    style="background-image: url('{{ .Site.Params.defaulLazyBanner }}')"
-  >
-    <img
-      draggable="false"
-      class="h-full min-h-[200px] w-full object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:min-h-[300px]"
-      src="{{ .Site.Params.defaulBanner }}"
-      loading="lazy"
-    />
+  <div class="bend-border blurred-img relative h-full min-h-[200px] w-full bg-cover bg-center md:min-h-[300px]" style="background-image: url('{{ .Site.Params.defaulLazyBanner }}')">
+    <img draggable="false" class="h-full min-h-[200px] w-full object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:min-h-[300px]" src="{{ .Site.Params.defaulBanner }}" loading="lazy" />
   </div>
 {{ end }}

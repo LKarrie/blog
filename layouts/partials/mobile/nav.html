@@ -1,19 +1,10 @@
 <div class="md:hidden">
-  <input
-    type="checkbox"
-    id="drawer-toggle"
-    class="peer sr-only fixed hidden h-full"
-  />
-  <label
-    for="drawer-toggle"
-    class="fixed left-0 top-0 z-20 inline-block rounded-lg bg-blue-400 p-3 transition-all duration-500 peer-checked:left-48 peer-checked:rotate-180"
-  >
+  <input type="checkbox" id="drawer-toggle" class="peer sr-only fixed hidden h-full" />
+  <label for="drawer-toggle" class="fixed left-0 top-0 z-20 inline-block rounded-lg bg-blue-400 p-3 transition-all duration-500 peer-checked:left-48 peer-checked:rotate-180">
     <div class="mb-[6px] h-1 w-4 -rotate-45 rounded-lg bg-white"></div>
     <div class="h-1 w-4 rotate-45 rounded-lg bg-white"></div>
   </label>
-  <div
-    class="fixed left-0 top-0 z-20 h-full w-48 -translate-x-full transform bg-white bg-opacity-95 shadow-lg transition-all duration-500 peer-checked:translate-x-0 dark:bg-gray-700 dark:bg-opacity-95"
-  >
+  <div class="fixed left-0 top-0 z-20 h-full w-48 -translate-x-full transform bg-white bg-opacity-95 shadow-lg transition-all duration-500 peer-checked:translate-x-0 dark:bg-gray-700 dark:bg-opacity-95">
     <div class="flex h-screen flex-col font-logo">
       <div class="flex-shrink-0 px-6 py-4">
         <h2 class="text-lg font-semibold dark:text-white">{{ T "Menu" }}</h2>
@@ -31,10 +22,7 @@
       <div class="flex-main">
         <ul class="flex flex-col justify-center gap-4 font-bold">
           <li>
-            <a
-              class="flex transform items-center rounded-lg px-3 py-2 text-gray-600 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-              href="{{ absLangURL "" }}"
-            >
+            <a class="flex transform items-center rounded-lg px-3 py-2 text-gray-600 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="{{ absLangURL "" }}">
               <i class="fa-brands fa-fort-awesome animate-pulse"></i>
               <span class="mx-2 text-lg font-medium">{{ T "Home" }}</span>
             </a>
@@ -42,8 +30,7 @@
           <li>
             <a
               class="flex transform items-center rounded-lg px-3 py-2 text-gray-600 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-              href="{{ absLangURL "blog" }}/"
-            >
+              href="{{ absLangURL "blog" }}/">
               <i class="fa-solid fa-list-ul animate-pulse"></i>
               <span class="mx-2 text-lg font-medium">{{ T "Archive" }}</span>
             </a>
@@ -51,8 +38,7 @@
           <li>
             <a
               class="flex transform items-center rounded-lg px-3 py-2 text-gray-600 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-              href="{{ absLangURL "tags" }}/"
-            >
+              href="{{ absLangURL "tags" }}/">
               <i class="fa-solid fa-tag animate-pulse"></i>
               <span class="mx-2 text-lg font-medium">{{ T "Tags" }}</span>
             </a>
@@ -60,8 +46,7 @@
           <li>
             <a
               class="flex transform items-center rounded-lg px-3 py-2 text-gray-600 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-              href="{{ absLangURL "categories" }}/"
-            >
+              href="{{ absLangURL "categories" }}/">
               <i class="fa-solid fa-hashtag animate-pulse"></i>
               <span class="mx-2 text-lg font-medium">{{ T "Categories" }}</span>
             </a>
@@ -69,8 +54,7 @@
           <li>
             <a
               class="flex transform items-center rounded-lg px-3 py-2 text-gray-600 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-              href="{{ absLangURL "links" }}/"
-            >
+              href="{{ absLangURL "links" }}/">
               <i class="fa-solid fa-link animate-pulse"></i>
               <span class="mx-2 text-lg font-medium">{{ T "Links" }}</span>
             </a>
@@ -87,10 +71,7 @@
               <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 {{ .Site.Params.newFeature.zhCN.description }}
               </p>
-              <img
-                class="mt-2 h-32 w-full rounded-lg object-cover"
-                src="{{ .Site.Params.newFeature.zhCN.image }}"
-              />
+              <img class="mt-2 h-32 w-full rounded-lg object-cover" src="{{ .Site.Params.newFeature.zhCN.image }}" />
             </a>
           {{ end }}
           {{ if  eq .Site.LanguageCode "en" }}
@@ -101,10 +82,7 @@
               <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 {{ .Site.Params.newFeature.en.description }}
               </p>
-              <img
-                class="mt-2 h-32 w-full rounded-lg object-cover"
-                src="{{ .Site.Params.newFeature.en.image }}"
-              />
+              <img class="mt-2 h-32 w-full rounded-lg object-cover" src="{{ .Site.Params.newFeature.en.image }}" />
             </a>
           {{ end }}
         </div>

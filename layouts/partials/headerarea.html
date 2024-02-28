@@ -8,13 +8,11 @@
   <!-- use js to set bg , css like style="background-image: url({{ site.Params.home.HomeBgImage }});" -->
   <section
     {{ if eq site.Params.home.ShowVideo false }}
-      id="home-with-image" class="min-h-screen bg-fixed bg-no-repeat bg-cover
-      bg-center hidden md:block"
+      id="home-with-image" class="min-h-screen bg-fixed bg-no-repeat bg-cover bg-center hidden md:block"
     {{ else }}
       class="min-h-screen hidden md:block"
       {{- partial "home/video.html" . -}}
-    {{ end }}
-  >
+    {{ end }}>
     <!-- header -->
     {{- partial "common/header.html" . -}}
     <!-- /header -->
@@ -35,9 +33,7 @@
     {{- partial "common/header.html" . -}}
   </section> -->
   <!--lazy-->
-  <section
-    class="h-[200px] min-h-[200px] overflow-hidden md:h-[300px] md:min-h-[300px]"
-  >
+  <section class="h-[200px] min-h-[200px] overflow-hidden md:h-[300px] md:min-h-[300px]">
     <div class="hidden md:block">{{- partial "common/header.html" . -}}</div>
     {{- partial "common/banner.html" . -}}
   </section>

@@ -1,16 +1,12 @@
 <!doctype html>
-<html
-  lang="{{ .Site.LanguageCode }}"
-  class="scroll-smooth scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-purple-300 scrollbar-thumb-rounded dark:scrollbar-track-slate-800 dark:scrollbar-thumb-purple-100"
->
+<html lang="{{ .Site.LanguageCode }}" class="scroll-smooth scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-purple-300 scrollbar-thumb-rounded dark:scrollbar-track-slate-800 dark:scrollbar-thumb-purple-100">
   {{- partial "common/head.html" . -}}
   <body
     {{ if .IsHome }}
       class="overflow-hidden text-gray-600 font-body"
     {{ else }}
       class="text-gray-600 font-body"
-    {{ end }}
-  >
+    {{ end }}>
     <div id="trigger-back-top" class="flex h-screen flex-col">
       <header class="flex-shrink-0">
         {{- partial "headerarea.html" . -}}
@@ -76,10 +72,7 @@
           el.querySelectorAll("pre code").forEach((inner) => {
             hljs.highlightElement(inner);
             inner.classList.add("dark:bg-gray-900");
-            el.setAttribute(
-              "code-type",
-              inner.getAttribute("data-lang").toUpperCase(),
-            );
+            el.setAttribute("code-type", inner.getAttribute("data-lang").toUpperCase());
             // generate line num
             // hugo can automatically generate line numbers, but it breaks my style
             let html = el?.innerHTML;

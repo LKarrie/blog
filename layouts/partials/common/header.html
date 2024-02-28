@@ -4,8 +4,7 @@
     bg-opacity-0 hover:bg-opacity-80 transition ease-in-out duration-300
   {{ else }}
     bg-opacity-80 transition ease-in-out duration-300
-  {{ end }} group fixed z-50 h-16 w-full bg-white dark:bg-gray-900 dark:bg-opacity-80"
->
+  {{ end }} group fixed z-50 h-16 w-full bg-white dark:bg-gray-900 dark:bg-opacity-80">
   <div class="mx-auto my-0 flex h-full w-full items-center justify-between">
     <div class="absolute hidden lg:block">
       <!-- <div class="text-2xl hidden md:inline">
@@ -17,48 +16,28 @@
         <img
           id="toplogo"
           class="{{ if .IsHome }}
-            opacity-0 group-hover:opacity-100 transition ease-in-out
-            duration-1000
+            opacity-0 group-hover:opacity-100 transition ease-in-out duration-1000
           {{ end }} h-[4.5rem]  w-[4.5rem]"
-          src="/img/silverwolf-logo.png"
-        />
+          src="/img/silverwolf-logo.png" />
         <div
           id="toptext"
           class="{{ if .IsHome }}
-            opacity-0 group-hover:opacity-100 transition ease-in-out
-            duration-500
-          {{ end }} flex flex-col pt-4 font-logo"
-        >
+            opacity-0 group-hover:opacity-100 transition ease-in-out duration-500
+          {{ end }} flex flex-col pt-4 font-logo">
           <span class="px-1">
-            <span
-              class="h-auto w-auto rounded-lg bg-white bg-opacity-0 px-2 text-2xl transition duration-500 ease-in-out group-hover:bg-purple-400 group-hover:text-white dark:text-white"
-            >
-              雑魚
-            </span>
-            <span
-              class="inline-block h-auto w-auto animate-none bg-white bg-opacity-0 text-2xl text-gray-600 transition duration-500 ease-in-out group-hover:animate-spin dark:text-white"
-            >
-              の
-            </span>
-            <span
-              class="h-auto w-auto bg-white bg-opacity-0 px-2 text-2xl transition duration-500 ease-in-out group-hover:text-purple-500 dark:text-white"
-            >
-              小站
-            </span>
+            <!-- <span
+              class="text-center h-auto w-auto rounded-lg bg-white bg-opacity-0 px-2 text-2xl transition duration-500 ease-in-out group-hover:bg-purple-400 group-hover:text-white dark:text-white"
+            > -->
+            <span class="h-auto w-auto rounded-lg bg-opacity-0 px-2 text-center text-2xl transition duration-500 ease-in-out group-hover:bg-purple-400 group-hover:text-white dark:text-white">雑魚</span>
+            <span class="inline-block h-auto w-auto animate-none bg-white bg-opacity-0 text-2xl text-gray-600 transition duration-500 ease-in-out group-hover:animate-spin dark:text-white">の</span>
+            <span class="h-auto w-auto bg-white bg-opacity-0 px-2 text-2xl transition duration-500 ease-in-out group-hover:text-purple-500 dark:text-white">小站</span>
           </span>
-          <span
-            class="translate-y-3 text-center text-xs tracking-[.5em] opacity-0 transition duration-500 ease-in-out group-hover:translate-y-0 group-hover:text-purple-500 group-hover:opacity-100"
-          >
-            让杂鱼来给你整个活!
-          </span>
+          <span class="translate-y-3 text-center text-xs tracking-[.5em] opacity-0 transition duration-500 ease-in-out group-hover:translate-y-0 group-hover:text-purple-500 group-hover:opacity-100">让杂鱼来给你整个活!</span>
         </div>
       </div>
     </div>
     <div class="absolute h-full w-full">
-      <nav
-        id="topnav"
-        class="fixed z-50 flex h-16 w-full translate-x-28 flex-col items-center justify-center opacity-0 transition duration-1000 ease-in-out hover:translate-x-0 hover:opacity-100"
-      >
+      <nav id="topnav" class="fixed z-50 flex h-16 w-full translate-x-28 flex-col items-center justify-center opacity-0 transition duration-1000 ease-in-out hover:translate-x-0 hover:opacity-100">
         <div class="hidden w-full font-logo text-lg md:inline">
           <ul class="flex justify-center gap-4 font-bold">
             <li class="w-[8.5em]  text-center">

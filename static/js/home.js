@@ -18,10 +18,8 @@ let beforeScrollTop = 0;
 
 function handleScroll() {
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  var clientHeight =
-    document.documentElement.clientHeight || document.body.clientHeight;
-  var scrollHeight =
-    document.documentElement.scrollHeight || document.body.scrollHeight;
+  var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+  var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
 
   let direction = DIRECTION_ENUM.DOWN;
   if (beforeScrollTop > scrollTop) {

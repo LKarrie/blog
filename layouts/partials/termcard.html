@@ -4,48 +4,31 @@
 {{ else if strings.Contains (.RelPermalink) "tags" }}
   {{ $pageTpye = "tags" }}
 {{ end }}
-<div
-  class="mt-4 grid grid-cols-1 gap-8 md:grid-cols-1 xl:mt-6 xl:grid-cols-1 xl:gap-12"
->
+<div class="mt-4 grid grid-cols-1 gap-8 md:grid-cols-1 xl:mt-6 xl:grid-cols-1 xl:gap-12">
   {{ $.Scratch.Set "counter" 0 }}
   {{ range $a:=.Pages.ByPublishDate.Reverse }}
-    <a
-      href="{{ .RelPermalink }}"
-      class="flex flex-col items-center justify-between rounded-xl border border-gray-200 bg-white shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 md:h-64 md:flex-row"
-    >
+    <a href="{{ .RelPermalink }}" class="flex flex-col items-center justify-between rounded-xl border border-gray-200 bg-white shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 md:h-64 md:flex-row">
       {{ if eq ($.Scratch.Get "counter") (0) }}
         {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
         {{ if .Params.cardImg }}
-          <div
-            class="blurred-img relative h-48 w-full rounded-t-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-t-none md:rounded-bl-xl md:rounded-tl-xl"
-            style="background-image: url('{{ .Params.lazyCardImg }}')"
-          >
+          <div class="blurred-img relative h-48 w-full rounded-t-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-t-none md:rounded-bl-xl md:rounded-tl-xl" style="background-image: url('{{ .Params.lazyCardImg }}')">
             <img
               draggable="false"
               class="h-full w-full rounded-t-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-t-none md:rounded-bl-xl md:rounded-tl-xl"
               src="{{ .Params.cardImg }}"
-              loading="lazy"
-            />
+              loading="lazy" />
           </div>
         {{ else }}
-          <div
-            class="blurred-img relative h-48 w-full rounded-t-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-t-none md:rounded-bl-xl md:rounded-tl-xl"
-            style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')"
-          >
+          <div class="blurred-img relative h-48 w-full rounded-t-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-t-none md:rounded-bl-xl md:rounded-tl-xl" style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')">
             <img
               draggable="false"
               class="h-full w-full rounded-t-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-t-none md:rounded-bl-xl md:rounded-tl-xl"
               src="{{ .Site.Params.defaulCardImg }}"
-              loading="lazy"
-            />
+              loading="lazy" />
           </div>
         {{ end }}
-        <div
-          class="flex flex-col items-center justify-between p-4 leading-normal md:items-end"
-        >
-          <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-          >
+        <div class="flex flex-col items-center justify-between p-4 leading-normal md:items-end">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {{ .Title }}
           </h5>
           <p class="my-[1px] mb-2 text-sm dark:text-gray-300 md:text-base">
@@ -73,12 +56,8 @@
         </div>
       {{ else }}
         {{ $.Scratch.Set "counter" 0 }}
-        <div
-          class="flex flex-col items-center justify-between p-4 leading-normal md:items-start"
-        >
-          <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-          >
+        <div class="flex flex-col items-center justify-between p-4 leading-normal md:items-start">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {{ .Title }}
           </h5>
           <p class="my-[1px] mb-2 text-sm md:text-base">
@@ -105,28 +84,20 @@
           </span>
         </div>
         {{ if .Params.cardImg }}
-          <div
-            class="blurred-img relative h-48 w-full rounded-b-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-b-none md:rounded-br-xl md:rounded-tr-xl"
-            style="background-image: url('{{ .Params.lazyCardImg }}')"
-          >
+          <div class="blurred-img relative h-48 w-full rounded-b-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-b-none md:rounded-br-xl md:rounded-tr-xl" style="background-image: url('{{ .Params.lazyCardImg }}')">
             <img
               draggable="false"
               class="h-full w-full rounded-b-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-b-none md:rounded-br-xl md:rounded-tr-xl"
               src="{{ .Params.cardImg }}"
-              loading="lazy"
-            />
+              loading="lazy" />
           </div>
         {{ else }}
-          <div
-            class="blurred-img relative h-48 w-full rounded-b-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-b-none md:rounded-br-xl md:rounded-tr-xl"
-            style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')"
-          >
+          <div class="blurred-img relative h-48 w-full rounded-b-xl bg-cover bg-center md:h-full md:w-[28rem] md:rounded-b-none md:rounded-br-xl md:rounded-tr-xl" style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')">
             <img
               draggable="false"
               class="h-full w-full rounded-b-xl object-cover object-center opacity-0 shadow-black/40 transition-opacity duration-1000 ease-in-out md:rounded-b-none md:rounded-br-xl md:rounded-tr-xl"
               src="{{ .Site.Params.defaulCardImg }}"
-              loading="lazy"
-            />
+              loading="lazy" />
           </div>
         {{ end }}
       {{ end }}

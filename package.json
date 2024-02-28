@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "npx tailwindcss -i ./assets/css/lkarrie.css -o ./static/css/lkarrie.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "npx prettier --write ./layouts ./static/css/*.css ./static/js --html-whitespace-sensitivity ignore"
+    "format": "npx prettier --write ./layouts ./static/css/*.css ./static/js"
   },
   "keywords": [],
   "author": "",

@@ -4,25 +4,17 @@
       <div class="container mx-auto px-2">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
           <div class="flex items-baseline justify-center">
-            <h1
-              class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl"
-            >
+            <h1 class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl">
               {{ .Title }}
             </h1>
-            <span
-              class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400"
-            >
-              Archive
-            </span>
+            <span class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400">Archive</span>
           </div>
           <p class="mt-4 text-center text-gray-500 dark:text-gray-300 xl:mt-6">
             {{ site.Params.archive.description.zhCN.default }}
           </p>
         {{ end }}
         {{ if  eq .Site.LanguageCode "en" }}
-          <h1
-            class="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
-          >
+          <h1 class="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">
             explore my
             <br />
             awesome
@@ -55,15 +47,11 @@
                       <div class="dot-sm" title="test">
                         <div class="dot-sm-ping"></div>
                       </div>
-                      <div
-                        class="timeline-item-bg group mb-1 ml-4 mr-4 mt-2 rounded p-2 md:mr-0"
-                      >
+                      <div class="timeline-item-bg group mb-1 ml-4 mr-4 mt-2 rounded p-2 md:mr-0">
                         <a href="{{ .RelPermalink }}">
                           <h3 class="timeline-title">{{ .Title }}</h3>
                         </a>
-                        <div
-                          class="timeline-item-bg mx-4 my-2 hidden grid-rows-[0fr] rounded p-3 duration-500 group-hover:grid-rows-[1fr] md:grid"
-                        >
+                        <div class="timeline-item-bg mx-4 my-2 hidden grid-rows-[0fr] rounded p-3 duration-500 group-hover:grid-rows-[1fr] md:grid">
                           <div class="md:overflow-hidden">
                             {{ if  eq .Site.LanguageCode "zh-CN" }}
                               <span class="timeline-date block">

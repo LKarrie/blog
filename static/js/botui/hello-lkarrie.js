@@ -52,8 +52,7 @@ var sure = function () {
   end = function () {
     botui.message.add({
       delay: 1600,
-      content:
-        "![...](https://image.lkarrie.com/images/2022/03/31/emoticon2.gif)",
+      content: "![...](https://image.lkarrie.com/images/2022/03/31/emoticon2.gif)",
     });
   },
   secondpart = function () {
@@ -72,8 +71,7 @@ var sure = function () {
             botui.message
               .add({
                 delay: 1600,
-                content:
-                  "就算生活被工作塞满,也总要挤挤空做一些自己喜欢的事嘛:P",
+                content: "就算生活被工作塞满,也总要挤挤空做一些自己喜欢的事嘛:P",
               })
               .then(function () {
                 botui.message
