@@ -1540,11 +1540,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-purple-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-0{
   --tw-bg-opacity: 0;
 }
@@ -1573,16 +1568,16 @@ video {
   background-image: url('../img/wave.png');
 }
 
-.bg-weighanchor1-lazy-jpg{
-  background-image: url('../imglazy/weighanchor1-lazy.jpg');
+.bg-weighanchor1-lazy{
+  background-image: url('../imglazy/weighanchor1-lazy.webp');
 }
 
-.bg-weighanchor2-lazy-jpg{
-  background-image: url('../imglazy/weighanchor2-lazy.jpg');
+.bg-weighanchor2-lazy{
+  background-image: url('../imglazy/weighanchor2-lazy.webp');
 }
 
-.bg-weighanchor3-lazy-jpg{
-  background-image: url('../imglazy/weighanchor3-lazy.jpg');
+.bg-weighanchor3-lazy{
+  background-image: url('../imglazy/weighanchor3-lazy.webp');
 }
 
 .from-pink-600{
@@ -1664,6 +1659,11 @@ video {
   padding-right: 0px;
 }
 
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1732,11 +1732,6 @@ video {
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-1{
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .pb-10{
@@ -1921,10 +1916,6 @@ video {
 
 .tracking-widest{
   letter-spacing: 0.1em;
-}
-
-.tracking-\[\.1em\]{
-  letter-spacing: .1em;
 }
 
 .text-black{
