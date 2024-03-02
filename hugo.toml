@@ -21,14 +21,14 @@ copyright = '© 2023 LKarrie.'
 
 [Params]
   description = '雑魚の小站'
-  defaulBanner = '/img/silverwolf.jpg'
-  defaulLazyBanner ='/imglazy/silverwolf-lazy.jpg'
+  defaulBanner = '/img/alice.webp'
+  defaulLazyBanner ='/imglazy/alice-lazy.webp'
   defaulCardImg = '/img/weighanchor1.old.webp'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.old.webp'
   syntaxHighlighter = "highlight.js"
   helloText = '⚡peace~ peace~ peace~ peace~ peace~ ⚡'
   newFeatureTitle = 'New feature!'
-  newFeatureImg = '/img/silverwolf.jpg'
+  newFeatureImg = '/img/alice.webp'
   newFeatureDes = 'new new new feature!'
   disableWeighanchorLoadAnime = true
   disableDiscoveryLoadAnime = true
@@ -82,13 +82,13 @@ copyright = '© 2023 LKarrie.'
 
 [Params.newFeature.en]
   title = 'New feature!'
-  image = '/img/silverwolf.jpg'
+  image = '/img/alice.webp'
   description = 'new new new feature!'
   url = '/'
 
 [Params.newFeature.zhCN]
   title = '没用的功能又增加了🧐'
-  image = '/img/silverwolf.jpg'
+  image = '/img/alice.webp'
   description = '1.新增文章目录... 详细信息戳我一下'
   url = '/'
 
@@ -119,6 +119,11 @@ copyright = '© 2023 LKarrie.'
 [Params.categories.description.zhCN]
   default = '文章分类'
   game = '游戏~ 🎮'
+  blog = '博客~ 📖'
+  docker = '容器~ 🐋'
+  java = '码码~ ⌨️'
+  k8s = 'Kubernetes~ ⚓'
+  nginx = 'Nginx~ 🎯'
 
 [Params.links.description.en]
   default = 'friend link'

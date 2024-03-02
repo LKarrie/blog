@@ -5,10 +5,10 @@ lastmod: 2023-11-12T23:25:00.000Z
 description: SSL and TLS ~
 tags: [ "Network" ]
 categories : [ "Network" ]
-lazyBanner : "/imglazy/silverwolf-lazy.jpg"
-banner : "/img/silverwolf.jpg"
-lazyCardImg : "/imglazy/silverwolf-lazy.jpg"
-cardImg : "/img/silverwolf.jpg"
+lazyBanner : "/imglazy/alice-lazy.webp"
+banner : "/img/alice.webp"
+lazyCardImg : "/imglazy/alice-lazy.webp"
+cardImg : "/img/alice.webp"
 ---
 
 ## SSL/TLS

@@ -14,9 +14,9 @@ module.exports = {
         lg: '0 8px 0 var(--tw-shadow-color)',
       },
       backgroundImage: {
-        'main': "url('../img/silverwolf.jpg')",
-        'wave': "url('../img/wave.png')",
-        'wavedark': "url('../img/wavedark.png')",
+        'main': "url('../img/alice.webp')",
+        'wave': "url('../img/wave.webp')",
+        'wavedark': "url('../img/wavedark.webp')",
         'weighanchor1-lazy-old': "url('../imglazy/weighanchor1-lazy.old.webp')",
         'weighanchor1-lazy': "url('../imglazy/weighanchor1-lazy.webp')",
         'weighanchor2-lazy': "url('../imglazy/weighanchor2-lazy.webp')",

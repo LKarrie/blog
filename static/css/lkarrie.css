@@ -1561,11 +1561,11 @@ video {
 }
 
 .bg-main{
-  background-image: url('../img/silverwolf.jpg');
+  background-image: url('../img/alice.webp');
 }
 
 .bg-wave{
-  background-image: url('../img/wave.png');
+  background-image: url('../img/wave.webp');
 }
 
 .bg-weighanchor1-lazy{
@@ -3211,7 +3211,7 @@ video {
 }
 
 :is(.dark .dark\:bg-wavedark){
-  background-image: url('../img/wavedark.png');
+  background-image: url('../img/wavedark.webp');
 }
 
 :is(.dark .dark\:text-blue-400){
