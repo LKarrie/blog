@@ -31,7 +31,7 @@
           <ul class="grid grid-cols-1 gap-8 px-10 py-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
             {{ range .Site.Params.link }}
               <li>
-                <a href="{{ .url }}">
+                <a target="_blank" href="{{ .url }}">
                   <div class=" group relative block h-full bg-white before:absolute before:inset-0 before:rounded-lg before:border-2 before:border-dashed before:border-gray-900 dark:rounded-lg dark:bg-gray-700 dark:before:border-solid">
                     <div class="rounded-lg border-2 border-gray-900 bg-white transition group-hover:-translate-x-2 group-hover:-translate-y-2 dark:border-[1px] dark:border-gray-200 dark:bg-slate-500">
                       <div class="p-4 sm:p-6">

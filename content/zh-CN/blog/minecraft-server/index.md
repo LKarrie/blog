@@ -5,15 +5,15 @@ lastmod: 2022-02-25T23:25:00.000Z
 description: Build Minecraft Server ~
 tags: [ "Minecraft" ]
 categories : [ "Game" ]
-lazyBanner : "/imglazy/blog/minecraft-lazy.jpg"
-banner : "/img/blog/minecraft.jpg"
-lazyCardImg : "/imglazy/blog/minecraft-lazy.jpg"
-cardImg : "/img/blog/minecraft.jpg"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/minecraft-lazy.webp"
+cardImg : "/img/blog/minecraft.webp"
 ---
 
 ## Minecraft
 
-  文章封面来自 [Milk jelly - Minecraft - Bee](https://www.pixiv.net/artworks/88268073)
+  文章封面来自[殘夜 ZANYA-✨](https://www.pixiv.net/artworks/113134444)
 
   时隔一年又一次和大学室友玩起了MC~，简单记录一下服务构建方法
 

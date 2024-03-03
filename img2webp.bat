@@ -20,8 +20,15 @@ cd /d %SrcFolder%
 
 for %%i in (%imgs%) do (  
     echo Processing file: %%i  
-    set /a count += 1
-    img2webp -v -loop %loop% -lossy -q %q% -d %time%  %%i -o %DstFolder%\out_quality%q%_loop%loop%_!count!_frametime%time%.webp
+    @REM set /a count += 1
+
+    set "file_with_ext=%%i"  
+    set "file_without_ext=!file_with_ext:~0,-5!"
+    set "file_without_ext=!file_without_ext:~1!"  
+    echo file_without_ext: !file_without_ext!
+    img2webp -v -loop %loop% -lossy -q %q% -d %time%  %%i -o %DstFolder%\!file_without_ext!.webp
+    
+    @REM img2webp -v -loop %loop% -lossy -q %q% -d %time%  %%i -o %DstFolder%\out_quality%q%_loop%loop%_!count!_frametime%time%.webp
     @REM img2webp -v -loop %loop% -mixed -d %time%  %imgs% -o %DstFolder%\out_mixed_loop%loop%_!count!_frametime%time%.webp
 )
 

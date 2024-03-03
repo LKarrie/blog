@@ -5,14 +5,14 @@ lastmod: 2022-03-02T00:05:00.000Z
 description: 在K3S、RANCHER中使用Traefik的正确姿势~
 tags: [ "Traefik" ]
 categories : [ "K8S" ]
-lazyBanner : "/imglazy/blog/traefik-lazy.jpg"
-banner : "/img/blog/traefik.jpg"
-lazyCardImg : "/imglazy/blog/traefik-lazy.jpg"
-cardImg : "/img/blog/traefik.jpg"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/traefik-lazy.webp"
+cardImg : "/img/blog/traefik.webp"
 ---
 
 ## 💕
-文章封面来自 [NEKO♨ RE.TH - 寮のにちじょう](https://www.pixiv.net/artworks/30413138)
+文章封面来自[殘夜 ZANYA-🌟](https://www.pixiv.net/artworks/112816681)
 
 ## What is traefik?
 

@@ -5,15 +5,15 @@ lastmod: 2023-09-08T14:23:00.000Z
 description: 老博客运维记录
 tags: [ "Blog" ]
 categories : [ "Blog" ]
-lazyBanner : "/imglazy/blog/old-blog-log-lazy.jpg"
-banner : "/img/blog/old-blog-log.jpg"
-lazyCardImg : "/imglazy/blog/old-blog-log-lazy.jpg"
-cardImg : "/img/blog/old-blog-log.jpg"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/old-blog-log-lazy.webp"
+cardImg : "/img/blog/old-blog-log.webp"
 ---
 
 ## 💙
 
-文章封面来自[たぬま-女の子 絵](https://www.pixiv.net/artworks/96074895)
+文章封面来自[殘夜 ZANYA-✨](https://www.pixiv.net/artworks/113992049)
 
 ## Look me
 

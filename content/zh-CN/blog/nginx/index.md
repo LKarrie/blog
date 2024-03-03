@@ -5,15 +5,15 @@ lastmod: 2023-11-24T21:29:00.000Z
 description: NGINX生产运维万字总结~
 tags: [ "Nginx" ]
 categories : [ "Nginx" ]
-lazyBanner : "/imglazy/blog/nginx-lazy.png"
-banner : "/img/blog/nginx.png"
-lazyCardImg : "/imglazy/blog/nginx-lazy.png"
-cardImg : "/img/blog/nginx.png"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/nginx-lazy.webp"
+cardImg : "/img/blog/nginx.webp"
 ---
 
 ## ⛱️
 
-文章封面来自[殘夜 ZANYA-🌟](https://www.pixiv.net/artworks/111639281)
+文章封面来自[殘夜 ZANYA-🌟](https://www.pixiv.net/artworks/110858757)
 
 太久太久没有水文章了...😇
 

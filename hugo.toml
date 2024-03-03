@@ -26,12 +26,12 @@ copyright = '© 2023 LKarrie.'
   defaulCardImg = '/img/weighanchor1.old.webp'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.old.webp'
   syntaxHighlighter = "highlight.js"
-  helloText = '⚡peace~ peace~ peace~ peace~ peace~ ⚡'
+  helloText = 'In solitude, where we are least alone; 💖'
   newFeatureTitle = 'New feature!'
-  newFeatureImg = '/img/alice.webp'
+  newFeatureImg = '/img/weighanchor1.old.webp'
   newFeatureDes = 'new new new feature!'
-  disableWeighanchorLoadAnime = true
-  disableDiscoveryLoadAnime = true
+  disableWeighanchorLoadAnime = false
+  disableDiscoveryLoadAnime = false
   fancybox = true
   tocopen = true
 
@@ -78,7 +78,7 @@ copyright = '© 2023 LKarrie.'
 
 [Params.mobile]
   avatar = '/img/avatar.jpg'
-  helloText = 'hello this is my mobile version'
+  helloText = 'In solitude, where we are least alone;'
 
 [Params.newFeature.en]
   title = 'New feature!'

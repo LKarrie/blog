@@ -5,15 +5,15 @@ lastmod: 2022-03-02T00:05:00.000Z
 description: k3s和rancher的一些工作部署总结~
 tags: [ "K3S","Rancher" ]
 categories : [ "K8S" ]
-lazyBanner : "/imglazy/blog/rancher-k3s-lazy.jpg"
-banner : "/img/blog/rancher-k3s.jpg"
-lazyCardImg : "/imglazy/blog/rancher-k3s-lazy.jpg"
-cardImg : "/img/blog/rancher-k3s.jpg"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/k3s-rancher-lazy.webp"
+cardImg : "/img/blog/k3s-rancher.webp"
 ---
 
 # 🥕
 
-文章封面来自[月夜-🌈](https://www.pixiv.net/artworks/96670572)
+文章封面来自[殘夜 ZANYA-✨](https://www.pixiv.net/artworks/112954180)
 
 Kubernetes管理平台在企业中也越来越普遍了，市面上相关产品也越来越多，我接触过的就有Rancher，DaoCloud，KubeSphere等等
 

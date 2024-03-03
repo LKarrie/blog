@@ -5,17 +5,17 @@ lastmod: 2023-09-08T13:14:00.000Z
 description: Docker部署Halo和Chevereto相关笔记
 tags: [ "Docker","Chevereto","Halo" ]
 categories : [ "Docker" ]
-lazyBanner : "/imglazy/blog/docker-halo-chevereto-lazy.jpg"
-banner : "/img/blog/docker-halo-chevereto.jpg"
-lazyCardImg : "/imglazy/blog/docker-halo-chevereto-lazy.jpg"
-cardImg : "/img/blog/docker-halo-chevereto.jpg"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/docker-halo-chevereto-lazy.webp"
+cardImg : "/img/blog/docker-halo-chevereto.webp"
 ---
 
 ## 🍀
 
 本篇简单介绍一下，使用Docker部署Halo和Chevereto
 
-文章封面来自[哆啦小熙 - < ， >](https://www.pixiv.net/artworks/85705596)
+文章封面来自[殘夜 ZANYA-🌟](https://www.pixiv.net/artworks/111068611)
 
 本片文章涉及Docker相关的基础使用，如果你对Docker不是很了解，欢迎阅读一下我的[Docker笔记](https://blog.lkarrie.com/blog/docker/)
 
