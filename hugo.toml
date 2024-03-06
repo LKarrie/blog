@@ -27,9 +27,6 @@ copyright = '© 2023 LKarrie.'
   defaulLazyCardImg ='/imglazy/weighanchor1-lazy.old.webp'
   syntaxHighlighter = "highlight.js"
   helloText = 'In solitude, where we are least alone; 💖'
-  newFeatureTitle = 'New feature!'
-  newFeatureImg = '/img/weighanchor1.old.webp'
-  newFeatureDes = 'new new new feature!'
   disableWeighanchorLoadAnime = false
   disableDiscoveryLoadAnime = false
   fancybox = true
@@ -44,19 +41,19 @@ copyright = '© 2023 LKarrie.'
   title = 'About'
   image = '/img/weighanchor1.webp'
   description = 'About Me'
-  url = '/en/about/me'
+  url = '/en/about/me/'
   
 [Params.weighanchor.two.en]
-  title = 'Under Maintenance'
+  title = 'Site'
   image = '/img/weighanchor2.webp'
-  description = 'Oops sry :('
-  url = '/'
+  description = 'About Site'
+  url = '/en/about/site/'
 
 [Params.weighanchor.three.en]
-  title = 'Under Maintenance'
+  title = 'Update'
   image = '/img/weighanchor3.webp'
-  description = 'Oops sry :('
-  url = '/'
+  description = 'About Change Log'
+  url = '/en/about/changelog/'
 
 [Params.weighanchor.one.zhCN]
   title = '小雑魚'
@@ -65,16 +62,16 @@ copyright = '© 2023 LKarrie.'
   url = '/about/me/'
 
 [Params.weighanchor.two.zhCN]
-  title = '维护中...'
+  title = '本站'
   image = '/img/weighanchor2.webp'
-  description = '维护中... 下次再来看看吧:)'
-  url = '/'
+  description = '快来看看本站介绍吧~'
+  url = '/about/site/'
 
 [Params.weighanchor.three.zhCN]
-  title = '维护中...'
+  title = '更新日志'
   image = '/img/weighanchor3.webp'
-  description = '维护中... 下次再来看看吧:)'
-  url = '/'
+  description = '本站更新和维护日志~'
+  url = '/about/changelog/'
 
 [Params.mobile]
   avatar = '/img/avatar.jpg'
@@ -82,15 +79,15 @@ copyright = '© 2023 LKarrie.'
 
 [Params.newFeature.en]
   title = 'New feature!'
-  image = '/img/alice.webp'
+  image = '/img/weighanchor1.old.webp'
   description = 'new new new feature!'
-  url = '/'
+  url = '/en/about/changelog/'
 
 [Params.newFeature.zhCN]
   title = '没用的功能又增加了🧐'
-  image = '/img/alice.webp'
-  description = '1.新增文章目录... 详细信息戳我一下'
-  url = '/'
+  image = '/img/weighanchor1.old.webp'
+  description = '1.balabala... 详细信息戳我一下'
+  url = '/about/changelog/'
 
 [Params.mobile.description.en]
   menuDes = 'Where u wanna go ? ~'
@@ -170,11 +167,6 @@ copyright = '© 2023 LKarrie.'
   url = 'https://blog.yuse.cc'
   logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'
   icon = '🐚'
-[[Params.link]] 
-  name = '墨言笙歌'
-  url = 'https://gxjblog.com'
-  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'
-  icon = '💐' 
 [[Params.link]] 
   name = '凛音的奇幻树屋'
   url = 'https://www.rinne.ink'
