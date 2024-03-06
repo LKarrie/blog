@@ -65,19 +65,19 @@ var sure = function () {
         botui.message
           .add({
             delay: 1600,
-            content: "即使有较忙的工作的,也不能妨碍我天天深夜coding!",
+            content: "即使白天忙的和帕鲁一样,也不能妨碍我天天深夜coding! (gaming",
           })
           .then(function () {
             botui.message
               .add({
                 delay: 1600,
-                content: "就算生活被工作塞满,也总要挤挤空做一些自己喜欢的事嘛:P",
+                content: "就算生活被工作塞满,也总要忙里偷闲整整自己喜欢的事嘛:P",
               })
               .then(function () {
                 botui.message
                   .add({
                     delay: 1700,
-                    content: "瞎写写捣鼓点自己感兴趣的东西啦",
+                    content: "就是瞎写写捣鼓点自己感兴趣的东西啦",
                   })
                   .then(function () {
                     botui.message
@@ -115,7 +115,7 @@ var sure = function () {
         botui.message
           .add({
             delay: 1600,
-            content: "（起名真是件有难度的事情",
+            content: "(起名真是件有难度的事情",
           })
           .then(function () {
             botui.action
@@ -150,7 +150,7 @@ var sure = function () {
             botui.message
               .add({
                 delay: 1600,
-                content: "嘻嘻",
+                content: "嘻嘻,所以就自称小杂鱼咯",
               })
               .then(function () {
                 botui.message.add({

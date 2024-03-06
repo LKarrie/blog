@@ -8,7 +8,6 @@ coverage
 **/*.min.js
 **/botui.js
 **/vue.js
-**/TagCloud.js
 
 **/*.min.css
 **/botui-theme-default.css
