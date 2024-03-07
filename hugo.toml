@@ -36,6 +36,7 @@ copyright = '© 2023 LKarrie.'
   enable = true
   url = 'analytics.lkarrie.com'
   site = 'blog.lkarrie.com'
+  js = 'analytics.lkarrie.com/js/plausible.js'
 
 [Params.weighanchor.one.en]
   title = 'About'

@@ -1,1 +1,3 @@
-<script async data-domain="blog.lkarrie.com" src="https://analytics.lkarrie.com/js/plausible.js"></script>
+{{ if eq site.Params.views.plausible.enable true }}
+<script async data-domain="{{ .Site.Params.views.plausible.url }}" src="https://{{ .Site.Params.views.plausible.js }}"></script>
+{{ end }}
