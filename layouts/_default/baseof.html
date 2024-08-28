@@ -38,8 +38,10 @@
       {{- partial "search/search.template" . -}}
       <script src="{{ .Site.BaseURL }}/js/lunr.min.js"></script>
       <script src="{{ .Site.BaseURL }}/js/search.js"></script>
+      <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>
     {{ else if or (eq .Title "Tags") (eq .Title "标签") }}
       {{- partial "tags/tags.template" . -}}
+      <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>
     {{ else }}
       {{- block "otherpagecripts" . }}{{- end }}
       <script src="{{ .Site.BaseURL }}/js/otherpage.js"></script>

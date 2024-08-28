@@ -66,4 +66,4 @@ banner : "/img/blog/defaultbanner.webp"
 
 为了自己目标，2023年一整年我在一边自我怀疑一边咬牙坚持的过程中自学了 [Hugo](https://gohugo.io/)、[Tailwind](https://tailwindcss.com/)、[Golang](https://go.dev/) 等等，现在想想还好我坚持了下来，终于做出了自己满意的博客（本站）~
 
-可能这些只是我的自满足，但是坚持完成一项目标后是真的真的真的是非常开心~
+可能这些只是我的自满足，但坚持完成一项目标后是真的真的真的非常开心~
