@@ -1,5 +1,5 @@
 ---
-title: Prometheus PromSQL
+title: Prometheus PromQL
 date: 2024-08-23T19:45:00.000Z
 lastmod: 2024-08-23T19:45:00.000Z
 description: Prometheus 备忘录~
