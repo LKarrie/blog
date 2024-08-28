@@ -1,37 +1,50 @@
 {{ define "main" }}
-<div class="mx-4 flex justify-center items-center flex-col pt-8">
-  <div class="w-full md:w-[800px] ">
-    <form id="search" action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">  
-      <div class="relative">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-              </svg>
+  <div class="mx-4 flex flex-col items-center justify-center pt-8">
+    <div class="w-full md:w-[800px] ">
+      <form id="search" action="{{ with .GetPage "/search" }}{{ .Permalink }}{{ end }}" method="get">
+        <div class="relative">
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
           </div>
-          <input type="search" id="search-input" name="query" class="appearance-none outline-none block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="{{ T "SearchPromptInBtn" }}" required>
-          <button type="submit" value="search" class="text-white absolute right-2.5 bottom-[0.55rem] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{{ .Title }}</button>
-      </div>
-    </form>
+          <input
+            type="search"
+            id="search-input"
+            name="query"
+            class="block w-full appearance-none rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 text-sm text-gray-900 outline-none focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            placeholder="{{ T "SearchPromptInBtn" }}"
+            required />
+          <button
+            type="submit"
+            value="search"
+            class="absolute bottom-[0.55rem] right-2.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            {{ .Title }}
+          </button>
+        </div>
+      </form>
 
-  <!-- <form id="search"
-    action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">
+      <!-- <form id="search"
+    action='{{ with .GetPage "/search" }}
+        {{ .Permalink }}
+      {{ end }}' method="get">
     <label hidden for="search-input">Search site</label>
     <input type="text" id="search-input" name="query" placeholder="Type here to search">
     <input type="submit" value="search">
   </form> -->
 
-  <!-- <ul id="results">
+      <!-- <ul id="results">
     <li>
         Enter a keyword above to search this site.
     </li>
   </ul> -->
 
-    <ul id="results" class="mt-10 gap-10 flex flex-col w-full md:w-[800px]">
-      <!-- <li class="flex flex-row h-28 text-xl gap-10 justify-center items-center">
+      <ul id="results" class="mt-10 flex w-full flex-col gap-10 md:w-[800px]">
+        <!-- <li class="flex flex-row h-28 text-xl gap-10 justify-center items-center">
           <span>{{ T "SearchPrompt" }}</span>
       </li> -->
 
-      <!-- <li class="flex flex-row h-28 text-ellipsis overflow-hidden gap-10">
+        <!-- <li class="flex flex-row h-28 text-ellipsis overflow-hidden gap-10">
         <div class="hidden md:flex items-center shrink-0 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full">
           <a href="/" class="block bg-white p-1 rounded-full transform transition hover:-rotate-6">
             <div class="blurred-img relative h-full w-full bg-center bg-cover rounded-full" style="background-image: url('{{ .Site.Params.defaulLazyCardImg }}')">
@@ -54,11 +67,11 @@
           </div>
         </div>
       </li> -->
-    </ul>
+      </ul>
+    </div>
   </div>
-</div>
 
-<!-- <style>
+  <!-- <style>
   #search-input{
     -webkit-appearance: none;
   }

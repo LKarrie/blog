@@ -5,15 +5,15 @@ lastmod: 2022-07-10T16:05:00.000Z
 description: 创建属于自己的看板娘API~
 tags: [ "Live2d" ]
 categories : [ "NGINX" ]
-lazyBanner : "/imglazy/blog/live2d-api-lazy.jpg"
-banner : "/img/blog/live2d-api.jpg"
-lazyCardImg : "/imglazy/blog/live2d-api-lazy.jpg"
-cardImg : "/img/blog/live2d-api.jpg"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/live2d-api-lazy.webp"
+cardImg : "/img/blog/live2d-api.webp"
 ---
 
 ## 🌿
 
-文章封面来自[たぬま-女の子 絵](https://www.pixiv.net/artworks/96074895)
+文章封面来自[殘夜 ZANYA-🌟](https://www.pixiv.net/artworks/111123823)
 
 在碎碎念之前，作为惯例当然需要先感谢看板娘的原作者[FGHRSH](https://www.fghrsh.net/)开源[看板娘API](https://github.com/fghrsh/live2d_api)，让我们的博客变得更加可爱~
 

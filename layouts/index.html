@@ -1,13 +1,9 @@
 {{ define "main" }}
+  <div class="block">
+    {{- partial "home/weighanchor.html" . -}}
 
-    <div class="block">
+    {{- partial "home/discovery.html" . -}}
 
-        {{- partial "home/weighanchor.html" . -}}
-
-        {{- partial "home/discovery.html" . -}}
-
-        {{- partial "home/readmore.html" . -}}
-
-    </div>
-
+    {{- partial "home/readmore.html" . -}}
+  </div>
 {{ end }}

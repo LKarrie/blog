@@ -1,34 +1,49 @@
-{{ if and (eq .Type "blog") (eq .Kind "page")}}
-<div class="flex flex-col items-center my-12">
-  <div class="inline-flex mt-2 xs:mt-0">
-    {{ if .PrevInSection }}
-    <button title="Go to {{.PrevInSection.Title}}" onclick="window.location.href='{{ .PrevInSection.Permalink }}'" class="w-28 md:w-36 flex flex-col items-end justify-center px-2 md:px-4 h-16 text-lg font-medium text-white bg-blue-400 rounded-l hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-      <span class="flex items-center gap-4">
-        <i class="fa-solid fa-chevron-left"></i>Prev
-      </span>
-      <span class="px-2 text-end w-24 md:w-32 text-base truncate">{{.PrevInSection.Title}}</span>
-    </button>
-    {{ else }}
-    <div class="w-28 md:w-36 flex flex-col items-center justify-center px-2 md:px-4 h-16 text-lg font-medium text-white bg-blue-400 rounded-l hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-      <span class="flex items-center gap-4">
-        <i class="fa-solid fa-star"></i>Start
-      </span>
+{{ if and (eq .Type "blog") (eq .Kind "page") }}
+  <div class="my-12 flex flex-col items-center">
+    <div class="xs:mt-0 mt-2 inline-flex">
+      {{ if .PrevInSection }}
+        <button
+          title="Go to {{ .PrevInSection.Title }}"
+          onclick="window.location.href='{{ .PrevInSection.Permalink }}'"
+          class="flex h-16 w-28 flex-col items-end justify-center rounded-l bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
+          <span class="flex items-center gap-4">
+            <i class="fa-solid fa-chevron-left"></i>
+            Prev
+          </span>
+          <span class="w-24 truncate px-2 text-end text-base md:w-32">
+            {{ .PrevInSection.Title }}
+          </span>
+        </button>
+      {{ else }}
+        <div
+          class="flex h-16 w-28 flex-col items-center justify-center rounded-l bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
+          <span class="flex items-center gap-4">
+            <i class="fa-solid fa-star"></i>
+            Start
+          </span>
+        </div>
+      {{ end }}
+      {{ if .NextInSection }}
+        <button
+          onclick="window.location.href='{{ .NextInSection.Permalink }}'"
+          class="flex h-16 w-28 flex-col items-start justify-center rounded-r border-0 border-l border-white bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
+          <span class="flex items-center gap-4">
+            Next
+            <i class="fa-solid fa-chevron-right"></i>
+          </span>
+          <span class="w-24 truncate px-2 text-start text-base md:w-32">
+            {{ .NextInSection.Title }}
+          </span>
+        </button>
+      {{ else }}
+        <div
+          class="flex h-16 w-28 flex-col items-start justify-center rounded-r border-0 border-l border-white bg-blue-400 px-2 text-lg font-medium text-white hover:bg-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:w-36 md:px-4">
+          <span class="flex items-center gap-4">
+            End
+            <i class="fa-solid fa-flag-checkered"></i>
+          </span>
+        </div>
+      {{ end }}
     </div>
-    {{ end }}
-    {{ if .NextInSection }}
-    <button onclick="window.location.href='{{ .NextInSection.Permalink }}'" class="w-28 md:w-36 flex flex-col items-start justify-center px-2 md:px-4 h-16 text-lg font-medium text-white bg-blue-400 border-0 border-l border-white rounded-r hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-      <span class="flex items-center gap-4">
-        Next<i class="fa-solid fa-chevron-right"></i>
-      </span>
-      <span class="px-2 text-start w-24 md:w-32 text-base truncate">{{.NextInSection.Title}}</span>
-    </button>
-    {{ else }}
-    <div class="w-28 md:w-36 flex flex-col items-start justify-center px-2 md:px-4 h-16 text-lg font-medium text-white bg-blue-400 border-0 border-l border-white rounded-r hover:bg-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-      <span class="flex items-center gap-4">
-        End<i class="fa-solid fa-flag-checkered"></i>
-      </span>
-    </div>
-    {{ end }}
   </div>
-</div>
 {{ end }}

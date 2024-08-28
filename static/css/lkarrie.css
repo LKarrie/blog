@@ -770,6 +770,31 @@ video {
   margin-bottom: 1px;
 }
 
+.mx-10{
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.mx-9{
+  margin-left: 2.25rem;
+  margin-right: 2.25rem;
+}
+
+.mx-8{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.mx-7{
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
+.my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .mb-1{
   margin-bottom: 0.25rem;
 }
@@ -1049,6 +1074,10 @@ video {
   width: 400px;
 }
 
+.w-\[8\.5em\]{
+  width: 8.5em;
+}
+
 .w-auto{
   width: auto;
 }
@@ -1084,6 +1113,10 @@ video {
 
 .shrink-0{
   flex-shrink: 0;
+}
+
+.shrink{
+  flex-shrink: 1;
 }
 
 .-translate-x-1\/2{
@@ -1241,12 +1274,20 @@ video {
   flex-direction: row;
 }
 
+.flex-row-reverse{
+  flex-direction: row-reverse;
+}
+
 .flex-col{
   flex-direction: column;
 }
 
 .flex-col-reverse{
   flex-direction: column-reverse;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
 }
 
 .items-start{
@@ -1557,23 +1598,23 @@ video {
 }
 
 .bg-main{
-  background-image: url('../img/silverwolf.jpg');
+  background-image: url('../img/alice.webp');
 }
 
 .bg-wave{
-  background-image: url('../img/wave.png');
+  background-image: url('../img/wave.webp');
 }
 
-.bg-weighanchor1-lazy-jpg{
-  background-image: url('../imglazy/weighanchor1-lazy.jpg');
+.bg-weighanchor1-lazy{
+  background-image: url('../imglazy/weighanchor1-lazy.webp');
 }
 
-.bg-weighanchor2-lazy-jpg{
-  background-image: url('../imglazy/weighanchor2-lazy.jpg');
+.bg-weighanchor2-lazy{
+  background-image: url('../imglazy/weighanchor2-lazy.webp');
 }
 
-.bg-weighanchor3-lazy-jpg{
-  background-image: url('../imglazy/weighanchor3-lazy.jpg');
+.bg-weighanchor3-lazy{
+  background-image: url('../imglazy/weighanchor3-lazy.webp');
 }
 
 .from-pink-600{
@@ -1794,8 +1835,20 @@ video {
   padding-top: 2rem;
 }
 
+.pr-10{
+  padding-right: 2.5rem;
+}
+
+.text-left{
+  text-align: left;
+}
+
 .text-center{
   text-align: center;
+}
+
+.text-right{
+  text-align: right;
 }
 
 .text-start{
@@ -1892,6 +1945,10 @@ video {
 
 .leading-relaxed{
   line-height: 1.625;
+}
+
+.tracking-\[\.5em\]{
+  letter-spacing: .5em;
 }
 
 .tracking-normal{
@@ -3031,20 +3088,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.peer:checked ~ .peer-checked\:transform{
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.peer:checked ~ .peer-checked\:transition-all{
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.peer:checked ~ .peer-checked\:duration-500{
-  transition-duration: 500ms;
-}
-
 .hover\:translate-x-0:hover{
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3217,7 +3260,7 @@ video {
 }
 
 :is(.dark .dark\:bg-wavedark){
-  background-image: url('../img/wavedark.png');
+  background-image: url('../img/wavedark.webp');
 }
 
 :is(.dark .dark\:text-blue-400){

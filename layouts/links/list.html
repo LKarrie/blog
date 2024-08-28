@@ -1,46 +1,60 @@
 {{ define "main" }}
-<div class="mx-4 flex justify-center items-center flex-col pt-4">
-  <div class="w-full md:w-[800px] ">
-    <section class="my-0 bg-white dark:bg-gray-900">
-      <div class="container px-2 mx-auto">
-        {{ if  eq .Site.LanguageCode "zh-CN" }}
-        <div class="flex items-baseline justify-center">
-          <h1 class="tracking-widest text-center text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white my-2 ml-2 pr-2 border-r-2 border-dashed">
-            {{ .Title }}
-          </h1>
-          <span class="tracking-normal font-normal my-2 mr-2 pl-2 dark:text-gray-400">Links</span>
-        </div>
-        <p class="mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
-            {{site.Params.links.description.zhCN.default}}
-        </p>
-        {{ end }}
-        {{ if  eq .Site.LanguageCode "en" }}
-        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-hashtag"></i>{{ .Title }}</span></h1>
-        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-            {{site.Params.links.description.en.default}}
-        </p>
-        {{ end }}
-        <ul class="px-10 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-        {{ range .Site.Params.link }}
-          <li>
-            <a href="{{.url}}">
-              <div class=" dark:bg-gray-700 dark:before:border-solid dark:rounded-lg group relative block h-full bg-white before:absolute before:inset-0 before:rounded-lg before:border-2 before:border-dashed before:border-gray-900">
-                <div class="dark:border-gray-200 dark:bg-slate-500 dark:border-[1px] rounded-lg border-2 border-gray-900 bg-white transition group-hover:-translate-y-2 group-hover:-translate-x-2">    
-                  <div class="p-4 sm:p-6">
-                    <div class="flex items-start justify-between">
-                      <span aria-hidden="true" role="img" class="text-lg sm:text-xl">{{ .icon }}</span>
+  <div class="mx-4 flex flex-col items-center justify-center pt-4">
+    <div class="w-full md:w-[800px] ">
+      <section class="my-0 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-2">
+          {{ if  eq .Site.LanguageCode "zh-CN" }}
+            <div class="flex items-baseline justify-center">
+              <h1 class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl">
+                {{ .Title }}
+              </h1>
+              <span class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400">Links</span>
+            </div>
+            <p class="mt-4 text-center text-gray-500 dark:text-gray-300 xl:mt-6">
+              {{ site.Params.links.description.zhCN.default }}
+            </p>
+          {{ end }}
+          {{ if  eq .Site.LanguageCode "en" }}
+            <h1 class="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">
+              explore my
+              <br />
+              awesome
+              <span class="underline decoration-blue-500">
+                <i class="fa-solid fa-hashtag"></i>
+                {{ .Title }}
+              </span>
+            </h1>
+            <p class="mt-4 text-gray-500 dark:text-gray-300 xl:mt-6">
+              {{ site.Params.links.description.en.default }}
+            </p>
+          {{ end }}
+          <ul class="grid grid-cols-1 gap-8 px-10 py-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+            {{ range .Site.Params.link }}
+              <li>
+                <a target="_blank" href="{{ .url }}">
+                  <div class=" group relative block h-full bg-white before:absolute before:inset-0 before:rounded-lg before:border-2 before:border-dashed before:border-gray-900 dark:rounded-lg dark:bg-gray-700 dark:before:border-solid">
+                    <div class="rounded-lg border-2 border-gray-900 bg-white transition group-hover:-translate-x-2 group-hover:-translate-y-2 dark:border-[1px] dark:border-gray-200 dark:bg-slate-500">
+                      <div class="p-4 sm:p-6">
+                        <div class="flex items-start justify-between">
+                          <span aria-hidden="true" role="img" class="text-lg sm:text-xl">
+                            {{ .icon }}
+                          </span>
+                        </div>
+                        <h2 class="mt-4 font-medium text-gray-900 dark:text-white sm:text-lg">
+                          {{ .name }}
+                        </h2>
+                        <p class="mt-1 text-xs text-gray-700 dark:text-white">
+                          {{ .url }}
+                        </p>
+                      </div>
                     </div>
-                    <h2 class="dark:text-white mt-4 font-medium text-gray-900 sm:text-lg"> {{ .name }}</h2>
-                    <p class="dark:text-white mt-1 text-xs text-gray-700">{{ .url }}</p>
                   </div>
-                </div>
-              </div>
-            </a>
-          </li>
-        {{ end }}
-        </ul>
-      </div>  
-    </section>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      </section>
+    </div>
   </div>
-</div>
 {{ end }}

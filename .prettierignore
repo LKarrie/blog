@@ -1,0 +1,14 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore files:
+**/toc.html
+
+**/*.min.js
+**/botui.js
+**/vue.js
+
+**/*.min.css
+**/botui-theme-default.css
+**/lkarrie.css

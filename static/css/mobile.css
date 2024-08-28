@@ -1,86 +1,84 @@
 .toolsinput {
-    margin: 0;
-    padding: 0;
-    top: 0px;
-    right: 5px;
-    z-index: 5;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    outline: 0;
-    cursor: pointer;
+  margin: 0;
+  padding: 0;
+  top: 0px;
+  right: 5px;
+  z-index: 5;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
 }
 
 .toolsbar {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 0px;
-    right: 5px;
-    z-index: 4;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    outline: 0;
-    cursor: pointer;
-    text-align: center;
-    cursor: pointer;
-    will-change: transform;
-    border: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  z-index: 4;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  cursor: pointer;
+  will-change: transform;
+  border: 0;
 }
 
 .toolsbutton {
-    height: 40px;
-    width: 40px;
-    margin-right: 5px;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    border-radius: 50%;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-    will-change: transform;
-    transition: all 0.7s;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  will-change: transform;
+  transition: all 0.7s;
 }
 
-.toolsinput~.toolsbutton:nth-child(6) {
-    transform: translateY(250px) rotate(60deg);
-    transition-delay: 200ms;
-   
+.toolsinput ~ .toolsbutton:nth-child(6) {
+  transform: translateY(250px) rotate(60deg);
+  transition-delay: 200ms;
 }
 
-.toolsinput~.toolsbutton:nth-child(5) {
-    transform: translateY(200px) rotate(90deg);
-    transition-delay: 300ms;
-
+.toolsinput ~ .toolsbutton:nth-child(5) {
+  transform: translateY(200px) rotate(90deg);
+  transition-delay: 300ms;
 }
 
-.toolsinput~.toolsbutton:nth-child(4) {
-    transform: translateY(150px) rotate(180deg);
-    transition-delay: 400ms;
+.toolsinput ~ .toolsbutton:nth-child(4) {
+  transform: translateY(150px) rotate(180deg);
+  transition-delay: 400ms;
 }
 
-.toolsinput[type="checkbox"]:checked~.toolsbutton {
-    transform: translateY(0);
+.toolsinput[type="checkbox"]:checked ~ .toolsbutton {
+  transform: translateY(0);
 }
 
-.toolsinput[type="checkbox"]:checked~.toolsbar:nth-child(2) {
-    display: none;
+.toolsinput[type="checkbox"]:checked ~ .toolsbar:nth-child(2) {
+  display: none;
 }
 
-.toolsinput[type="checkbox"]:checked~.toolsbar:nth-child(3) {
-    display: block;
+.toolsinput[type="checkbox"]:checked ~ .toolsbar:nth-child(3) {
+  display: block;
 }
 
-.toolsinput~.toolsbar:nth-child(2) {
-    display: block;
+.toolsinput ~ .toolsbar:nth-child(2) {
+  display: block;
 }
 
-.toolsinput~.toolsbar:nth-child(3) {
-    display: none;
+.toolsinput ~ .toolsbar:nth-child(3) {
+  display: none;
 }

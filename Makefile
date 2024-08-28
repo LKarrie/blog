@@ -4,4 +4,7 @@ dev:
 css:
 	npm run watch
 
-.PHONY: dev css
+format:
+	npm run format
+
+.PHONY: dev css format

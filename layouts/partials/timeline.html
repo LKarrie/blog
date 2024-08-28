@@ -1,57 +1,67 @@
-<div class="mx-4 flex justify-center items-center flex-col pt-4">
+<div class="mx-4 flex flex-col items-center justify-center pt-4">
   <div class="w-full md:w-[800px] ">
     <section class="my-0 bg-white dark:bg-gray-900">
-      <div class="container px-2 mx-auto">
+      <div class="container mx-auto px-2">
         {{ if  eq .Site.LanguageCode "zh-CN" }}
-        <div class="flex items-baseline justify-center">
-          <h1 class="tracking-widest text-center text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white my-2 ml-2 pr-2 border-r-2 border-dashed">
-            {{ .Title }}
-          </h1>
-          <span class="tracking-normal font-normal my-2 mr-2 pl-2 dark:text-gray-400">Archive</span>
-        </div>
-        <p class="mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
-          {{site.Params.archive.description.zhCN.default}}
-        </p>
+          <div class="flex items-baseline justify-center">
+            <h1 class="my-2 ml-2 border-r-2 border-dashed pr-2 text-center text-2xl font-semibold capitalize tracking-widest text-gray-800 dark:text-white lg:text-4xl">
+              {{ .Title }}
+            </h1>
+            <span class="my-2 mr-2 pl-2 font-normal tracking-normal dark:text-gray-400">Archive</span>
+          </div>
+          <p class="mt-4 text-center text-gray-500 dark:text-gray-300 xl:mt-6">
+            {{ site.Params.archive.description.zhCN.default }}
+          </p>
         {{ end }}
         {{ if  eq .Site.LanguageCode "en" }}
-        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore my <br> awesome <span class="underline decoration-blue-500"><i class="fa-solid fa-bars-staggered"></i>{{ .Title }}</span></h1>
-        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-          {{site.Params.archive.description.en.default}}
-        </p>
+          <h1 class="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">
+            explore my
+            <br />
+            awesome
+            <span class="underline decoration-blue-500">
+              <i class="fa-solid fa-bars-staggered"></i>
+              {{ .Title }}
+            </span>
+          </h1>
+          <p class="mt-4 text-gray-500 dark:text-gray-300 xl:mt-6">
+            {{ site.Params.archive.description.en.default }}
+          </p>
         {{ end }}
-        <div class="mx-0 flex justify-center items-center flex-col pt-4">
-          <section class="w-full md:w-[800px] px-0 md:px-2">
-            {{ range .Pages.GroupByDate "2006" "desc" }}      
-                <h3 class="group-date-year">  {{ .Key }} </h3>  
-                {{ range .Pages.GroupByDate "2006-01" "desc" }}
+        <div class="mx-0 flex flex-col items-center justify-center pt-4">
+          <section class="w-full px-0 md:w-[800px] md:px-2">
+            {{ range .Pages.GroupByDate "2006" "desc" }}
+              <h3 class="group-date-year">{{ .Key }}</h3>
+              {{ range .Pages.GroupByDate "2006-01" "desc" }}
                 <div class="timeline">
-                  
-                    <div class="relative">
-                      <div class="dot-md" title="test">
-                        <div class="dot-md-ping"></div>
-                      </div>
-                      <div class="timeline-item">
-                        <h3 class="group-date-month" >  {{ .Key }} </h3>
-                      </div>
+                  <div class="relative">
+                    <div class="dot-md" title="test">
+                      <div class="dot-md-ping"></div>
                     </div>
+                    <div class="timeline-item">
+                      <h3 class="group-date-month">{{ .Key }}</h3>
+                    </div>
+                  </div>
 
                   {{ range .Pages.ByTitle.Reverse }}
                     <div class="relative">
                       <div class="dot-sm" title="test">
                         <div class="dot-sm-ping"></div>
                       </div>
-                      <div class="group timeline-item-bg ml-4 mr-4 md:mr-0 mt-2 mb-1 p-2 rounded">
+                      <div class="timeline-item-bg group mb-1 ml-4 mr-4 mt-2 rounded p-2 md:mr-0">
                         <a href="{{ .RelPermalink }}">
-                          <h3 class="timeline-title" > {{ .Title }} </h3>
+                          <h3 class="timeline-title">{{ .Title }}</h3>
                         </a>
-                        <div class="hidden timeline-item-bg mx-4 my-2 p-3 rounded md:grid grid-rows-[0fr] group-hover:grid-rows-[1fr] duration-500">
-
+                        <div class="timeline-item-bg mx-4 my-2 hidden grid-rows-[0fr] rounded p-3 duration-500 group-hover:grid-rows-[1fr] md:grid">
                           <div class="md:overflow-hidden">
                             {{ if  eq .Site.LanguageCode "zh-CN" }}
-                            <span class="timeline-date block"> {{ .Date.Format "2006年1月02日" }} </span>
+                              <span class="timeline-date block">
+                                {{ .Date.Format "2006年1月02日" }}
+                              </span>
                             {{ end }}
                             {{ if  eq .Site.LanguageCode "en" }}
-                            <span class="timeline-date block"> {{ .Date.Format "Mon, Jan 2, 2006" }} </span>
+                              <span class="timeline-date block">
+                                {{ .Date.Format "Mon, Jan 2, 2006" }}
+                              </span>
                             {{ end }}
                             <span class="text-gray-500 dark:text-white">
                               {{ .Description }}
@@ -62,7 +72,7 @@
                     </div>
                   {{ end }}
                 </div>
-                {{ end }}
+              {{ end }}
             {{ end }}
           </section>
         </div>

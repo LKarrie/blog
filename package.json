@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "npx tailwindcss -i ./assets/css/lkarrie.css -o ./static/css/lkarrie.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx prettier --write ./layouts ./static/css/*.css ./static/js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,9 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
+    "prettier": "^3.2.5",
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwind-scrollbar": "^3.0.4",
     "tailwindcss": "^3.3.2"
   }

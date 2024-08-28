@@ -21,76 +21,76 @@ copyright = '© 2023 LKarrie.'
 
 [Params]
   description = '雑魚の小站'
-  defaulBanner = '/img/silverwolf.jpg'
-  defaulLazyBanner ='/imglazy/silverwolf-lazy.jpg'
-  defaulCardImg = '/img/weighanchor1.png'
-  defaulLazyCardImg ='/imglazy/weighanchor1-lazy.png'
+  defaulBanner = '/img/alice.webp'
+  defaulLazyBanner ='/imglazy/alice-lazy.webp'
+  defaulCardImg = '/img/weighanchor1.old.webp'
+  defaulLazyCardImg ='/imglazy/weighanchor1-lazy.old.webp'
   syntaxHighlighter = "highlight.js"
-  helloText = '⚡peace~ peace~ peace~ peace~ peace~ ⚡'
-  newFeatureTitle = 'New feature!'
-  newFeatureImg = '/img/silverwolf.jpg'
-  newFeatureDes = 'new new new feature!'
-  disableWeighanchorLoadAnime = true
-  disableDiscoveryLoadAnime = true
+  helloText = 'In solitude, where we are least alone; 💖'
+  disableWeighanchorLoadAnime = false
+  disableDiscoveryLoadAnime = false
   fancybox = true
   tocopen = true
+  aboutSiteLastModTime = '2024年3月7日'
+  aboutSiteAuthor = '小杂鱼'
 
 [Params.views.plausible]
   enable = true
   url = 'analytics.lkarrie.com'
   site = 'blog.lkarrie.com'
+  js = 'analytics.lkarrie.com/js/plausible.js'
 
 [Params.weighanchor.one.en]
   title = 'About'
-  image = '/img/weighanchor1.jpg'
+  image = '/img/weighanchor1.webp'
   description = 'About Me'
-  url = '/en/about/me'
+  url = '/en/about/me/'
   
 [Params.weighanchor.two.en]
-  title = 'Under Maintenance'
-  image = '/img/weighanchor2.jpg'
-  description = 'Oops sry :('
-  url = '/'
+  title = 'Site'
+  image = '/img/weighanchor2.webp'
+  description = 'About Site'
+  url = '/en/about/site/'
 
 [Params.weighanchor.three.en]
-  title = 'Under Maintenance'
-  image = '/img/weighanchor3.jpg'
-  description = 'Oops sry :('
-  url = '/'
+  title = 'Update'
+  image = '/img/weighanchor3.webp'
+  description = 'About Change Log'
+  url = '/en/about/changelog/'
 
 [Params.weighanchor.one.zhCN]
   title = '小雑魚'
-  image = '/img/weighanchor1.jpg'
+  image = '/img/weighanchor1.webp'
   description = '快来和小雑魚对话吧~'
   url = '/about/me/'
 
 [Params.weighanchor.two.zhCN]
-  title = '维护中...'
-  image = '/img/weighanchor2.jpg'
-  description = '维护中... 下次再来看看吧:)'
-  url = '/'
+  title = '本站'
+  image = '/img/weighanchor2.webp'
+  description = '快来看看本站介绍吧~'
+  url = '/about/site/'
 
 [Params.weighanchor.three.zhCN]
-  title = '维护中...'
-  image = '/img/weighanchor3.jpg'
-  description = '维护中... 下次再来看看吧:)'
-  url = '/'
+  title = '更新日志'
+  image = '/img/weighanchor3.webp'
+  description = '本站更新和维护日志~'
+  url = '/about/changelog/'
 
 [Params.mobile]
   avatar = '/img/avatar.jpg'
-  helloText = 'hello this is my mobile version'
+  helloText = 'In solitude, where we are least alone;'
 
 [Params.newFeature.en]
   title = 'New feature!'
-  image = '/img/silverwolf.jpg'
+  image = '/img/weighanchor1.old.webp'
   description = 'new new new feature!'
-  url = '/'
+  url = '/en/about/changelog/'
 
 [Params.newFeature.zhCN]
   title = '没用的功能又增加了🧐'
-  image = '/img/silverwolf.jpg'
-  description = '1.新增文章目录... 详细信息戳我一下'
-  url = '/'
+  image = '/img/weighanchor1.old.webp'
+  description = '1.balabala... 详细信息戳我一下'
+  url = '/about/changelog/'
 
 [Params.mobile.description.en]
   menuDes = 'Where u wanna go ? ~'
@@ -119,6 +119,11 @@ copyright = '© 2023 LKarrie.'
 [Params.categories.description.zhCN]
   default = '文章分类'
   game = '游戏~ 🎮'
+  blog = '博客~ 📖'
+  docker = '容器~ 🐋'
+  java = '码码~ ⌨️'
+  k8s = 'Kubernetes~ ⚓'
+  nginx = 'Nginx~ 🎯'
 
 [Params.links.description.en]
   default = 'friend link'
@@ -128,10 +133,10 @@ copyright = '© 2023 LKarrie.'
 
 [Params.home]
   showVideo = false
-  homeBgStartIndex = 0
-  homeBgEndIndex = 1
+  homeBgStartIndex = 1
+  homeBgEndIndex = 6
   homeBgImage = '/img/home'
-  homeBgImageSuffix = 'jpg'
+  homeBgImageSuffix = 'webp'
   homeBgVideo = 'https://blog.lkarrie.com/media/silverwolf.mp4/index.m3u8'
   github = 'https://github.com/LKarrie'
   mail = 'lkarrie@163.com'
@@ -165,11 +170,6 @@ copyright = '© 2023 LKarrie.'
   url = 'https://blog.yuse.cc'
   logo = 'https://pan.yuse.cc/d/imgu/avatar.jpg'
   icon = '🐚'
-[[Params.link]] 
-  name = '墨言笙歌'
-  url = 'https://gxjblog.com'
-  logo = 'https://images-1313401033.cos.ap-beijing.myqcloud.com/accessory/headPortrait.jpeg'
-  icon = '💐' 
 [[Params.link]] 
   name = '凛音的奇幻树屋'
   url = 'https://www.rinne.ink'

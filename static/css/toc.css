@@ -58,9 +58,6 @@
   color: var(--secondary);
 }
 
-
-summary  > details {
-
+summary > details {
   border: white;
-
 }

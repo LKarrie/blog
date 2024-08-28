@@ -1,70 +1,86 @@
-<header id="tophaeder" class="group h-16 w-full bg-white dark:bg-gray-900 dark:bg-opacity-80 {{ if .IsHome }} bg-opacity-0 hover:bg-opacity-80 transition ease-in-out duration-300 {{ else}} bg-opacity-80 transition ease-in-out duration-300 {{ end }} fixed z-50">
-    <div class="h-full w-full flex items-center justify-between mx-auto my-0">
-      <div class="absolute hidden lg:block">
-        <!-- <div class="text-2xl hidden md:inline">
+<header
+  id="tophaeder"
+  class="{{ if .IsHome }}
+    bg-opacity-0 hover:bg-opacity-80 transition ease-in-out duration-300
+  {{ else }}
+    bg-opacity-80 transition ease-in-out duration-300
+  {{ end }} group fixed z-50 h-16 w-full bg-white dark:bg-gray-900 dark:bg-opacity-80">
+  <div class="mx-auto my-0 flex h-full w-full items-center justify-between">
+    <div class="absolute hidden lg:block">
+      <!-- <div class="text-2xl hidden md:inline">
           <h1 class="pl-10 font-bold uppercase p-4 ">
             <a href="/" class="hover:text-gray-700">LKarrie</a>
           </h1>
         </div> -->
-        <div class="flex flex-row justify-center items-center">
-            <img id="toplogo" class="w-[4.5rem] h-[4.5rem]  {{ if .IsHome }} opacity-0 group-hover:opacity-100 transition ease-in-out duration-1000 {{ end }}" src="/img/silverwolf-logo.png">
-            <div id="toptext" class="{{ if .IsHome }} opacity-0 group-hover:opacity-100 transition ease-in-out duration-500 {{ end }} flex flex-col font-logo pt-4 ">
-              <span class="px-1">
-                <span class="dark:text-white px-2 bg-white group-hover:bg-purple-400 rounded-lg h-auto w-auto text-2xl bg-opacity-0 group-hover:text-white transition ease-in-out duration-500">雑魚</span>
-                <span class="text-gray-600 dark:text-white inline-block bg-white h-auto w-auto text-2xl bg-opacity-0 animate-none group-hover:animate-spin transition ease-in-out duration-500">の</span>
-                <span class="dark:text-white px-2 bg-white h-auto w-auto text-2xl bg-opacity-0 group-hover:text-purple-500 transition ease-in-out duration-500">小站</span>
-              </span>
-              <rp></rp>
-                <rt class="opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 group-hover:text-purple-500 text-xs transition ease-in-out duration-500">让杂鱼来给你整个活!</rt>
-              <rp></rp>
-            </div>
-        </div>
-      </div>
-      <div class="absolute h-full w-full">
-        <nav id="topnav" class="flex items-center justify-center flex-col w-full h-16 opacity-0 hover:opacity-100 translate-x-28 hover:translate-x-0 transition ease-in-out duration-1000 fixed z-50">
-            <div class="text-lg hidden md:inline w-full">
-              <ul class="flex font-bold justify-center gap-4">
-                <li class="text-center w-32">
-                    <a href="{{ absLangURL "" }}" class="nav">
-                      <i class="fa-brands fa-fort-awesome animate-pulse"></i>
-                      <span>{{ T "Home" }}</span>
-                    </a>
-                </li>
-                <li class="text-center w-32">
-                    <a href="{{ absLangURL "blog" }}/" class="nav">          
-                        <i class="fa-solid fa-list-ul animate-pulse"></i>
-                        <span>{{ T "Archive" }}</span>
-                    </a>
-                </li>
-                <li class="text-center w-32">
-                  <a href="{{ absLangURL "tags" }}/" class="nav">
-                      <i class="fa-solid fa-tag animate-pulse"></i>
-                      <span>{{ T "Tags" }}</span>
-                  </a>
-                </li>
-                <li class="text-center w-32">
-                  <a href="{{ absLangURL "categories" }}/" class="nav">
-                      <i class="fa-solid fa-hashtag animate-pulse"></i>
-                      <span>{{ T "Categories" }}</span>
-                  </a>
-                </li>
-                <li class="text-center w-32">
-                  <a href="{{ absLangURL "links" }}/" class="nav">
-                      <i class="fa-solid fa-link animate-pulse"></i>
-                      <span>{{ T "Links" }}</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-        </nav>
-      </div>
-      <!-- other -->
-      <div class="absolute right-1 z-50">
-        <div class="flex flex-row gap-1">
-        {{- partial "common/lang.html" . -}}
-        {{- partial "common/searchbtn.html" . -}}
-        {{- partial "common/darktoggle.html" . -}}
+      <div class="flex flex-row items-center justify-center">
+        <img
+          id="toplogo"
+          class="{{ if .IsHome }}
+            opacity-0 group-hover:opacity-100 transition ease-in-out duration-1000
+          {{ end }} h-[4.5rem]  w-[4.5rem]"
+          src="/img/silverwolf-logo.webp" />
+        <div
+          id="toptext"
+          class="{{ if .IsHome }}
+            opacity-0 group-hover:opacity-100 transition ease-in-out duration-500
+          {{ end }} flex flex-col pt-4 font-logo">
+          <span class="px-1">
+            <!-- <span
+              class="text-center h-auto w-auto rounded-lg bg-white bg-opacity-0 px-2 text-2xl transition duration-500 ease-in-out group-hover:bg-purple-400 group-hover:text-white dark:text-white"
+            > -->
+            <span class="h-auto w-auto rounded-lg bg-opacity-0 px-2 text-center text-2xl transition duration-500 ease-in-out group-hover:bg-purple-400 group-hover:text-white dark:text-white">雑魚</span>
+            <span class="inline-block h-auto w-auto animate-none bg-white bg-opacity-0 text-2xl text-gray-600 transition duration-500 ease-in-out group-hover:animate-spin dark:text-white">の</span>
+            <span class="h-auto w-auto bg-white bg-opacity-0 px-2 text-2xl transition duration-500 ease-in-out group-hover:text-purple-500 dark:text-white">小站</span>
+          </span>
+          <span class="translate-y-3 text-center text-xs tracking-[.5em] opacity-0 transition duration-500 ease-in-out group-hover:translate-y-0 group-hover:text-purple-500 group-hover:opacity-100">让杂鱼来给你整个活!</span>
         </div>
       </div>
     </div>
+    <div class="absolute h-full w-full">
+      <nav id="topnav" class="fixed z-50 flex h-16 w-full translate-x-28 flex-col items-center justify-center opacity-0 transition duration-1000 ease-in-out hover:translate-x-0 hover:opacity-100">
+        <div class="hidden w-full font-logo text-lg md:inline">
+          <ul class="flex justify-center gap-4 font-bold">
+            <li class="w-[8.5em]  text-center">
+              <a href="{{ absLangURL "" }}" class="nav">
+                <i class="fa-brands fa-fort-awesome animate-pulse"></i>
+                <span>{{ T "Home" }}</span>
+              </a>
+            </li>
+            <li class="w-[8.5em]  text-center">
+              <a href="{{ absLangURL "blog" }}/" class="nav">
+                <i class="fa-solid fa-list-ul animate-pulse"></i>
+                <span>{{ T "Archive" }}</span>
+              </a>
+            </li>
+            <li class="w-[8.5em]  text-center">
+              <a href="{{ absLangURL "tags" }}/" class="nav">
+                <i class="fa-solid fa-tag animate-pulse"></i>
+                <span>{{ T "Tags" }}</span>
+              </a>
+            </li>
+            <li class="w-[8.5em] text-center">
+              <a href="{{ absLangURL "categories" }}/" class="nav">
+                <i class="fa-solid fa-hashtag animate-pulse"></i>
+                <span>{{ T "Categories" }}</span>
+              </a>
+            </li>
+            <li class="w-[8.5em]  text-center">
+              <a href="{{ absLangURL "links" }}/" class="nav">
+                <i class="fa-solid fa-link animate-pulse"></i>
+                <span>{{ T "Links" }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- other -->
+    <div class="absolute right-1 z-50">
+      <div class="flex flex-row gap-1">
+        {{- partial "common/lang.html" . -}}
+        {{- partial "common/searchbtn.html" . -}}
+        {{- partial "common/darktoggle.html" . -}}
+      </div>
+    </div>
+  </div>
 </header>

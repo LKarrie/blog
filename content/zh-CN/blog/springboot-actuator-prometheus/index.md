@@ -5,15 +5,15 @@ lastmod: 2022-09-30T20:10:00.000Z
 description: Spring Boot Actuator Prometheus 自定义埋点~
 tags: [ "SpringBoot","Actuator" ]
 categories : [ "Java" ]
-lazyBanner : "/imglazy/blog/actuator-lazy.jpg"
-banner : "/img/blog/actuator.jpg"
-lazyCardImg : "/imglazy/blog/actuator-lazy.jpg"
-cardImg : "/img/blog/actuator.jpg"
+lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
+banner : "/img/blog/defaultbanner.webp"
+lazyCardImg : "/imglazy/blog/actuator-lazy.webp"
+cardImg : "/img/blog/actuator.webp"
 ---
 
 ## 🍮
 
-文章封面来自[おめぐ-ヒナ委員長の夏休み](https://www.pixiv.net/artworks/101267080)
+文章封面来自[殘夜 ZANYA-✨](https://www.pixiv.net/artworks/113295379)
 
 鸽了一段时间没有水文章了 🤕
 
