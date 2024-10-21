@@ -1,7 +1,7 @@
 ---
 title: NGINX全知手册~
 date: 2023-11-24T21:29:00.000Z
-lastmod: 2023-11-24T21:29:00.000Z
+lastmod: 2024-11-21T21:00:00.000Z
 description: NGINX生产运维万字总结~
 tags: [ "Nginx" ]
 categories : [ "Nginx" ]
@@ -138,7 +138,7 @@ make intall
 openSSL升级
 
 ```bash
-cd /app
+cd /app/openssl
 wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz
 tar -xvf openssl-1.1.1g.tar.gz
 cd openssl-1.1.1g
@@ -208,6 +208,53 @@ script 存放keepalived探活脚本 或 一些定时任务脚本
 └── uwsgi_temp
 ```
 
+动态编译
+
+动态编译主要指编译时通过 add-dynamic-module 设置需要动态编译的模块，个人不是很常用，简单备忘一下编译和使用过程
+
+```markdown
+# 创建nginx安装路径
+mkdir -p /app/nginx2
+# 创建构建编译nginx路径
+mkdir -p /app/nginx_build2
+# 创建存放nginx动态模块路径
+mkdir -p /app/nginx_build2/dynamic-module
+# 准备编译
+cd /app/nginx_build2
+# 拉取nginx源码
+wget http://nginx.org/download/nginx-1.21.3.tar.gz
+tar -zxvf nginx-1.21.3.tar.gz
+# 拉取测试动态编译的模块
+git clone https://github.com/openresty/echo-nginx-module.git
+cd nginx-1.21.3
+# 设置编译参数
+# --modules-path 设置存放动态编译后生成的 .so 文件的路径
+# --add-dynamic-module 指定到动态编译的模块源码路径
+./configure --prefix=/app/nginx2 --with-compat --with-file-aio --with-threads --with-http_ssl_module --with-stream --with-stream_ssl_module --with-http_sub_module --modules-path=/app/nginx_build2/dynamic-module  --add-dynamic-module=../echo-nginx-module
+# 编译并安装
+make && make install
+# 构建完成后 可以观察到生成的 .so 文件
+# 以下目录会生成 ngx_http_echo_module.so
+ls /app/nginx_build2/dynamic-module/
+```
+
+**注意**：在使用被动态编译模块的配置时，需要在对应的配置文件的**首行**使用 load_module 配置引用对应的 模块.so 文件，如下
+
+```nginx
+load_module /app/nginx_build2/dynamic-module/ngx_http_echo_module.so;
+
+#user  nobody;
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+# ...
+# ...
+```
 
 
 ## NGINX运维
@@ -221,7 +268,7 @@ script 存放keepalived探活脚本 或 一些定时任务脚本
 热升级或者热重启的使用场景：
 
 * NGINX版本升级（替换可执行文件），保证流量的同时进行升级
-* 在**开源社区版本**中NGINX会对本地DNS进行缓存，resolver配置未生效的情况下，只能热重启NGINX获取域名对应的最新IP
+* 在**开源社区版本**中NGINX会对本地DNS进行缓存，resolver配置未生效的情况下，只能热重启或尝试reload使NGINX获取域名对应的最新IP
 
 热升级具体操作如下
 
@@ -1034,10 +1081,13 @@ http{
         # 需要注意这个配置并不是限制 keepalive的链接数
         keepalive 32;
         # 单个keepalive链接最大处理的请求数
+        # 默认 1000 
         keepalive_requests 10000;
         # 空闲最大时间
+        # 默认 60s
         keepalive_timeout 60s;
         # 最大存活时间 1.19.10 版本后可配置
+		# 默认 1h
         keepalive_time 1h;
     }
     
@@ -1055,7 +1105,7 @@ http{
 
 
 
-#### STEAM 长链接
+#### STREAM 长链接
 
 在NGINX的四层代理中使用长链接
 
@@ -1140,6 +1190,62 @@ HTTPS我使用的不是很多，目前工作中SSL卸载是在硬件上实现的
 
 [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
 
+配置示例如下
+
+```nginx
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    # 侦听 ipv4
+    listen 443 ssl http2;
+    # 侦听 ipv6
+    listen [::]:443 ssl http2;
+
+    ssl_certificate /path/to/signed_cert_plus_intermediates;
+    ssl_certificate_key /path/to/private_key;
+    # 参考实际用途调整 APP 1h 网页 < 24h
+    ssl_session_timeout 60m;
+    # 本机内存缓存 无法解决分布式的问题
+    ssl_session_cache shared:SSL:30m;  # about 40000 * 3 sessions
+    # 由于安全问题关闭
+    # 服务器将 session 信息加密后保存在 session ticket 中交由客户端保存，客户端会在 client hello 的拓展中加上 session ticket，服务器解密后就可以恢复会话信息
+    # Nginx 和 Apache 都只在重启后才会更改加密使用的密钥
+    # session ticket 不具有前向保密性，并且一旦 session ticket 被解密会使 TLS 的前向保密性机制完全失效
+    ssl_session_tickets off;
+
+    # intermediate configuration
+    ssl_protocols TLSv1.2 TLSv1.3;
+    # 设置启用加密算法
+    # 所有算法套件 openssl ciphers
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-CHACHA20-POLY1305;
+    # 关闭服务器端择要使用的算法套件
+    # 当支持 SSL3 或 TSLv1.1 时 客户端可能选择低安全的算法造成安全问题 所以需要设置 on
+    # 由于已经设置 ssl_protocols TLSv1.2 TLSv1.3 所以可以 off 此设置 让客户端选择自己性能首选的算法
+    ssl_prefer_server_ciphers off;
+
+    # HSTS (ngx_http_headers_module is required) (63072000 seconds)
+    add_header Strict-Transport-Security "max-age=63072000" always;
+
+    # OCSP stapling
+    # 服务器端发起OCSP验证证书 默认不开启 私有网络不开启
+    # ssl_stapling on;
+    # ssl_stapling_verify on;
+
+    # verify chain of trust of OCSP response using Root CA and Intermediate certs
+    # ssl_trusted_certificate /path/to/root_CA_cert_plus_intermediates;
+
+    # replace with the IP address of your resolver
+    # resolver 127.0.0.1;
+}
+```
+
 下面是个人博客使用到的一些配置，仅供参考
 
 ```nginx
@@ -1208,6 +1314,51 @@ server {
 }
 ```
 
+#### 代理上游HTTPS
+
+反向代理上游服务器是HTTPS时，你可能见过这种错误
+
+> SSL_do_handshake() failed (SSL：error：14077438：SSL routines：SSL23_GET_SERVER_HELLO：tlsv1 alert internal error) ...
+
+上述错误是TLS 握手时 证书 SNI 校验失败导致的，看error.log并不能很明显的看出原因
+
+下面时反向代理上游是HTTPS可能使用的配置
+
+```nginx
+server {
+	listen 80;
+	location / {
+        # 上游地址： https://test.com;
+        proxy_pass https://127.0.0.1:443;
+        # 设置 Host 头
+        proxy_set_header Host test.com;
+        # 启用将 server_name 添加到 client hello extension 字段中 
+        # 启用SNI 
+        proxy_ssl_server_name on;
+        # 覆盖SNI 传递的域名字段 用于证书校验
+        proxy_ssl_name test.com;
+        # 算法
+        proxy_ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256;
+        # 协议版本
+        proxy_ssl_protocols TLSv1.2 TLSv1.3;
+        # 配置客户端证书
+        proxy_ssl_certificate     cert/client.pem;
+        # 配置客户端密钥
+        proxy_ssl_certificate_key cert/client.key;
+		
+        # 开启证书校验 默认不开启
+        proxy_ssl_verify on;
+        # 被信任的CA机构证书
+        proxy_ssl_trusted_certificate cert/trusted_ca_cert.crt;
+        # 验证深度（顶级CA机构->下层CA机构）
+		proxy_ssl_verify_depth 2;
+        
+        # 复用SSL握手会话 加速连接
+		proxy_ssl_session_reuse on;
+	}
+}
+```
+
 
 
 ### 请求缓冲
@@ -1224,18 +1375,18 @@ http {
     client_max_body_size 1m;
 
     # 设置读取请求体的缓存区大小 超过此大小将 写入临时文件
-	client_body_buffer_size 8k;
+    client_body_buffer_size 8k;
 
     # 限制请求头的大小
     # 请求头 例如 Host lkarrie.com
     # 超过此值 large_client_header_buffers 配置生效
-	client_header_buffer_size 1k;
+    client_header_buffer_size 1k;
 
     # 限制超过 client_header_buffer_size 的请求 请求行和请求头大小
     # 请求行(request line)的大小不能超过 8k（设置值） 否则返回414 (Request-URI Too Large) 错误
     # 每一个请求头不能超过 8k（设置值） 否则返回400
     # 请求行和请求头总大小不能超过 4x8k（32k 设置值）
-	large_client_header_buffers 4 8k;
+    large_client_header_buffers 4 8k;
     
     # ...
 }
@@ -1246,11 +1397,11 @@ http {
 ```nginx
 http {
     # ...
-	client_max_body_size 100m;
-	client_body_buffer_size 128k;
-	client_header_buffer_size 256k;
-	large_client_header_buffers 4 256k; 
-	# ...
+    client_max_body_size 100m;
+    client_body_buffer_size 128k;
+    client_header_buffer_size 256k;
+    large_client_header_buffers 4 256k; 
+    # ...
 }
 ```
 
@@ -1458,6 +1609,11 @@ server {
         	# 如果 if 表达式为 false 默认会走 if 外的proxy_pass配置 
         	# 若注释默认 proxy_pass 则会返回 html 目录下的 index.html
             # proxy_pass http://localhost:9000;
+        	
+        	# 如果需要提取的IP后还有其他参数
+        	# curl -i http://localhost?ip=127.0.0.1:80&a=1&=2
+        	# 需要修改正侧表达式
+        	# ip=([^&]+)
     }
 }
 ```
@@ -1567,20 +1723,20 @@ NGINX中常见的匹配正则语法
 
 ```nginx
 location ~* ^/test {
-	# 设置content type
+    # 设置content type
     # 如果不设置 在浏览器上请求 不会用html形式展示 会直接变成附件下载 
-	default_type text/html ;
+    default_type text/html ;
 	
     # 测试正则
     # 当访问
     # http://localhost/test?method=GET
-	# http://localhost/test?test=test&method=GET
-	# http://localhost/test?method=GET&test=test
+    # http://localhost/test?test=test&method=GET
+    # http://localhost/test?method=GET&test=test
     # $1 捕获的就是 GET
 	if ($query_string ~ ".*(?:^|\?|&)method=(.+?)(?:(?:&.*)|$)") { 
-		return 200  "$1"; 
-	}
-	return 200  "default";
+        return 200  "$1"; 
+    }
+    return 200  "default";
 }
 ```
 
@@ -1632,6 +1788,30 @@ server {
         add_header 'Access-Control-Allow-Origin' 'https://browsedomain.com';
         proxy_pass http://192.168.0.2:9081;
     }
+}
+```
+
+
+
+### 密码认证
+
+生成密码
+
+在当前目录生成文件名为auth的认证文件，用户名为username，密码是执行下面的命令后提示需要输入的密钥
+
+```bash
+htpasswd -c ./auth username
+```
+
+添加NGINX配置
+
+```nginx
+server {
+    listen 80;
+    # 也可以放在 location 下
+    auth_basic "请输入认证信息";
+    auth_basic_user_file auth;
+    ...
 }
 ```
 
@@ -1700,6 +1880,96 @@ CSRF和防盗链
 
 
 
+
+
+### 压缩配置
+
+Nginx对前端资源的压缩分为两种，动态压缩和静态压缩
+
+* 动态压缩
+  * 由 nginx ngx_http_gzip_module 处理，属于默认模块
+  * 当Nginx向浏览器返回资源文件时，虽然文件本事并不是.gz结尾，Nginx会消耗CPU资源进行压缩，再将压缩后的内容返回给浏览器
+
+* 静态压缩
+  * 由 nginx ngx_http_gzip_static_module 处理，不是默认模块
+  * 基于前端框架的项目在打包过程中资源会根据配置构建生成.gz结尾的文件，项目在Nginx部署后，对于资源请求Nginx将直接返回压缩包
+
+可以通过响应头可以判断资源是否被压缩，以谷歌浏览器为例，F12打开控制台后，请求信息栏中右键选择响应头，选择Content-Encoding，添加展示Content-Encoding头信息，其中为gzip则表示当前资源开启了gzip压缩，无则没有开启
+
+![nginx-gzip-1](https://image.lkarrie.com/images/2024/10/21/nginx-gzip-1.png)
+
+**动态压缩**
+
+NGINX Gzip配置
+
+```nginx
+http {
+	...
+	# 开启 gzip
+    gzip on;
+    # 设置最小的压缩配置 小于1k 不做gzip压缩 
+    gzip_min_length 1k;
+    # 设置压缩缓冲区 4 块 每块大小16k
+    gzip_buffers 4 16k;
+    # 开启gzip的 http请求协议
+    # 默认 1.1
+    # 在多层nginx嵌套下要注意这里的设置 nginx —> nginx(upstream) 之间默认是 http 1.0 和gzip_http_version的默认值不匹配
+    # 上述情况 需要在上游nginx中设置 gzip_http_version 1.0
+    gzip_http_version 1.1;
+    # 压缩级别1-10 和 CPU 占用相关 数字越高CPU占用越高 5以上压缩大小没有明显提升 
+    gzip_comp_level 5;
+    # 压缩文件的类型
+    # 这里需要注意 所设置的类型和后缀映射 必须在 mime.types 中存在 通常只对文本类文件进行gzip压缩
+    gzip_types text/css text/xml text/plain application/javascript application/rss+xml font/woff font/woff2;
+    # 设置当前nginx作为被代理节点时是否启用gzip
+    # 其他代理节点向当前nginx请求文件且请求包含Via头(Via: XXX)时 gzip_proxied配置才会生效 gzip_proxied根据请求或响应头来判断是否开启gzip
+    # 默认 off 可以同时设置多个
+    # 可选的值 如下
+	# any		所有被代理请求均开启Gzip
+    # off		被代理时禁止Gzip
+	# expired	响应头包含Expires 禁用Gzip
+	# no-cache	响应头Cache-Control为no-cache 禁用Gzip
+	# no-store	响应头Cache-Control为no-store 禁用Gzip
+	# private	响应头Cache-Control为private 禁用Gzip
+	# no_etag	响应头不包含ETag 禁用Gzip
+	# auth		请求头包含Authorization 禁用Gzip
+    # no_last_modified	响应头不包含Last-Modified 禁用Gzip
+    gzip_proxied any;
+    # 添加响应头 Vary: Accept-Encoding
+    gzip_vary on;
+    # 根据 User-Agent 禁用 gzip 下面当为 ie浏览器访问时 禁用gzip
+    gzip_disable "MSIE [1-6]\.";
+	...
+}
+```
+
+**静态压缩**
+
+需要根据实际的后缀文件设置 gzip_static
+
+```nginx
+server {
+	...
+	root   html;
+
+	location ~ \.(js|mjs|json|css|html)$ {
+        gzip_static on;
+	}
+
+	location / {
+		try_files $uri $uri/ /index.html;
+        index  index.html index.htm;
+  	}
+    ...
+}
+```
+
+
+
+  
+
+
+
 ### 真实IP透传
 
 一些安全性较高的系统，在被NGINX代理后可能出现无法登录无法访问或403的问题，需要将真实IP透传到后端
@@ -1745,6 +2015,33 @@ server{
     }
 }
 ```
+
+
+
+
+
+
+
+### Cookie设置
+
+NGINX多层代理之后系统Cookie设置可能存在问题，记录一下set cookie出现的问题和解决方法
+
+问题：secure 标记导致cookie无法设置
+
+![nginx-cookie-error1](https://image.lkarrie.com/images/2024/10/21/nginx-cookie-error1.png)
+
+```nginx
+server{
+	···
+    # 删除cookie中的 secure 标记
+    proxy_cookie_flags ~ nosecure;
+    ···
+}
+```
+
+
+
+
 
 
 
@@ -2060,7 +2357,7 @@ server {
 
 
 
-#### Prxy_cookie_domain 
+#### Proxy_cookie_domain 
 
 NGINX在代理 依赖cookie认证模式的系统时，服务端返回的cookie domain并不一定和NGINX代理后的地址相同，cookie domain 和浏览器访问地址不同会导致写入cookie被阻止，这时就需要使用 proxy_cookie_domain 命令调整服务端返回的cookie
 
@@ -2075,6 +2372,313 @@ server {
     }
 }
 ```
+
+
+
+#### Proxy_protocol
+
+记录一个不太常见的配置
+
+proxy_protocol 表示开启NGINX支持 proxy protocol 协议
+
+> proxy_prorocol 是一种透传协议，可以更方便的获取请求源地址;
+>
+> 相关文档：[haproxy.org/download/1.8/doc/proxy-protocol.txt](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
+
+开启协议后可以通过变量获取 proxy protocol 请求的信息 例如：
+
+$proxy_protocol_addr、$proxy_protocol_port、$proxy_protocol_server_addr、$proxy_protocol_server_port 等
+
+```nginx
+server {
+    listen 80 proxy_protocol;
+}
+```
+
+
+
+#### Reuseport
+
+reuseport 是提升nginx性能比较关键的配置，放在listen配置后，如下
+
+reuseport 是启用内核 SO_REUSEPORT 功能的配置
+
+该功能允许多个进程/线程 bind/listen 相同的 IP/PORT，提升了新链接的分配性能
+
+详细参考官方对 reuesport 的解释：[Socket Sharding in NGINX OSS Release 1.9.1](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/)
+
+```nginx
+server {
+    listen 80 reuseport;
+}
+```
+
+为nginx设置1080端口，两个工作进程，测试开启 reuseport 前后的 socket 变化
+
+```bash
+# 1080 未添加 reuseport
+# master 只创建一个 socket bind listen 1080
+# worker 进程拷贝 master 所以有 3个 socket
+[nginx@nginx conf]$ lsof -i:1080
+COMMAND   PID  USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+nginx   32906 nginx    5u  IPv4 8355385      0t0  TCP *:socks (LISTEN)
+nginx   37791 nginx    5u  IPv4 8355385      0t0  TCP *:socks (LISTEN)
+nginx   37792 nginx    5u  IPv4 8355385      0t0  TCP *:socks (LISTEN)
+[nginx@nginx conf]$ netstat -atnp | grep 1080
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 0.0.0.0:1080            0.0.0.0:*               LISTEN      32906/nginx: master 
+# 修改配置 1080 添加 reuseport
+[nginx@nginx conf]$ vim nginx.conf
+[nginx@nginx conf]$ ../sbin/nginx -s reload
+# 由于设置两个工作进程 nginx master进程分别创建两个 socket 并且设置 so_reuseport 再对1080端口进行 bind 和 listen
+# 当nginx worker进程 fork master进程时 对应也拷贝了相应的socket
+# 实现了多个进程 独自bind listen相同的端口
+[nginx@nginx conf]$ lsof -i:1080
+COMMAND   PID  USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+nginx   32906 nginx    5u  IPv4 8355385      0t0  TCP *:socks (LISTEN)
+nginx   32906 nginx    8u  IPv4 8378295      0t0  TCP *:socks (LISTEN)
+nginx   38492 nginx    5u  IPv4 8355385      0t0  TCP *:socks (LISTEN)
+nginx   38492 nginx    8u  IPv4 8378295      0t0  TCP *:socks (LISTEN)
+nginx   38493 nginx    5u  IPv4 8355385      0t0  TCP *:socks (LISTEN)
+nginx   38493 nginx    8u  IPv4 8378295      0t0  TCP *:socks (LISTEN)
+```
+
+还需要注意一点，当reuseport打开时，**accept_mutex** 配置是被忽略的
+
+
+
+#### Accept_mutex
+
+Nginx 互斥锁配置，accept_mutex主要时为了解决“惊群效应”带来的问题，如果开启Nginx工作进程会串行工作处理新的连接，否则将会以类似广播的方式处理新连接，**1.11.3版本后默认 off**
+
+互斥锁属于性能优化配置，个人认为已经过时，如果考虑优化Nginx性能，优先使用reuseport，不启用此项配置
+
+在高版本的linux中（4.5后），惊群问题已经由系统层面解决，Nginx也将默认 accept_mutex 默认on 转为 off
+
+参考:[epoll: add EPOLLEXCLUSIVE flag · torvalds/linux@df0108c · GitHub](https://github.com/torvalds/linux/commit/df0108c5da561c66c333bb46bfe3c1fc65905898)
+
+引用官方对开启 accept_mutex的建议
+
+> There is no need to enable `accept_mutex` on systems that support the [EPOLLEXCLUSIVE](https://nginx.org/en/docs/events.html#epoll) flag (1.11.3) or when using [reuseport](https://nginx.org/en/docs/http/ngx_http_core_module.html#reuseport).
+
+```nginx
+events {
+    worker_connections 4096;
+    
+    # 配置举例 非特殊情况不需要启用
+    accept_mutex on; 
+    accept_mutex_delay 100ms;
+}
+```
+
+
+
+#### Worker_connections
+
+worker_connections，设置**单个工作进程**可以允许**同时**建立外部连接的数量，数字越大，能同时处理的连接越多，这里的外部链接**不仅仅是来自客户端的，也包括向上游发起的建链**
+
+当 Nginx **仅**作为WEB服务器时，设置为系统最大打开文件数即可
+
+当 Nginx **仅**作为反向代理服务器时，至多为 1/2 系统最大打开文件数
+
+其他情况可以设置为近似的中间值，例如最大打开文件数为 65535，可以调整 worker_connections 为 20960
+
+需要注意的是，在默认的nginx.conf配置中 worker_connections 是 1024，这个配置对于生产环境是非常危险的，稍频繁的网站 1024 的设置远远不够
+
+这个值主要更具内存和操作系统进程最大打开文件数进行设置
+
+* 一般情况下，以现在的计算机硬件水平不需要考虑连接带来的内存影响，除非设置的值真的非常非常大
+* 可以通过  ulimit -n 查询最大打开文件数，可能是1024 或者 65535
+* 可以通过 cat /proc/nginx_woker_pid/limits 查看当前工作进程的最大打开文件数
+* 也可以通过 nginx 配置（worker_rlimit_nofile）调整**worker进程**的最大打开文件数（**需要使用特权用户运行nginx，如root**）
+
+```nginx
+worker_processes 2; 
+worker_rlimit_nofile 65535;
+events {
+   worker_connections 65535; 
+}
+```
+
+在 worker进程收到的连接已经超过 woker_connections 设置的值后，新的连接会进入排队状态，当超过内核参数 net.core.netdev_max_backlog 设置的数据包最大排队数后，将不再接收新的连接，客户端请求将会失败
+
+
+
+#### Tcp_nodelay
+
+在**长连接**的情况下，tcp_nodelay 能够解决小包阻塞的问题，**默认 on**，即关闭  TCP Nagle 算法
+
+要理解这项配置的含义需要了解TCP传输中的 Nagle 和 Delayed Ack
+
+Nagle算法规定，在发送数据包时，满足以下任意一个条件时才允许发送（Nagle算法降低了网络中小包的数量，假如实际数据只有1KB，被立即发送时会携带40KB的包头，大量小包被发送时 payload 利用率低，严重会导致网络瘫痪）
+
+* 积累的数据量到达最大的 TCP Segment Size（MSS）
+
+* 收到了一个 Ack
+
+Delayed Ack规定不针对单个包发送Ack，Ack在以下情况时发送（降低网络中ACK数量，提升网络性能）
+
+* 一次确认两个包
+* 发送响应时携带Ack
+* 触发超时时间（40ms）后再发送Ack
+
+发送方和接收方 Nagle 和 Delayed Ack 互相作用，在**连续发送两个包，立刻进行读操作时，会产生40ms的延迟**，通过下面的一段伪码来解释出现问题的这种情况
+
+```markdown
+# 当发送方启用 Nagle 接收方启用 Delayed Ack
+# Nagle 算法逻辑
+# 当有数据需要发送时
+if there is new data to send
+  # 假设 数据一共 四个包 前两大包（大于MSS） 后两个一个中包和一个小包（小于MSS，且小包不是包含Fin标志的包）
+  # 步骤1：两个大包会被立刻发送 接收方也必须返回Ack 确认这两个大包
+  if the window size >= MSS and available data is >= MSS
+    send complete MSS segment now
+  else 
+    if there is unconfirmed data still in the pipe
+      # 步骤3：最后一个小包数据小于 MSS 前一个中包未被Ack 存在未确认数据 
+      # 最后一个 小包会进入缓冲 等待发送
+      # 由于接收方遵循 Delayed Ack 会在40ms之后再发送Ack 所以这个小包会延迟40ms后被发送
+      enqueue data in the buffer until an acknowledge is received
+    else
+      # 步骤2：中包被发送时发送数据小于 MSS 但是由于前两个大包被Ack没有待确认的数据 中包也会立刻被发送 
+      send data immediately
+    end if
+  end if
+end if
+# 上述情况 会产生40ms的延迟 且上述情况只会发生在 连接状态为 keep-alive 时
+# 在连接非持久的短链接情况下 最后的小包会随连接关闭立刻发送 
+# 即短链接并不存在小包阻塞问题
+```
+
+综上，在Nginx启用长连接，tcp_nodelay 为 on 时能优化网络连接传输，建议不要设置成 off
+
+
+
+#### Sendfile
+
+sendfile配置是控制开启或关闭使用sendfile()，sendfile()是磁盘和传输控制协议之前的一种系统呼叫，它提供的”零拷贝(zero-copy)“机制
+
+可以让数据直接从主机存储传送到网卡缓冲块中
+
+正常情况下被发送的数据会首先通过read()呼叫从磁盘拷贝进系统高速缓冲存储器中（内存），再使用write()呼叫将缓冲区内容发送到网络，这个过程涉及两次上下文切换，会占用较多的CPU
+
+在使用sendfile()呼叫时，数据会从磁盘直接进入网卡缓冲区，跳过了将数据拷贝进出系统高速缓冲存储器的过程，降低CPU占用
+
+```nginx
+http {
+    ...
+    # 生产环境 建议三者同时开启
+    sendfile       on;
+    tcp_nopush     on;
+    tcp_nodelay	   on;
+
+    server {
+        ...
+        # 也可以在location块中设置 sendfile
+        location /video/ {
+            sendfile       on;
+            tcp_nopush     on;
+            aio            on;
+        }
+        ...
+    }
+    ...
+}
+```
+
+
+
+#### Tcp_nopush
+
+通过设置tcp_nopush on，可以让nginx使用 TCP cork 机制，默认 off
+
+启用后，可以使 Nginx 在一段时间内积累多个小的数据包，然后一次性发送它们
+
+看似 tcp_nopush 和 tcp_nodely 是互斥的，个人理解这两项配置只是作用的层面不通，tcp_nodely 决定需不需要立刻发送包，而tcp_nopush 是对已经就绪发送的包进行阻塞，满足条件之后再进行发送，在介绍tcp_nodely的伪码内容中，假设tcp_nopush起作用，它就会阻塞第三个包（中包）的发送
+
+Linux 2.5.9 以后的版本中，`tcp_nopush` 和 `tcp_nodelay` 是可以兼容的，两者同时作用进行网络传输优化
+
+和系统层面相同，Nginx也可以同时配置 tcp_nopush on 和 tcp_nodelay on
+
+个人理解在两者同时配置开启时，nginx首先会通过 tcp_nopush 确保每个数据包都被填满，最后一个包时 tcp_nodelay 生效将最后一个包强制发出而不进行等待和阻塞
+
+```nginx
+http{
+    ...
+    # 生产环境 建议三者同时开启
+    sendfile on; 
+    tcp_nopush on; 
+    tcp_nodelay on; 
+    ...
+}
+```
+
+
+
+#### Multi_accept
+
+个人建议 无需启用
+
+```nginx
+events {
+    worker_connections 4096; 
+
+    # 使用epoll事件模型
+    use epoll;
+
+    # 使用工作进程一直循环接受新网络连接请求 直到系统返回EAGAIN
+	# 默认 off
+    # 在连接没达到一定数量级时不要尝试开启 会造成连接分配不均衡
+    # 参考NGINX核心开发者的邮件 https://forum.nginx.org/read.php?21,267183,267526#msg-267526
+    multi_accept on; 
+}
+```
+
+
+
+#### Default_server
+
+最近遇到了一个default_server（顾名思义是对多个有相同端口监听的server，设置其中一个server做为默认server，当请求未被server_name匹配上时，使用被标记默认的server处理当前请求）加载顺序的问题，简单记录一下
+
+如果存在两个配置文件，如下
+
+a.conf
+
+```nginx
+server {
+    listen 80;
+    server_name a.test.com;
+    location / {
+            default_type text/html;
+            return 200 "a";
+    }
+}
+```
+
+b.conf
+
+```nginx
+server {
+    listen 80;
+    # 如果期望 直接访问 127.0.0.1 80 由 b.conf 处理
+    # 可以进行如下修改 
+    # listen 80 default_server;
+    # 或者 通过重命名配置文件 让原本的 b.conf 再 a.conf 之前加载(比如将 b.conf重命名为c.conf a.conf重命名为d.conf)
+    location / {
+            default_type text/html;
+            return 200 "b";
+    }
+}
+```
+
+当访问 a.test.com 时 得到的返回是 a，当访问 127.0.0.1:80 时 得到的返回也是 a 但是我们期望访问 127.0.0.1:80 得到的返回是b
+
+这个问题是由 nginx 配置文件加载顺序 和 default_server 自动设置导致的
+
+引用 nginx 官方对 default_server 的解释，其中说明了当未对任何相同 listen 的 server 设置 default_server 时，nginx 会默认为在配置中第一个读取的 server 自动标记 default_server，又因为 a.conf b.conf 在被读取顺序上是完全按照字母大小（可以通过 ls 验证在前的配置文件先被读取）所以 a.conf 先被读取且被自动标记了 default_server，故产生了当访问 127.0.0.1:80 时 得到的返回也是 a 的问题
+
+> The `default_server` parameter, if present, will cause the server to become the default server for the specified `*address*`:`*port*` pair. If none of the directives have the `default_server` parameter then the first server with the `*address*`:`*port*` pair will be the default server for this pair.
 
 
 
@@ -2126,4 +2730,273 @@ client_header_timeout
 client intended to send too large body : xxx bytes
 
 调整配置 client_max_body_size 200m;
+
+
+
+## 常用软件代理转发配置
+
+### Minio
+
+```nginx
+upstream minio-server {
+	server 127.0.0.1:9000;
+}
+
+server {
+    listen 9000;
+    server_name  minio-server;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        # 如果整个链路存在多层的反向代理 minio返回SignatureDoesNotMatch
+        # 尝试在 外层的反向代理中 将此项配置注释
+        proxy_set_header Host $http_host;
+
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        chunked_transfer_encoding off;
+
+        proxy_pass http://minio-server;
+        proxy_read_timeout 30s;
+        proxy_send_timeout 30s;
+    }
+}
+
+
+upstream minio-console{
+	server 1.1.1.1:9001;
+}
+server {
+    listen 9001;
+    server_name  minio-console;
+
+    location / {
+        proxy_pass http://minio-console;
+    }
+    location /ws {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $http_host;
+        proxy_pass http://minio-console;
+    }
+}    
+```
+
+
+
+### Grafana
+
+```nginx
+map $http_upgrade $connection_upgrade{
+    default upgrade;
+    '' close;
+}
+
+server {
+    listen 3000;
+    server_name grafana;
+    
+    # 前缀是否是 grafana 根据实际 grafana 配置判断
+	location ^~ /grafana {
+        proxy_buffering on;
+        proxy_buffers 100 200k;
+        proxy_set_header Host $http_host;
+        proxy_pass http://127.0.0.1;
+        gzip on;
+    }
+    location ^~ /grafana/api/live {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $http_host;
+        proxy_pass http://127.0.0.1;
+    }
+}
+```
+
+
+
+## ANGIE
+
+为了支撑国密需求，安装ANGIE+铜锁
+
+* Angie
+
+> `Angie` is an efficient, powerful, and scalable web server that was forked from nginx:
+>
+> - Conceived by nginx ex-devs to extend the functionality far beyond the original.
+> - Acts as a drop-in replacement for nginx without major configuration changes.
+>
+> We build binary packages for a range of [systems and architectures](https://angie.software/en/install/), as well as [Docker images](https://angie.software/en/install/#docker-images). The source code is open in our [public repositories](https://angie.software/en/a_contribution/) under a [BSD-like license](https://angie.software/en/license/). Dynamic nginx modules are compatible with Angie; in fact, we build a [number of them](https://angie.software/en/install/#dynamic-modules).
+
+* 铜锁
+
+> 铜锁/Tongsuo是一个提供现代密码学算法和安全通信协议的开源基础密码库，为存储、网络、密钥管理、隐私计算等诸多业务场景提供底层的密码学基础能力，实现数据在传输、使用、存储等过程中的私密性、完整性和可认证性，为数据生命周期中的隐私和安全提供保护能力。
+
+
+
+### 编译
+
+* 资源准备和前置操作
+
+```bash
+ mkdir -p /app/angie_build
+ cd /app/angie_build
+ curl -O https://download.angie.software/files/angie-1.3.1.tar.gz
+ wget https://github.com/Tongsuo-Project/Tongsuo/archive/refs/tags/8.3.3.tar.gz
+ tar -zxvf 8.3.3.tar.gz
+ tar -zxvf angie-1.3.1.tar.gz
+ cd angie-1.3.1
+```
+
+* 编译
+
+```bash
+./configure --prefix=/app/angie \
+            --with-openssl=../Tongsuo-8.3.3 \
+            --with-openssl-opt=enable-ntls  \
+            --with-ntls \
+            --with-http_ssl_module
+
+# 列举一些其他模块
+./configure --prefix=/app/angie \
+            --with-openssl=../Tongsuo-8.3.3 \
+            --with-openssl-opt=enable-ntls  \
+            --with-ntls \
+            --with-http_ssl_module \
+            --with-http_flv_module \
+			--with-http_mp4_module \
+            --with-http_addition_module \
+            --with-http_realip_module \
+            --with-http_slice_module \
+            --with-http_stub_status_module \
+            --with-http_sub_module \
+            --with-http_v2_module \
+            --with-http_v3_module \
+            --with-stream \
+            --with-stream_geoip_module \
+            --with-stream_realip_module
+
+
+make -j
+make install
+```
+
+
+
+## 国密支撑
+
+### 概念
+
+什么是证书？
+
+> 受访问的服务需要提供能证明自己身份的东西，就是证书。
+
+什么是签名？
+
+> 证书上的可信标识，叫做签名。
+
+什么是CA?
+
+> 第三方机构CA（certificate authority），CA通过对证书签名标识当前证书可信。
+
+什么是国密算法?
+
+> 国密算法是指国家密码管理局认定的一系列国产密码算法，包括SM1-SM9以及ZUC等。其中SM1、SM4、SM5、SM6、SM7、SM8、ZUC等属于对称密码，SM2、SM9等属于公钥密码，SM3属于单向散列函数。目前我国主要使用公开的SM2、SM3、SM4作为商用密码算法。
+
+什么是双证书?
+
+>**双证书是指国家商用密码体系中的双证书（加密证书+签名证书）**，而不是**站点部署自适应**的双证书（SM2算法证书+[RSA](https://so.csdn.net/so/search?q=RSA&spm=1001.2101.3001.7020)算法证书）。
+>
+>传统单证书，一个证书包含签名和加密功能，**双证书将这两项功能分开**，别需要签名证书和加密证书。加密证书只用来进行加密，签名证书只用来签名。
+
+什么是单向双向？
+
+> 简单一点理解，仅在服务端部署国密双证书为单向，服务端和客户端均部署双证书为双向。
+>
+> 
+>
+> **双向认证是指客户端对服务端证书进行认证的同时，服务端对客户端的身份也进行认证**。通常很多情况下浏览器会对服务端证书是否可信进行验证。而服务端对客户端的身份是不做限制的，如我们的常用的购物网站，视频网站等。无论你用手机还是用电脑只要输入正确的网址都可以正常访问。
+>
+> 
+>
+> 但是有些特殊的场景，为了安全性，服务端会鉴别客户端的身份，这时候就需要在双方握手的过程中，客户端需要将证明自己身份的证书传递给服务端。**如有些VPN设备，或政务网站需要用key才能进行登录，这很可能就启用了双向认证**
+
+
+
+### 国密CSR
+
+本地创建SM2签名私钥和CSR，CSR提供给证书签发机构申请签名证书和加密证书
+
+```shell
+# 检查openssl版本
+# openssl 1.1.1+ 版本增加了对SM2 的支持
+openssl version
+# 确定 当前版本是否支持 SM2
+openssl ecparam -list_curves | grep SM2
+
+# 签名私钥
+openssl ecparam -genkey -name SM2 -out signvip.key
+
+# 生成CSR
+openssl req -new -key signvip.key -out signvip.req
+```
+
+
+
+### 配置
+
+- 开启 NTLS 功能
+
+```nginx
+listen ... ssl;
+ssl_ntls  on;
+```
+
+- 配置国密证书
+
+```nginx
+listen ... ssl;
+
+ssl_ntls  on;
+
+# dual NTLS certificate
+# sign.key 我们创建CSR的私钥
+# sign.crt 是签名证书
+# enc.crt 是加密证书
+# enc.key 是加密私钥 一般证书签发机构不会直接提供给你 可能会提供一串加密的txt文件 需要联系相关厂商解密成 key文件 例如CFCA
+# 只在server 中配置 是单向国密
+ssl_certificate      sign.crt enc.crt;
+ssl_certificate_key  sign.key enc.key;
+
+# can be combined with regular RSA certificate:
+ssl_certificate  rsa.crt;
+ssl_certificate  rsa.key;
+```
+
+- 配置国密套件
+
+```nginx
+# 确保下面配置中有这两个套件即可
+ssl_ciphers "ECC-SM2-SM4-CBC-SM3:ECDHE-SM2-WITH-SM4-SM3";
+```
+
+- 配置国密回源
+
+```nginx
+location /proxy {
+    proxy_ssl_ntls  on;
+
+    proxy_ssl_certificate      sign.crt enc.crt;
+    proxy_ssl_certificate_key  sign.key enc.key;
+
+    proxy_ssl_ciphers "ECC-SM2-WITH-SM4-SM3:ECDHE-SM2-WITH-SM4-SM3:RSA";
+
+    proxy_pass https://backend:443;
+}
+```
+
 
