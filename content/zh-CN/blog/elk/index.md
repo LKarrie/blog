@@ -2,7 +2,7 @@
 title: ELK 部署实践指南~
 date: 2024-10-21T21:10:00.000Z
 lastmod: 2024-10-21T21:10:00.000Z
-description: ELK 部署实践指南~
+description: ELK 7.5.1 日志采集部署实践指南~
 tags: [ "ELK" ]
 categories : [ "ELK" ]
 lazyBanner : "/imglazy/blog/defaultbanner-lazy.webp"
