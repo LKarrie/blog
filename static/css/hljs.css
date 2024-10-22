@@ -9,6 +9,9 @@
   font-size: 14px;
   line-height: 24px;
   text-align: left;
+  /* 20241022 add */
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* linenum */

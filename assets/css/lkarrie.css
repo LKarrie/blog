@@ -135,6 +135,9 @@
 .post-content table thead {
   @apply text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400 hidden md:block
 }
+/**
+todo: table样式有问题
+**/
 .post-content table thead tr th{
   @apply px-6 py-3 
 }
